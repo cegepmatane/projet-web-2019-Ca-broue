@@ -7,3 +7,9 @@
 Alexandre Beauquel
 
 ---
+
+![alt text](images/StoryBoard_inscription.png "storyboard de l'inscription")
+
+Sedrick Levesque
+
+---
