@@ -20,7 +20,10 @@ Alexandre Beauquel
 
 ### Permettre à l'utilisateur de s'inscrire
 ![alt text](images/storyboard-inscription.png "storyboard de l'inscription")
-
+À partie de la page d'inscription, l'utilisateur entre les informations de connexion qu'il désire puis son adresse mail. Par la suite, l'utilisateur appuie sur poursuivre.
+Sur la deuxième page, l'utilisateur peut entré ses informations personnelles pour l'achat en boutique. Ensuite, l'utilisateur appuie sur poursuivre.
+La troisieme page sert au conditions d'utilisations. l'utilisateur oeut choisir de les apcepter ou non.
+  
 Sedrick Levesque
 
 ---
