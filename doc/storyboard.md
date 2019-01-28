@@ -50,3 +50,11 @@ Si la connexion c'est affectué sans embauche, *Se connecter* et *S'inscrire* da
 Alec Pallot
 
 ![alt text](images/storyboard-ajout-dun-article.png "Storyboard de l'ajout d'un article dans le panier")
+
+### Permettre à l'utilisateur de voir le panier et de payer le contenu de son panier 
+Florian LEVY
+
+![alt text](images/storyboard-paiement-panier.png "Storyboard de l'ajout d'un article dans le panier")
+
+
+
