@@ -8,7 +8,7 @@
     - [Permettre à l'utilisateur d'afficher les goodies de la boutique](#permettre-à-lutilisateur-dafficher-les-goodies-de-la-boutique)
     - [Permettre à l'utilisateur de s'inscrire](#permettre-à-lutilisateur-de-sinscrire)
     - [Permettre à l'utilisateur de se connecter sur le site](#permettre-à-lutilisateur-de-se-connecter-sur-le-site)
-
+    - [Permettre à l'utilisateur d'ajouter un article au panier](#permettre-à-lutilisateur-dajouter-un-article-au-panier)
 <!-- /MDTOC -->
 
 ### Permettre à l'utilisateur d'afficher les goodies de la boutique
@@ -42,3 +42,8 @@ Un coup les informations saisient, l'utilisateur peut appuyer sur le bouton *Se 
 Si la connexion c'est affectué sans embauche, *Se connecter* et *S'inscrire* dans la bar de navigation seront remplacé par *Mon compte*.
 
 ---
+
+### Permettre à l'utilisateur d'ajouter un article au panier
+Alec Pallot
+
+![alt text](images/storyboard-ajout-dun-article.png "Storyboard de l'ajout d'un article dans le panier")
