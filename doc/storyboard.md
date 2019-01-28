@@ -1,10 +1,10 @@
-# Les Storyboards de Ça brasse
+# Les Storyboards de Ça broue
 
 ---
 
 <!-- MDTOC maxdepth:6 firsth1:1 numbering:0 flatten:0 bullets:1 updateOnSave:1 -->
 
-- [Les Storyboards de Ça brasse](#les-storyboards-de-ça-brasse)
+- [Les Storyboards de Ça broue](#les-storyboards-de-ça-broue)
     - [Permettre à l'utilisateur d'afficher les goodies de la boutique](#permettre-à-lutilisateur-dafficher-les-goodies-de-la-boutique)
     - [Permettre à l'utilisateur de s'inscrire](#permettre-à-lutilisateur-de-sinscrire)
     - [Permettre à l'utilisateur de se connecter sur le site](#permettre-à-lutilisateur-de-se-connecter-sur-le-site)
