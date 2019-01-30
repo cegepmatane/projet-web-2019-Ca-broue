@@ -6,5 +6,6 @@
 1              |1            |24 janvier | 2          |Réalisation des users stories        |
 1              |1            |27 janvier | 1.5        |Réalisation des storyboards          |---    
 1              |2            |28 janvier |3           |Debut du dossier fonctionnel         |---    
+1              |2            |29 janvier |0.5         |Création tiquet Wordpress de la semaine 1         |---    
 
        
