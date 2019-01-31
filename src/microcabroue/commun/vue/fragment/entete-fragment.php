@@ -26,15 +26,15 @@ function afficherEntete($page = null){
         <link href="commun/decoration/style-commun.css" rel="stylesheet" type="text/css"/>
 
 
-   <!--     <?php
-/*        if(isset($page->style)){
-            */?>
+        <?php
+        if(isset($page->style)){
+            ?>
 
-            <link href="css/<?/*= $page->style; */?>" rel="stylesheet" media="all">
+            <link href="css<?= $page->style; ?>" rel="stylesheet" media="all">
 
-            --><?php
-/*        }
-        */?>
+            <?php
+        }
+        ?>
 
     </head>
 <body>
@@ -42,17 +42,49 @@ function afficherEntete($page = null){
     <h1>
         <?= $page->titrePrincipal ?? ""; ?>
     </h1>
-    <nav role="navigation">
 
-        <?php
-        /*
-        Utiliser $page->itemMenuActif pour mettre en évidence le menu actif.
-        */
-        ?>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="#">
+            <img src="https://i.pinimg.com/236x/ff/fc/f7/fffcf753c1f1f599ae73877ec7ccb605--beer-logos-house-bar.jpg" width="30" height="30" class="d-inline-block align-top" alt="">
+            ça broue
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
 
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+                <?php
+                $objetsNav = [
+                    ["titre"=>"Accueil", "lien"=>"accueil"],
+                    ["titre"=>"Bière", "lien"=>"biere"],
+                    ["titre"=>"Boutique", "lien"=>"boutique"],
+                    ["titre"=>"Evenement", "lien"=>"evenement"],
+                ];
+                $liste="";
+                foreach ($objetsNav as $objet) {
+                    $liste.="<li class='nav-item";
+
+                    if($page->itemMenuActif == $objet['lien']){
+                        $liste.=" active";
+                    }
+                    $liste.="'>";
+                    $liste.= " <a class='nav-link' href='microcabroue/".$objet['lien']."' >".$objet['titre']."</a>";
+                    $liste.="</li>";
+                }
+                echo $liste;
+                ?>
+
+            </ul>
+            <form class="form-inline my-2 my-lg-0">
+                <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+                <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+            </form>
+        </div>
     </nav>
+
 </header>
 
-<?php
+    <?php
 
 }
