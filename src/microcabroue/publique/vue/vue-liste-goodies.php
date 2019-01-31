@@ -17,7 +17,6 @@ $page = (object)
     "titre" => "Boutique",
     "titrePrincipal" => "Boutique",
     "itemMenuActif" => "boutique",
-    "test" => "tessfdsfsdfs"
 ];
 
 

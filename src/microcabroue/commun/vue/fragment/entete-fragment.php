@@ -69,7 +69,7 @@ function afficherEntete($page = null){
                         $liste.=" active";
                     }
                     $liste.="'>";
-                    $liste.= " <a class='nav-link' href='microcabroue/".$objet['lien']."' >".$objet['titre']."</a>";
+                    $liste.= " <a class='nav-link' href='/microcabroue/".$objet['lien']."' >".$objet['titre']."</a>";
                     $liste.="</li>";
                 }
                 echo $liste;
