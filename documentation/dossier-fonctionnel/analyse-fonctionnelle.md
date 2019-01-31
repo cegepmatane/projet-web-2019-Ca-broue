@@ -21,6 +21,7 @@
     - [Maquette des conditions d'utilisation](#maquette-des-conditions-dutilisation)
     - [Maquette finalisation d'achat par carte](#maquette-finalisation-achat-par-carte)
     - [Maquette finalisation d'achat par paypal](#maquette-finalisation-achat-par-paypal)
+    - [Maquette panier pas inscrit](#maquette-panier-pas-inscrit)
 <!-- /MDTOC -->
 
 ## Mission
@@ -97,4 +98,5 @@ Site internet de la Brasserie artisanale ça Broue. Le site permet une présenta
 
 ---
 
-
+### Maquette panier pas inscrit
+![alt text](maquette/panier-pas-inscrit.png "maquette panier pas inscrit")
