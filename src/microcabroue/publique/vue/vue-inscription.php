@@ -1,26 +1,35 @@
 <?php 
 require_once("../../commun/vue/fragment/entete-fragment.php");
-function afficherPremiereEtape()
+require_once("../../commun/vue/fragment/pied-de-page-fragment.php");
+
+$page = (object)
+[
+    "titre" => "inscription",
+    "isPremiereEtape" => true,
+    "isSecondeEtape" => false
+];
+
+function afficherPremiereEtape($page = null)
 {?>
  <form>   
 <!-- nom utilisateur -->
 <div class="form-group">
-<label for="nom-utilisateur"></label>
-<input type="nom-utilisateur" class="form-control" id="nom-utilisateur">
+<label for="nom-utilisateur">Nom d'utilisateur</label>
+<input class="form-control" id="nom-utilisateur">
 </div>
 <!-- addresse -->
 <div class="form-group">
-<label for="email"></label>
+<label for="email">Adresse mail</label>
 <input type="email" class="form-control" id="email">
 </div>
 <!-- Mot de passe -->
 <div class="form-group">
-<label for="mot-de-passe"></label>
-<input type="mot-de-passe" class="form-control" id="mot-de-passe">
+<label for="mot-de-passe">Mot de passe</label>
+<input type="password" class="form-control" id="mot-de-passe">
 </div>
 <!-- confirmer Mot de passe -->
 <div class="form-group">
-<label for="mot-de-passe"></label>
+<label for="mot-de-passe">Confirmer le mot de passe</label>
 <input type="mot-de-passe" class="form-control" id="mot-de-passe">
 </div>
 <!-- Prochaine etape -->
@@ -28,7 +37,7 @@ function afficherPremiereEtape()
 </form>
 <?php 
 }
-function afficherDeuxiemeEtape()
+function afficherDeuxiemeEtape($page = null)
 {
 ?>
 <form>   
@@ -68,5 +77,24 @@ function afficherDeuxiemeEtape()
 
 <?php
 }
-require_once("../../commun/vue/fragment/pied-de-page-fragment.php");
+
+function afficherPage($page = null)
+{
+    if(!is_object($page)) $page = (object)[];
+
+    afficherEntete($page);
+
+    if($page->isPremiereEtape == true)
+    {
+        afficherPremiereEtape($page);
+    }
+    if($page->isSecondeEtape == true)
+    {
+        afficherDeuxiemeEtape($page);
+    }
+
+    afficherPiedDePage($page);
+}
+
+afficherPage($page);
 ?>

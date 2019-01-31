@@ -1,4 +1,5 @@
 RewriteEngine on
 RewriteRule ^$ publique/vue/index.php
 RewriteRule ^boutique publique/vue/vue-liste-goodies.php
+RewriteRule ^inscription publique/vue/vue-inscription.php
 
