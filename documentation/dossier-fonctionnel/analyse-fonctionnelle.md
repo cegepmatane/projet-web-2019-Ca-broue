@@ -73,27 +73,27 @@ Site internet de la Brasserie artisanale ça Broue. Le site permet une présenta
 ---
 
 ### Maquette de l'inscription
-![alt text](maquette/Inscription.png "maquette de l'inscription)
+![alt text](maquette/Inscription.png "maquette de l'inscription")
 
 ---
 
 ### Maquette des informations personnelles
-![alt text](maquette/Information-Personnelle.png "maquette des informations personnelles)
+![alt text](maquette/Information-Personnelle.png "maquette des informations personnelles")
 
 ---
 
 ### Maquette des conditions d'utilisation
-![alt text](maquette/Condition-utilisation.png "maquette des conditions d'utilisation)
+![alt text](maquette/Condition-utilisation.png "maquette des conditions d'utilisation")
 
 ---
 
 ### Maquette finalisation d'achat par carte
-![alt text](maquette/Finalisation-d'achat-carte.png "maquette finalisation d'achat par carte)
+![alt text](maquette/Finalisation-d'achat-carte.png "maquette finalisation d'achat par carte")
 
 ---
 
 ### Maquette finalisation d'achat par paypal
-![alt text](maquette/Finalisation-d'achat-paypal.png "maquette finalisation d'achat par paypal)
+![alt text](maquette/Finalisation-d'achat-paypal.png "maquette finalisation d'achat par paypal")
 
 ---
 
