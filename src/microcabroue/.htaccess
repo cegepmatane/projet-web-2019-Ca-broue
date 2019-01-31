@@ -3,4 +3,6 @@ RewriteRule ^$ publique/vue/index.php
 RewriteRule ^boutique publique/vue/vue-liste-goodies.php
 RewriteRule ^biere publique/vue/vue-biere.php
 RewriteRule ^inscription publique/vue/vue-inscription.php
+RewriteRule ^panier utilisateur/vue/vue-panier.php
+
 

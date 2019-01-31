@@ -1,10 +1,9 @@
 <?php
-require_once("../../commun/vue/fragment/entete-fragment.php");
-require_once("../../commun/vue/fragment/pied-de-page-fragment.php");
+include_once("../../commun/vue/fragment/entete-fragment.php");
+include_once("../../commun/vue/fragment/pied-de-page-fragment.php");
 
 $page = (object)
     [
-    "style" => "acceuil.css",
     "titre" => "panier",
     "titrePrincipal" => "Le titre principal H1",
     "itemMenuActif" => "accueil"
@@ -57,5 +56,20 @@ function afficherElementsConnexion(){
     ");
 }
 
+function afficherElementsCommande(){
+    echo("<div id='ModeLivraison'>
+            <h3 >Mode de livraison</h3>
+            <label><input type='radio' name='optradio' checked>Poste Canada</label>
+            <label><input type='radio' name='optradio' checked>Fedex</label>
+            <label><input type='radio' name='optradio' checked>PuroPost</label>
+         </div>
+         <div id='ModeLivraison'>
+            <h3 >Mode de Paiement</h3>
+            <label><input type='radio' name='optradio' checked>Paypal</label>
+            <label><input type='radio' name='optradio' checked>Carte de crédit</label>
+        </div>"
+    );
+}
+
 afficherTableauPanier();
-afficherElementsConnexion();
+afficherElementsCommande();
