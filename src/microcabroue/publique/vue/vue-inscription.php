@@ -1,5 +1,5 @@
 <?php 
-require_once("../../commun/vue/fragment/haut-de-page.php");
+require_once("../../commun/vue/fragment/entete-fragment.php");
 function afficherPremiereEtape()
 {?>
  <form>   
@@ -68,5 +68,5 @@ function afficherDeuxiemeEtape()
 
 <?php
 }
-require_once("../../commun/vue/fragment/bas-de-page.php");
+require_once("../../commun/vue/fragment/pied-de-page-fragment.php");
 ?>

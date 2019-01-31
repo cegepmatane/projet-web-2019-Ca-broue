@@ -5,9 +5,9 @@
  * Date: 31/01/19
  * Time: 12:34 PM
  */
-include_once "../../commun/vue/fragment/haut-de-page.php";
-include_once "../../commun/vue/fragment/bas-de-page.php";
-include_once "../../commun/vue/fragment/cote-de-page.php";
+include_once "../../commun/vue/fragment/entete-fragment.php";
+include_once "../../commun/vue/fragment/pied-de-page-fragment.php";
+include_once "../../commun/vue/fragment/a-cote-fragment.php";
 
 
 
@@ -16,7 +16,8 @@ $page = (object)
 /*    "style" => "acceuil.css",*/
     "titre" => "Boutique",
     "titrePrincipal" => "Boutique",
-    "itemMenuActif" => "boutique"
+    "itemMenuActif" => "boutique",
+    "test" => "tessfdsfsdfs"
 ];
 
 
