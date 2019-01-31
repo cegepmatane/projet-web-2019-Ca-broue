@@ -1,12 +1,4 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: xela
- * Date: 31/01/19
- * Time: 2:05 PM
- */
-
-
 
 function afficherPiedDePage($page = null){
 
@@ -15,12 +7,35 @@ function afficherPiedDePage($page = null){
 
     ?>
     <footer role="contentinfo">
-        <address>
-            <p>Pour plus d'information
-                <a href="mailto:admin@example.com">Mail de la brasserie Mustermann</a>.
-            </p>
-        </address>
-        <small>Copyright &copy; <time>2019</time></small>
+
+        <div>
+            <h5>
+                <a href="">
+                    <img src="" alt="Accueil Ça Broue">
+                </a>
+            </h5>
+
+            <a href="/forum">Forum</a>
+            <a href="/a-propos">À propos</a>
+            <a href="/contact">Nous contactez</a>
+        </div>
+
+        <hr>
+
+        <div>
+            <a href="mailto:admin@example.com">
+                <img src="" alt="Mail de Ça Broue">
+            </a>
+            <a href="https://www.facebook.com">
+                <img src="" alt="Facebook Ça Broue">
+            </a>
+        </div>
+
+        <div>
+            <small>&copy; <time><?=date("Y");?></time>, ÇaBroue.com, inc.</small>
+            <small>616 Avenue St Rédempteur, Matane, QC G4W 1L1</small>
+            <small><address>cabroue@gmail.com</address></small>
+        </div>
     </footer>
     </body>
     </html>
