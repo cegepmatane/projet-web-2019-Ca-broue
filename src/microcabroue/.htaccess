@@ -1,0 +1,4 @@
+RewriteEngine on
+RewriteRule ^$ publique/vue/index.php
+RewriteRule ^boutique publique/vue/vue-liste-goodies.php
+
