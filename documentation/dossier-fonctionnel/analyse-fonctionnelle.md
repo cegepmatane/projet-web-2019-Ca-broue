@@ -63,7 +63,7 @@ Site internet de la Brasserie artisanale ça Broue. Le site permet une présenta
 ---
 
 ### Maquette contact
-![alt text](maquette/contact.png "maquette contact")
+![alt text](maquette/Contact.png "maquette contact")
 
 ---
 
