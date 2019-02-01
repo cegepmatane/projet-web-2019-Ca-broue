@@ -45,7 +45,7 @@ function afficherEntete($page = null){
 
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
         <a class="navbar-brand" href="#">
-            <img src="https://i.pinimg.com/236x/ff/fc/f7/fffcf753c1f1f599ae73877ec7ccb605--beer-logos-house-bar.jpg" width="30" height="30" class="d-inline-block align-top" alt="">
+            <img src="commun/decoration/image/logo.png"  class="d-inline-block align-top" alt="">
             ça broue
         </a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
