@@ -17,3 +17,12 @@ body {
   @extend .nav-link;
   font-size:25px;
 }
+
+.ligne{
+  @extend .row;
+}
+
+.conteneur{
+  @extend .container;
+  text-align: center;
+}

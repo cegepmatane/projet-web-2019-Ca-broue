@@ -1,0 +1,6 @@
+@import "../commun/bootstrap-4.0.0/scss/bootstrap.scss";
+
+.carte-goodie{
+  @extend .card;
+  margin: 5px;
+}

@@ -30,7 +30,7 @@ function afficherEntete($page = null){
         if(isset($page->style)){
             ?>
 
-            <link href="css<?= $page->style; ?>" rel="stylesheet" media="all">
+            <link href="<?= $page->style; ?>" rel="stylesheet" media="all"  type="text/css">
 
             <?php
         }
@@ -67,7 +67,7 @@ function afficherEntete($page = null){
                         $liste.=" active";
                     }
                     $liste.="'>";
-                    $liste.= " <a class='nav-lien' href='/microcabroue/".$objet['lien']."' >".$objet['titre']."</a>";
+                    $liste.= " <a class='nav-lien' href='".$objet['lien']."' >".$objet['titre']."</a>";
                     $liste.="</li>";
                 }
                 echo $liste;
