@@ -17,3 +17,48 @@ body {
   @extend .nav-link;
   font-size:25px;
 }
+
+.ligne{
+  @extend .row;
+}
+
+.conteneur{
+  @extend .container;
+  padding-left: 2%;
+  padding-right: 2%;
+  /*margin-left: 15%;
+  margin-right: 15%;*/
+}
+
+.bouton-validation{
+  @extend .btn;
+  @extend .btn-primary;
+
+  background-color: #fcc200;
+
+  &:hover {
+    background-color: #c18e00;
+  }
+}
+
+.carte-connexion{
+  @extend .card;
+  border: none;
+  //background-color: rgba(160, 157, 156, 0.322);
+
+  padding: 1%;
+  margin-top: 3%;
+
+}
+
+.input-connexion{
+  @extend .form-control;
+  margin: 2%;
+
+}
+
+.bouton-secondaire{
+  @extend .btn;
+  @extend .btn-secondary;
+
+}

@@ -24,13 +24,14 @@ function afficherEntete($page = null){
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
         <link href="commun/decoration/style-commun.css" rel="stylesheet" type="text/css"/>
+        <link href="../commun/decoration/style-commun.css" rel="stylesheet" type="text/css"/>
 
 
         <?php
         if(isset($page->style)){
             ?>
 
-            <link href="css<?= $page->style; ?>" rel="stylesheet" media="all">
+            <link href="<?= $page->style; ?>" rel="stylesheet" media="all"  type="text/css">
 
             <?php
         }
@@ -45,6 +46,8 @@ function afficherEntete($page = null){
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
         <a class="navbar-brand" href="#">
             <img src="commun/decoration/image/logo.png"  class="d-inline-block align-top" alt="">
+            <img src="../commun/decoration/image/logo.png"  class="d-inline-block align-top" alt="">
+
         </a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -63,11 +66,11 @@ function afficherEntete($page = null){
                 foreach ($objetsNav as $objet) {
                     $liste.="<li class='nav-objet";
 
-                    if($page->itemMenuActif == $objet['lien']){
+                    if(isset($page->itemMenuActif) && $page->itemMenuActif == $objet['lien']){
                         $liste.=" active";
                     }
                     $liste.="'>";
-                    $liste.= " <a class='nav-lien' href='/microcabroue/".$objet['lien']."' >".$objet['titre']."</a>";
+                    $liste.= " <a class='nav-lien' href='".$objet['lien']."' >".$objet['titre']."</a>";
                     $liste.="</li>";
                 }
                 echo $liste;

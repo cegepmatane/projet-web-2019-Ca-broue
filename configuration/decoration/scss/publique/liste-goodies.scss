@@ -1,0 +1,23 @@
+@import "../commun/bootstrap-4.0.0/scss/bootstrap.scss";
+
+.carte-goodie{
+  @extend .card;
+  margin: 5px;
+
+}
+
+.carte-image-goodie{
+  @extend .card-img-top;
+}
+
+.carte-goodie-corp{
+  @extend .card-body;
+}
+
+.carte-goodie-titre{
+  @extend .card-title;
+}
+
+.carte-goodie-texte{
+  @extend .card-text;
+}

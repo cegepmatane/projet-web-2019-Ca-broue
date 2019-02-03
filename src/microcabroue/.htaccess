@@ -4,6 +4,10 @@ RewriteRule ^accueil publique/vue/index.php
 RewriteRule ^boutique publique/vue/vue-liste-goodies.php
 RewriteRule ^biere publique/vue/vue-biere.php
 RewriteRule ^inscription publique/vue/vue-inscription.php
-RewriteRule ^panier utilisateur/vue/vue-panier.php
+RewriteRule ^panier publique/vue/vue-panier.php
+RewriteRule ^connexion publique/vue/vue-connexion.php
+RewriteRule ^utilisateur/paiement utilisateur/vue/vue-paiement.php
+
+
 
 
