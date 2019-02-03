@@ -3799,12 +3799,12 @@ tbody.collapse.show {
   border-bottom-left-radius: 0.25rem;
 }
 
-.card-body {
+.card-body, .carte-goodie-corp {
   flex: 1 1 auto;
   padding: 1.25rem;
 }
 
-.card-title {
+.card-title, .carte-goodie-titre {
   margin-bottom: 0.75rem;
 }
 
@@ -3813,7 +3813,7 @@ tbody.collapse.show {
   margin-bottom: 0;
 }
 
-.card-text:last-child {
+.card-text:last-child, .carte-goodie-texte:last-child {
   margin-bottom: 0;
 }
 
@@ -3872,7 +3872,7 @@ tbody.collapse.show {
   border-radius: calc(0.25rem - 1px);
 }
 
-.card-img-top {
+.card-img-top, .carte-image-goodie {
   width: 100%;
   border-top-left-radius: calc(0.25rem - 1px);
   border-top-right-radius: calc(0.25rem - 1px);
@@ -3930,7 +3930,7 @@ tbody.collapse.show {
     border-top-right-radius: 0;
     border-bottom-right-radius: 0;
   }
-  .card-group > .card:first-child .card-img-top, .card-group > .carte-goodie:first-child .card-img-top,
+  .card-group > .card:first-child .card-img-top, .card-group > .card:first-child .carte-image-goodie, .card-group > .carte-goodie:first-child .card-img-top, .card-group > .carte-goodie:first-child .carte-image-goodie,
 .card-group > .card:first-child .card-header,
 .card-group > .carte-goodie:first-child .card-header {
     border-top-right-radius: 0;
@@ -3944,7 +3944,7 @@ tbody.collapse.show {
     border-top-left-radius: 0;
     border-bottom-left-radius: 0;
   }
-  .card-group > .card:last-child .card-img-top, .card-group > .carte-goodie:last-child .card-img-top,
+  .card-group > .card:last-child .card-img-top, .card-group > .card:last-child .carte-image-goodie, .card-group > .carte-goodie:last-child .card-img-top, .card-group > .carte-goodie:last-child .carte-image-goodie,
 .card-group > .card:last-child .card-header,
 .card-group > .carte-goodie:last-child .card-header {
     border-top-left-radius: 0;
@@ -3957,7 +3957,7 @@ tbody.collapse.show {
   .card-group > .card:only-child, .card-group > .carte-goodie:only-child {
     border-radius: 0.25rem;
   }
-  .card-group > .card:only-child .card-img-top, .card-group > .carte-goodie:only-child .card-img-top,
+  .card-group > .card:only-child .card-img-top, .card-group > .card:only-child .carte-image-goodie, .card-group > .carte-goodie:only-child .card-img-top, .card-group > .carte-goodie:only-child .carte-image-goodie,
 .card-group > .card:only-child .card-header,
 .card-group > .carte-goodie:only-child .card-header {
     border-top-left-radius: 0.25rem;
@@ -3972,7 +3972,7 @@ tbody.collapse.show {
   .card-group > .card:not(:first-child):not(:last-child):not(:only-child), .card-group > .carte-goodie:not(:first-child):not(:last-child):not(:only-child) {
     border-radius: 0;
   }
-  .card-group > .card:not(:first-child):not(:last-child):not(:only-child) .card-img-top, .card-group > .carte-goodie:not(:first-child):not(:last-child):not(:only-child) .card-img-top,
+  .card-group > .card:not(:first-child):not(:last-child):not(:only-child) .card-img-top, .card-group > .card:not(:first-child):not(:last-child):not(:only-child) .carte-image-goodie, .card-group > .carte-goodie:not(:first-child):not(:last-child):not(:only-child) .card-img-top, .card-group > .carte-goodie:not(:first-child):not(:last-child):not(:only-child) .carte-image-goodie,
 .card-group > .card:not(:first-child):not(:last-child):not(:only-child) .card-img-bottom,
 .card-group > .carte-goodie:not(:first-child):not(:last-child):not(:only-child) .card-img-bottom,
 .card-group > .card:not(:first-child):not(:last-child):not(:only-child) .card-header,

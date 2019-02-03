@@ -24,5 +24,19 @@ body {
 
 .conteneur{
   @extend .container;
-  text-align: center;
+  padding-left: 2%;
+  padding-right: 2%;
+  /*margin-left: 15%;
+  margin-right: 15%;*/
+}
+
+.bouton-validation{
+  @extend .btn;
+  @extend .btn-primary;
+
+  background-color: #fcc200;
+
+  &:hover {
+    background-color: #c18e00;
+  }
 }
