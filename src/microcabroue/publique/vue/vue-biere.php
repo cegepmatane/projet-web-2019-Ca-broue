@@ -1,2 +1,2 @@
 <?php
-echo"Bière"
+echo"Bière";

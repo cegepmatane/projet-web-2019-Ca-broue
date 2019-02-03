@@ -40,3 +40,25 @@ body {
     background-color: #c18e00;
   }
 }
+
+.carte-connexion{
+  @extend .card;
+  border: none;
+  //background-color: rgba(160, 157, 156, 0.322);
+
+  padding: 1%;
+  margin-top: 3%;
+
+}
+
+.input-connexion{
+  @extend .form-control;
+  margin: 2%;
+
+}
+
+.bouton-secondaire{
+  @extend .btn;
+  @extend .btn-secondary;
+
+}
