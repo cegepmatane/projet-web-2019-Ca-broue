@@ -16,7 +16,9 @@ afficherEntete($page);
 
 <?php
 function afficherTableauPanier(){
-    echo("<table class='table'>
+    ?>
+    <div id ='table-panier'>
+    <table class='table'>
     <thead>
       <tr>
         <th scope='col'>n°</th>
@@ -42,20 +44,28 @@ function afficherTableauPanier(){
         <td>12.50$</td>
       </tr>
     </tbody>
-  </table>");
+  </table>
+  </div>
+  <?php
 }
 
-function afficherElementsConnexion(){
-    echo("<div id='connexion'><h3 >Êtes-vous déjà inscrit ?</h3>
-    <button type='button' class='btn btn-primary'>Connecter</button>
-    </div>
-    <div id='inscription'><h3 >Vous n'êtes pas inscrit ?</h3>
-    <button type='button' class='btn btn-primary'>S'inscrire</button>
-    </div>
+function afficherBoutton(){
 
-    ");
+  // TO DO : Verification si l'utilisateur est connecté envoie vers connexion ou choix livraison
+
+  ?>
+  
+  <div id='continuer-bouttons'>
+        <a class='btn btn-secondary' href='boutique'>Revenir à la boutique</a>
+        <a class='btn btn-primary' href='connexion'>Commander</a>
+  </div>
+       
+  
+  <?php
 }
 
+
+/*
 function afficherElementsCommande(){
     echo("<div id='ModeLivraison'>
             <h3 >Mode de livraison</h3>
@@ -63,13 +73,17 @@ function afficherElementsCommande(){
             <label><input type='radio' name='optradio' checked>Fedex</label>
             <label><input type='radio' name='optradio' checked>PuroPost</label>
          </div>
+         <hr>
          <div id='ModeLivraison'>
             <h3 >Mode de Paiement</h3>
             <label><input type='radio' name='optradio' checked>Paypal</label>
             <label><input type='radio' name='optradio' checked>Carte de crédit</label>
-        </div>"
+        </div>
+        <button type='button' class='btn btn-primary'>Continuer</button>"
+
     );
-}
+}*/
 
 afficherTableauPanier();
-afficherElementsCommande();
+afficherBoutton();
+//afficherElementsCommande();
