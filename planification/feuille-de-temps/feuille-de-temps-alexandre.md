@@ -10,5 +10,6 @@
 1              |2            |31 janvier |2           |Integration de boostrap, sass        |---    
 1              |2            |31 janvier |2           |Creation des fragments de vue        |---    
 1              |2            |31 janvier |3           |Creation d'un navbar dans l'entete        |---    
+1              |2            |1  février |0.5         | Début de la vue boutique        |---    
 
         

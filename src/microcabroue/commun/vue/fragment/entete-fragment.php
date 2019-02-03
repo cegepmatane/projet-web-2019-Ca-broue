@@ -39,14 +39,12 @@ function afficherEntete($page = null){
     </head>
 <body>
 <header role="banner">
-    <h1>
-        <?= $page->titrePrincipal ?? ""; ?>
-    </h1>
-
+   <!-- <h1>
+        <?/*= $page->titrePrincipal ?? ""; */?>
+    </h1>-->
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
         <a class="navbar-brand" href="#">
             <img src="commun/decoration/image/logo.png"  class="d-inline-block align-top" alt="">
-            ça broue
         </a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -63,13 +61,13 @@ function afficherEntete($page = null){
                 ];
                 $liste="";
                 foreach ($objetsNav as $objet) {
-                    $liste.="<li class='nav-item";
+                    $liste.="<li class='nav-objet";
 
                     if($page->itemMenuActif == $objet['lien']){
                         $liste.=" active";
                     }
                     $liste.="'>";
-                    $liste.= " <a class='nav-link' href='/microcabroue/".$objet['lien']."' >".$objet['titre']."</a>";
+                    $liste.= " <a class='nav-lien' href='/microcabroue/".$objet['lien']."' >".$objet['titre']."</a>";
                     $liste.="</li>";
                 }
                 echo $liste;

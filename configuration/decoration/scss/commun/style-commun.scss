@@ -1,10 +1,19 @@
-@import "bootstrap/css/bootstrap.css";
+@import "bootstrap-4.0.0/scss/bootstrap.scss";
 
 
 $font-stack:    Helvetica, sans-serif;
-$primary-color: #333;
+$couleur-principal: rgba(177, 175, 132, 0.79);
+$couleur-secondaire: #333;
 
 body {
   font: 100% $font-stack;
-  color: $primary-color;
+}
+
+.nav-objet {
+  @extend .nav-item;
+}
+
+.nav-lien {
+  @extend .nav-link;
+  font-size:25px;
 }
