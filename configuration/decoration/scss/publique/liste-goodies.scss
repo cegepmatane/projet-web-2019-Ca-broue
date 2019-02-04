@@ -1,5 +1,8 @@
 @import "../commun/bootstrap-4.0.0/scss/bootstrap.scss";
 
+$couleur-principal: #fcc200;
+$hover-principal: #c18e00;
+
 .carte-goodie{
   @extend .card;
   margin: 5px;
@@ -20,4 +23,30 @@
 
 .carte-goodie-texte{
   @extend .card-text;
+}
+
+.conteneur-liste-goodies{
+  position: fixed;
+  width: 23%;
+
+}
+.liste-categorie-goodies{
+  @extend .list-group;
+  @extend .list-group-flush;
+
+}
+
+.lien-liste-categorie-goodies{
+  @extend .list-group-item;
+  @extend .d-flex;
+  @extend .justify-content-between;
+  @extend .align-items-center;
+}
+
+.badge-liste-categorie-goodies{
+  @extend .badge;
+  @extend .badge-success;
+  @extend .badge-pill;
+  @extend .text-right;
+  background-color: $couleur-principal;
 }

@@ -2,7 +2,9 @@
 
 
 $font-stack:    Helvetica, sans-serif;
-$couleur-principal: rgba(177, 175, 132, 0.79);
+$couleur-principal: #fcc200;
+$hover-principal: #c18e00;
+
 $couleur-secondaire: #333;
 
 body {
@@ -34,10 +36,10 @@ body {
   @extend .btn;
   @extend .btn-primary;
 
-  background-color: #fcc200;
+  background-color: $couleur-principal;
 
   &:hover {
-    background-color: #c18e00;
+    background-color: $hover-principal;
   }
 }
 

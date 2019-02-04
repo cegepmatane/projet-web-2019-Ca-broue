@@ -29,8 +29,23 @@ afficherEntete($page);
 ?>
     <div class="ligne">
         <div class="col-3">
-            <h2 class="text-center">Recherche</h2>
-            <p>TODO furture algo de recherche dans la boutique</p>
+            <div class="conteneur-liste-goodies ">
+            <h1 class="text-center">Categorie</h1>
+            <ul class="liste-categorie-goodies">
+                <a href="#" class="lien-liste-categorie-goodies">
+                        Habits
+                    <span class="badge-liste-categorie-goodies">1</span>
+                </a>
+                <a href="#" class="lien-liste-categorie-goodies">
+                    Poster
+                    <span class="badge-liste-categorie-goodies">50</span>
+                </a>
+                <a href="#" class="lien-liste-categorie-goodies">
+                    Buck
+                    <span class="badge-liste-categorie-goodies">12</span>
+                </a>
+            </ul>
+        </div>
         </div>
     <div class="conteneur col-9">
         <h1>Notre boutique</h1>
