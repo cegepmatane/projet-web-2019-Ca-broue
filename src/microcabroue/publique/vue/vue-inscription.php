@@ -13,7 +13,7 @@ $page = (object)
 function afficherPremiereEtape($page = null)
 {?>
 <div class="conteneur-inscription">
- <form>   
+ <form method="post">    
 <!-- nom utilisateur -->
 <div class="groupe-formulaire">
 <label for="nom-utilisateur">Nom d'utilisateur</label>
@@ -35,7 +35,7 @@ function afficherPremiereEtape($page = null)
 <input type="mot-de-passe" class="controle-formulaire" id="mot-de-passe">
 </div>
 <!-- Prochaine etape -->
-<button type="submit" class="bouton bouton-primaire">Poursuivre</button>
+<button type="submit" class="bouton bouton-primaire" name="action-aller-seconde-etape">Poursuivre</button>
 </form>
 </div>
 <?php 
@@ -44,38 +44,39 @@ function afficherDeuxiemeEtape($page = null)
 {
 ?>
 <div class="conteneur-inscription">
-<form>   
+<form method="post">   
 <!-- nom-->
 <div class="groupe-formulaire">
-<label for="nom"></label>
+<label for="nom">Nom</label>
 <input type="nom" class="controle-formulaire" id="nom">
 </div>
 <!-- Prenom -->
 <div class="groupe-formulaire">
-<label for="prenom"></label>
+<label for="prenom">Prénom</label>
 <input type="prenom" class="controle-formulaire" id="prenom">
 </div>
 <!-- Adresse -->
 <div class="groupe-formulaire">
-<label for="adresse"></label>
+<label for="adresse">Adresse</label>
 <input type="adresse" class="controle-formulaire" id="adresse">
 </div>
 <!-- code postal -->
 <div class="groupe-formulaire">
-<label for="code-postal"></label>
+<label for="code-postal">Code postal</label>
 <input type="code-postal" class="controle-formulaire" id="code-postal">
 </div>
 <!-- vile -->
 <div class="groupe-formulaire">
-<label for="ville"></label>
+<label for="ville">Ville</label>
 <input type="ville" class="controle-formulaire" id="ville">
 </div>
 <!-- condition d'utilisation -->
 <div class="groupe-formulaire bouton-cocher">
 <label class="etiquette-bouton-cocher">
 <input class="saisie-bouton-cocher" type="checkbox"> J'accepte les <a href="#">conditiond d'utilisations
-<!-- finaliser -->
-<button type="submit" class="bouton bouton-primaire">S'inscrire</button>
+<!-- finaliser ou revenir-->
+<button type="submit" class="bouton bouton-primaire" name="action-aller-premiere-etape">Revenir</button>
+<button type="submit" class="bouton bouton-primaire" name="action-inscrire">S'inscrire</button>
 </div>
 </form>
 
@@ -89,11 +90,11 @@ function afficherPage($page = null)
 
     afficherEntete($page);
 
-    if($page->isPremiereEtape == true)
+    if($page->isPremiereEtape ?? false)
     {
         afficherPremiereEtape($page);
     }
-    if($page->isSecondeEtape == true)
+    elseif($page->isSecondeEtape ?? false)
     {
         afficherDeuxiemeEtape($page);
     }
@@ -101,5 +102,5 @@ function afficherPage($page = null)
     afficherPiedDePage($page);
 }
 
-afficherPage($page);
+require_once("../../../microcabroue_publique/action/action-inscription.php");
 ?>
