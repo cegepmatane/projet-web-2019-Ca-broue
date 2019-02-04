@@ -580,7 +580,7 @@ pre code {
   margin-left: auto;
 }
 
-.row {
+.row, .conteneur-boutique {
   display: flex;
   flex-wrap: wrap;
   margin-right: -15px;
@@ -8243,11 +8243,18 @@ h3 {
     border: 1px solid #ddd !important;
   }
 }
-.carte-goodie {
-  margin: 5px;
+.conteneur-boutique {
+  margin-left: 0;
+  margin-right: 0;
 }
 
-.conteneur-liste-goodies {
+.carte-goodie {
+  margin-right: 3%;
+  margin-bottom: 1%;
+  padding: 2%;
+}
+
+.conteneur-categories-liste-goodies {
   position: fixed;
   width: 23%;
 }

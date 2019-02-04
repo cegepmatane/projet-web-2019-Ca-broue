@@ -27,9 +27,9 @@ if(!is_object($page)) $page = (object)[];
 
 afficherEntete($page);
 ?>
-    <div class="ligne">
+    <div class="conteneur-boutique">
         <div class="col-3">
-            <div class="conteneur-liste-goodies ">
+            <div class="conteneur-categories-liste-goodies ">
             <h1 class="text-center">Categorie</h1>
             <ul class="liste-categorie-goodies">
                 <a href="#" class="lien-liste-categorie-goodies">
@@ -48,7 +48,7 @@ afficherEntete($page);
         </div>
         </div>
     <div class="conteneur col-9">
-        <h1>Notre boutique</h1>
+        <h1 >Notre boutique</h1>
     <div class="ligne">
         <?php
         for ($i = 1; $i <= 15; $i++) {
