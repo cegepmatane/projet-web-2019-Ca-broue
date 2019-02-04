@@ -13,6 +13,17 @@ $page = (object)
     "dossier" => true,
 ];
 
+function afficherAdresseFacturation()
+{
+    ?>
+    <h1>Votre adresse de facturation </h1>
+    
+    <div>
+        <p> atatatatatatat </p>
+</div>
+<?php
+}
+
 function afficherPremiereEtapeLivraison($page = null)
 {
 ?>
