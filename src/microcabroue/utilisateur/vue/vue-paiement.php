@@ -10,7 +10,7 @@ $page = (object)
     "titre" => "inscription",
     "isPremiereEtape" => true,
     "isSecondeEtape" => false,
-
+    "dossier" => true,
 ];
 
 function afficherPremiereEtapeLivraison($page = null)
