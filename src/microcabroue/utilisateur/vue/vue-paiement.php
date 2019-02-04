@@ -6,18 +6,20 @@ require_once("../../commun/vue/fragment/tableau-panier.php");
 //TO DO verifier dans controleur premiere etape et deuxieme etape
 $page = (object)
 [
+    "style" => "decoration/style-paiement.css",
     "titre" => "inscription",
-    "isPremiereEtape" => false,
-    "isSecondeEtape" => true,
+    "isPremiereEtape" => true,
+    "isSecondeEtape" => false,
 
 ];
 
 function afficherPremiereEtapeLivraison($page = null)
 {
 ?>
-    <form>
         <h1>Mode de livraison</h1>
-        <div id="form-group">
+
+    <form >
+        <div class='form-group ligne'>
             <label><input type='radio' name='optradio' checked>Poste Canada</label>
             <label><input type='radio' name='optradio' checked>Fedex</label>
             <label><input type='radio' name='optradio' checked>PuroPost</label>
@@ -52,8 +54,8 @@ function afficherPage($page = null)
     if(!is_object($page)) $page = (object)[];
 
     afficherEntete($page);
-    afficherTableauPanier();
 
+    echo "<div class='conteneur carte-livraison'>";
 
     if($page->isPremiereEtape == true)
     {
@@ -63,6 +65,7 @@ function afficherPage($page = null)
     {
         afficherDeuxiemeEtapePaiement($page);
     }
+    echo "</div>";
 
     afficherPiedDePage($page);
 }

@@ -1,0 +1,8 @@
+@import "../commun/bootstrap-4.0.0/scss/bootstrap.scss";
+
+.carte-livraison{
+    @extend .card;
+    border: none;
+    padding: 1%;
+    margin-top: 3%;
+}
