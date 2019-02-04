@@ -1,0 +1,36 @@
+@import "../commun/bootstrap-4.0.0/scss/bootstrap.scss";
+
+.conteneur-inscription
+{
+    @extend .container;
+    width: 60%;
+    
+}
+.groupe-formulaire
+{
+    @extend .form-group;
+}
+.controle-formulaire
+{
+    @extend .form-control;
+}
+.bouton
+{
+    @extend .btn;
+}
+.bouton-primaire
+{
+    @extend .btn-primary;
+}
+.bouton-cocher
+{
+    @extend .form-check;
+}
+.etiquette-bouton-cocher
+{
+    @extend .form-check-label;
+}
+.saisie-bouton-cocher
+{
+    @extend .form-check-input;
+}

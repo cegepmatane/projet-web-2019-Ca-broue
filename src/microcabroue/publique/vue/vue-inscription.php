@@ -4,6 +4,7 @@ require_once("../../commun/vue/fragment/pied-de-page-fragment.php");
 
 $page = (object)
 [
+    "style" => "publique/decoration/inscription.css",
     "titre" => "inscription",
     "isPremiereEtape" => true,
     "isSecondeEtape" => false
@@ -11,67 +12,71 @@ $page = (object)
 
 function afficherPremiereEtape($page = null)
 {?>
+<div class="conteneur-inscription">
  <form>   
 <!-- nom utilisateur -->
-<div class="form-group">
+<div class="groupe-formulaire">
 <label for="nom-utilisateur">Nom d'utilisateur</label>
-<input class="form-control" id="nom-utilisateur">
+<input class="controle-formulaire" id="nom-utilisateur">
 </div>
 <!-- addresse -->
-<div class="form-group">
+<div class="groupe-formulaire">
 <label for="email">Adresse mail</label>
-<input type="email" class="form-control" id="email">
+<input type="email" class="controle-formulaire" id="email">
 </div>
 <!-- Mot de passe -->
-<div class="form-group">
+<div class="groupe-formulaire">
 <label for="mot-de-passe">Mot de passe</label>
-<input type="password" class="form-control" id="mot-de-passe">
+<input type="password" class="controle-formulaire" id="mot-de-passe">
 </div>
 <!-- confirmer Mot de passe -->
-<div class="form-group">
+<div class="groupe-formulaire">
 <label for="mot-de-passe">Confirmer le mot de passe</label>
-<input type="mot-de-passe" class="form-control" id="mot-de-passe">
+<input type="mot-de-passe" class="controle-formulaire" id="mot-de-passe">
 </div>
 <!-- Prochaine etape -->
-<button type="submit" class="btn btn-primary">Poursuivre</button>
+<button type="submit" class="bouton bouton-primaire">Poursuivre</button>
 </form>
+</div>
 <?php 
 }
 function afficherDeuxiemeEtape($page = null)
 {
 ?>
+<div class="conteneur-inscription">
 <form>   
 <!-- nom-->
-<div class="form-group">
+<div class="groupe-formulaire">
 <label for="nom"></label>
-<input type="nom" class="form-control" id="nom">
+<input type="nom" class="controle-formulaire" id="nom">
 </div>
 <!-- Prenom -->
-<div class="form-group">
+<div class="groupe-formulaire">
 <label for="prenom"></label>
-<input type="prenom" class="form-control" id="prenom">
+<input type="prenom" class="controle-formulaire" id="prenom">
 </div>
 <!-- Adresse -->
-<div class="form-group">
+<div class="groupe-formulaire">
 <label for="adresse"></label>
-<input type="adresse" class="form-control" id="adresse">
+<input type="adresse" class="controle-formulaire" id="adresse">
 </div>
 <!-- code postal -->
-<div class="form-group">
+<div class="groupe-formulaire">
 <label for="code-postal"></label>
-<input type="code-postal" class="form-control" id="code-postal">
+<input type="code-postal" class="controle-formulaire" id="code-postal">
 </div>
 <!-- vile -->
-<div class="form-group">
+<div class="groupe-formulaire">
 <label for="ville"></label>
-<input type="ville" class="form-control" id="ville">
+<input type="ville" class="controle-formulaire" id="ville">
 </div>
 <!-- condition d'utilisation -->
-<div class="form-group form-check">
-<label class="form-check-label">
-<input class="form-check-input" type="checkbox"> J'accepte les <a href="#">conditiond d'utilisations
+<div class="groupe-formulaire bouton-cocher">
+<label class="etiquette-bouton-cocher">
+<input class="saisie-bouton-cocher" type="checkbox"> J'accepte les <a href="#">conditiond d'utilisations
 <!-- finaliser -->
-<button type="submit" class="btn btn-primary">S'inscrire</button>
+<button type="submit" class="bouton bouton-primaire">S'inscrire</button>
+</div>
 </form>
 
 
