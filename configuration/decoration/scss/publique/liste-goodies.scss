@@ -2,7 +2,7 @@
 
 $couleur-principal: #fcc200;
 $hover-principal: #c18e00;
-
+$taille-police: 2em;
 .conteneur-boutique{
   @extend .row;
   margin-left: 0;
@@ -41,7 +41,7 @@ $hover-principal: #c18e00;
 .liste-categorie-goodies{
   @extend .list-group;
   @extend .list-group-flush;
-
+  font-size: $taille-police;
 }
 
 .lien-liste-categorie-goodies{
@@ -49,6 +49,10 @@ $hover-principal: #c18e00;
   @extend .d-flex;
   @extend .justify-content-between;
   @extend .align-items-center;
+
+  &:hover {
+    background-color: #d1ecf1;
+  }
 }
 
 .badge-liste-categorie-goodies{
@@ -57,4 +61,18 @@ $hover-principal: #c18e00;
   @extend .badge-pill;
   @extend .text-right;
   background-color: $couleur-principal;
+}
+
+.pagination-liste-goodies{
+  @extend .pagination;
+  padding-left: 30%;
+  font-size: $taille-police;
+}
+
+.objet-pagination{
+  @extend .page-item;
+}
+
+.lien-pagination{
+  @extend .page-link;
 }

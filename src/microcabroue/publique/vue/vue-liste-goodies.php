@@ -51,7 +51,7 @@ afficherEntete($page);
         <h1 >Notre boutique</h1>
     <div class="ligne">
         <?php
-        for ($i = 1; $i <= 15; $i++) {
+        for ($i = 1; $i <= 6; $i++) {
 
 
             ?>
@@ -73,6 +73,25 @@ afficherEntete($page);
 
 
     </div>
+        <nav aria-label="Page navigation goodies">
+            <ul class="pagination-liste-goodies">
+                <li class="objet-pagination">
+                    <a class="lien-pagination" href="#" aria-label="Previous">
+                        <span aria-hidden="true">&laquo;</span>
+                        <span class="sr-only">Previous</span>
+                    </a>
+                </li>
+                <li class="objet-pagination"><a class="page-link" href="#">1</a></li>
+                <li class="objet-pagination"><a class="page-link" href="#">2</a></li>
+                <li class="objet-pagination"><a class="page-link" href="#">3</a></li>
+                <li class="objet-pagination">
+                    <a class="lien-pagination" href="#" aria-label="Next">
+                        <span aria-hidden="true">&raquo;</span>
+                        <span class="sr-only">Next</span>
+                    </a>
+                </li>
+            </ul>
+        </nav>
     </div>
     </div>
     <?php

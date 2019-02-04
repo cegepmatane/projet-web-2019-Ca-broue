@@ -4024,14 +4024,14 @@ tbody.collapse.show {
   color: #6c757d;
 }
 
-.pagination {
+.pagination, .pagination-liste-goodies {
   display: flex;
   padding-left: 0;
   list-style: none;
   border-radius: 0.25rem;
 }
 
-.page-link {
+.page-link, .lien-pagination {
   position: relative;
   display: block;
   padding: 0.5rem 0.75rem;
@@ -4041,37 +4041,37 @@ tbody.collapse.show {
   background-color: #fff;
   border: 1px solid #dee2e6;
 }
-.page-link:hover {
+.page-link:hover, .lien-pagination:hover {
   color: #0056b3;
   text-decoration: none;
   background-color: #e9ecef;
   border-color: #dee2e6;
 }
-.page-link:focus {
+.page-link:focus, .lien-pagination:focus {
   z-index: 2;
   outline: 0;
   box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
 }
-.page-link:not(:disabled):not(.disabled) {
+.page-link:not(:disabled):not(.disabled), .lien-pagination:not(:disabled):not(.disabled) {
   cursor: pointer;
 }
 
-.page-item:first-child .page-link {
+.page-item:first-child .page-link, .page-item:first-child .lien-pagination, .objet-pagination:first-child .page-link, .objet-pagination:first-child .lien-pagination {
   margin-left: 0;
   border-top-left-radius: 0.25rem;
   border-bottom-left-radius: 0.25rem;
 }
-.page-item:last-child .page-link {
+.page-item:last-child .page-link, .page-item:last-child .lien-pagination, .objet-pagination:last-child .page-link, .objet-pagination:last-child .lien-pagination {
   border-top-right-radius: 0.25rem;
   border-bottom-right-radius: 0.25rem;
 }
-.page-item.active .page-link {
+.page-item.active .page-link, .page-item.active .lien-pagination, .active.objet-pagination .page-link, .active.objet-pagination .lien-pagination {
   z-index: 1;
   color: #fff;
   background-color: #007bff;
   border-color: #007bff;
 }
-.page-item.disabled .page-link {
+.page-item.disabled .page-link, .page-item.disabled .lien-pagination, .disabled.objet-pagination .page-link, .disabled.objet-pagination .lien-pagination {
   color: #6c757d;
   pointer-events: none;
   cursor: auto;
@@ -4079,30 +4079,30 @@ tbody.collapse.show {
   border-color: #dee2e6;
 }
 
-.pagination-lg .page-link {
+.pagination-lg .page-link, .pagination-lg .lien-pagination {
   padding: 0.75rem 1.5rem;
   font-size: 1.25rem;
   line-height: 1.5;
 }
-.pagination-lg .page-item:first-child .page-link {
+.pagination-lg .page-item:first-child .page-link, .pagination-lg .page-item:first-child .lien-pagination, .pagination-lg .objet-pagination:first-child .page-link, .pagination-lg .objet-pagination:first-child .lien-pagination {
   border-top-left-radius: 0.3rem;
   border-bottom-left-radius: 0.3rem;
 }
-.pagination-lg .page-item:last-child .page-link {
+.pagination-lg .page-item:last-child .page-link, .pagination-lg .page-item:last-child .lien-pagination, .pagination-lg .objet-pagination:last-child .page-link, .pagination-lg .objet-pagination:last-child .lien-pagination {
   border-top-right-radius: 0.3rem;
   border-bottom-right-radius: 0.3rem;
 }
 
-.pagination-sm .page-link {
+.pagination-sm .page-link, .pagination-sm .lien-pagination {
   padding: 0.25rem 0.5rem;
   font-size: 0.875rem;
   line-height: 1.5;
 }
-.pagination-sm .page-item:first-child .page-link {
+.pagination-sm .page-item:first-child .page-link, .pagination-sm .page-item:first-child .lien-pagination, .pagination-sm .objet-pagination:first-child .page-link, .pagination-sm .objet-pagination:first-child .lien-pagination {
   border-top-left-radius: 0.2rem;
   border-bottom-left-radius: 0.2rem;
 }
-.pagination-sm .page-item:last-child .page-link {
+.pagination-sm .page-item:last-child .page-link, .pagination-sm .page-item:last-child .lien-pagination, .pagination-sm .objet-pagination:last-child .page-link, .pagination-sm .objet-pagination:last-child .lien-pagination {
   border-top-right-radius: 0.2rem;
   border-bottom-right-radius: 0.2rem;
 }
@@ -8259,8 +8259,21 @@ h3 {
   width: 23%;
 }
 
+.liste-categorie-goodies {
+  font-size: 2em;
+}
+
+.lien-liste-categorie-goodies:hover {
+  background-color: #d1ecf1;
+}
+
 .badge-liste-categorie-goodies {
   background-color: #fcc200;
+}
+
+.pagination-liste-goodies {
+  padding-left: 30%;
+  font-size: 2em;
 }
 
 /*# sourceMappingURL=liste-goodies.css.map */
