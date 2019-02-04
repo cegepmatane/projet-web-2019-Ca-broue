@@ -1,6 +1,7 @@
 RewriteEngine on
 RewriteRule ^$ publique/vue/index.php
 RewriteRule ^accueil publique/vue/index.php
+RewriteRule ^boutique/goodie/? publique/vue/vue-goodie.php
 RewriteRule ^boutique publique/vue/vue-liste-goodies.php
 RewriteRule ^biere publique/vue/vue-biere.php
 RewriteRule ^inscription publique/vue/vue-inscription.php

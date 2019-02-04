@@ -61,6 +61,7 @@ afficherEntete($page);
                     <h5 class="carte-goodie-titre">Nom du produit</h5>
                     <p class="carte-goodie-texte">55$</p>
                     <p class="carte-goodie-texte">Description du produit</p>
+                    <a href="boutique/goodie/" >détails</a>
                     <a href="#" class="bouton-validation">Ajouter au panier</a>
                 </div>
             </div>
