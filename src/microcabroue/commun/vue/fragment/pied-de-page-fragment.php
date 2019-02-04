@@ -10,14 +10,14 @@ function afficherPiedDePage($page = null){
 
         <div>
             <h5>
-                <a href="">
+                <a href="./accueil">
                     <img src="" alt="Accueil Ça Broue">
                 </a>
             </h5>
 
-            <a href="/forum">Forum</a>
-            <a href="/a-propos">À propos</a>
-            <a href="/contact">Nous contactez</a>
+            <a href="https://cabroue.home.blog/">Forum</a>
+            <a href="./a-propos">À propos de nous</a>
+            <a href="./contact">Nous contactez</a>
         </div>
 
         <hr>
