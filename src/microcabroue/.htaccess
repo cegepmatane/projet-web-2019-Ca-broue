@@ -7,6 +7,8 @@ RewriteRule ^inscription publique/vue/vue-inscription.php
 RewriteRule ^panier publique/vue/vue-panier.php
 RewriteRule ^connexion publique/vue/vue-connexion.php
 RewriteRule ^utilisateur/paiement utilisateur/vue/vue-paiement.php
+RewriteRule ^contact publique/vue/vue-contact.php
+RewriteRule ^a-propos publique/vue/vue-a-propos.php
 
 
 
