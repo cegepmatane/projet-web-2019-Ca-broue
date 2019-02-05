@@ -8295,4 +8295,13 @@ h3 {
   width: 60%;
 }
 
+#message-erreur {
+  width: 50%;
+  margin: auto;
+  color: red;
+  text-align: center;
+  border: 2px solid red;
+  border-radius: 5px;
+}
+
 /*# sourceMappingURL=inscription.css.map */
