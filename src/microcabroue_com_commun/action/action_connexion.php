@@ -7,5 +7,8 @@ $accesseurUtilisateur = new AccesseurUtilisateur();
 
 $listeUtilisateur = $accesseurUtilisateur->recupererListeUtilisateur();
 
-print_r ($listeUtilisateur);
+if(isset($_POST["action-connexion"]) && $_POST["action-connexion"] == "connexion")
+{
+    echo "tata";
+}
 
