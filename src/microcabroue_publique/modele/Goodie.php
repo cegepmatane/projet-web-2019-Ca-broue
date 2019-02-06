@@ -13,9 +13,21 @@ class Goodie
     public const DESCRIPTION = "description";
     public const PRIX = "prix";
 
+    /**
+     * @var string
+     */
     private $id;
+    /**
+     * @var string
+     */
     private $nom;
+    /**
+     * @var string
+     */
     private $description;
+    /**
+     * @var |double
+     */
     private $prix;
 
     function __construct(object $attribut){
@@ -90,8 +102,5 @@ class Goodie
     {
         $this->prix = $prix;
     }
-
-
-
 
 }

@@ -9,32 +9,16 @@
 require_once("../../../microcabroue_publique/modele/Goodie.php");
 require_once("../../../microcabroue_publique/modele/CategorieGoodie.php");
 require_once("../../../microcabroue_publique/accesseur/AccesseurEntiteCategorieGoodie.php");
+require_once("../../../microcabroue_publique/accesseur/AccesseurEntiteGoodie.php");
 $accesseurEntiteCategorieGoodie = new AccesseurEntiteCategorieGoodie();
+$accesseurEntiteGoodie = new AccesseurEntiteGoodie();
 
 $listeCategoriesGoodies=$accesseurEntiteCategorieGoodie->recupererListeEntiteCategorieGoodie();
-
-$listeGoodies = [
-    new Goodie((object)
-    [
-        "nom" =>"Goodie 1",
-        "description" => "Sébastien",
-        "prix" => "bois.sebastien@moncouriel.com",
-        "id" => 0
-    ]),
-    new Goodie((object)
-    [
-        "nom" =>"Goodie 2",
-        "description" => "Sébastien",
-        "prix" => "bois.sebastien@moncouriel.com",
-        "id" => 1
-    ]), new Goodie((object)
-    [
-        "nom" =>"Goodie 3",
-        "description" => "Sébastien",
-        "prix" => "bois.sebastien@moncouriel.com",
-        "id" => 3
-    ])
-];
+if(!isset($page->categorieSelectionnee)){
+    $listeGoodies =$accesseurEntiteGoodie->recupererListeEntiteGoodie();
+}else{
+    $listeGoodies=[]; //TODO recupérer la liste pour la catégorie sélectionnee
+}
 
 $page->listeGoodies = $listeGoodies;
 $page->listeCategorieGoodies = $listeCategoriesGoodies;
