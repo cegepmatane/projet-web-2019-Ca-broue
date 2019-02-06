@@ -7,6 +7,11 @@
  */
 
 require_once("../../../microcabroue_publique/modele/Goodie.php");
+require_once("../../../microcabroue_publique/modele/CategorieGoodie.php");
+require_once("../../../microcabroue_publique/accesseur/AccesseurEntiteCategorieGoodie.php");
+$accesseurEntiteCategorieGoodie = new AccesseurEntiteCategorieGoodie();
+
+$listeCategoriesGoodies=$accesseurEntiteCategorieGoodie->recupererListeEntiteCategorieGoodie();
 
 $listeGoodies = [
     new Goodie((object)
@@ -32,7 +37,7 @@ $listeGoodies = [
 ];
 
 $page->listeGoodies = $listeGoodies;
-
+$page->listeCategorieGoodies = $listeCategoriesGoodies;
 /*
 Un message peut être affiché à l'ouverture de la page
 */

@@ -13,17 +13,17 @@ class AccesseurEntiteCategorieGoodie
         $listeCategorie=[];
         $listeCategorie[]= new CategorieGoodie((object)
         [
-            "nom" =>"Poster",
+            "libelle" =>"Poster",
             "id" => 1
         ]);
         $listeCategorie[]= new CategorieGoodie((object)
         [
-            "nom" =>"Buck",
+            "libelle" =>"Buck",
             "id" => 2
         ]);
         $listeCategorie[]= new CategorieGoodie((object)
         [
-            "nom" =>"Vêtements",
+            "libelle" =>"Vêtements",
             "id" => 3
         ]);
         return $listeCategorie;

@@ -32,18 +32,16 @@ afficherEntete($page);
             <div class="conteneur-categories-liste-goodies ">
             <h1 class="text-center">Categorie</h1>
             <ul class="liste-categorie-goodies">
-                <a href="#" class="lien-liste-categorie-goodies">
-                        Habits
-                    <span class="badge-liste-categorie-goodies">1</span>
-                </a>
-                <a href="#" class="lien-liste-categorie-goodies">
-                    Poster
-                    <span class="badge-liste-categorie-goodies">50</span>
-                </a>
-                <a href="#" class="lien-liste-categorie-goodies">
-                    Buck
-                    <span class="badge-liste-categorie-goodies">12</span>
-                </a>
+                <?php
+                /** @var CategorieGoodie $categorie */
+                foreach($page->listeCategorieGoodies as $categorie){
+                    echo"<a href=\"#\" class=\"lien-liste-categorie-goodies\">
+                        ".$categorie->getLibelle()."
+                    <span class=\"badge-liste-categorie-goodies\">?</span>
+                </a>";
+                    }
+                ?>
+
             </ul>
         </div>
         </div>
