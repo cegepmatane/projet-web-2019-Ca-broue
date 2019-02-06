@@ -18,19 +18,13 @@ class Goodie
     private $description;
     private $prix;
 
-    /**
-     * Goodie constructor.
-     * @param $id
-     * @param $nom
-     * @param $description
-     * @param $prix
-     */
-    public function __construct($id, $nom, $description, $prix)
-    {
-        $this->id = $id;
-        $this->nom = $nom;
-        $this->description = $description;
-        $this->prix = $prix;
+    function __construct(object $attribut){
+        if(!is_object($attribut)) $attribut = (object)[];
+
+        $this->id = $attribut->id ?? "";
+        $this->nom = $attribut->nom ?? "";
+        $this->description = $attribut->description ?? "";
+        $this->prix = $attribut->prix ?? null;
     }
 
     /**
