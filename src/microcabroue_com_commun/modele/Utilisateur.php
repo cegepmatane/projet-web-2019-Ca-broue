@@ -18,15 +18,15 @@ class Utilisateur
     function __construct(object $attribut){
         if(!is_object($attribut)) $attribut = (object)[];
 
-        $this->$setId($attribut->id ?? null);
-        $this->$setNom($attribut->nom ?? "");
-        $this->$setPrenom($attribut->prenom ?? "");
-        $this->$setAdresse_postal($attribut->adresse_postal ?? "");
-        $this->$setCode_postal($attribut->code_postal ?? "");
-        $this->$setVille($attribut->ville ?? "");
-        $this->$setMail($attribut->mail ?? "");
-        $this->$setPseudo($attribut->pseudo ?? "");
-        $this->$setMot_passe($attribut->mot_passe ?? "");
+        $this->setId($attribut->id ?? null);
+        $this->setNom($attribut->nom ?? "");
+        $this->setPrenom($attribut->prenom ?? "");
+        $this->setAdresse_postal($attribut->adresse_postal ?? "");
+        $this->setCode_postal($attribut->code_postal ?? "");
+        $this->setVille($attribut->ville ?? "");
+        $this->setMail($attribut->mail ?? "");
+        $this->setPseudo($attribut->pseudo ?? "");
+        $this->setMot_passe($attribut->mot_passe ?? "");
     }
     /**
      * Get the value of id
