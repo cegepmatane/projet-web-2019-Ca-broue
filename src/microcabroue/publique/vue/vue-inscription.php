@@ -1,6 +1,7 @@
 <?php 
 require_once("../../commun/vue/fragment/entete-fragment.php");
 require_once("../../commun/vue/fragment/pied-de-page-fragment.php");
+require_once("../../../microcabroue_com_commun/modele/Utilisateur.php");
 
 $page = (object)
 [
@@ -11,24 +12,24 @@ $page = (object)
     "isEnErreur" => false
 ];
 
-function afficherPremiereEtape($page = null)
+function afficherPremiereEtape($utilisateur, $page = null)
 {?>
     <div class="conteneur-inscription">
         <form method="post">    
         <!-- nom utilisateur -->
         <div class="groupe-formulaire">
             <label for="nom-utilisateur">Nom d'utilisateur</label>
-            <input class="controle-formulaire" id="nom-utilisateur" name="nom-utilisateur">
+            <input class="controle-formulaire" id="pseudo" name="pseudo" value=<?=$utilisateur->getPseudo(); ?>>
         </div>
     <!-- addresse -->
     <div class="groupe-formulaire">
         <label for="email">Adresse mail</label>
-        <input type="email" class="controle-formulaire" id="email" name="email">
+        <input type="email" class="controle-formulaire" id="email" name="mail" value=<?=$utilisateur->getMail(); ?>>
     </div>
     <!-- Mot de passe -->
     <div class="groupe-formulaire">
         <label for="mot-de-passe">Mot de passe</label>
-        <input type="password" class="controle-formulaire" id="mot-de-passe" name="mot-de-passe">
+        <input type="password" class="controle-formulaire" id="mot-de-passe" name="mot_passe">
     </div>
     <!-- confirmer Mot de passe -->
     <div class="groupe-formulaire">
@@ -41,7 +42,7 @@ function afficherPremiereEtape($page = null)
 </div>
 <?php 
 }
-function afficherDeuxiemeEtape($page = null)
+function afficherDeuxiemeEtape($utilisateur, $page = null)
 {
 ?>
 <div class="conteneur-inscription">
@@ -49,27 +50,27 @@ function afficherDeuxiemeEtape($page = null)
         <!-- nom-->
         <div class="groupe-formulaire">
             <label for="nom">Nom</label>
-            <input type="nom" class="controle-formulaire" id="nom" name="nom">
+            <input type="nom" class="controle-formulaire" id="nom" name="nom" value=<?=$utilisateur->getNom();?>>
         </div>
         <!-- Prenom -->
         <div class="groupe-formulaire">
             <label for="prenom">Prénom</label>
-            <input type="prenom" class="controle-formulaire" id="prenom" name="prenom">
+            <input type="prenom" class="controle-formulaire" id="prenom" name="prenom" value=<?=$utilisateur->getPrenom();?>>
         </div>
         <!-- Adresse -->
         <div class="groupe-formulaire">
             <label for="adresse">Adresse</label>
-            <input type="adresse" class="controle-formulaire" id="adresse" name="adresse">
+            <input type="adresse" class="controle-formulaire" id="adresse" name="adresse_postal" value=<?=$utilisateur->getAdresse_postal();?>>
         </div>
         <!-- code postal -->
         <div class="groupe-formulaire">
             <label for="code-postal">Code postal</label>
-            <input type="code-postal" class="controle-formulaire" id="code-postal" name="code-postal">
+            <input type="code-postal" class="controle-formulaire" id="code-postal" name="code_postal" value=<?=$utilisateur->getCode_postal();?>>
         </div>
         <!-- vile -->
         <div class="groupe-formulaire">
             <label for="ville">Ville</label>
-            <input type="ville" class="controle-formulaire" id="ville" name="ville">
+            <input type="ville" class="controle-formulaire" id="ville" name="ville" value=<?=$utilisateur->getVille();?>>
         </div>
         <!-- condition d'utilisation -->
         <div class="groupe-formulaire bouton-cocher">
@@ -91,7 +92,7 @@ function afficherErreur()
 </div>    
 <?php
 }
-function afficherPage($page = null)
+function afficherPage($utilisateur, $page = null)
 {
     if(!is_object($page)) $page = (object)[];
     afficherEntete($page);
@@ -101,7 +102,7 @@ function afficherPage($page = null)
         {
             afficherErreur();
         }
-        afficherPremiereEtape($page);
+        afficherPremiereEtape($utilisateur, $page);
     }
     elseif($page->isSecondeEtape ?? false)
     {
@@ -109,7 +110,7 @@ function afficherPage($page = null)
         {
             afficherErreur();
         }
-        afficherDeuxiemeEtape($page);
+        afficherDeuxiemeEtape($utilisateur, $page);
     }
     afficherPiedDePage($page);
 }
