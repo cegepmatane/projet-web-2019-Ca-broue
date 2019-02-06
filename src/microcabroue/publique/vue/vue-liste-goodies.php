@@ -100,5 +100,6 @@ afficherEntete($page);
     afficherPiedDePage($page);
 
 }
+require_once("../../../microcabroue_publique/action/action-liste-goodies.php");
 
-afficherPage($page);
+/*afficherPage($page);*/
