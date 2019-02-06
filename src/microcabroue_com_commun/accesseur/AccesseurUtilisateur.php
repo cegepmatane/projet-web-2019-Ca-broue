@@ -2,7 +2,7 @@
 class AccesseurUtilisateur
 {
 
-    public function recupererUtilisateur(){
+    public function recupererListeUtilisateur(){
         $listeUtilisateur=[];
         $listeUtilisateur[]= new Utilisateur((object)
         [

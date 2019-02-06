@@ -35,7 +35,7 @@ afficherPartieConnexion();
 
 echo "</div>";  
 
-require_once("../../../microcabroue_com_commun/action/action-connexion.php");
+require_once("../../../microcabroue_com_commun/action/action_connexion.php");
 
 
 ?>
