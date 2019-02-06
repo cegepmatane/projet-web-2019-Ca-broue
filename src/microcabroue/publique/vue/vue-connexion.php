@@ -17,8 +17,6 @@ $page = (object)
 function afficherPartieConnexion(){
     ?>
     <h2>Connectez vous !</h2>
-
-
         <form>
             <div class='form-group ligne'>
 
@@ -36,5 +34,8 @@ echo "<div class='conteneur carte-connexion'>";
 afficherPartieConnexion();
 
 echo "</div>";  
+
+require_once("../../../microcabroue_com_commun/action/action-connexion.php");
+
 
 ?>
