@@ -101,11 +101,11 @@ function afficherDeuxiemeEtape($utilisateur, $page = null)
     <?php
 }
 
-function afficherErreur()
+function afficherErreur($page)
 {
     ?>
     <div id="message-erreur">
-        <strong>Attention!</strong> Un ou plusieurs champs sont incorectes
+        <strong>Attention!</strong> <?= $page->ErreurActive ?>
     </div>
     <?php
 }
@@ -116,12 +116,12 @@ function afficherPage($utilisateur, $page = null)
     afficherEntete($page);
     if ($page->isPremiereEtape ?? false) {
         if ($page->isEnErreur == true) {
-            afficherErreur();
+            afficherErreur($page);
         }
         afficherPremiereEtape($utilisateur, $page);
     } elseif ($page->isSecondeEtape ?? false) {
         if ($page->isEnErreur == true) {
-            afficherErreur();
+            afficherErreur($page);
         }
         afficherDeuxiemeEtape($utilisateur, $page);
     }
