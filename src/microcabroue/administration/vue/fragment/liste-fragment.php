@@ -5,8 +5,6 @@
 
         ?>
 
-            <h2><?= $page->titre; ?></h2>
-
             <?php if($page->type != "utilisateur"){?>
                 <a href="./vue-ajouter-<?= $page->type; ?>.php">Ajouter</a>
             <?php } ?>
