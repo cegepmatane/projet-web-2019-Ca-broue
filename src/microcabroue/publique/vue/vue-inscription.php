@@ -9,7 +9,8 @@ $page = (object)
     "titre" => "inscription",
     "isPremiereEtape" => true,
     "isSecondeEtape" => false,
-    "isEnErreur" => false
+    "isEnErreur" => false,
+    "ErreurActive" => ""
 ];
 
 function afficherPremiereEtape($utilisateur, $page = null)

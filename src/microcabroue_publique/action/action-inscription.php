@@ -1,7 +1,7 @@
 <?php
 require_once("../../../microcabroue_com_commun/modele/Utilisateur.php");
 
-function ajouterPersonne($personne) {
+function ajouterUtilisateur($utilisateur) {
 
     //Ajouter la personne avec $personne dans la BD.
     //Vide Pour l'instant
