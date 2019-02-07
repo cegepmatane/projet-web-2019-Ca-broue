@@ -32,3 +32,15 @@
 1              | 3           | 6/02/19  | 0.25          | Template pour la modification d'une bière [#17](https://github.com/cegepmatane/projet-web-2019-Ca-broue/issues/17) |
 1              | 3           | 6/02/19  | 0.25          | Template pour la modification d'un goodie [#17](https://github.com/cegepmatane/projet-web-2019-Ca-broue/issues/17) |
 1              | 3           | 6/02/19  | 0.25          | Template pour la modification d'un utilisateur [#17](https://github.com/cegepmatane/projet-web-2019-Ca-broue/issues/17) |
+1              | 3           | 6/02/19  | 0.1          | Correction emplacement balise [#17](https://github.com/cegepmatane/projet-web-2019-Ca-broue/issues/17) |
+1              | 3           | 6/02/19  | 0.5          | Fragment formulaire pour template goodie/utilisateur/biere [#17](https://github.com/cegepmatane/projet-web-2019-Ca-broue/issues/17) |
+1              | 3           | 6/02/19  | 0.1          | Delete balise desuet [#17](https://github.com/cegepmatane/projet-web-2019-Ca-broue/issues/17) |
+1              | 3           | 6/02/19  | 0.25          | Fragment formulaire biere [#17](https://github.com/cegepmatane/projet-web-2019-Ca-broue/issues/17) |
+1              | 3           | 6/02/19  | 0.25          | Fragment formulaire utilisateur [#17](https://github.com/cegepmatane/projet-web-2019-Ca-broue/issues/17) |
+1              | 3           | 6/02/19  | 0.25          | Fragment formulaire goodie [#17](https://github.com/cegepmatane/projet-web-2019-Ca-broue/issues/17) |
+1              | 3           | 6/02/19  | 0.1          | Utilisation fragment formulaire pour ajouter biere [#17](https://github.com/cegepmatane/projet-web-2019-Ca-broue/issues/17) |
+1              | 3           | 6/02/19  | 0.25          | Fragment formulaire pour ajouter goodie [#17](https://github.com/cegepmatane/projet-web-2019-Ca-broue/issues/17) |
+1              | 3           | 6/02/19  | 0.1          | Correction nom blaise et appel de fonction [#17](https://github.com/cegepmatane/projet-web-2019-Ca-broue/issues/17) |
+1              | 3           | 6/02/19  | 0.1          | Utilisation fragment pour modification biere [#17](https://github.com/cegepmatane/projet-web-2019-Ca-broue/issues/17) |
+1              | 3           | 6/02/19  | 0.1          | Utilisation fragment pour modification goodie [#17](https://github.com/cegepmatane/projet-web-2019-Ca-broue/issues/17) |
+1              | 3           | 6/02/19  | 0.1          | Utilisation fragment pour modification utilisateur [#17](https://github.com/cegepmatane/projet-web-2019-Ca-broue/issues/17) |
