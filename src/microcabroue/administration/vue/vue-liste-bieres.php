@@ -25,10 +25,9 @@
             $page = (object)[];
         
         afficherEntete($page);
-
         afficherListe($page);
+        afficherPiedDePage($page);
     }
 
     afficherPage($page);
-    afficherPiedDePage($page);
 ?>

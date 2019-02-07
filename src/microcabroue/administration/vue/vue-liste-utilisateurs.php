@@ -9,11 +9,11 @@
         "titrePrincipal" => "Panneau d'adminstration - Ça Broue !",
         "type" => "utilisateur",
         "liste" => [
-            $biere = (object)[
+            $utilisateur = (object)[
                 "nom" => "Joe Blow",
                 "id" => "0"
             ],
-            $biere = (object)[
+            $utilisateur = (object)[
                 "nom" => "Jean-Denis Tremblay",
                 "id" => "1"
             ]
@@ -25,10 +25,9 @@
             $page = (object)[];
         
         afficherEntete($page);
-
         afficherListe($page);
+        afficherPiedDePage($page);
     }
 
     afficherPage($page);
-    afficherPiedDePage($page);
 ?>
