@@ -22,19 +22,19 @@
 		    <div id="carousel">
 
 		       <div class="hideLeft">
-		        <img src="publique/decoration/biere-image/FMR.png">
+		        <img src="publique/illustration/biere-image/FMR.png">
 		      </div>
 
 		      <div class="prevLeftSecond">
-		        <img src="publique/decoration/biere-image/CH'TI.png">
+		        <img src="publique/illustration/biere-image/CH'TI.png">
 		      </div>
 
 		      <div class="prev">
-		        <img src="publique/decoration/biere-image/B.png">
+		        <img src="publique/illustration/biere-image/B.png">
 		      </div>
 
 		      <div class="selected">
-		        <img src="publique/decoration/biere-image/Asahi.png">
+		        <img src="publique/illustration/biere-image/Asahi.png">
 		      </div>
 
 		      <div class="next">
@@ -42,11 +42,11 @@
 		      </div>
 
 		      <div class="nextRightSecond">
-		        <img src="publique/decoration/biere-image/Beck's.png">
+		        <img src="publique/illustration/biere-image/Beck's.png">
 		      </div>
 
 		      <div class="hideRight">
-		        <img src="publique/decoration/biere-image/78.png">
+		        <img src="publique/illustration/biere-image/78.png">
 		      </div>
 
 		    </div>
