@@ -1,6 +1,6 @@
 <?php
     include_once "fragment/entete-fragment.php";
-    include_once "fragment/modification-fragment.php";
+    include_once "fragment/formulaire-fragment.php";
     include_once "fragment/pied-de-page-fragment.php";
 
     $page = (object)
@@ -11,11 +11,9 @@
         "type" => "utilisateur",
         "action" => "modification",
         "urlRetour" => "./vue-liste-utilisateurs.php",
-        "listeChamps" => [
-            "labelNomUtilisateur" => '<label for="nom-utilisateur">Nom</label>',
-            "nomUtilisateur" => '<div name="nom-utilisateur">Joe33</div>',
-            "labelRole" => '<label for="role">Rôle de l\'utilisateur</label>',
-            "role" => '<input type="checkbox" name="role" id="role-modification-utilisateur" value="Admin" checked><div>Administrateur</div>'
+        "utilisateur" => (object)[
+            "nomUtilisateur" => "ti-paulSarte33",
+            "isAdmin" => true
         ]
     ];
     
@@ -24,10 +22,9 @@
             $page = (object)[];
         
         afficherEntete($page);
-
-        afficherChamps($page);
+        afficherFormulaire($page);
+        afficherPiedDePage($page);
     }
 
     afficherPage($page);
-    afficherPiedDePage($page);
 ?>
