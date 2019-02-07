@@ -37,7 +37,7 @@
                 </ul>
             </header>
 
-
+            <h2><?= $page->titre; ?></h2>
         <?php
     }
 ?>

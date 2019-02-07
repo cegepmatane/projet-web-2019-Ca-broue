@@ -24,9 +24,10 @@
         </div>
 
         <?php
+        
+        afficherPiedDePage($page);
     }
 
     afficherPage($page);
 
-    afficherPiedDePage($page);
 ?>
