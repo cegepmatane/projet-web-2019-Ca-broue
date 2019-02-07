@@ -26,7 +26,8 @@ function afficherEntete($page = null){
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
         <link href="commun/decoration/style-commun.css" rel="stylesheet" type="text/css"/>
         <link href="../commun/decoration/style-commun.css" rel="stylesheet" type="text/css"/>
-
+        <link href="../../commun/decoration/style-commun.css" rel="stylesheet" type="text/css"/>
+        <!-- TODO a fix avec un tableau de style -->
 
         <?php
         if(isset($page->style)){
