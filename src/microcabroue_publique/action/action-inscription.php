@@ -21,7 +21,7 @@ if (isset($_POST["action-aller-seconde-etape"]) && $_POST["action-aller-seconde-
         $page->isPremiereEtape = false;
         $page->isSecondeEtape = true;
         $page->isEnErreur = false;
-        $page->ErreurActive = "";
+
     } else {
         $page->isEnErreur = true;
 
@@ -63,10 +63,53 @@ if (isset($_POST["action-inscrire"]) && $_POST["action-inscrire"] == "inscrire")
         ajouterUtilisateur($utilisateur);
         //echo "<script>alert(\"Inscription! WOOOOOOOOOOO\")</script>"; 
     } else {
-        echo "<script>alert(\"rentre dans erreur de la deuxieme etape\")</script>";
+        //echo "<script>alert(\"rentre dans erreur de la deuxieme etape\")</script>";
         $page->isPremiereEtape = false;
         $page->isSecondeEtape = true;
         $page->isEnErreur = true;
+
+        if ($_POST["nom"] == "") {
+            if ($page->ErreurActive == "") {
+                $page->ErreurActive = "Le nom est invalide";
+            } else {
+                $page->ErreurActive .= ", " . " Le nom est invalide";
+            }
+        }
+        if ($_POST["prenom"] == "") {
+            if ($page->ErreurActive == "") {
+                $page->ErreurActive = "Le prénom est invalide";
+            } else {
+                $page->ErreurActive .= ", " . " Le prénom est invalide";
+            }
+        }
+        if ($_POST["adresse_postal"] == "") {
+            if ($page->ErreurActive == "") {
+                $page->ErreurActive = "L'adresse est invalide";
+            } else {
+                $page->ErreurActive .= ", " . " L'adresse est invalide";
+            }
+        }
+        if ($_POST["code_postal"] == "") {
+            if ($page->ErreurActive == "") {
+                $page->ErreurActive = "Le code postal est invalide";
+            } else {
+                $page->ErreurActive .= ", " . " Le code postal est invalide";
+            }
+        }
+        if ($_POST["ville"] == "") {
+            if ($page->ErreurActive == "") {
+                $page->ErreurActive = "La ville est invalide";
+            } else {
+                $page->ErreurActive .= ", " . " La ville est invalide";
+            }
+        }
+        if ($_POST['accepter-condition'] != "coche") {
+            if ($page->ErreurActive == "") {
+                $page->ErreurActive = "Vous devez accepter les conditions d'utilisation!";
+            } else {
+                $page->ErreurActive .= ", " . " Vous devez accepter les conditions d'utilisation!";
+            }
+        }
     }
 }
 afficherPage($utilisateur, $page);
