@@ -101,10 +101,12 @@ function afficherEntete($page = null){
                     echo " <button class='btn btn-danger my-2 my-sm-0' type='submit'>Deconnexion</button>";
                 }
                 else {
-                    echo "<button class='btn btn-outline-success my-2 my-sm-0' type='submit'>Search</button>";
-                    session_destroy();
+                    
+                    echo "<a class='bouton-validation' type='submit' href='connexion'>Connexion</a>";
+                    echo "<a class='bouton-validation' type='submit' href='inscription'>Inscription</a>";
+                    
                 }
-            ?>
+                ?>
             </div>
         </div>
     </nav>
