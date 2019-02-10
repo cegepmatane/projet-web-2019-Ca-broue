@@ -17,14 +17,14 @@ $page = (object)
 function afficherPartieConnexion(){
     ?>
     <h2>Connectez vous !</h2>
-        <form method="post">
+        <form method="post" action= "accueil">
             <div class='form-group ligne'>
 
                 <input class="input-connexion col-6" type="text" id="pseudo" name="pseudo" placeholder="Utilisateur" aria-label="utilisateur">
                 <input class="input-connexion col-6" type="text" id="mot-de-passe" name="mot_passe" placeholder="Mot de passe" aria-label="motDePasse">
             </div>
             <a  href='inscription'>Pas encore inscrit ?</a>
-            <button class="bouton-validation" name="action-connexion" value="connexion" type="submit">Connexion</button>
+            <button class="bouton-validation" name="action-connexion" value="connexion" type="submit"><a href="accueil">Connexion</a></button>
         </form>
     <?php
 }

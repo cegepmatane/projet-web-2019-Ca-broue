@@ -6,6 +6,7 @@
  * Time: 2:03 PM
  */
 
+require_once("../../../microcabroue_com_commun/action/action_deconnexion.php");
 
 function afficherEntete($page = null){
 
@@ -97,8 +98,10 @@ function afficherEntete($page = null){
 
                 if (isset($_SESSION['id']) AND isset($_SESSION['pseudo']))
                 {
+                    echo '<form method="post">';
                     echo 'Bonjour ' . $_SESSION['pseudo'];
-                    echo " <button class='btn btn-danger my-2 my-sm-0' type='submit'>Deconnexion</button>";
+                    echo " <button class='btn btn-danger my-2 my-sm-0' name='action-deconnexion' value='deconnexion' type='submit'>Deconnexion</button>";
+                    echo "</form>";
                 }
                 else {
                     
@@ -114,5 +117,6 @@ function afficherEntete($page = null){
 </header>
 
     <?php
+
 
 }
