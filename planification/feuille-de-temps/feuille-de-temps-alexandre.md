@@ -13,5 +13,5 @@
 1              |2            |1  février |0.5         | Début de la vue boutique        |---    
 1              |3            |4  février |2         | Modification de la vue pour afficher les categories des goodies        |---    
 1              |3            |6  février |3         | Affichage d'un echafaud des goodies et des categories de goodies dans la vue |---    
-
+1              |3            |10  février |3         | Modélisation de la base et création du script |---    
         
