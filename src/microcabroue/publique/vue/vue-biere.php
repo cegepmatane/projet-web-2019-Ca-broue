@@ -38,7 +38,7 @@
 		      </div>
 
 		      <div class="next">
-		        <img src="publique/decoration/biere-image/Boréal.png">
+		        <img src="publique/illustration/biere-image/Boréal.png">
 		      </div>
 
 		      <div class="nextRightSecond">
