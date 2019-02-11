@@ -21,7 +21,7 @@ function afficherPartieConnexion(){
             <div class='form-group ligne'>
 
                 <input class="input-connexion col-6" type="text" id="pseudo" name="pseudo" placeholder="Utilisateur" aria-label="utilisateur">
-                <input class="input-connexion col-6" type="text" id="mot-de-passe" name="mot_passe" placeholder="Mot de passe" aria-label="motDePasse">
+                <input class="input-connexion col-6" type="password" id="mot-de-passe" name="mot_passe" placeholder="Mot de passe" aria-label="motDePasse">
             </div>
             <a  href='inscription'>Pas encore inscrit ?</a>
             <button class="bouton-validation" name="action-connexion" value="connexion" type="submit"><a href="accueil">Connexion</a></button>
