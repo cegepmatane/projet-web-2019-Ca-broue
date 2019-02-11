@@ -11,3 +11,4 @@
 1	       |2	     |31/01/19  |3h	     |SCSS des pages crées |--
 1	       |3            |4/02/19   |3h          | Création des hierarchie pour le commun + modèle utilisateur |---
 1              |3            |6/02/19   |2h          |Création controleur pour la connexion, verification temporaire ajout en session + verification si user est connecté |---
+1           |3               |10/02/19  |3h          |Création du virtualhost, arrangement de la connexion |---
