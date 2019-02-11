@@ -1,12 +1,12 @@
 <?php
 require_once("../../../microcabroue_com_commun/modele/Utilisateur.php");
+require_once("../../../microcabroue_com_commun/accesseur/AccesseurUtilisateur.php");
 
 function ajouterUtilisateur($utilisateur)
 {
-
-    //Ajouter la personne avec $personne dans la BD.
-    //Vide Pour l'instant
-
+    $accesseur = new AccesseurUtilisateur();
+    $accesseur->ajouterUtilisateur($utilisateur);
+    
 }
 
 $utilisateur = new Utilisateur((object)$_POST);
@@ -57,11 +57,11 @@ if (isset($_POST["action-aller-seconde-etape"]) && $_POST["action-aller-seconde-
     }
 }
 if (isset($_POST["action-inscrire"]) && $_POST["action-inscrire"] == "inscrire") {
-    //echo "<script>alert(\"".."\")</script>"; 
+    echo "<script>alert(\"".$_POST."\")</script>"; 
     if ($_POST["nom"] != "" && $_POST["prenom"] != "" && $_POST["adresse_postal"] != "" && $_POST["code_postal"] != "" && $_POST["ville"] != "" && $_POST['accepter-condition'] == "coche") {
         $page->isEnErreur = false;
         ajouterUtilisateur($utilisateur);
-        //echo "<script>alert(\"Inscription! WOOOOOOOOOOO\")</script>"; 
+        //echo "<script>alert(\"ca passe WOOOOOOOOOOO\")</script>"; 
     } else {
         //echo "<script>alert(\"rentre dans erreur de la deuxieme etape\")</script>";
         $page->isPremiereEtape = false;

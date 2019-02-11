@@ -36,8 +36,10 @@ class AccesseurUtilisateur
 
     public function ajouterUtilisateur($utilisateur){
 
-        $SQL_AJOUTER = "INSERT INTO utilisateur (nom, prenom, adresse_postal, code_postal, ville, mail, pseudo, mot_passe) 
-        VALUES ('?','?','?','?','?','?','?','?')";
-        
+      /*  $SQL_AJOUTER = "INSERT INTO utilisateur (nom, prenom, adresse_postal, code_postal, ville, mail, pseudo, mot_passe) 
+        VALUES ('?','?','?','?','?','?','?','?')";*/
+
+        echo "<script>alert(\"Inscription! WOOOOOOOOOOO\")</script>"; 
+
     }
 }
