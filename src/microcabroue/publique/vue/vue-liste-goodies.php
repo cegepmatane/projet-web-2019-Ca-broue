@@ -36,7 +36,7 @@ afficherEntete($page);
                 /** @var CategorieGoodie $categorie */
                 foreach($page->listeCategorieGoodies as $categorie){
                     echo"<a href=\"boutique/categorie/".$categorie->getId()."  \" class=\"lien-liste-categorie-goodies\">
-                        ".$categorie->getLibelle()."
+                        ".$categorie->getLibelleFr()."
                     <span class=\"badge-liste-categorie-goodies\">?</span>
                 </a>";
                     }
