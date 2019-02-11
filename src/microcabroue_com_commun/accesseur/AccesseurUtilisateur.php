@@ -1,6 +1,7 @@
 <?php
 class AccesseurUtilisateur
 {
+    
 
     public function recupererListeUtilisateur(){
         $listeUtilisateur=[];
@@ -31,5 +32,12 @@ class AccesseurUtilisateur
             "mot_passe" => "tata"
         ]);
         return $listeUtilisateur;
+    }
+
+    public function ajouterUtilisateur($utilisateur){
+
+        $SQL_AJOUTER = "INSERT INTO utilisateur (nom, prenom, adresse_postal, code_postal, ville, mail, pseudo, mot_passe) 
+        VALUES ('?','?','?','?','?','?','?','?')";
+        
     }
 }
