@@ -102,7 +102,7 @@ function afficherEntete($page = null){
                     echo 'Bonjour ' . $_SESSION['pseudo'];
                     echo " <button class='btn btn-danger my-2 my-sm-0' name='action-deconnexion' value='deconnexion' type='submit'>Deconnexion</button>";
                     echo "</form>";
-                }
+                }   
                 else {
                     
                     echo "<a class='bouton-validation' type='submit' href='connexion'>Connexion</a>";
