@@ -19,7 +19,7 @@ if(isset($_POST["action-connexion"]) && $_POST["action-connexion"] == "connexion
             if($_POST["mot_passe"] == $listeUtilisateur[$i]->getMot_passe()){
                 $_SESSION['pseudo'] = $listeUtilisateur[$i]->getPseudo();
                 $_SESSION['id'] = $listeUtilisateur[$i]->getId();
-                print_r( $_SESSION['pseudo']);
+                header('Location: accueil'); 
             }
             else{
                 echo "mauvais MDP";

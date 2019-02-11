@@ -17,7 +17,7 @@ $page = (object)
 function afficherPartieConnexion(){
     ?>
     <h2>Connectez vous !</h2>
-        <form method="post" action= "accueil">
+        <form method="post" >
             <div class='form-group ligne'>
 
                 <input class="input-connexion col-6" type="text" id="pseudo" name="pseudo" placeholder="Utilisateur" aria-label="utilisateur">
