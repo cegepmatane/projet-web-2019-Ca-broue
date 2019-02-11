@@ -57,7 +57,6 @@ if (isset($_POST["action-aller-seconde-etape"]) && $_POST["action-aller-seconde-
     }
 }
 if (isset($_POST["action-inscrire"]) && $_POST["action-inscrire"] == "inscrire") {
-    echo "<script>alert(\"".$_POST."\")</script>"; 
     if ($_POST["nom"] != "" && $_POST["prenom"] != "" && $_POST["adresse_postal"] != "" && $_POST["code_postal"] != "" && $_POST["ville"] != "" && $_POST['accepter-condition'] == "coche") {
         $page->isEnErreur = false;
         ajouterUtilisateur($utilisateur);
