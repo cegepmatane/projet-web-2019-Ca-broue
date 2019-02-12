@@ -1,7 +1,9 @@
 <?php
 class AccesseurUtilisateur
 {
-    
+    require_once('BaseDeDonnee.php');
+
+    $baseDeDonnee = new BaseDeDonnee();
 
     public function recupererListeUtilisateur(){
         $listeUtilisateur=[];
@@ -36,8 +38,22 @@ class AccesseurUtilisateur
 
     public function ajouterUtilisateur($utilisateur){
 
-      /*  $SQL_AJOUTER = "INSERT INTO utilisateur (nom, prenom, adresse_postal, code_postal, ville, mail, pseudo, mot_passe) 
-        VALUES ('?','?','?','?','?','?','?','?')";*/
+       $SQL_AJOUTER = "INSERT INTO utilisateur (nom, prenom, adresse_postal, code_postal, ville, mail, pseudo, mot_passe) 
+        VALUES ('?','?','?','?','?','?','?','?')";
+
+        $requete = $baseDeDonnee->prepare($SQL_AJOUTER);
+
+        $requete.bindParam(1, $utilisateur->nom);
+        $requete.bindParam(2, $utilisateur->prenom);
+        $requete.bindParam(3, $utilisateur->adresse_postal);
+        $requete.bindParam(4, $utilisateur->code_postal);
+        $requete.bindParam(5, $utilisateur->ville);
+        $requete.bindParam(6, $utilisateur->mail);
+        $requete.bindParam(7, $utilisateur->pseudo);
+        $requete.bindParam(8, $utilisateur->mot_passe);
+
+        $baseDeDonnee->execute();
+
 
         echo "<script>alert(\"Inscription! WOOOOOOOOOOO\")</script>"; 
 
