@@ -1,9 +1,12 @@
 <?php
+require_once('BaseDeDonnee.php');
+
+$baseDeDonnee = new BaseDeDonnee();
 class AccesseurUtilisateur
 {
-    require_once('BaseDeDonnee.php');
+    
 
-    $baseDeDonnee = new BaseDeDonnee();
+    
 
     public function recupererListeUtilisateur(){
         $listeUtilisateur=[];
