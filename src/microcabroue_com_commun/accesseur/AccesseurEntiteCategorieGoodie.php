@@ -15,7 +15,7 @@ class AccesseurEntiteCategorieGoodie
         //$bdd = new PDO('mysql:host=localhost;dbname=cabroue;charset=utf8', 'root', 'floflo'); //TODO pour tester le base de donnees et la requete
 
         $listeCategorie=[];
-        $curseur =$bdd->prepare(self::SELECT_TOUTES_LES_CATEGORIES);
+       /* $curseur =$bdd->prepare(self::SELECT_TOUTES_LES_CATEGORIES);
         $curseur->execute();
         $donnees = $curseur->fetchAll(PDO::FETCH_ASSOC);
         if (count($donnees) > 0) {
@@ -27,7 +27,7 @@ class AccesseurEntiteCategorieGoodie
                 ]);
                 $listeCategorie[] = $categorie;
             }
-        }
+        }*/
         return $listeCategorie;
     }
 }

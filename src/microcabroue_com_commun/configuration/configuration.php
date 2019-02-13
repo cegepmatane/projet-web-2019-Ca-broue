@@ -31,11 +31,10 @@ function determinerSectionWebCourante(){
 
     $cheminAbsolutFichierPrincipal = getcwd();
 
-    $cheminRelatifSectionWeb =
-        str_replace($_SERVER['DOCUMENT_ROOT'],
-                    $cheminAbsolutFichierPrincipal,"");
-
-    $sectionWeb = explode("/", $cheminRelatifSectionWeb)[1];
+    $cheminRelatifSectionWeb = str_replace($_SERVER['DOCUMENT_ROOT'], $cheminAbsolutFichierPrincipal,"");
+    $tableau =explode("/", $cheminRelatifSectionWeb);
+    //$sectionWeb = $tableau[1];
+    $sectionWeb = $tableau[0]; // TODO mis 1 pour enelever le warning
 
     return $sectionWeb;
 
@@ -45,9 +44,7 @@ function determinerSectionCodeCourante($sectionWebCourante){
 
     $listeNomRepertoire = explode("/", $_SERVER['DOCUMENT_ROOT']);
 
-    $nomRepertoireDocumentRoot =
-        $listeNomRepertoire[$listeNomRepertoire.count - 1];
-
+    $nomRepertoireDocumentRoot = $listeNomRepertoire[sizeof($listeNomRepertoire) - 1];
     $sectionCode = $nomRepertoireDocumentRoot  . $sectionWebCourante;
 
     return $sectionCode;
@@ -69,8 +66,9 @@ $sectionCodeCourante = determinerSectionCodeCourante($sectionWebCourante);
 //nom_de_domaine_com_adminitration ou
 //nom_de_domaine_com_commun
 //qui est hors du $_SERVER['DOCUMENT_ROOT'].
-define("CHEMIN_RACINE_SECTION",
-       "/home/florian/www/projet-web-2019-Ca-broue/src/microcabroue_com_commun/" .
+//TODO mis en commentaire pour enlever les warning
+/*define("CHEMIN_RACINE_SECTION",
+       "/var/www/projet-web-2019-Ca-broue/src/microcabroue_com_commun/" .
        $sectionCodeCourante);
 
 if("nom_de_domaine_com_commun" != $sectionCodeCourante){
@@ -78,4 +76,6 @@ if("nom_de_domaine_com_commun" != $sectionCodeCourante){
     require_once(CHEMIN_RACINE_SECTION .
                  "configuration/configuration.php");
 
-}
+}*/
+
+define("CHEMIN_SRC_DEV", "/var/www/html/projet-web-2019-Ca-broue/src/");

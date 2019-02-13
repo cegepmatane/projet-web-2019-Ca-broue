@@ -6,10 +6,11 @@
  * Time: 11:11 AM
  */
 
-require_once("../../../microcabroue_publique/modele/Goodie.php");
-require_once("../../../microcabroue_publique/modele/CategorieGoodie.php");
-require_once("../../../microcabroue_publique/accesseur/AccesseurEntiteCategorieGoodie.php");
-require_once("../../../microcabroue_publique/accesseur/AccesseurEntiteGoodie.php");
+require_once(CHEMIN_SRC_DEV."microcabroue_com_commun/modele/Goodie.php");
+require_once(CHEMIN_SRC_DEV."microcabroue_com_commun/modele/CategorieGoodie.php");
+require_once(CHEMIN_SRC_DEV."microcabroue_com_commun/accesseur/AccesseurEntiteCategorieGoodie.php");
+require_once(CHEMIN_SRC_DEV."microcabroue_com_commun/accesseur/AccesseurEntiteGoodie.php");
+
 $accesseurEntiteCategorieGoodie = new AccesseurEntiteCategorieGoodie();
 $accesseurEntiteGoodie = new AccesseurEntiteGoodie();
 
