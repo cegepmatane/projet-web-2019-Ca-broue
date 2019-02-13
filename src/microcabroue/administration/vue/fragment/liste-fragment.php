@@ -15,8 +15,8 @@
 
             <div>
                 <?= $item->nom; ?>
-                <a href="vue-modifier-<?= $page->type; ?>.php?id=<?= $item->id; ?>">Modifier</a>
-                <a href="#supprimer?id=<?= $item->id; ?>">Supprimer</a>
+                <a href="vue-modifier-<?= $page->type; ?>.php?id=<?= $item->id;?>" class="btn btn-info">Modifier</a>
+                <a href="#supprimer?id=<?= $item->id; ?>" class="btn btn-danger">Supprimer</a>
             </div>
 
             <?php
