@@ -10,6 +10,9 @@
         <head>
             <meta charset="UTF-8">
             <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <link href="commun/decoration/style-commun.css" rel="stylesheet" type="text/css"/>
+            <link href="../commun/decoration/style-commun.css" rel="stylesheet" type="text/css"/>
+            <link href="../../commun/decoration/style-commun.css" rel="stylesheet" type="text/css"/>
             <title><?= $page->titre ?? ""; ?></title>
 
             <?php
@@ -24,15 +27,15 @@
         </head>
         <body>
             <header>
-                <ul>
-                    <li>
-                        <a href="./vue-liste-bieres.php">Bieres</a>
+                <ul class="list-inline">
+                    <li class="list-inline-item">
+                        <a href="./vue-liste-bieres.php" class="nav-item btn btn-warning">Bieres</a>
                     </li>
-                    <li>
-                        <a href="./vue-liste-goodies.php">Goodies</a>
+                    <li class="list-inline-item">
+                        <a href="./vue-liste-goodies.php" class="nav-item btn btn-warning">Goodies</a>
                     </li>
-                    <li>
-                        <a href="./vue-liste-utilisateurs.php">Utilisateurs</a>
+                    <li class="list-inline-item">
+                        <a href="./vue-liste-utilisateurs.php"class="btn btn-warning">Utilisateurs</a>
                     </li>
                 </ul>
             </header>
