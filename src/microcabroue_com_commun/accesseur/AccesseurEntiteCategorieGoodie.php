@@ -6,20 +6,26 @@
  * Time: 12:45 PM
  */
 require_once("BaseDeDonnee.php");
+require_once(CHEMIN_RACINE_SECTION . "/modele/CategorieGoodie.php");
 class AccesseurEntiteCategorieGoodie
 {
+    private static $connexion = null;
 
     const SELECT_TOUTES_LES_CATEGORIES = "select * from ". CategorieGoodie::TABLE;
 
+    function __construct(){
+
+        if(!self::$connexion) self::$connexion =  BaseDeDonnee::getConnexion();
+    }
+
     public function recupererListeEntiteCategorieGoodie(){
-        //$bdd = new PDO('mysql:host=localhost;dbname=cabroue;charset=utf8', 'root', 'floflo'); //TODO pour tester le base de donnees et la requete
+        $requete = self::$connexion->prepare(self::SELECT_TOUTES_LES_CATEGORIES);
 
         $listeCategorie=[];
-       /* $curseur =$bdd->prepare(self::SELECT_TOUTES_LES_CATEGORIES);
-        $curseur->execute();
-        $donnees = $curseur->fetchAll(PDO::FETCH_ASSOC);
-        if (count($donnees) > 0) {
-            foreach ($donnees as $maLigne) {
+        $requete->execute();
+        $curseur = $requete->fetchAll(PDO::FETCH_ASSOC);
+        if (count($curseur) > 0) {
+            foreach ($curseur as $maLigne) {
                 $categorie = new CategorieGoodie((object)
                 [
                     CategorieGoodie::ID => $maLigne[CategorieGoodie::ID],
@@ -27,7 +33,7 @@ class AccesseurEntiteCategorieGoodie
                 ]);
                 $listeCategorie[] = $categorie;
             }
-        }*/
+        }
         return $listeCategorie;
     }
 }
