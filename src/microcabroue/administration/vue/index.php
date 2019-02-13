@@ -16,10 +16,7 @@
         afficherEntete($page);
 
         ?>
-
-        <h2><?= $page->titre; ?></h2>
-
-        <div>
+        <div class="text-danger">
             Si vous ne possèdez pas les droits vous ne devriez pas être ici.
         </div>
 
