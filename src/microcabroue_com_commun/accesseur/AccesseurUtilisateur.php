@@ -1,8 +1,10 @@
 <?php
 require_once("BaseDeDonnee.php");
+require_once(CHEMIN_RACINE_SECTION . "/modele/Utilisateur.php");
 class AccesseurUtilisateur
 {
-    
+    private static $connexion = null;
+
 
     
 
@@ -42,7 +44,8 @@ class AccesseurUtilisateur
        $SQL_AJOUTER = "INSERT INTO utilisateur (nom, prenom, adresse_postal, code_postal, ville, mail, pseudo, mot_passe) 
         VALUES ('?','?','?','?','?','?','?','?')";
 
-        $requete = $baseDeDonnee->prepare($SQL_AJOUTER);
+        
+        $requete = self::$connexion->prepare($SQL_AJOUTER);
 
         $requete.bindParam(1, $utilisateur->nom);
         $requete.bindParam(2, $utilisateur->prenom);
@@ -53,10 +56,16 @@ class AccesseurUtilisateur
         $requete.bindParam(7, $utilisateur->pseudo);
         $requete.bindParam(8, $utilisateur->mot_passe);
 
-        $baseDeDonnee->execute();
+        self::$connexion->execute();
 
 
         echo "<script>alert(\"Inscription! WOOOOOOOOOOO\")</script>"; 
 
+    }
+
+    function __construct(){
+
+        if(!self::$connexion) self::$connexion =  BaseDeDonnee::getConnexion();
+        print_r($connexion);    
     }
 }
