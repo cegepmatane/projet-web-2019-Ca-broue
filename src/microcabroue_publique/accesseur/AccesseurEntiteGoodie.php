@@ -39,7 +39,7 @@ class AccesseurEntiteGoodie
     }
 
     public function recupererListeEntiteGoodieParCategorie(int $id_categorie){
-        $bdd = new PDO('mysql:host=localhost;dbname=cabroue;charset=utf8', 'root', ''); //TODO pour tester le base de donnees et la requete
+        $bdd = new PDO('mysql:host=localhost;dbname=cabroue;charset=utf8', 'root', 'floflo'); //TODO pour tester le base de donnees et la requete
         $listeGoodie=[];
         $curseur =$bdd->prepare(self::SELECT_GOODIES_PAR_CATEGORIE);
         $curseur->bindParam(":id_categorie",$id_categorie);

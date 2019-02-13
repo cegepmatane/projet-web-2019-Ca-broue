@@ -1,7 +1,5 @@
 <?php
-require_once('BaseDeDonnee.php');
-
-$baseDeDonnee = new BaseDeDonnee();
+require_once("BaseDeDonnee.php");
 class AccesseurUtilisateur
 {
     

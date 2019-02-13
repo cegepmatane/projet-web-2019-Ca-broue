@@ -3,6 +3,7 @@
 //Le chemin vers le code PHP de la section nom_de_domaine_com_commun
 //qui est hors du $_SERVER['DOCUMENT_ROOT'].
 //Idéalement, une variable d'environnement devrait être utilisée.
+
 define(CHEMIN_RACINE_COMMUN, $_SERVER['CHEMIN_RACINE_COMMUN']);
 
 //Le chemin vers le code PHP des vues de la section commun
@@ -47,7 +48,7 @@ function determinerSectionCodeCourante($sectionWebCourante){
     $nomRepertoireDocumentRoot =
         $listeNomRepertoire[$listeNomRepertoire.count - 1];
 
-    $sectionCode = $nomRepertoireDocumentRoot . "_" . $sectionWebCourante;
+    $sectionCode = $nomRepertoireDocumentRoot  . $sectionWebCourante;
 
     return $sectionCode;
 
@@ -57,7 +58,7 @@ $sectionWebCourante = determinerSectionWebCourante();
 
 //L'URL du site pour la partie non PHP de la section
 //nom_de_domaine_com_publique.
-define(URL_SECTION, $_SERVER['HTTP_HOST'] . "/" . $sectionWebCourante]);
+define(URL_SECTION, $_SERVER['HTTP_HOST'] . "/" . $sectionWebCourante);
 
 
 $sectionCodeCourante = determinerSectionCodeCourante($sectionWebCourante);
@@ -69,12 +70,12 @@ $sectionCodeCourante = determinerSectionCodeCourante($sectionWebCourante);
 //nom_de_domaine_com_commun
 //qui est hors du $_SERVER['DOCUMENT_ROOT'].
 define(CHEMIN_RACINE_SECTION,
-       "/var/www/code/" .
+       "/home/florian/www/projet-web-2019-Ca-broue/src/microcabroue_com_commun/" .
        $sectionCodeCourante);
 
 if("nom_de_domaine_com_commun" != $sectionCodeCourante){
 
     require_once(CHEMIN_RACINE_SECTION .
-                 "/configuration/configuration.php");
+                 "configuration/configuration.php");
 
 }
