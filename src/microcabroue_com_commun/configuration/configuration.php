@@ -67,16 +67,13 @@ $sectionCodeCourante = determinerSectionCodeCourante($sectionWebCourante);
 //nom_de_domaine_com_commun
 //qui est hors du $_SERVER['DOCUMENT_ROOT'].
 //TODO mis en commentaire pour enlever les warning
-define("CHEMIN_RACINE_SECTION",
-       "/var/www/html/projet-web-2019-Ca-broue/src/microcabroue_com_commun/" .
-       $sectionCodeCourante);
+define("CHEMIN_RACINE_SECTION","/var/www/html/projet-web-2019-Ca-broue/src/microcabroue_com_commun/" .$sectionCodeCourante);
 
-if("nom_de_domaine_com_commun" != $sectionCodeCourante){
+// if("microcabroue_com_commun" != $sectionCodeCourante){
 
-    require_once(CHEMIN_RACINE_SECTION .
-                 "configuration/configuration.php");
+//     require_once(CHEMIN_RACINE_SECTION ."configuration/configuration.php");
 
-}
+// }
 
 define("CHEMIN_SRC_DEV", "/var/www/html/projet-web-2019-Ca-broue/src/");
 define("CHEMIN_CODE", "/var/www/html/projet-web-2019-Ca-broue/src/");
