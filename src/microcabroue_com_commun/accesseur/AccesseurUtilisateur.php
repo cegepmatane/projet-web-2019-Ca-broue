@@ -1,6 +1,6 @@
 <?php
 require_once("BaseDeDonnee.php");
-require_once(CHEMIN_RACINE_SECTION . "/modele/Utilisateur.php");
+require_once(CHEMIN_SRC_DEV . "microcabroue_com_commun/modele/Utilisateur.php");
 class AccesseurUtilisateur
 {
     private static $connexion = null;

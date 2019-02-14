@@ -6,7 +6,7 @@
  * Time: 12:45 PM
  */
 require_once("BaseDeDonnee.php");
-require_once(CHEMIN_RACINE_SECTION . "/modele/CategorieGoodie.php");
+require_once(CHEMIN_SRC_DEV . "microcabroue_com_commun/modele/CategorieGoodie.php");
 class AccesseurEntiteCategorieGoodie
 {
     private static $connexion = null;
