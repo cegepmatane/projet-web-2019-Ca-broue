@@ -76,6 +76,5 @@ class AccesseurUtilisateur
     function __construct(){
 
         if(!self::$connexion) self::$connexion =  BaseDeDonnee::getConnexion();
-        print_r($connexion);    
     }
 }
