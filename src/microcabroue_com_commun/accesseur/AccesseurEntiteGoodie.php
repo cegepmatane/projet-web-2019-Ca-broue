@@ -5,6 +5,8 @@
  * Date: 06/02/19
  * Time: 12:46 PM
  */
+require_once("BaseDeDonnee.php");
+
 
 class AccesseurEntiteGoodie
 {
@@ -75,4 +77,28 @@ class AccesseurEntiteGoodie
         }
         return $listeGoodie;
     }
+
+    public function recupererGoodie($id_goodie)
+    {
+        $SQL_RECUPERER = " SELECT * FROM goodie where id = " . $id_goodie;
+        
+        
+        $requete =  self::$connexion->prepare($SQL_RECUPERER);
+        $requete->execute();
+        $donnee_goodie = $requete->fetch();
+
+        $goodie = new Goodie((object)
+                [
+                    Goodie::ID => $donnee_goodie[Goodie::ID],
+                    Goodie::NOM_FR =>$donnee_goodie[Goodie::NOM_FR],
+                    Goodie::NOM_EN =>$donnee_goodie[Goodie::NOM_EN],
+                    Goodie::DESCRIPTION_FR =>$donnee_goodie[Goodie::DESCRIPTION_FR],
+                    Goodie::DESCRIPTION_EN =>$donnee_goodie[Goodie::DESCRIPTION_EN],
+                    Goodie::DESCRIPTION_LONGUE_EN =>$donnee_goodie[Goodie::DESCRIPTION_LONGUE_EN],
+                    Goodie::DESCRIPTION_LONGUE_FR =>$donnee_goodie[Goodie::DESCRIPTION_LONGUE_FR],
+                ]);
+                return $goodie;
+    }
+
+
 }

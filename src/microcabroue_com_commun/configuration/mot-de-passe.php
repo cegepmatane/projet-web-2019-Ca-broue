@@ -1,4 +1,4 @@
 <?php
 $baseDeDonnee = 'cabroue';
-$utilisateur = 'root';
-$motDePasse = 'floflo';
+$utilisateur = 'ender';
+$motDePasse = 'qwerty';
