@@ -5,27 +5,26 @@ require_once("../../../microcabroue_com_commun/accesseur/AccesseurUtilisateur.ph
 
 $accesseurUtilisateur = new AccesseurUtilisateur();
     
-$listeUtilisateur = $accesseurUtilisateur->recupererListeUtilisateur();
-
 if(isset($_POST["action-connexion"]) && $_POST["action-connexion"] == "connexion")
 {
 
     //Temporaire 
 
-    $listeUtilisateur = $accesseurUtilisateur->recupererListeUtilisateur();
+    $utilisateur = $accesseurUtilisateur->verifierUtilisateur($_POST['pseudo']);
 
-    for ($i=0; $i< sizeof($listeUtilisateur); $i++){
-        if($_POST["pseudo"] == $listeUtilisateur[$i]->getPseudo()){
-            if($_POST["mot_passe"] == $listeUtilisateur[$i]->getMot_passe()){
-                $_SESSION['pseudo'] = $listeUtilisateur[$i]->getPseudo();
-                $_SESSION['id'] = $listeUtilisateur[$i]->getId();
-                header('Location: accueil'); 
-            }
-            else{
-                echo "mauvais MDP";
-            }
+
+    if(!$utilisateur){
+        echo 'Mauvais identifiant';
+    }
+    else {
+        if(password_verify($_POST['mot_passe'], $utilisateur->mot_passe)){
+            $_SESSION['pseudo'] = $utilisateur->pseudo;
+            $_SESSION['id'] = $utilisateur->id;
+            header('Location: accueil');         
         }
-       
+        else{
+            echo 'Mauvais identifiant';
+        }
     }
 }
 

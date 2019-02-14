@@ -5,38 +5,20 @@ class AccesseurUtilisateur
 {
     private static $connexion = null;
 
+    function __construct(){
 
-    
+        if(!self::$connexion) self::$connexion =  BaseDeDonnee::getConnexion();
+    }
 
-    public function recupererListeUtilisateur(){
-        $listeUtilisateur=[];
-        $listeUtilisateur[]= new Utilisateur((object)
-        [
-            "id" => 1,
-            "nom" =>"levy",
-            "prenom" => "florian",
-            "adresse_postal" => "616 avenue st redempteur",
-            "code_postal" => "G4W 1L1",
-            "ville" => "Matane",
-            "mail" => "flolevy33@gmail.com",
-            "pseudo" => "darkfloflo",
-            "mot_passe" => "floflo"
+    public function verifierUtilisateur($pseudo){
 
-            
-        ]);
-        $listeUtilisateur[]= new Utilisateur((object)
-        [
-            "id" => 1,
-            "nom" =>"toto",
-            "prenom" => "tata",
-            "adresse_postal" => "616 avenue st redempteur",
-            "code_postal" => "G4W 1L1",
-            "ville" => "Matane",
-            "mail" => "flolevy33@gmail.com",
-            "pseudo" => "toto",
-            "mot_passe" => "tata"
-        ]);
-        return $listeUtilisateur;
+        $SQL_VERIFIER = "SELECT pseudo, mot_passe, id FROM utilisateur WHERE pseudo = :pseudo";
+
+        $requete = self::$connexion->prepare($SQL_VERIFIER);
+        $requete->bindParam(':pseudo', $pseudo, PDO::PARAM_STR);
+        $requete->execute();
+        $donnees = $requete->fetch(PDO::FETCH_OBJ);
+        return $donnees;
     }
 
     public function ajouterUtilisateur($utilisateur){
@@ -55,8 +37,6 @@ class AccesseurUtilisateur
         $pseudo = $utilisateur->getPseudo();
         $mot_passe = $utilisateur->getMot_passe();
 
-        var_dump($SQL_AJOUTER);
-
         $requete->bindParam(':nom', $nom, PDO::PARAM_STR);
         $requete->bindParam(':prenom', $prenom, PDO::PARAM_STR);
         $requete->bindParam(':adresse', $adresse, PDO::PARAM_STR);
@@ -67,14 +47,7 @@ class AccesseurUtilisateur
         $requete->bindParam(':mot_passe', $mot_passe, PDO::PARAM_STR);
 
         $requete->execute();
-
-
-        echo "<script>alert(\"Inscription! WOOOOOOOOOOO\")</script>"; 
-
     }
 
-    function __construct(){
-
-        if(!self::$connexion) self::$connexion =  BaseDeDonnee::getConnexion();
-    }
+  
 }
