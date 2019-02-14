@@ -18,6 +18,7 @@ class Goodie
     public const PRIX = "prix";
     public const ID_CATEGORIE = "id_categorie_goodie";
     public const ID_UTILISATEUR = "id_utilisateur";
+    const TABLE = "goodie";
 
     private $id;
     private $nom_fr;

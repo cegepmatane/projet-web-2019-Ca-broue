@@ -8,43 +8,56 @@
 
 class AccesseurEntiteGoodie
 {
-    const SELECT_GOODIES_PAR_CATEGORIE = "select * from ". CategorieGoodie::TABLE ." WHERE ".Goodie::ID_CATEGORIE."=:id_categorie";
+    const SELECT_GOODIES_PAR_CATEGORIE = "select * from ". Goodie::TABLE ." WHERE ".Goodie::ID_CATEGORIE."=:id_categorie";
 
-    public function recupererListeEntiteGoodie(){
+    private static $connexion = null;
 
-        $listeGoodies = [
-            new Goodie((object)
-            [
-                "nom" =>"Goodie 1",
-                "description" => "Desc dsdslfpdslfkdskfsd kfs,dlf,sdkl,f l,slf, sdl;f lsd;fklsd,klf,sdkl,fkds,fkejrifhs",
-                "prix" => 12.45,
-                "id" => 0
-            ]),
-            new Goodie((object)
-            [
-                "nom" =>"Goodie 2",
-                "description" => "fisdhfuhsofkspi ihfosjf ifs qifyqsu ràçbfdshjbdsu hfbsdhjfshbfiuze ifhsiuhfusd ",
-                "prix" => 36.12,
-                "id" => 1
-            ]), new Goodie((object)
-            [
-                "nom" =>"Goodie 3",
-                "description" => " ihfiushfdihs jfhdsj fjdss hfuzdvqhgdvuysgduzehfishqfhjbsd jhfbsdhjbfjdbfdb fdb hfjd jfbs bfjsdbfhjsb",
-                "prix" => 50.55,
-                "id" => 3
-            ])
-        ];
+    function __construct(){
 
-        return $listeGoodies;
+        if(!self::$connexion) self::$connexion =  BaseDeDonnee::getConnexion();
     }
 
-    public function recupererListeEntiteGoodieParCategorie(int $id_categorie){
-        $bdd = new PDO('mysql:host=localhost;dbname=cabroue;charset=utf8', 'root', 'floflo'); //TODO pour tester le base de donnees et la requete
+    /***
+     * Recupere tous les goodies
+     * @return mixed
+     */
+    public function recupererListeEntiteGoodie(){
+        $requete = self::$connexion->prepare("select * from ".Goodie::TABLE);
+
         $listeGoodie=[];
-        $curseur =$bdd->prepare(self::SELECT_GOODIES_PAR_CATEGORIE);
-        $curseur->bindParam(":id_categorie",$id_categorie);
-        $curseur->execute();
-        $donnees = $curseur->fetchAll(PDO::FETCH_ASSOC);
+        $requete->execute();
+        $donnees = $requete->fetchAll(PDO::FETCH_ASSOC);
+        if (count($donnees) > 0) {
+            foreach ($donnees as $maLigne) {
+                $goodie = new Goodie((object)
+                [
+                    Goodie::ID => $maLigne[Goodie::ID],
+                    Goodie::NOM_FR =>$maLigne[Goodie::NOM_FR],
+                    Goodie::NOM_EN =>$maLigne[Goodie::NOM_EN],
+                    Goodie::DESCRIPTION_FR =>$maLigne[Goodie::DESCRIPTION_FR],
+                    Goodie::DESCRIPTION_EN =>$maLigne[Goodie::DESCRIPTION_EN],
+                    Goodie::DESCRIPTION_LONGUE_EN =>$maLigne[Goodie::DESCRIPTION_LONGUE_EN],
+                    Goodie::DESCRIPTION_LONGUE_FR =>$maLigne[Goodie::DESCRIPTION_LONGUE_FR],
+                ]);
+                $listeGoodie[] = $goodie;
+            }
+        }
+
+        return $listeGoodie;
+    }
+
+    /***
+     * Lister tous les goodies d'une categorie
+     * @param int $id_categorie
+     * @return array
+     */
+    public function recupererListeEntiteGoodieParCategorie(int $id_categorie){
+        $requete = self::$connexion->prepare(self::SELECT_GOODIES_PAR_CATEGORIE);
+
+        $listeGoodie=[];
+        $requete->bindParam(":id_categorie",$id_categorie);
+        $requete->execute();
+        $donnees = $requete->fetchAll(PDO::FETCH_ASSOC);
         if (count($donnees) > 0) {
             foreach ($donnees as $maLigne) {
                 $goodie = new Goodie((object)

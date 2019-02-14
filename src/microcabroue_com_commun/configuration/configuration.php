@@ -79,3 +79,4 @@ if("nom_de_domaine_com_commun" != $sectionCodeCourante){
 }
 
 define("CHEMIN_SRC_DEV", "/var/www/html/projet-web-2019-Ca-broue/src/");
+define("CHEMIN_CODE", "/var/www/html/projet-web-2019-Ca-broue/src/");
