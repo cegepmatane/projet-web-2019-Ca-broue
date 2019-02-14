@@ -55,6 +55,9 @@ function afficherDeuxiemeEtape($utilisateur, $page = null)
     ?>
     <div class="conteneur-inscription">
         <form method="post">
+        <input type="hidden" id="pseudo" name="pseudo" value=<?= $utilisateur->getPseudo(); ?>>
+        <input type="hidden" id="mot-de-passe" name="mot_passe" value=<?= $utilisateur->getMot_passe();?>>
+        <input type="hidden" id="email" name="mail" value=<?= $utilisateur->getMail(); ?>>
             <!-- nom-->
             <div class="groupe-formulaire">
                 <label for="nom">Nom</label>

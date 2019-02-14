@@ -5,17 +5,11 @@ require_once("../../../microcabroue_com_commun/accesseur/AccesseurUtilisateur.ph
 function ajouterUtilisateur($utilisateur)
 {
     $accesseur = new AccesseurUtilisateur();
-    $utilisateur->setPseudo($_SESSION['pseudo']);
-    $utilisateur->setMail($_SESSION['mail']);
-    $utilisateur->setMot_passe($_SESSION['mot_passe']);
+    $utilisateur->setMot_passe(password_hash($utilisateur->getMot_passe(), PASSWORD_DEFAULT));
     $accesseur->ajouterUtilisateur($utilisateur);
-    session_destroy();
+    
 }
 
-if(!isset($_SESSION['pseudo']) || !isset($_SESSION['mail']) || !isset($_SESSION['mot_passe'])){
-    session_destroy();
-    session_start();
-}
 $utilisateur = new Utilisateur((object)$_POST);
 
 if (isset($_POST["action-aller-premiere-etape"]) && $_POST["action-aller-premiere-etape"] == "naviguer") {
@@ -30,7 +24,7 @@ if (isset($_POST["action-aller-seconde-etape"]) && $_POST["action-aller-seconde-
         $page->isEnErreur = false;
         $_SESSION['pseudo'] = $_POST['pseudo'];
         $_SESSION['mail'] = $_POST['mail'];
-        $_SESSION['mot_passe'] = $_POST['mot_passe'];
+        $_SESSION['mot_passe'] = password_hash($_POST['mot_passe'], PASSWORD_DEFAULT);
 
 
        
