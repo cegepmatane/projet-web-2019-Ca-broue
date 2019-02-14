@@ -42,21 +42,31 @@ class AccesseurUtilisateur
     public function ajouterUtilisateur($utilisateur){
 
        $SQL_AJOUTER = "INSERT INTO utilisateur (nom, prenom, adresse_postal, code_postal, ville, mail, pseudo, mot_passe) 
-        VALUES ('?','?','?','?','?','?','?','?')";
+        VALUES (:nom,:prenom,:adresse,:code_postal,:ville,:mail,:pseudo,:mot_passe)";
 
         
         $requete = self::$connexion->prepare($SQL_AJOUTER);
+        $nom = $utilisateur->getNom();
+        $prenom = $utilisateur->getPrenom();
+        $adresse = $utilisateur->getAdresse_postal();
+        $code_postal = $utilisateur->getCode_postal();
+        $ville = $utilisateur->getVille();
+        $mail = $utilisateur->getMail();
+        $pseudo = $utilisateur->getPseudo();
+        $mot_passe = $utilisateur->getMot_passe();
 
-        $requete.bindParam(1, $utilisateur->nom);
-        $requete.bindParam(2, $utilisateur->prenom);
-        $requete.bindParam(3, $utilisateur->adresse_postal);
-        $requete.bindParam(4, $utilisateur->code_postal);
-        $requete.bindParam(5, $utilisateur->ville);
-        $requete.bindParam(6, $utilisateur->mail);
-        $requete.bindParam(7, $utilisateur->pseudo);
-        $requete.bindParam(8, $utilisateur->mot_passe);
+        var_dump($SQL_AJOUTER);
 
-        self::$connexion->execute();
+        $requete->bindParam(':nom', $nom, PDO::PARAM_STR);
+        $requete->bindParam(':prenom', $prenom, PDO::PARAM_STR);
+        $requete->bindParam(':adresse', $adresse, PDO::PARAM_STR);
+        $requete->bindParam(':code_postal', $code_postal, PDO::PARAM_STR);
+        $requete->bindParam(':ville', $ville, PDO::PARAM_STR);
+        $requete->bindParam(':mail', $mail, PDO::PARAM_STR);
+        $requete->bindParam(':pseudo', $pseudo, PDO::PARAM_STR);
+        $requete->bindParam(':mot_passe', $mot_passe, PDO::PARAM_STR);
+
+        $requete->execute();
 
 
         echo "<script>alert(\"Inscription! WOOOOOOOOOOO\")</script>"; 
