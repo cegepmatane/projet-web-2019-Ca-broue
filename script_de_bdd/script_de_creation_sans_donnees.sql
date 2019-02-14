@@ -84,10 +84,12 @@ CREATE TABLE IF NOT EXISTS `utilisateur` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `prenom` text,
   `nom` text,
-  `telephone` text,
+  `adresse_postal` text,
+  `code_postal` text,
+  `ville` text,
   `mail` text,
   `mot_passe` text NOT NULL,
-  `type` text NOT NULL,
+  `pseudo` text NOT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 COMMIT;
