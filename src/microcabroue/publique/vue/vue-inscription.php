@@ -1,7 +1,8 @@
 <?php
-require_once("../../commun/vue/fragment/entete-fragment.php");
-require_once("../../commun/vue/fragment/pied-de-page-fragment.php");
-require_once("../../../microcabroue_com_commun/modele/Utilisateur.php");
+require_once ($_SERVER['CONFIGURATION_COMMUN']);
+require_once(CHEMIN_SRC_DEV . "microcabroue/commun/vue/fragment/entete-fragment.php");
+require_once(CHEMIN_SRC_DEV . "microcabroue/commun/vue/fragment/pied-de-page-fragment.php");
+require_once(CHEMIN_SRC_DEV . "microcabroue_com_commun/modele/Utilisateur.php");
 
 $page = (object)
 [
