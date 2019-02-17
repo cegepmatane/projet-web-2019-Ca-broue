@@ -14,11 +14,13 @@ require_once(CHEMIN_SRC_DEV."microcabroue_com_commun/accesseur/AccesseurEntiteGo
 $accesseurEntiteCategorieGoodie = new AccesseurEntiteCategorieGoodie();
 $accesseurEntiteGoodie = new AccesseurEntiteGoodie();
 
+
 $listeCategoriesGoodies=$accesseurEntiteCategorieGoodie->recupererListeEntiteCategorieGoodie();
-if(!isset($page->categorieSelectionnee)){
+if(!isset($_GET['categorie'])){
     $listeGoodies =$accesseurEntiteGoodie->recupererListeEntiteGoodie();
 }else{
-    $listeGoodies=[]; //TODO recupérer la liste pour la catégorie sélectionnee
+    $page->categorieSelectionnee=$_GET['categorie'];
+    $listeGoodies=$accesseurEntiteGoodie->recupererListeEntiteGoodieParCategorie($page->categorieSelectionnee);
 }
 
 $page->listeGoodies = $listeGoodies;

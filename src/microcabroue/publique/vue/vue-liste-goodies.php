@@ -36,8 +36,11 @@ afficherEntete($page);
                 <?php
                 /** @var CategorieGoodie $categorie */
                 foreach($page->listeCategorieGoodies as $categorie){
-                    echo"<a href=\"boutique/categorie/".$categorie->getId()."  \" class=\"lien-liste-categorie-goodies\">
-                        ".$categorie->getLibelleFr()."
+                    echo"<a href=\"boutique?categorie=".$categorie->getId()."  \" class=\"lien-liste-categorie-goodies ";
+                    if(isset($page->categorieSelectionnee)&& $categorie->getId() == $page->categorieSelectionnee){
+                        echo "active";
+                    }
+                     echo   "\">".$categorie->getLibelleFr()."
                     <span class=\"badge-liste-categorie-goodies\">?</span>
                 </a>";
                     }
@@ -73,7 +76,7 @@ afficherEntete($page);
 
 
     </div>
-        <nav aria-label="Page navigation goodies">
+       <!-- <nav aria-label="Page navigation goodies">
             <ul class="pagination-liste-goodies">
                 <li class="objet-pagination">
                     <a class="lien-pagination" href="#" aria-label="Previous">
@@ -91,7 +94,7 @@ afficherEntete($page);
                     </a>
                 </li>
             </ul>
-        </nav>
+        </nav>-->
     </div>
     </div>
     <?php
@@ -99,6 +102,5 @@ afficherEntete($page);
     afficherPiedDePage($page);
 
 }
-require_once("../../../microcabroue_publique/action/action-liste-goodies.php");
+require_once(CHEMIN_CODE."microcabroue_publique/action/action-liste-goodies.php");
 
-/*afficherPage($page);*/
