@@ -1,0 +1,30 @@
+@import "../commun/bootstrap-4.0.0/scss/bootstrap.scss";
+
+.bouton
+{
+    @extend .btn;
+}
+.bouton-vert
+{
+    @extend .btn-success;
+}
+.bouton-bleu
+{
+    @extend .btn-info;
+}
+.bouton-rouge
+{
+    @extend .btn-danger;
+}
+.bouton-jaune
+{
+    @extend .btn-warning;
+}
+.liste-horizontale
+{
+    @extend .list-inline;
+}
+.element-liste-horizontale
+{
+    @extend .list-inline-item; 
+} 

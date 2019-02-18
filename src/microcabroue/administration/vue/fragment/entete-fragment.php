@@ -10,9 +10,8 @@
         <head>
             <meta charset="UTF-8">
             <meta name="viewport" content="width=device-width, initial-scale=1.0">
-            <link href="commun/decoration/style-commun.css" rel="stylesheet" type="text/css"/>
-            <link href="../commun/decoration/style-commun.css" rel="stylesheet" type="text/css"/>
-            <link href="../../commun/decoration/style-commun.css" rel="stylesheet" type="text/css"/>
+            <link href="../decoration/style-commun-admin.css" rel="stylesheet" type="text/css"/>
+            
             <title><?= $page->titre ?? ""; ?></title>
 
             <?php
@@ -27,15 +26,18 @@
         </head>
         <body>
             <header>
-                <ul class="list-inline">
-                    <li class="list-inline-item">
-                        <a href="./vue-liste-bieres.php" class="nav-item btn btn-warning">Bieres</a>
+                <ul class="liste-horizontale">
+                    <li class="element-liste-horizontale">
+                        <a href="./index.php" class="bouton bouton-jaune">Accueil</a>
                     </li>
-                    <li class="list-inline-item">
-                        <a href="./vue-liste-goodies.php" class="nav-item btn btn-warning">Goodies</a>
+                    <li class="element-liste-horizontale">
+                        <a href="./vue-liste-bieres.php" class="bouton bouton-jaune">Bieres</a>
                     </li>
-                    <li class="list-inline-item">
-                        <a href="./vue-liste-utilisateurs.php"class="btn btn-warning">Utilisateurs</a>
+                    <li class="element-liste-horizontale">
+                        <a href="./vue-liste-goodies.php" class="bouton bouton-jaune">Goodies</a>
+                    </li>
+                    <li class="element-liste-horizontale">
+                        <a href="./vue-liste-utilisateurs.php"class="bouton bouton-jaune">Utilisateurs</a>
                     </li>
                 </ul>
             </header>
