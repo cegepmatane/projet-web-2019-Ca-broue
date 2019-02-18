@@ -6,7 +6,7 @@
         ?>
 
             <?php if($page->type != "utilisateur"){?>
-                <a href="./vue-ajouter-<?= $page->type; ?>.php">Ajouter</a>
+                <a href="./vue-ajouter-<?= $page->type; ?>.php" class="btn btn-success">Ajouter</a>
             <?php } ?>
         <?php
 
