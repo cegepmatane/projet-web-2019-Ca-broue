@@ -29,6 +29,9 @@
             <header>
                 <ul class="list-inline">
                     <li class="list-inline-item">
+                        <a href="./index.php" class="nav-item btn btn-warning">Accueil</a>
+                    </li>
+                    <li class="list-inline-item">
                         <a href="./vue-liste-bieres.php" class="nav-item btn btn-warning">Bieres</a>
                     </li>
                     <li class="list-inline-item">
