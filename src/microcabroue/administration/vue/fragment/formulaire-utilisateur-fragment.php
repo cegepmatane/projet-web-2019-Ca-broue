@@ -9,18 +9,18 @@
         ?>
         
         <form action="<?= $page->urlRetour; ?>" method="post">
-            <div>
+            <div class="form-group">
                 <label for="nom-utilisateur">Nom d'utilisateur</label>
-                <div name="nom-utilisateur"><?= $utilisateur->nomUtilisateur; ?></div>
+                <div name="nom-utilisateur" class="form-control"><?= $utilisateur->nomUtilisateur; ?></div>
+            </div>
+            Rôle de l'utilisateur
+            <div class="form-group">
+                <label for="role" class="form-check-label">Administrateur</label>
+                <input <?= $utilisateur->isAdmin ? "checked" : null ?> type="checkbox" name="role" id="role-modification-utilisateur" value="Admin" class="form-check-input" >
+               
             </div>
 
-            <div>
-                <label for="role">Rôle de l'utilisateur</label>
-                Administrateur
-                <input <?= $utilisateur->isAdmin ? "checked" : null ?> type="checkbox" name="role" id="role-modification-utilisateur" value="Admin">
-            </div>
-
-            <input type="submit" value=<?= $page->action == "ajouter" ? "Ajouter" : "Enregistrer"?>>
+            <input class="bouton bouton-vert" type="submit" value=<?= $page->action == "ajouter" ? "Ajouter" : "Enregistrer"?>>
         </form>
         <?php
     }
