@@ -6,7 +6,7 @@
         ?>
 
             <?php if($page->type != "utilisateur"){?>
-                <a href="./vue-ajouter-<?= $page->type; ?>.php" class="btn btn-success">Ajouter</a>
+                <a href="./vue-ajouter-<?= $page->type; ?>.php" class="bouton bouton-vert">Ajouter</a>
             <?php } ?>
         <?php
 
@@ -15,8 +15,8 @@
 
             <div>
                 <?= $item->nom; ?>
-                <a href="vue-modifier-<?= $page->type; ?>.php?id=<?= $item->id;?>" class="btn btn-info">Modifier</a>
-                <a href="#supprimer?id=<?= $item->id; ?>" class="btn btn-danger">Supprimer</a>
+                <a href="vue-modifier-<?= $page->type; ?>.php?id=<?= $item->id;?>" class="bouton bouton-bleu">Modifier</a>
+                <a href="#supprimer?id=<?= $item->id; ?>" class="bouton bouton-rouge">Supprimer</a>
             </div>
 
             <?php
