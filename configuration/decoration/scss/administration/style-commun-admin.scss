@@ -28,3 +28,19 @@
 {
     @extend .list-inline-item; 
 } 
+.groupe-formulaire
+{
+    @extend .form-group;
+}
+.controle-formulaire
+{
+    @extend .form-control;
+}
+.controle-cocher
+{
+    @extend .form-check-input;
+}
+.etiquette-cocher
+{
+    @extend .form-check-label;
+}

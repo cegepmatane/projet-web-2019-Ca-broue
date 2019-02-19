@@ -9,13 +9,13 @@
         ?>
         
         <form action="<?= $page->urlRetour; ?>" method="post">
-            <div class="form-group">
+            <div class="groupe-formulaire">
                 <label for="nom-utilisateur">Nom d'utilisateur</label>
-                <div name="nom-utilisateur" class="form-control"><?= $utilisateur->nomUtilisateur; ?></div>
+                <div name="nom-utilisateur" class="controle-formulaire"><?= $utilisateur->nomUtilisateur; ?></div>
             </div>
             Rôle de l'utilisateur
-            <div class="form-group">
-                <label for="role" class="form-check-label">Administrateur</label>
+            <div class="groupe-formulaire">
+                <label for="role" class="etiquette-cocher">Administrateur</label>
                 <input <?= $utilisateur->isAdmin ? "checked" : null ?> type="checkbox" name="role" id="role-modification-utilisateur" value="Admin" class="form-check-input" >
                
             </div>
