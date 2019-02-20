@@ -1,4 +1,6 @@
 <?php
+require_once ($_SERVER['CONFIGURATION_COMMUN']);
+
 include_once("../../commun/vue/fragment/entete-fragment.php");
 include_once("../../commun/vue/fragment/pied-de-page-fragment.php");
 
@@ -35,7 +37,7 @@ afficherPartieConnexion();
 
 echo "</div>";  
 
-require_once("../../../microcabroue_com_commun/action/action_connexion.php");
+require_once(CHEMIN_CODE."microcabroue_com_commun/action/action-connexion.php");
 
 
 ?>

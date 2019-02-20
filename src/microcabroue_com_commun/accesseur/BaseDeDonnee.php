@@ -1,6 +1,6 @@
 <?php
 
-require_once("../../../microcabroue_com_commun/configuration/configuration.php");
+require_once(CHEMIN_CODE."microcabroue_com_commun/configuration/configuration.php");
 
 class BaseDeDonnee {
   private static $pdo = null;
