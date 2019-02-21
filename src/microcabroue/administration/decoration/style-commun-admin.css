@@ -8291,5 +8291,12 @@ h3 {
     border: 1px solid #ddd !important;
   }
 }
+.controle-formulaire {
+  width: 50%;
+}
+
+header {
+  background-color: fuchsia;
+}
 
 /*# sourceMappingURL=style-commun-admin.css.map */

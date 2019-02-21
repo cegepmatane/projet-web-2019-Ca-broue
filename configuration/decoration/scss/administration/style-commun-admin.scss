@@ -35,6 +35,7 @@
 .controle-formulaire
 {
     @extend .form-control;
+    width: 50%;
 }
 .controle-cocher
 {
@@ -43,4 +44,9 @@
 .etiquette-cocher
 {
     @extend .form-check-label;
+}
+header
+{
+   // background-color:#f8f9fa;
+    background-color: fuchsia;
 }
