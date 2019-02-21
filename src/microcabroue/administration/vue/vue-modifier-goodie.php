@@ -1,21 +1,16 @@
 <?php
+    require_once ($_SERVER['CONFIGURATION_COMMUN']);
     include_once "fragment/entete-fragment.php";
     include_once "fragment/formulaire-fragment.php";
     include_once "fragment/pied-de-page-fragment.php";
 
     $page = (object)
     [
-        // TODO Changer les information pour les information recuillit de la bd avec le id
-        "titre" => "Gestion de ". $_GET["id"],
+        "titre" => "Gestion de ",
         "titrePrincipal" => "Panneau d'adminstration - Ça Broue !",
         "type" => "goodie",
         "action" => "modification",
         "urlRetour" => "./vue-liste-goodies.php",
-        "goodie" => (object)[
-            "nom" => "Biscuits",
-            "description" => "Aux chipites de chocolat",
-            "prix" => "3$"
-        ]
     ];
     
     function afficherPage($page = null){
@@ -27,5 +22,6 @@
         afficherPiedDePage($page);
     }
 
-    afficherPage($page);
+    // afficherPage($page);
+    require_once (CHEMIN_CODE."microcabroue_com_administration/action/action-afficher-champs-modification-goodies.php");
 ?>
