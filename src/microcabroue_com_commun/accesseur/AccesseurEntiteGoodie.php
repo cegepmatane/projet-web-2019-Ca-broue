@@ -93,6 +93,7 @@ class AccesseurEntiteGoodie
         $goodie = new Goodie((object)
                 [
                     Goodie::ID => $donneeGoodie[Goodie::ID],
+                    Goodie::ID_CATEGORIE => $donneeGoodie[Goodie::ID_CATEGORIE],
                     Goodie::NOM_FR =>$donneeGoodie[Goodie::NOM_FR],
                     Goodie::NOM_EN =>$donneeGoodie[Goodie::NOM_EN],
                     Goodie::PRIX => $donneeGoodie[Goodie::PRIX],

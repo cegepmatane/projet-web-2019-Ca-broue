@@ -21,6 +21,7 @@ class Goodie
     const TABLE = "goodie";
 
     private $id;
+    private $id_categorie_goodie;
     private $nom_fr;
     private $nom_en;
     private $description_fr;
@@ -33,6 +34,7 @@ class Goodie
         if(!is_object($attribut)) $attribut = (object)[];
 
         $this->id = $attribut->id ?? "";
+        $this->id_categorie_goodie = $attribut->id_categorie_goodie ?? "";
         $this->nom_fr = $attribut->nom_fr ?? "";
         $this->nom_en = $attribut->nom_en ?? "";
         $this->description_fr = $attribut->description_fr ?? "";
@@ -56,6 +58,22 @@ class Goodie
     public function setId($id): void
     {
         $this->id = $id;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getIdCategorie()
+    {
+        return $this->id_categorie_goodie;
+    }
+
+    /**
+     * @param mixed $id
+     */
+    public function setIdCategorie($id_categorie_goodie): void
+    {
+        $this->id_categorie_goodie = $id_categorie_goodie;
     }
 
     /**
