@@ -86,8 +86,10 @@ class AccesseurEntiteGoodie
         
         
         $requete =  self::$connexion->prepare($SQL_RECUPERER);
+        $requete->bindParam(":id",$id_goodie);
         $requete->execute();
-        $donnee_goodie = $requete->fetch();
+        $donnee_goodie = $requete->fetch(PDO::FETCH_ASSOC);
+        var_dump($donnee_goodie);
 
         $goodie = new Goodie((object)
                 [
