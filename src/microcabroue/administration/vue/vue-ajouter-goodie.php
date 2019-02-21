@@ -1,4 +1,5 @@
 <?php
+    require_once ($_SERVER['CONFIGURATION_COMMUN']);
     include_once "fragment/entete-fragment.php";
     include_once "fragment/formulaire-fragment.php";
     include_once "fragment/pied-de-page-fragment.php";
@@ -22,5 +23,6 @@
         afficherPiedDePage($page);
     }
 
-    afficherPage($page);
+    // afficherPage($page);
+    require_once (CHEMIN_CODE."microcabroue_com_administration/action/action-afficher-champs-ajout-goodies.php");
 ?>
