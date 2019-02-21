@@ -7,7 +7,16 @@
  */
 
 require_once("../../../microcabroue_com_commun/action/action-deconnexion.php");
+require_once ($_SERVER['CONFIGURATION_COMMUN']);
 
+require_once (CHEMIN_SRC_DEV."microcabroue/commun/traduction/traduction-entete.php");
+//TODO pour tester
+if (!function_exists("gettext")){
+    echo "gettext is not installed\n";
+}
+else{
+    echo "gettext is supported\n";
+}
 function afficherEntete($page = null){
 
     // En cas d'erreur avec le paramètre $page, un objet $page vide est créé.

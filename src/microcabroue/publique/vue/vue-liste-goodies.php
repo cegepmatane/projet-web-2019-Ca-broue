@@ -5,7 +5,6 @@
  * Date: 31/01/19
  * Time: 12:34 PM
  */
-require_once ($_SERVER['CONFIGURATION_COMMUN']);
 require_once "../../commun/vue/fragment/entete-fragment.php";
 require_once "../../commun/vue/fragment/pied-de-page-fragment.php";
 require_once "../../commun/vue/fragment/a-cote-fragment.php";
