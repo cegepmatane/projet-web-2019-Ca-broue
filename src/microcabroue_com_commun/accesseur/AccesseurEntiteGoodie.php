@@ -80,26 +80,26 @@ class AccesseurEntiteGoodie
         return $listeGoodie;
     }
 
-    public function recupererGoodie($id_goodie)
+    public function recupererGoodie(int $idGoodie)
     {
-        $SQL_RECUPERER = " SELECT * FROM goodie where id = " . $id_goodie;
+        $SQL_RECUPERER = " SELECT * FROM goodie where id = :id";
         
         
         $requete =  self::$connexion->prepare($SQL_RECUPERER);
-        $requete->bindParam(":id",$id_goodie);
+        $requete->bindParam(":id",$idGoodie);
         $requete->execute();
-        $donnee_goodie = $requete->fetch(PDO::FETCH_ASSOC);
-        var_dump($donnee_goodie);
+        $donneeGoodie= $requete->fetch(PDO::FETCH_ASSOC);
 
         $goodie = new Goodie((object)
                 [
-                    Goodie::ID => $donnee_goodie[Goodie::ID],
-                    Goodie::NOM_FR =>$donnee_goodie[Goodie::NOM_FR],
-                    Goodie::NOM_EN =>$donnee_goodie[Goodie::NOM_EN],
-                    Goodie::DESCRIPTION_FR =>$donnee_goodie[Goodie::DESCRIPTION_FR],
-                    Goodie::DESCRIPTION_EN =>$donnee_goodie[Goodie::DESCRIPTION_EN],
-                    Goodie::DESCRIPTION_LONGUE_EN =>$donnee_goodie[Goodie::DESCRIPTION_LONGUE_EN],
-                    Goodie::DESCRIPTION_LONGUE_FR =>$donnee_goodie[Goodie::DESCRIPTION_LONGUE_FR],
+                    Goodie::ID => $donneeGoodie[Goodie::ID],
+                    Goodie::NOM_FR =>$donneeGoodie[Goodie::NOM_FR],
+                    Goodie::NOM_EN =>$donneeGoodie[Goodie::NOM_EN],
+                    Goodie::PRIX => $donneeGoodie[Goodie::PRIX],
+                    Goodie::DESCRIPTION_FR =>$donneeGoodie[Goodie::DESCRIPTION_FR],
+                    Goodie::DESCRIPTION_EN =>$donneeGoodie[Goodie::DESCRIPTION_EN],
+                    Goodie::DESCRIPTION_LONGUE_EN =>$donneeGoodie[Goodie::DESCRIPTION_LONGUE_EN],
+                    Goodie::DESCRIPTION_LONGUE_FR =>$donneeGoodie[Goodie::DESCRIPTION_LONGUE_FR],
                 ]);
                 return $goodie;
     }
