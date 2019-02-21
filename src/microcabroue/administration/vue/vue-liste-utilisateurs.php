@@ -8,7 +8,7 @@
         "titre" => "Gestion des utilisateurs",
         "titrePrincipal" => "Panneau d'adminstration - Ça Broue !",
         "type" => "utilisateur",
-        "liste" => [
+        "listeUtilisateurs" => [
             $utilisateur = (object)[
                 "nom" => "Joe Blow",
                 "id" => "0"
@@ -25,7 +25,7 @@
             $page = (object)[];
         
         afficherEntete($page);
-        afficherListe($page);
+        preparerListe($page);
         afficherPiedDePage($page);
     }
 
