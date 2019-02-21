@@ -6,7 +6,6 @@
  * Time: 11:27 AM
  */
 
-require_once (CHEMIN_CODE."/var/www/html/projet-web-2019-Ca-broue/src/microcabroue_com_commun/configuration/fr_FR/LC_MESSAGES/entete.po");
 if (isset($_GET["locale"])) {
     $locale = $_GET["locale"];
 }
@@ -19,7 +18,7 @@ else {
 putenv("LANG=" . $locale);
 setlocale(LC_ALL, $locale);
 $domain = "example";
-bindtextdomain($domain, "Locale");
+bindtextdomain($domain, CHEMIN_CODE."microcabroue_com_commun/configuration/Locale");
 bind_textdomain_codeset($domain, 'UTF-8');
 textdomain($domain);
 
