@@ -8,13 +8,15 @@
         "titre" => "Gestion des bières",
         "titrePrincipal" => "Panneau d'adminstration - Ça Broue !",
         "type" => "biere",
-        "liste" => [
+        "listeBieres" => [
             $biere = (object)[
                 "nom" => "Labatt 50",
+                "description" => "Une bonne tite 50 mon chum",
                 "id" => "0"
             ],
             $biere = (object)[
                 "nom" => "Molson Laurentide",
+                "description" => "Tes un gars de banlieu ? pas de probleme tin un laurentide",
                 "id" => "1"
             ]
         ]
@@ -25,7 +27,7 @@
             $page = (object)[];
         
         afficherEntete($page);
-        afficherListe($page);
+        preparerListe($page);
         afficherPiedDePage($page);
     }
 

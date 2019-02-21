@@ -6,7 +6,7 @@
     $page = (object)
     [
         // TODO Changer les information pour les information recuillit de la bd avec le id
-        "titre" => "Gestion d'une bière",
+        "titre" => "Gestion de ",
         "titrePrincipal" => "Panneau d'adminstration - Ça Broue !",
         "type" => "biere",
         "action" => "modification",
