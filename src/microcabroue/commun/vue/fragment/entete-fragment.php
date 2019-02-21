@@ -5,9 +5,9 @@
  * Date: 31/01/19
  * Time: 2:03 PM
  */
-
-require_once("../../../microcabroue_com_commun/action/action-deconnexion.php");
 require_once ($_SERVER['CONFIGURATION_COMMUN']);
+
+require_once (CHEMIN_SRC_DEV."microcabroue_com_commun/action/action-deconnexion.php");
 
 require_once (CHEMIN_SRC_DEV."microcabroue/commun/traduction/traduction-entete.php");
 
@@ -71,14 +71,22 @@ function afficherEntete($page = null){
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav mr-auto">
                 <?php
+                session_start();
+
                 $objetsNav = [
                     ["titre"=>"Accueil", "lien"=>"accueil"],
                     ["titre"=>"Bière", "lien"=>"biere"],
                     ["titre"=>"Boutique", "lien"=>"boutique"],
                     ["titre"=>"Evenement", "lien"=>"evenement"],
+                    ["titre"=>"Mon Compte", "lien"=>"moncompte"],
                 ];
                 $liste="";
                 foreach ($objetsNav as $objet) {
+
+                    if($objet['lien'] == 'moncompte' && !isset($_SESSION['id'])){
+                        break;
+                    }
+
                     $liste.="<li class='nav-objet";
 
                     if(isset($page->itemMenuActif) && $page->itemMenuActif == $objet['lien']){
@@ -97,7 +105,6 @@ function afficherEntete($page = null){
             <div class="form-inline my-2 my-lg-0">
             
             <?php 
-                session_start();
 
                 if (isset($_SESSION['id']) AND isset($_SESSION['pseudo']))
                 {
