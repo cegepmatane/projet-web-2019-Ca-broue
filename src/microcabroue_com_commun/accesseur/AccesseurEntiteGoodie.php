@@ -11,8 +11,8 @@ require_once("BaseDeDonnee.php");
 class AccesseurEntiteGoodie
 {
     const SELECT_GOODIES_PAR_CATEGORIE = "select * from ". Goodie::TABLE ." WHERE ".Goodie::ID_CATEGORIE."=:id_categorie";
-    const SQL_AJOUTER = "INSER INTO ".Goodie::TABLE."(".Goodie::ID.", ".Goodie::ID_CATEGORIE.", ".Goodie::NOM_FR.", ".Goodie::NOM_EN.", ".Goodie::PRIX.", ".Goodie::DESCRIPTION_FR.", ".Goodie::DESCRIPTION_EN.", ".Goodie::DESCRIPTION_LONGUE_EN.", ".Goodie::DESCRIPTION_LONGUE_FR.") VALUES(:".Goodie::ID.", :".Goodie::ID_CATEGORIE.", :".Goodie::NOM_FR.", :".Goodie::NOM_EN.", :".Goodie::PRIX.", :".Goodie::DESCRIPTION_FR.", :".Goodie::DESCRIPTION_EN.", :".Goodie::DESCRIPTION_LONGUE_EN.", :".Goodie::DESCRIPTION_LONGUE_FR.");";
-    const SQL_MODIFIER = "UPATE ".Goodie::TABLE." SET ".Goodie::ID_CATEGORIE."=:".Goodie::ID_CATEGORIE.", ".Goodie::NOM_FR."=:".Goodie::NOM_FR.", ".Goodie::NOM_EN."=:".Goodie::NOM_EN.", ".Goodie::PRIX."=:".Goodie::PRIX.", ".Goodie::DESCRIPTION_FR."=:".Goodie::DESCRIPTION_FR.", ".Goodie::DESCRIPTION_EN."=:".Goodie::DESCRIPTION_EN.", ".Goodie::DESCRIPTION_LONGUE_EN."=:".Goodie::DESCRIPTION_LONGUE_EN.", ".Goodie::DESCRIPTION_LONGUE_FR."=:".Goodie::DESCRIPTION_LONGUE_FR." WHERE ".Goodie::ID."=:".Goodie::ID.";";
+    const SQL_AJOUTER = "INSERT INTO ".Goodie::TABLE."(".Goodie::ID_CATEGORIE.", ".Goodie::NOM_FR.", ".Goodie::NOM_EN.", ".Goodie::PRIX.", ".Goodie::DESCRIPTION_FR.", ".Goodie::DESCRIPTION_EN.", ".Goodie::DESCRIPTION_LONGUE_EN.", ".Goodie::DESCRIPTION_LONGUE_FR.") VALUES(:".Goodie::ID_CATEGORIE.", :".Goodie::NOM_FR.", :".Goodie::NOM_EN.", :".Goodie::PRIX.", :".Goodie::DESCRIPTION_FR.", :".Goodie::DESCRIPTION_EN.", :".Goodie::DESCRIPTION_LONGUE_EN.", :".Goodie::DESCRIPTION_LONGUE_FR.");";
+    const SQL_MODIFIER = "UPDATE ".Goodie::TABLE." SET ".Goodie::ID_CATEGORIE."=:".Goodie::ID_CATEGORIE.", ".Goodie::NOM_FR."=:".Goodie::NOM_FR.", ".Goodie::NOM_EN."=:".Goodie::NOM_EN.", ".Goodie::PRIX."=:".Goodie::PRIX.", ".Goodie::DESCRIPTION_FR."=:".Goodie::DESCRIPTION_FR.", ".Goodie::DESCRIPTION_EN."=:".Goodie::DESCRIPTION_EN.", ".Goodie::DESCRIPTION_LONGUE_EN."=:".Goodie::DESCRIPTION_LONGUE_EN.", ".Goodie::DESCRIPTION_LONGUE_FR."=:".Goodie::DESCRIPTION_LONGUE_FR." WHERE ".Goodie::ID."=:".Goodie::ID.";";
     const SQL_SUPPRIMER = "DELETE FROM ".Goodie::TABLE." WHERE ".Goodie::ID."=:".Goodie::ID.";";
 
     private static $connexion = null;
@@ -110,32 +110,50 @@ class AccesseurEntiteGoodie
 
     public function ajouter(Goodie $goodie){
         $requete = self::$connexion->prepare(self::SQL_AJOUTER);
-
-        $requete->bindParam(":" . Goodie::ID, $goodie->getId(), PDO::PARAM_INT);
-        $requete->bindParam(":" . Goodie::ID_CATEGORIE, $goodie->getIdCategorie(), PDO::PARAM_INT);
-        $requete->bindParam(":" . Goodie::NOM_FR, $goodie->getNomFr(), PDO::PARAM_STR);
-        $requete->bindParam(":" . Goodie::NOM_EN, $goodie->getNomEn(), PDO::PARAM_STR);
-        $requete->bindParam(":" . Goodie::PRIX, $goodie->getPrix(), PDO::PARAM_STR);
-        $requete->bindParam(":" . Goodie::DESCRIPTION_FR, $goodie->getDescriptionFr(), PDO::PARAM_STR);
-        $requete->bindParam(":" . Goodie::DESCRIPTION_EN, $goodie->getDescriptionEn(), PDO::PARAM_STR);
-        $requete->bindParam(":" . Goodie::DESCRIPTION_LONGUE_EN, $goodie->getDescriptionLongueEn(), PDO::PARAM_STR);
-        $requete->bindParam(":" . Goodie::DESCRIPTION_LONGUE_FR, $goodie->getDescriptionLongueFr(), PDO::PARAM_STR);
         
+        $idCategorie = $goodie->getIdCategorie();
+        $nomFr = $goodie->getNomFr();
+        $nomEn = $goodie->getNomEn();
+        $prix = $goodie->getPrix();
+        $descriptionFr = $goodie->getDescriptionFr();
+        $descriptionEn = $goodie->getDescriptionEn();
+        $descriptionLongueEn = $goodie->getDescriptionLongueEn();
+        $descriptionLongueFr = $goodie->getDescriptionLongueFr();
+
+        $requete->bindParam(":" . Goodie::ID_CATEGORIE, $idCategorie, PDO::PARAM_INT);
+        $requete->bindParam(":" . Goodie::NOM_FR, $nomFr, PDO::PARAM_STR);
+        $requete->bindParam(":" . Goodie::NOM_EN, $nomEn, PDO::PARAM_STR);
+        $requete->bindParam(":" . Goodie::PRIX, $prix, PDO::PARAM_STR);
+        $requete->bindParam(":" . Goodie::DESCRIPTION_FR, $descriptionFr, PDO::PARAM_STR);
+        $requete->bindParam(":" . Goodie::DESCRIPTION_EN, $descriptionEn, PDO::PARAM_STR);
+        $requete->bindParam(":" . Goodie::DESCRIPTION_LONGUE_EN, $descriptionLongueEn, PDO::PARAM_STR);
+        $requete->bindParam(":" . Goodie::DESCRIPTION_LONGUE_FR, $descriptionLongueFr, PDO::PARAM_STR);
+
         return $requete->execute();
     }
 
     public function modifier(Goodie $goodie){
         $requete = self::$connexion->prepare(self::SQL_MODIFIER);
 
-        $requete->bindParam(":" . Goodie::ID, $goodie->getId(), PDO::PARAM_INT);
-        $requete->bindParam(":" . Goodie::ID_CATEGORIE, $goodie->getIdCategorie(), PDO::PARAM_INT);
-        $requete->bindParam(":" . Goodie::NOM_FR, $goodie->getNomFr(), PDO::PARAM_STR);
-        $requete->bindParam(":" . Goodie::NOM_EN, $goodie->getNomEn(), PDO::PARAM_STR);
-        $requete->bindParam(":" . Goodie::PRIX, $goodie->getPrix(), PDO::PARAM_STR);
-        $requete->bindParam(":" . Goodie::DESCRIPTION_FR, $goodie->getDescriptionFr(), PDO::PARAM_STR);
-        $requete->bindParam(":" . Goodie::DESCRIPTION_EN, $goodie->getDescriptionEn(), PDO::PARAM_STR);
-        $requete->bindParam(":" . Goodie::DESCRIPTION_LONGUE_EN, $goodie->getDescriptionLongueEn(), PDO::PARAM_STR);
-        $requete->bindParam(":" . Goodie::DESCRIPTION_LONGUE_FR, $goodie->getDescriptionLongueFr(), PDO::PARAM_STR);
+        $id = $goodie->getId();
+        $idCategorie = $goodie->getIdCategorie();
+        $nomFr = $goodie->getNomFr();
+        $nomEn = $goodie->getNomEn();
+        $prix = $goodie->getPrix();
+        $descriptionFr = $goodie->getDescriptionFr();
+        $descriptionEn = $goodie->getDescriptionEn();
+        $descriptionLongueEn = $goodie->getDescriptionLongueEn();
+        $descriptionLongueFr = $goodie->getDescriptionLongueFr();
+        
+        $requete->bindParam(":" . Goodie::ID, $id, PDO::PARAM_INT);
+        $requete->bindParam(":" . Goodie::ID_CATEGORIE, $idCategorie, PDO::PARAM_INT);
+        $requete->bindParam(":" . Goodie::NOM_FR, $nomFr, PDO::PARAM_STR);
+        $requete->bindParam(":" . Goodie::NOM_EN, $nomEn, PDO::PARAM_STR);
+        $requete->bindParam(":" . Goodie::PRIX, $prix, PDO::PARAM_STR);
+        $requete->bindParam(":" . Goodie::DESCRIPTION_FR, $descriptionFr, PDO::PARAM_STR);
+        $requete->bindParam(":" . Goodie::DESCRIPTION_EN, $descriptionEn, PDO::PARAM_STR);
+        $requete->bindParam(":" . Goodie::DESCRIPTION_LONGUE_EN, $descriptionLongueEn, PDO::PARAM_STR);
+        $requete->bindParam(":" . Goodie::DESCRIPTION_LONGUE_FR, $descriptionLongueFr, PDO::PARAM_STR);
         
         return $requete->execute();
     }
@@ -143,7 +161,9 @@ class AccesseurEntiteGoodie
     function supprimerEquipe(int $id){
         $requete = $pdo->prepare(self::SQL_SUPPRIMER);
 
-        $requete->bindParam(":" . Goodie::ID, $goodie->getId(), PDO::PARAM_INT);
+        $id = $goodie->getId();
+
+        $requete->bindParam(":" . Goodie::ID, $id, PDO::PARAM_INT);
 
         return $requete->execute();
     }
