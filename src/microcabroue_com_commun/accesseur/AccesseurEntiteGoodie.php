@@ -158,10 +158,8 @@ class AccesseurEntiteGoodie
         return $requete->execute();
     }
 
-    function supprimerEquipe(int $id){
-        $requete = $pdo->prepare(self::SQL_SUPPRIMER);
-
-        $id = $goodie->getId();
+    function supprimer(int $id){
+        $requete = self::$connexion->prepare(self::SQL_SUPPRIMER);
 
         $requete->bindParam(":" . Goodie::ID, $id, PDO::PARAM_INT);
 
