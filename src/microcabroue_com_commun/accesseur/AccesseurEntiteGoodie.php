@@ -11,6 +11,9 @@ require_once("BaseDeDonnee.php");
 class AccesseurEntiteGoodie
 {
     const SELECT_GOODIES_PAR_CATEGORIE = "select * from ". Goodie::TABLE ." WHERE ".Goodie::ID_CATEGORIE."=:id_categorie";
+    const SQL_AJOUTER = "INSER INTO ".Goodie::TABLE."(".Goodie::ID.", ".Goodie::ID_CATEGORIE.", ".Goodie::NOM_FR.", ".Goodie::NOM_EN.", ".Goodie::PRIX.", ".Goodie::DESCRIPTION_FR.", ".Goodie::DESCRIPTION_EN.", ".Goodie::DESCRIPTION_LONGUE_EN.", ".Goodie::DESCRIPTION_LONGUE_FR.") VALUES(:".Goodie::ID.", :".Goodie::ID_CATEGORIE.", :".Goodie::NOM_FR.", :".Goodie::NOM_EN.", :".Goodie::PRIX.", :".Goodie::DESCRIPTION_FR.", :".Goodie::DESCRIPTION_EN.", :".Goodie::DESCRIPTION_LONGUE_EN.", :".Goodie::DESCRIPTION_LONGUE_FR.");";
+    const SQL_MODIFIER = "UPATE ".Goodie::TABLE." SET ".Goodie::ID_CATEGORIE."=:".Goodie::ID_CATEGORIE.", ".Goodie::NOM_FR."=:".Goodie::NOM_FR.", ".Goodie::NOM_EN."=:".Goodie::NOM_EN.", ".Goodie::PRIX."=:".Goodie::PRIX.", ".Goodie::DESCRIPTION_FR."=:".Goodie::DESCRIPTION_FR.", ".Goodie::DESCRIPTION_EN."=:".Goodie::DESCRIPTION_EN.", ".Goodie::DESCRIPTION_LONGUE_EN."=:".Goodie::DESCRIPTION_LONGUE_EN.", ".Goodie::DESCRIPTION_LONGUE_FR."=:".Goodie::DESCRIPTION_LONGUE_FR." WHERE ".Goodie::ID."=:".Goodie::ID.";";
+    const SQL_SUPPRIMER = "DELETE FROM ".Goodie::TABLE." WHERE ".Goodie::ID."=:".Goodie::ID.";";
 
     private static $connexion = null;
 
@@ -106,9 +109,8 @@ class AccesseurEntiteGoodie
     }
 
     public function ajouter(Goodie $goodie){
-        $SQL_AJOUTER = "INSER INTO ".Goodie::TABLE."(".Goodie::ID.", ".Goodie::ID_CATEGORIE.", ".Goodie::NOM_FR.", ".Goodie::NOM_EN.", ".Goodie::PRIX.", ".Goodie::DESCRIPTION_FR.", ".Goodie::DESCRIPTION_EN.", ".Goodie::DESCRIPTION_LONGUE_EN.", ".Goodie::DESCRIPTION_LONGUE_FR.") VALUES(:".Goodie::ID.", :".Goodie::ID_CATEGORIE.", :".Goodie::NOM_FR.", :".Goodie::NOM_EN.", :".Goodie::PRIX.", :".Goodie::DESCRIPTION_FR.", :".Goodie::DESCRIPTION_EN.", :".Goodie::DESCRIPTION_LONGUE_EN.", :".Goodie::DESCRIPTION_LONGUE_FR.");";
+        $requete = self::$connexion->prepare(self::SQL_AJOUTER);
 
-        $requete = self::$connexion->prepare($SQL_AJOUTER);
         $requete->bindParam(":" . Goodie::ID, $goodie->getId(), PDO::PARAM_INT);
         $requete->bindParam(":" . Goodie::ID_CATEGORIE, $goodie->getIdCategorie(), PDO::PARAM_INT);
         $requete->bindParam(":" . Goodie::NOM_FR, $goodie->getNomFr(), PDO::PARAM_STR);
@@ -123,9 +125,8 @@ class AccesseurEntiteGoodie
     }
 
     public function modifier(Goodie $goodie){
-        $SQL_MODIFIER = "UPATE ".Goodie::TABLE." SET ".Goodie::ID_CATEGORIE."=:".Goodie::ID_CATEGORIE.", ".Goodie::NOM_FR."=:".Goodie::NOM_FR.", ".Goodie::NOM_EN."=:".Goodie::NOM_EN.", ".Goodie::PRIX."=:".Goodie::PRIX.", ".Goodie::DESCRIPTION_FR."=:".Goodie::DESCRIPTION_FR.", ".Goodie::DESCRIPTION_EN."=:".Goodie::DESCRIPTION_EN.", ".Goodie::DESCRIPTION_LONGUE_EN."=:".Goodie::DESCRIPTION_LONGUE_EN.", ".Goodie::DESCRIPTION_LONGUE_FR."=:".Goodie::DESCRIPTION_LONGUE_FR." WHERE ".Goodie::ID."=:".Goodie::ID.";";
+        $requete = self::$connexion->prepare(self::SQL_MODIFIER);
 
-        $requete = self::$connexion->prepare($SQL_AJOUTER);
         $requete->bindParam(":" . Goodie::ID, $goodie->getId(), PDO::PARAM_INT);
         $requete->bindParam(":" . Goodie::ID_CATEGORIE, $goodie->getIdCategorie(), PDO::PARAM_INT);
         $requete->bindParam(":" . Goodie::NOM_FR, $goodie->getNomFr(), PDO::PARAM_STR);
@@ -140,9 +141,8 @@ class AccesseurEntiteGoodie
     }
 
     function supprimerEquipe(int $id){
-        $SQL_SUPPRIMER = "DELETE FROM ".Goodie::TABLE." WHERE ".Goodie::ID."=:".Goodie::ID.";";
+        $requete = $pdo->prepare(self::SQL_SUPPRIMER);
 
-        $requete = $pdo->prepare($SQL_SUPPRIMER);
         $requete->bindParam(":" . Goodie::ID, $goodie->getId(), PDO::PARAM_INT);
 
         return $requete->execute();
