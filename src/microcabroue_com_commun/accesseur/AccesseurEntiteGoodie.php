@@ -105,5 +105,20 @@ class AccesseurEntiteGoodie
                 return $goodie;
     }
 
+    public function ajouter(Goodie $goodie){
+        $SQL_AJOUTER = "INSER INTO ".Goodie::TABLE."(".Goodie::ID.", ".Goodie::ID_CATEGORIE.", ".Goodie::NOM_FR.", ".Goodie::NOM_EN.", ".Goodie::PRIX.", ".Goodie::DESCRIPTION_FR.", ".Goodie::DESCRIPTION_EN.", ".Goodie::DESCRIPTION_LONGUE_EN.", ".Goodie::DESCRIPTION_LONGUE_FR.") VALUES(:".Goodie::ID.", :".Goodie::ID_CATEGORIE.", :".Goodie::NOM_FR.", :".Goodie::NOM_EN.", :".Goodie::PRIX.", :".Goodie::DESCRIPTION_FR.", :".Goodie::DESCRIPTION_EN.", :".Goodie::DESCRIPTION_LONGUE_EN.", :".Goodie::DESCRIPTION_LONGUE_FR.");";
 
+        $requete = self::$connexion->prepare($SQL_AJOUTER);
+        $requete->bindParam(":" . Goodie::ID, $goodie->getId(), PDO::PARAM_INT);
+        $requete->bindParam(":" . Goodie::ID_CATEGORIE, $goodie->getIdCategorie(), PDO::PARAM_INT);
+        $requete->bindParam(":" . Goodie::NOM_FR, $goodie->getNomFr(), PDO::PARAM_STR);
+        $requete->bindParam(":" . Goodie::NOM_EN, $goodie->getNomEn(), PDO::PARAM_STR);
+        $requete->bindParam(":" . Goodie::PRIX, $goodie->getPrix(), PDO::PARAM_STR);
+        $requete->bindParam(":" . Goodie::DESCRIPTION_FR, $goodie->getDescriptionFr(), PDO::PARAM_STR);
+        $requete->bindParam(":" . Goodie::DESCRIPTION_EN, $goodie->getDescriptionEn(), PDO::PARAM_STR);
+        $requete->bindParam(":" . Goodie::DESCRIPTION_LONGUE_EN, $goodie->getDescriptionLongueEn(), PDO::PARAM_STR);
+        $requete->bindParam(":" . Goodie::DESCRIPTION_LONGUE_FR, $goodie->getDescriptionLongueFr(), PDO::PARAM_STR);
+        
+        return $requete->execute();
+    }
 }
