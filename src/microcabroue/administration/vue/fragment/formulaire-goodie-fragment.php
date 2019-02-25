@@ -40,12 +40,12 @@
 
             <div class="groupe-formulaire">
                 <label for=<?= Goodie::DESCRIPTION_LONGUE_EN; ?>>Description longue du goodie (en)</label>
-                <textarea class="controle-formulaire" name=<?= Goodie::DESCRIPTION_LONGUE_FR; ?> id='description-longue-modification-goodie-en' cols='30' rows='5'><?= isset($goodie) ? $goodie->getDescriptionLongueEn() : null ?></textarea>
+                <textarea class="controle-formulaire" name=<?= Goodie::DESCRIPTION_LONGUE_EN; ?> id='description-longue-modification-goodie-en' cols='30' rows='5'><?= isset($goodie) ? $goodie->getDescriptionLongueEn() : null ?></textarea>
             </div>
 
             <div class="groupe-formulaire">
                 <label for=<?= Goodie::DESCRIPTION_FR; ?>>Description courte du goodie (fr)</label>
-                <textarea class="controle-formulaire" <?= Goodie::DESCRIPTION_FR; ?> id='description-courte-modification-goodie-fr' cols='30' rows='5'><?= isset($goodie) ? $goodie->getDescriptionFr() : null ?></textarea>
+                <textarea class="controle-formulaire" name=<?= Goodie::DESCRIPTION_FR; ?> id='description-courte-modification-goodie-fr' cols='30' rows='5'><?= isset($goodie) ? $goodie->getDescriptionFr() : null ?></textarea>
             </div>
 
             <div class="groupe-formulaire">
