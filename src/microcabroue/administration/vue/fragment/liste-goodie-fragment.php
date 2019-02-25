@@ -8,10 +8,10 @@
                 ?>
 
                 <div>
-                    <?= $goodie->getNomFr(); ?>
-                    <a href="vue-modifier-<?= $page->type; ?>.php?id=<?= $goodie->getId();?>" class="bouton bouton-bleu">Modifier</a>
-                    
                     <form method="post">
+                        <?= $goodie->getNomFr(); ?>
+                        <a href="vue-modifier-<?= $page->type; ?>.php?id=<?= $goodie->getId();?>" class="bouton bouton-bleu">Modifier</a>
+                    
                         <input type="hidden" name="id" value="<?= $goodie->getId(); ?>">
                         <button class="bouton bouton-rouge" type="submit" name="action-modifier" value="suppression">Supprimer</button>
                     </form>
