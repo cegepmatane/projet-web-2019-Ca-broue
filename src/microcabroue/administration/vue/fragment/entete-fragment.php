@@ -42,7 +42,7 @@
                 </ul>
             </header>
 
-            <h2><?= $page->titre; ?></h2>
+            <h2 class="titre"><?= $page->titre; ?></h2>
         <?php
     }
 ?>
