@@ -15,7 +15,11 @@
                 include "fragment/formulaire-utilisateur-fragment.php";
                 break;
         }
-
+?>
+        <div class="contenu">
+<?php
         afficherChamps($page);
+?>      </div>
+<?php
     }
 ?>
