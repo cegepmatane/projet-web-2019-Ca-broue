@@ -10,7 +10,7 @@
             $goodie = $page->goodie;
 
         ?>
-        <form action="<?= $page->urlRetour; ?>" method="post">
+        <form method="post">
             <div class="groupe-formulaire">
                 <label for=<?= Goodie::NOM_FR; ?>>Nom du goodie (fr)</label>
                 <input class="controle-formulaire" value="<?= isset($goodie) ? $goodie->getNomFr() : null ?>" name=<?= Goodie::NOM_FR; ?> id='nom-modification-goodie-fr' type='text'>
@@ -58,8 +58,10 @@
                 <input class="controle-formulaire" value="<?= isset($goodie) ? $goodie->getPrix() : null ?>" type="text" name=<?= Goodie::PRIX; ?> id="prix-modification-goodie">
             </div>
 
-            <input class="bouton bouton-vert" type="submit" value=<?= $page->action == "ajouter" ? "Ajouter" : "Enregistrer"?>>
+            <button class="bouton bouton-vert" name="action-enregistrer" type="submit" value="<?= $page->action; ?>"><?= $page->action == "ajout" ? "Ajouter" : "Enregistrer"?></button>
         </form>
         <?php
     }
+
+    require_once (CHEMIN_CODE."microcabroue_com_administration/action/action-enregistrer-goodie.php");
 ?>
