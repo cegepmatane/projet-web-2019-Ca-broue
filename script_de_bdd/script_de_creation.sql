@@ -108,8 +108,11 @@ CREATE TABLE `utilisateur` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `prenom` text,
   `nom` text,
-  `telephone` text,
+  `adresse_postal` text,
+  `code_postal` text,
+  `ville` text, 
   `mail` text,
+  `pseudo` text, 
   `mot_passe` text NOT NULL,
   `type` text NOT NULL,
   PRIMARY KEY (`id`)

@@ -18,4 +18,6 @@
 1              |4            |13  février |5         | Configuration de apache avec des variables d'environnement de la base et création du script |---    
 1              |4            |16  février |2        | Chargement des categories de la base de données |[Issue #6 ](https://github.com/cegepmatane/projet-web-2019-Ca-broue/issues/6)[lien commit](https://github.com/cegepmatane/projet-web-2019-Ca-broue/commit/cf628ad18de9743d0bd641030c065cf7b7a5850d)
 1              |4            |17  février |2        | Chargement des goodies de la base de données d'une categorie|[Issue #6 ](https://github.com/cegepmatane/projet-web-2019-Ca-broue/issues/6) [Lien commit](https://github.com/cegepmatane/projet-web-2019-Ca-broue/commit/dcef29922336c311784c7d29740b326c527b0c13)
+1              |5            |21  février |2        | découverte et lecture de la documentation de gettext |[Issue #2 ](https://github.com/cegepmatane/projet-web-2019-Ca-broue/issues/2)
+1              |5            |22  février |2        | tentation d'implementer gettext dans le projet |[Issue #2 ](https://github.com/cegepmatane/projet-web-2019-Ca-broue/issues/2) [Lien commit](https://github.com/cegepmatane/projet-web-2019-Ca-broue/commit/663940b177ea63739674343a03673627367584a3)
         
