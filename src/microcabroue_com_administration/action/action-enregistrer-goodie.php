@@ -31,6 +31,11 @@
             Goodie::DESCRIPTION_LONGUE_FR =>$goodieTemp[Goodie::DESCRIPTION_LONGUE_FR],
         ]);
 
-        $accesseurEntiteGoodie->ajouter($goodie);
+        if($_POST["action-enregistrer"] == "ajout")
+            $accesseurEntiteGoodie->ajouter($goodie);
+        else
+            $accesseurEntiteGoodie->modifier($goodie);
+
+        // header('Location: accueil');
     }
 ?>

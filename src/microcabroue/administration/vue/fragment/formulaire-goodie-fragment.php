@@ -11,6 +11,8 @@
 
         ?>
         <form method="post">
+            <input type="hidden" name="id" value=<?= isset($goodie) ? $goodie->getId() : null ?>>
+
             <div class="groupe-formulaire">
                 <label for=<?= Goodie::NOM_FR; ?>>Nom du goodie (fr)</label>
                 <input class="controle-formulaire" value="<?= isset($goodie) ? $goodie->getNomFr() : null ?>" name=<?= Goodie::NOM_FR; ?> id='nom-modification-goodie-fr' type='text'>
