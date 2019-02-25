@@ -8292,15 +8292,17 @@ h3 {
   }
 }
 .controle-formulaire {
-  width: 50%;
+  width: 100%;
 }
 
 header {
-  background-color: fuchsia;
+  background-color: #f8f9fa;
 }
 
 .contenu {
   margin-left: 10%;
+  background-color: #f8f9fa;
+  width: 60%;
 }
 
 /*# sourceMappingURL=style-commun-admin.css.map */

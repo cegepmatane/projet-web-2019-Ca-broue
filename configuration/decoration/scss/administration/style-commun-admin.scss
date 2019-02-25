@@ -35,7 +35,7 @@
 .controle-formulaire
 {
     @extend .form-control;
-    width: 50%;
+    width: 100%;
 }
 .controle-cocher
 {
@@ -47,10 +47,13 @@
 }
 header
 {
-   // background-color:#f8f9fa;
-    background-color: fuchsia;
+    background-color:#f8f9fa;
+    //background-color: fuchsia;
 }
 .contenu
 {
     margin-left: 10%; 
+    background-color:#f8f9fa;
+    width: 60%;
+
 }
