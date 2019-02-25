@@ -60,10 +60,10 @@
                 <input class="controle-formulaire" value="<?= isset($goodie) ? $goodie->getPrix() : null ?>" type="text" name=<?= Goodie::PRIX; ?> id="prix-modification-goodie">
             </div>
 
-            <button class="bouton bouton-vert" name="action-enregistrer" type="submit" value="<?= $page->action; ?>"><?= $page->action == "ajout" ? "Ajouter" : "Enregistrer"?></button>
+            <button class="bouton bouton-vert" name="action-modifier" type="submit" value="<?= $page->action; ?>"><?= $page->action == "ajout" ? "Ajouter" : "Enregistrer"?></button>
         </form>
         <?php
     }
 
-    require_once (CHEMIN_CODE."microcabroue_com_administration/action/action-enregistrer-goodie.php");
+    require_once (CHEMIN_CODE."microcabroue_com_administration/action/action-modifier-goodie.php");
 ?>

@@ -3,7 +3,7 @@
 
     $accesseurEntiteGoodie = new AccesseurEntiteGoodie();
 
-    if(isset($_POST["action-enregistrer"]) && ($_POST["action-enregistrer"] == "ajout" || $_POST["action-enregistrer"] == "modification")){
+    if(isset($_POST["action-modifier"]) && ($_POST["action-modifier"] == "ajout" || $_POST["action-modifier"] == "modification" || $_POST["action-modifier"] == "suppression")){
         $filtreGoodie = array(
             Goodie::ID => FILTER_SANITIZE_NUMBER_INT,
             Goodie::ID_CATEGORIE => FILTER_SANITIZE_NUMBER_INT,
@@ -31,10 +31,12 @@
             Goodie::DESCRIPTION_LONGUE_FR =>$goodieTemp[Goodie::DESCRIPTION_LONGUE_FR],
         ]);
 
-        if($_POST["action-enregistrer"] == "ajout")
+        if($_POST["action-modifier"] == "ajout")
             $accesseurEntiteGoodie->ajouter($goodie);
-        else
+        else if($_POST["action-modifier"] == "modification")
             $accesseurEntiteGoodie->modifier($goodie);
+        else if($_POST["action-modifier"] == "suppression")
+            $accesseurEntiteGoodie->supprimer($goodie->getId());
 
         // header('Location: accueil');
     }
