@@ -22,5 +22,8 @@
 1              | 4           | 14/02/19 | 1      | reglage d'erreur dans l'accesseur utilisateur  | [Permettre a l'utilisateur de s'inscrire sur le site avec un formulaire](https://github.com/cegepmatane/projet-web-2019-Ca-broue/issues/7)
 1              | 4           | 14/02/19 | 1      | Hashage du mot de passe  | [Permettre a l'utilisateur de s'inscrire sur le site avec un formulaire](https://github.com/cegepmatane/projet-web-2019-Ca-broue/issues/7)
 1              | 5           | 18/02/19 | 2      | Ajout de boostrap dans les page admin et css semantique | [Permet à l'administrateur de d'ajouter, modifier et supprimer des goodies](https://github.com/cegepmatane/projet-web-2019-Ca-broue/issues/17)
-
+1              | 5           | 21/02/19 | 0.5      | Ajout du css semantique dans le fragment ajout de bierre | [Permet à l'administrateur de d'ajouter, modifier et supprimer des goodies](https://github.com/cegepmatane/projet-web-2019-Ca-broue/issues/17)
+1              | 5           | 24/02/19 | 2      | Ajout du css semantique dans le formulaire ajout de goodie | [Permet à l'administrateur de d'ajouter, modifier et supprimer des goodies](https://github.com/cegepmatane/projet-web-2019-Ca-broue/issues/17)
+1              | 5           | 25/02/19 | 0.25      | Decalage du titre dans le css | [Permet à l'administrateur de d'ajouter, modifier et supprimer des goodies](https://github.com/cegepmatane/projet-web-2019-Ca-broue/issues/17)
+1              | 5           | 26/02/19 | 3      | Ajout du css semantique dans tout les fragment liste | [Permet à l'administrateur de d'ajouter, modifier et supprimer des goodies](https://github.com/cegepmatane/projet-web-2019-Ca-broue/issues/17)
 
