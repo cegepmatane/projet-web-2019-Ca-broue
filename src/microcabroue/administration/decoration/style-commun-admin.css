@@ -8309,4 +8309,13 @@ header {
   margin-left: 10%;
 }
 
+.boutons-liste {
+  margin-left: 30%;
+  margin-top: -2.5%;
+}
+
+.bouton-ajouter {
+  margin-bottom: 1%;
+}
+
 /*# sourceMappingURL=style-commun-admin.css.map */
