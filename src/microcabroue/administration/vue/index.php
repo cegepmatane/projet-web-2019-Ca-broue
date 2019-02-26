@@ -16,7 +16,7 @@
         afficherEntete($page);
 
         ?>
-        <div class="text-danger">
+        <div class="texte-rouge texte-index">
             Si vous ne possèdez pas les droits vous ne devriez pas être ici.
         </div>
 

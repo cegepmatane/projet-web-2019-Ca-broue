@@ -1,5 +1,6 @@
 @import "../commun/bootstrap-4.0.0/scss/bootstrap.scss";
 
+$margeContenu: 7%;
 .bouton
 {
     @extend .btn;
@@ -52,14 +53,14 @@ header
 }
 .contenu
 {
-    margin-left: 10%; 
+    margin-left: $margeContenu; 
     background-color:#f8f9fa;
     width: 60%;
 
 }
 .titre
 {
-    margin-left: 10%;
+    margin-left: $margeContenu;
 }
 .boutons-liste 
 {
@@ -74,6 +75,15 @@ header
 }
 .boutons-entete
 {
-    margin-left: 7%;
+    margin-left: $margeContenu;
     margin-top: -5%
+}
+.texte-rouge
+{
+    @extend .text-danger;
+    
+}
+.texte-index
+{
+    margin-left: $margeContenu;
 }
