@@ -26,23 +26,23 @@
         </head>
         <body>
             <header>
-                <ul class="liste-horizontale">
-                    <li class="element-liste-horizontale">
-                        <a href="./index.php" class="bouton bouton-jaune">Accueil</a>
-                    </li>
-                    <li class="element-liste-horizontale">
-                        <a href="./vue-liste-bieres.php" class="bouton bouton-jaune">Bieres</a>
-                    </li>
-                    <li class="element-liste-horizontale">
-                        <a href="./vue-liste-goodies.php" class="bouton bouton-jaune">Goodies</a>
-                    </li>
-                    <li class="element-liste-horizontale">
-                        <a href="./vue-liste-categories.php" class="bouton bouton-jaune">Categories</a>
-                    </li>
-                    <li class="element-liste-horizontale">
-                        <a href="./vue-liste-utilisateurs.php"class="bouton bouton-jaune">Utilisateurs</a>
-                    </li>
-                </ul>
+                <img src="../decoration/image/logo.png"  class="d-inline-block align-top" alt=""> 
+                <div class="boutons-entete">
+                    <ul class="liste-horizontale">
+                        <li class="element-liste-horizontale">
+                            <a href="./index.php" class="bouton bouton-jaune">Accueil</a>
+                        </li>
+                        <li class="element-liste-horizontale">
+                            <a href="./vue-liste-bieres.php" class="bouton bouton-jaune">Bieres</a>
+                        </li>
+                        <li class="element-liste-horizontale">
+                            <a href="./vue-liste-goodies.php" class="bouton bouton-jaune">Goodies</a>
+                        </li>
+                        <li class="element-liste-horizontale">
+                            <a href="./vue-liste-utilisateurs.php"class="bouton bouton-jaune">Utilisateurs</a>
+                        </li>
+                    </ul>
+                </div>
             </header>
 
             <h2 class="titre"><?= $page->titre; ?></h2>

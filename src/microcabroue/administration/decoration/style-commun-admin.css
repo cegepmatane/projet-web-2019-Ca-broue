@@ -8168,11 +8168,11 @@ a.text-warning:hover, a.text-warning:focus {
   color: #d39e00 !important;
 }
 
-.text-danger {
+.text-danger, .texte-rouge {
   color: #dc3545 !important;
 }
 
-a.text-danger:hover, a.text-danger:focus {
+a.text-danger:hover, a.texte-rouge:hover, a.text-danger:focus, a.texte-rouge:focus {
   color: #bd2130 !important;
 }
 
@@ -8300,13 +8300,31 @@ header {
 }
 
 .contenu {
-  margin-left: 10%;
+  margin-left: 7%;
   background-color: #f8f9fa;
   width: 60%;
 }
 
 .titre {
-  margin-left: 10%;
+  margin-left: 7%;
+}
+
+.boutons-liste {
+  margin-left: 30%;
+  margin-top: -2.5%;
+}
+
+.bouton-ajouter {
+  margin-bottom: 1%;
+}
+
+.boutons-entete {
+  margin-left: 7%;
+  margin-top: -5%;
+}
+
+.texte-index {
+  margin-left: 7%;
 }
 
 /*# sourceMappingURL=style-commun-admin.css.map */

@@ -6,17 +6,17 @@
         if(isset($page->listeGoodies)){
             foreach($page->listeGoodies as $goodie){
                 ?>
-
                 <div>
-                    <form method="post">
-                        <?= $goodie->getNomFr(); ?>
-                        <a href="vue-modifier-<?= $page->type; ?>.php?id=<?= $goodie->getId();?>" class="bouton bouton-bleu">Modifier</a>
-                    
+                <?= $goodie->getNomFr(); ?>
+                <div class="boutons-liste">
+                    <form method="post"> 
+                        <a href="vue-modifier-<?= $page->type; ?>.php?id=<?= $goodie->getId();?>" class="bouton bouton-bleu bouton-liste">Modifier</a>
+        
                         <input type="hidden" name="id" value="<?= $goodie->getId(); ?>">
-                        <button class="bouton bouton-rouge" type="submit" name="action-modifier" value="suppression">Supprimer</button>
+                        <button class="bouton bouton-rouge bouton-liste" type="submit" name="action-modifier" value="suppression">Supprimer</button>
                     </form>
                 </div>
-
+                <div>
                 <?php
             }
         }

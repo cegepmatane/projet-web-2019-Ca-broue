@@ -4,7 +4,9 @@
             return;
 
         if($page->type != "utilisateur"){ ?>
+        <div class="contenu bouton-ajouter">
                 <a href="./vue-ajouter-<?= $page->type; ?>.php" class="bouton bouton-vert">Ajouter</a>
+                </div>
         <?php }
 
         switch($page->type){
@@ -18,7 +20,11 @@
                 include "fragment/liste-utilisateur-fragment.php";
                 break;
         }
-
+        ?>
+        <div class="contenu">
+<?php
         afficherListe($page);
+        ?>      </div>
+<?php
     }
 ?>
