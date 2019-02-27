@@ -9,6 +9,7 @@ require_once("BaseDeDonnee.php");
 require_once(CHEMIN_SRC_DEV . "microcabroue_com_commun/modele/CategorieGoodie.php");
 class AccesseurEntiteCategorieGoodie
 {
+    const SQL_AJOUTER = "INSERT INTO ".CategorieGoodie::TABLE."(".CategorieGoodie::LIBELLE_FR.", ".CategorieGoodie::LIBELLE_EN.") VALUES(:" .CategorieGoodie::LIBELLE_FR. ", :" .CategorieGoodie::LIBELLE_EN . ")";
     private static $connexion = null;
 
     const SELECT_TOUTES_LES_CATEGORIES = "select * from ". CategorieGoodie::TABLE;
@@ -35,5 +36,17 @@ class AccesseurEntiteCategorieGoodie
             }
         }
         return $listeCategorie;
+    }
+
+    public function ajouter(CategorieGoodie $categorieGoodie){
+        $requete = self::$connexion->prepare(self::SQL_AJOUTER);
+
+        $libelleFr = $categorieGoodie->getLibelleFr();
+        $libelleEn = $categorieGoodie->getLibelleEn();
+
+        $requete->bindParam(":" . CategorieGoodie::LIBELLE_FR, $libelleFr, PDO::PARAM_STR);
+        $requete->bindParam(":" . CategorieGoodie::LIBELLE_EN, $libelleEn, PDO::PARAM_STR);
+
+        return $requete->execute();
     }
 }
