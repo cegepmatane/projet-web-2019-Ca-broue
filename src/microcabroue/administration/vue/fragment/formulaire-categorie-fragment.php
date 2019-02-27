@@ -1,0 +1,37 @@
+<?php
+/**
+ * Created by PhpStorm.
+ * User: xela
+ * Date: 27/02/19
+ * Time: 3:41 PM
+ */
+require_once (CHEMIN_CODE."microcabroue_com_commun/modele/CategorieGoodie.php");
+
+function afficherChamps($page = null){
+    if(!is_object($page))
+        return;
+
+    if(isset($page->categorie))
+        /** @var CategorieGoodie $categorie */
+        $categorie = $page->categorie;
+
+    ?>
+    <form method="post">
+        <input type="hidden" name="id" value=<?= isset($categorie) ? $categorie->getId() : null ?>>
+
+        <div class="groupe-formulaire">
+            <label for=<?= CategorieGoodie::LIBELLE_FR; ?>>Libelle de la categorie (fr)</label>
+            <input class="controle-formulaire" value="<?= isset($categorie) ? $categorie->get() : null ?>" name=<?= Goodie::NOM_FR; ?> id='nom-modification-goodie-fr' type='text'>
+        </div>
+
+        <div class="groupe-formulaire">
+            <label for=<?= CategorieGoodie::LIBELLE_EN; ?>>Libelle de la categorie  (en)</label>
+            <input class="controle-formulaire" value="<?= isset($categorie) ? $categorie->getNomEn() : null ?>" name=<?= Goodie::NOM_EN; ?> id='nom-modification-goodie-en' type='text'>
+        </div>
+
+        <button class="bouton bouton-vert" name="action-modifier" type="submit" value="<?= $page->action; ?>"><?= $page->action == "ajout" ? "Ajouter" : "Enregistrer"?></button>
+    </form>
+    <?php
+}
+
+require_once (CHEMIN_CODE."microcabroue_com_administration/action/action-modifier-categorie.php");

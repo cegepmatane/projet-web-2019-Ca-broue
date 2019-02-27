@@ -11,6 +11,9 @@
             case "goodie":
                 include "fragment/formulaire-goodie-fragment.php";
                 break;
+            case "categorie":
+                include "fragment/formulaire-categorie-fragment.php";
+                break;
             case "utilisateur":
                 include "fragment/formulaire-utilisateur-fragment.php";
                 break;
