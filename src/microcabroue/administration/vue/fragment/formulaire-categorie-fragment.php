@@ -21,12 +21,12 @@ function afficherChamps($page = null){
 
         <div class="groupe-formulaire">
             <label for=<?= CategorieGoodie::LIBELLE_FR; ?>>Libelle de la categorie (fr)</label>
-            <input class="controle-formulaire" value="<?= isset($categorie) ? $categorie->get() : null ?>" name=<?= Goodie::NOM_FR; ?> id='nom-modification-goodie-fr' type='text'>
+            <input class="controle-formulaire" value="<?= isset($categorie) ? $categorie->get() : null ?>" name=<?= CategorieGoodie::LIBELLE_FR; ?> id='libelle-modification-categorie-fr' type='text'>
         </div>
 
         <div class="groupe-formulaire">
             <label for=<?= CategorieGoodie::LIBELLE_EN; ?>>Libelle de la categorie  (en)</label>
-            <input class="controle-formulaire" value="<?= isset($categorie) ? $categorie->getNomEn() : null ?>" name=<?= Goodie::NOM_EN; ?> id='nom-modification-goodie-en' type='text'>
+            <input class="controle-formulaire" value="<?= isset($categorie) ? $categorie->getNomEn() : null ?>" name=<?= CategorieGoodie::LIBELLE_EN; ?> id='libelle-modification-categorie-en' type='text'>
         </div>
 
         <button class="bouton bouton-vert" name="action-modifier" type="submit" value="<?= $page->action; ?>"><?= $page->action == "ajout" ? "Ajouter" : "Enregistrer"?></button>
