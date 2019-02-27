@@ -24,26 +24,7 @@ function afficherPage($page = null){
         $page = (object)[];
 
     afficherEntete($page);
-
-    if(isset($page->listeCategorieGoodies)){
-        /** @var CategorieGoodie $categorie */
-        foreach($page->listeCategorieGoodies as $categorie){
-            ?>
-
-            <div>
-                <form method="post">
-                    <?= $categorie->getLibelleFr(); ?>
-                    <a href="vue-modifier-<?= $page->type; ?>.php?id=<?= $categorie->getId();?>" class="bouton bouton-bleu">Modifier</a>
-
-                    <input type="hidden" name="id" value="<?= $categorie->getId(); ?>">
-                    <button class="bouton bouton-rouge" type="submit" name="action-modifier" value="suppression">Supprimer</button>
-                </form>
-            </div>
-
-            <?php
-        }
-    }
-
+    preparerListe($page);
     afficherPiedDePage($page);
 }
 
