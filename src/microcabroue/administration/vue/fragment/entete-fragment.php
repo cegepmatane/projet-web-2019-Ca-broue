@@ -37,6 +37,9 @@
                         <a href="./vue-liste-goodies.php" class="bouton bouton-jaune">Goodies</a>
                     </li>
                     <li class="element-liste-horizontale">
+                        <a href="./vue-liste-categories.php" class="bouton bouton-jaune">Categories</a>
+                    </li>
+                    <li class="element-liste-horizontale">
                         <a href="./vue-liste-utilisateurs.php"class="bouton bouton-jaune">Utilisateurs</a>
                     </li>
                 </ul>
