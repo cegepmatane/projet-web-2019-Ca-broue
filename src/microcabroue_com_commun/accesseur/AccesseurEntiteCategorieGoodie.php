@@ -11,6 +11,8 @@ class AccesseurEntiteCategorieGoodie
 {
     const SQL_AJOUTER = "INSERT INTO ".CategorieGoodie::TABLE."(".CategorieGoodie::LIBELLE_FR.", ".CategorieGoodie::LIBELLE_EN.") VALUES(:" .CategorieGoodie::LIBELLE_FR. ", :" .CategorieGoodie::LIBELLE_EN . ")";
     const SQL_MODIFIER = "UPDTAE ". CategorieGoodie::TABLE . " SET ".CategorieGoodie::LIBELLE_FR."=:".CategorieGoodie::LIBELLE_FR.", ".CategorieGoodie::LIBELLE_EN."=:".CategorieGoodie::LIBELLE_EN." WHERE ".CategorieGoodie::ID . "=:".CategorieGoodie::ID."; ";
+    const SQL_SUPPRIMER = "DELETE FROM ".CategorieGoodie::TABLE." WHERE ".CategorieGoodie::ID."=:".CategorieGoodie::ID.";";
+
     private static $connexion = null;
 
     const SELECT_TOUTES_LES_CATEGORIES = "select * from ". CategorieGoodie::TABLE;
@@ -66,8 +68,12 @@ class AccesseurEntiteCategorieGoodie
         return $requete->execute();
     }
 
-    public function supprimer($getId)
+    public function supprimer(int $id)
     {
+        $requete = self::$connexion->prepare(self::SQL_SUPPRIMER);
 
+        $requete->bindParam(":" . CategorieGoodie::ID, $id, PDO::PARAM_INT);
+
+        return $requete->execute();
     }
 }
