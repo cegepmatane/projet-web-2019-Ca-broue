@@ -17,12 +17,12 @@ function afficherListe($page = null){
             <?= $categorie->getLibelleFr(); ?>
             <div class="boutons-liste">
                 <form method="post">
-                    <a href="vue-modifier-<?= $page->type; ?>.php?id=<?= $categorie->getId();?>" class="bouton bouton-bleu bouton-liste">Modifier</a>
+                    <a href="vue-modifier-<?= $page->type; ?>.php?id=<?= $categorie->getId();?>" class="bouton bouton-bleu">Modifier</a>
 
                     <input type="hidden" name="id" value="<?= $categorie->getId(); ?>">
-                    <button class="bouton bouton-rouge bouton-liste" type="submit" name="action-modifier" value="suppression">Supprimer</button>
+                    <button class="bouton bouton-rouge" type="submit" name="action-modifier" value="suppression">Supprimer</button>
                 </form>
-
+            </div>
             <?php
         }
     }
