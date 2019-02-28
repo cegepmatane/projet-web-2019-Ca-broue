@@ -31,6 +31,7 @@ function afficherEntete($page = null){
         <link href="commun/decoration/style-commun.css" rel="stylesheet" type="text/css"/>
         <link href="../commun/decoration/style-commun.css" rel="stylesheet" type="text/css"/>
         <link href="../../commun/decoration/style-commun.css" rel="stylesheet" type="text/css"/>
+
         <!-- TODO a fix avec un tableau de style -->
 
         <?php
@@ -59,10 +60,12 @@ function afficherEntete($page = null){
             }else{
                 ?>
                 <img src="commun/decoration/image/logo.png"  class="d-inline-block align-top" alt="">
+                <img src="../../commun/decoration/image/logo.png"  class="d-inline-block align-top" alt="">
 
                 <?php
             }
             ?>
+            
         </a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
