@@ -10,6 +10,7 @@ require_once(CHEMIN_SRC_DEV . "microcabroue_com_commun/modele/CategorieGoodie.ph
 class AccesseurEntiteCategorieGoodie
 {
     const SQL_AJOUTER = "INSERT INTO ".CategorieGoodie::TABLE."(".CategorieGoodie::LIBELLE_FR.", ".CategorieGoodie::LIBELLE_EN.") VALUES(:" .CategorieGoodie::LIBELLE_FR. ", :" .CategorieGoodie::LIBELLE_EN . ")";
+    const SQL_MODIFIER = "UPDTAE ". CategorieGoodie::TABLE . " SET ".CategorieGoodie::LIBELLE_FR."=:".CategorieGoodie::LIBELLE_FR.", ".CategorieGoodie::LIBELLE_EN."=:".CategorieGoodie::LIBELLE_EN." WHERE ".CategorieGoodie::ID . "=:".CategorieGoodie::ID."; ";
     private static $connexion = null;
 
     const SELECT_TOUTES_LES_CATEGORIES = "select * from ". CategorieGoodie::TABLE;
@@ -48,5 +49,25 @@ class AccesseurEntiteCategorieGoodie
         $requete->bindParam(":" . CategorieGoodie::LIBELLE_EN, $libelleEn, PDO::PARAM_STR);
 
         return $requete->execute();
+    }
+
+    public function modifier(CategorieGoodie $categorieGoodie)
+    {
+        $requete = self::$connexion->prepare(self::SQL_MODIFIER);
+
+        $id = $categorieGoodie->getId();
+        $libelleFr = $categorieGoodie->getLibelleFr();
+        $libelleEn = $categorieGoodie->getLibelleEn();
+
+        $requete->bindParam(":" . CategorieGoodie::LIBELLE_FR, $libelleFr, PDO::PARAM_STR);
+        $requete->bindParam(":" . CategorieGoodie::LIBELLE_EN, $libelleEn, PDO::PARAM_STR);
+        $requete->bindParam(":" . CategorieGoodie::ID, $id, PDO::PARAM_INT);
+
+        return $requete->execute();
+    }
+
+    public function supprimer($getId)
+    {
+
     }
 }
