@@ -13,6 +13,8 @@ class AccesseurEntiteCategorieGoodie
     const SQL_MODIFIER = "UPDTAE ". CategorieGoodie::TABLE . " SET ".CategorieGoodie::LIBELLE_FR."=:".CategorieGoodie::LIBELLE_FR.", ".CategorieGoodie::LIBELLE_EN."=:".CategorieGoodie::LIBELLE_EN." WHERE ".CategorieGoodie::ID . "=:".CategorieGoodie::ID."; ";
     const SQL_SUPPRIMER = "DELETE FROM ".CategorieGoodie::TABLE." WHERE ".CategorieGoodie::ID."=:".CategorieGoodie::ID.";";
 
+    const SQL_RECUPERER_UNE = "SELECT * from ".CategorieGoodie::TABLE." WHERE ".CategorieGoodie::ID."=:".CategorieGoodie::ID.";";
+
     private static $connexion = null;
 
     const SELECT_TOUTES_LES_CATEGORIES = "select * from ". CategorieGoodie::TABLE;
@@ -33,7 +35,8 @@ class AccesseurEntiteCategorieGoodie
                 $categorie = new CategorieGoodie((object)
                 [
                     CategorieGoodie::ID => $maLigne[CategorieGoodie::ID],
-                    CategorieGoodie::LIBELLE_FR =>$maLigne[CategorieGoodie::LIBELLE_FR]
+                    CategorieGoodie::LIBELLE_FR =>$maLigne[CategorieGoodie::LIBELLE_FR],
+                    CategorieGoodie::LIBELLE_EN =>$maLigne[CategorieGoodie::LIBELLE_EN]
                 ]);
                 $listeCategorie[] = $categorie;
             }
@@ -75,5 +78,23 @@ class AccesseurEntiteCategorieGoodie
         $requete->bindParam(":" . CategorieGoodie::ID, $id, PDO::PARAM_INT);
 
         return $requete->execute();
+    }
+
+    public function recupererCategorie($id)
+    {
+
+        $requete =  self::$connexion->prepare(self::SQL_RECUPERER_UNE);
+        $requete->bindParam(":id",$id);
+        $requete->execute();
+        $curseur= $requete->fetch(PDO::FETCH_ASSOC);
+
+        $categorie = new CategorieGoodie((object)
+        [
+            CategorieGoodie::ID => $curseur[CategorieGoodie::ID],
+            CategorieGoodie::LIBELLE_FR =>$curseur[CategorieGoodie::LIBELLE_FR],
+            CategorieGoodie::LIBELLE_EN =>$curseur[CategorieGoodie::LIBELLE_EN]
+
+        ]);
+        return $categorie;
     }
 }
