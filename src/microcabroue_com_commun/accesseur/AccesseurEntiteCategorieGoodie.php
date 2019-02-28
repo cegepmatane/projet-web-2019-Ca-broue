@@ -10,7 +10,7 @@ require_once(CHEMIN_SRC_DEV . "microcabroue_com_commun/modele/CategorieGoodie.ph
 class AccesseurEntiteCategorieGoodie
 {
     const SQL_AJOUTER = "INSERT INTO ".CategorieGoodie::TABLE."(".CategorieGoodie::LIBELLE_FR.", ".CategorieGoodie::LIBELLE_EN.") VALUES(:" .CategorieGoodie::LIBELLE_FR. ", :" .CategorieGoodie::LIBELLE_EN . ")";
-    const SQL_MODIFIER = "UPDTAE ". CategorieGoodie::TABLE . " SET ".CategorieGoodie::LIBELLE_FR."=:".CategorieGoodie::LIBELLE_FR.", ".CategorieGoodie::LIBELLE_EN."=:".CategorieGoodie::LIBELLE_EN." WHERE ".CategorieGoodie::ID . "=:".CategorieGoodie::ID."; ";
+    const SQL_MODIFIER = "UPDATE ". CategorieGoodie::TABLE . " SET ".CategorieGoodie::LIBELLE_FR."=:".CategorieGoodie::LIBELLE_FR.", ".CategorieGoodie::LIBELLE_EN."=:".CategorieGoodie::LIBELLE_EN." WHERE ".CategorieGoodie::ID . "=:".CategorieGoodie::ID."; ";
     const SQL_SUPPRIMER = "DELETE FROM ".CategorieGoodie::TABLE." WHERE ".CategorieGoodie::ID."=:".CategorieGoodie::ID.";";
 
     const SQL_RECUPERER_UNE = "SELECT * from ".CategorieGoodie::TABLE." WHERE ".CategorieGoodie::ID."=:".CategorieGoodie::ID.";";
@@ -59,14 +59,13 @@ class AccesseurEntiteCategorieGoodie
     public function modifier(CategorieGoodie $categorieGoodie)
     {
         $requete = self::$connexion->prepare(self::SQL_MODIFIER);
-
         $id = $categorieGoodie->getId();
         $libelleFr = $categorieGoodie->getLibelleFr();
         $libelleEn = $categorieGoodie->getLibelleEn();
 
+        $requete->bindParam(":" . CategorieGoodie::ID, $id, PDO::PARAM_INT);
         $requete->bindParam(":" . CategorieGoodie::LIBELLE_FR, $libelleFr, PDO::PARAM_STR);
         $requete->bindParam(":" . CategorieGoodie::LIBELLE_EN, $libelleEn, PDO::PARAM_STR);
-        $requete->bindParam(":" . CategorieGoodie::ID, $id, PDO::PARAM_INT);
 
         return $requete->execute();
     }
