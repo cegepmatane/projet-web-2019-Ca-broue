@@ -10,11 +10,11 @@ require_once("BaseDeDonnee.php");
 
 class AccesseurEntiteGoodie
 {
-    const SELECT_GOODIES_PAR_CATEGORIE = "select * from ". Goodie::TABLE ." WHERE ".Goodie::ID_CATEGORIE."=:id_categorie";
+    const SELECT_GOODIES_PAR_CATEGORIE = "select ".Goodie::ID. ", " .Goodie::NOM_FR. ", " .Goodie::NOM_EN. ", " .Goodie::PRIX. ", ".Goodie::DESCRIPTION_FR. ", " .Goodie::DESCRIPTION_EN. ", " .Goodie::DESCRIPTION_LONGUE_EN. ", " .Goodie::DESCRIPTION_LONGUE_FR. ", " .Goodie::ID_CATEGORIE. " from ". Goodie::TABLE ." WHERE ".Goodie::ID_CATEGORIE."=:id_categorie";
     const SQL_AJOUTER = "INSERT INTO ".Goodie::TABLE."(".Goodie::ID_CATEGORIE.", ".Goodie::NOM_FR.", ".Goodie::NOM_EN.", ".Goodie::PRIX.", ".Goodie::DESCRIPTION_FR.", ".Goodie::DESCRIPTION_EN.", ".Goodie::DESCRIPTION_LONGUE_EN.", ".Goodie::DESCRIPTION_LONGUE_FR.") VALUES(:".Goodie::ID_CATEGORIE.", :".Goodie::NOM_FR.", :".Goodie::NOM_EN.", :".Goodie::PRIX.", :".Goodie::DESCRIPTION_FR.", :".Goodie::DESCRIPTION_EN.", :".Goodie::DESCRIPTION_LONGUE_EN.", :".Goodie::DESCRIPTION_LONGUE_FR.");";
     const SQL_MODIFIER = "UPDATE ".Goodie::TABLE." SET ".Goodie::ID_CATEGORIE."=:".Goodie::ID_CATEGORIE.", ".Goodie::NOM_FR."=:".Goodie::NOM_FR.", ".Goodie::NOM_EN."=:".Goodie::NOM_EN.", ".Goodie::PRIX."=:".Goodie::PRIX.", ".Goodie::DESCRIPTION_FR."=:".Goodie::DESCRIPTION_FR.", ".Goodie::DESCRIPTION_EN."=:".Goodie::DESCRIPTION_EN.", ".Goodie::DESCRIPTION_LONGUE_EN."=:".Goodie::DESCRIPTION_LONGUE_EN.", ".Goodie::DESCRIPTION_LONGUE_FR."=:".Goodie::DESCRIPTION_LONGUE_FR." WHERE ".Goodie::ID."=:".Goodie::ID.";";
     const SQL_SUPPRIMER = "DELETE FROM ".Goodie::TABLE." WHERE ".Goodie::ID."=:".Goodie::ID.";";
-    const SQL_GOODIES_DETAIL = "SELECT * FROM " .Goodie::TABLE ." WHERE " .Goodie::ID."=".Goodie::ID. ";";
+    const SQL_GOODIES = "SELECT ".Goodie::ID. ", " .Goodie::NOM_FR. ", " .Goodie::NOM_EN. ", " .Goodie::PRIX. ", ".Goodie::DESCRIPTION_FR. ", " .Goodie::DESCRIPTION_EN. ", " .Goodie::DESCRIPTION_LONGUE_EN. ", " .Goodie::DESCRIPTION_LONGUE_FR. ", " .Goodie::ID_CATEGORIE. " FROM " .Goodie::TABLE ." WHERE " .Goodie::ID."=".Goodie::ID. ";";
 
     private static $connexion = null;
 
@@ -28,7 +28,7 @@ class AccesseurEntiteGoodie
      * @return mixed
      */
     public function recupererListeEntiteGoodie(){
-        $requete = self::$connexion->prepare("select * from ".Goodie::TABLE);
+        $requete = self::$connexion->prepare(self::SQL_GOODIES);
 
         $listeGoodie=[];
         $requete->execute();
@@ -86,7 +86,7 @@ class AccesseurEntiteGoodie
 
     public function recupererGoodie(int $idGoodie)
     {
-        $requete =  self::$connexion->prepare(self::SQL_GOODIES_DETAIL);
+        $requete =  self::$connexion->prepare(self::SQL_GOODIES);
 
         $requete->bindParam(":id",$idGoodie);
         $requete->execute();
