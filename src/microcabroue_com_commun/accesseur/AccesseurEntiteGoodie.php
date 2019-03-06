@@ -14,6 +14,7 @@ class AccesseurEntiteGoodie
     const SQL_AJOUTER = "INSERT INTO ".Goodie::TABLE."(".Goodie::ID_CATEGORIE.", ".Goodie::NOM_FR.", ".Goodie::NOM_EN.", ".Goodie::PRIX.", ".Goodie::DESCRIPTION_FR.", ".Goodie::DESCRIPTION_EN.", ".Goodie::DESCRIPTION_LONGUE_EN.", ".Goodie::DESCRIPTION_LONGUE_FR.") VALUES(:".Goodie::ID_CATEGORIE.", :".Goodie::NOM_FR.", :".Goodie::NOM_EN.", :".Goodie::PRIX.", :".Goodie::DESCRIPTION_FR.", :".Goodie::DESCRIPTION_EN.", :".Goodie::DESCRIPTION_LONGUE_EN.", :".Goodie::DESCRIPTION_LONGUE_FR.");";
     const SQL_MODIFIER = "UPDATE ".Goodie::TABLE." SET ".Goodie::ID_CATEGORIE."=:".Goodie::ID_CATEGORIE.", ".Goodie::NOM_FR."=:".Goodie::NOM_FR.", ".Goodie::NOM_EN."=:".Goodie::NOM_EN.", ".Goodie::PRIX."=:".Goodie::PRIX.", ".Goodie::DESCRIPTION_FR."=:".Goodie::DESCRIPTION_FR.", ".Goodie::DESCRIPTION_EN."=:".Goodie::DESCRIPTION_EN.", ".Goodie::DESCRIPTION_LONGUE_EN."=:".Goodie::DESCRIPTION_LONGUE_EN.", ".Goodie::DESCRIPTION_LONGUE_FR."=:".Goodie::DESCRIPTION_LONGUE_FR." WHERE ".Goodie::ID."=:".Goodie::ID.";";
     const SQL_SUPPRIMER = "DELETE FROM ".Goodie::TABLE." WHERE ".Goodie::ID."=:".Goodie::ID.";";
+    const SQL_GOODIES_DETAIL = "SELECT * FROM " .Goodie::TABLE ." WHERE " .Goodie::ID."=".Goodie::ID. ";";
 
     private static $connexion = null;
 
@@ -85,10 +86,8 @@ class AccesseurEntiteGoodie
 
     public function recupererGoodie(int $idGoodie)
     {
-        $SQL_RECUPERER = " SELECT * FROM goodie where id = :id";
-        
-        
-        $requete =  self::$connexion->prepare($SQL_RECUPERER);
+        $requete =  self::$connexion->prepare(self::SQL_GOODIES_DETAIL);
+
         $requete->bindParam(":id",$idGoodie);
         $requete->execute();
         $donneeGoodie= $requete->fetch(PDO::FETCH_ASSOC);
