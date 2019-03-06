@@ -28,14 +28,14 @@ class AccesseurUtilisateur
 
         
         $requete = self::$connexion->prepare($SQL_AJOUTER);
-        $nom = $utilisateur->getNom();
-        $prenom = $utilisateur->getPrenom();
-        $adresse = $utilisateur->getAdresse_postal();
-        $code_postal = $utilisateur->getCode_postal();
-        $ville = $utilisateur->getVille();
-        $mail = $utilisateur->getMail();
-        $pseudo = $utilisateur->getPseudo();
-        $mot_passe = $utilisateur->getMot_passe();
+        $nom = filter_var($utilisateur->getNom(), FILTER_SANITIZE_STRING);
+        $prenom = filter_var($utilisateur->getPrenom(), FILTER_SANITIZE_STRING);
+        $adresse = filter_var($utilisateur->getAdresse_postal(), FILTER_SANITIZE_STRING);
+        $code_postal = filter_var($utilisateur->getCode_postal(), FILTER_SANITIZE_STRING);
+        $ville = filter_var($utilisateur->getVille(), FILTER_SANITIZE_STRING);
+        $mail = filter_var($utilisateur->getMail(), FILTER_SANITIZE_STRING);
+        $pseudo = filter_var($utilisateur->getPseudo(), FILTER_SANITIZE_STRING);
+        $mot_passe = filter_var($utilisateur->getMot_passe(), FILTER_SANITIZE_STRING);
 
         $requete->bindParam(':nom', $nom, PDO::PARAM_STR);
         $requete->bindParam(':prenom', $prenom, PDO::PARAM_STR);
