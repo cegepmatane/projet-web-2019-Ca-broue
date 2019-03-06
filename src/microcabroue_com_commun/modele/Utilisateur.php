@@ -14,6 +14,38 @@ class Utilisateur
     private $pseudo;
     private $mot_passe;
 
+    private $liste_message_erreur_active = [];
+    private static $LISTE_MESSAGE_ERREUR =
+    [
+
+        "nom-vide" =>
+            "Le nom ne doit pas être vide",
+ 
+        "prenom-vide" =>
+            "Le prénom ne doit pas être vide",
+
+        "courriel-vide" =>
+            "Le courriel ne doit pas être vide",
+            
+        "pseudo-vide" =>
+            "Le nom d'utilisateur ne doit pas être vide",
+        
+        "mot-passe-vide" =>
+            "Le mot de passe ne doit pas être vide",
+
+        "mot-passe-errone" =>
+            "Les mots de passe doivent être identique",
+        
+        "adresse-vide" =>
+            "L'adresse ne doit pas être vide",
+        
+        "code-postal-vide" =>
+            "Le code postal ne doit pas être vide",
+
+        "ville-vide" =>
+            "La ville ne doit pas être vide"
+       
+    ];
 
     function __construct(object $attribut){
         if(!is_object($attribut)) $attribut = (object)[];
@@ -28,6 +60,7 @@ class Utilisateur
         $this->setPseudo($attribut->pseudo ?? "");
         $this->setMot_passe($attribut->mot_passe ?? "");
     }
+
     /**
      * Get the value of id
      */ 
@@ -206,5 +239,45 @@ class Utilisateur
         $this->mot_passe = $mot_passe;
 
         return $this;
+    }
+    public function isValide($champ)
+    {
+        if(null == $champ)
+        {
+
+        }
+        
+    }
+    public function isNomValide($nom)
+    {
+
+    }
+    public function isPrenomValide($prenom)
+    {
+
+    }
+    public function isPseudoValide($pseudo)
+    {
+
+    }
+    public function isMotDePasseValide($motPasse)
+    {
+
+    }
+    public function isCourrielValide($courriel)
+    {
+
+    }
+    public function isAdresseValide($adresse)
+    {
+
+    }
+    public function isCodePostalValide($codePostal)
+    {
+
+    }
+    public function isVilleValide($ville)
+    {
+
     }
 }
