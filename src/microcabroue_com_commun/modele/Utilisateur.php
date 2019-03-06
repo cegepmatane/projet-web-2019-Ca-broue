@@ -240,78 +240,85 @@ class Utilisateur
 
         return $this;
     }
-    public function isValide($champ)
+    public function ValiderUtilisateurPremiereEtape()
     {
-        if(null == $champ)
-        {
-
-        }
-        
+        $this->liste_message_erreur_active = [];
+        $this->isPseudoValide();
+        $this->isCourrielValide();
     }
-    public function isNomValide($nom)
+    public function ValiderUtilisateurDeuxiemeEtape()
     {
-        if($nom == "")
+        $this->liste_message_erreur_active = [];
+        $this->isNomValide();
+        $this->isPrenomValide();
+        $this->isAdresseValide();
+        $this->isCodePostalValide();
+        $this->isVilleValide();
+    }
+    private function isNomValide()
+    {
+        if($this->nom == "")
         {
-            array_push($liste_message_erreur_active, $LISTE_MESSAGE_ERREUR['nom-vide']);
+            array_push($this->liste_message_erreur_active, self::$LISTE_MESSAGE_ERREUR['nom-vide']);
             
         }
     }
-    public function isPrenomValide($prenom)
+    private function isPrenomValide()
     {
-        if($prenom == "")
+        if($this->prenom == "")
         {
-            array_push($liste_message_erreur_active, $LISTE_MESSAGE_ERREUR['prenom-vide']);
+            array_push($this->liste_message_erreur_active, self::$LISTE_MESSAGE_ERREUR['prenom-vide']);
         }
     }
-    public function isPseudoValide($pseudo)
+    private function isPseudoValide()
     { 
-        if($pseudo == "")
+        if($this->pseudo == "")
         {
-            array_push($liste_message_erreur_active, $LISTE_MESSAGE_ERREUR['pseudo-vide']);
+            array_push($this->liste_message_erreur_active, self::$LISTE_MESSAGE_ERREUR['pseudo-vide']);
         }
     }
-    public function isMotDePasseValide($motPasse, $confirmationMotPasse)
+    public function isMotDePasseValide($confirmationMotPasse)
     { 
-        if($motPasse == "")
+        if($this->mot_passe == "")
         {
-            array_push($liste_message_erreur_active, $LISTE_MESSAGE_ERREUR['mot-passe-vide']);
+            array_push($this->liste_message_erreur_active, self::$LISTE_MESSAGE_ERREUR['mot-passe-vide']);
         }
-        if($motPasse != $confirmationMotPasse)
+        if($this->mot_passe != $confirmationMotPasse)
         {
-            array_push($liste_message_erreur_active, $LISTE_MESSAGE_ERREUR['mot-passe-errone']);
-        }
-    }
-    public function isCourrielValide($courriel)
-    {
-        if($courriel == "")
-        {
-            array_push($liste_message_erreur_active, $LISTE_MESSAGE_ERREUR['courriel-vide']);
+            array_push($this->liste_message_erreur_active, self::$LISTE_MESSAGE_ERREUR['mot-passe-errone']);
         }
     }
-    public function isAdresseValide($adresse)
+    private function isCourrielValide()
     {
-        if($adresse == "")
+        if($this->mail == "")
         {
-            array_push($liste_message_erreur_active, $LISTE_MESSAGE_ERREUR['adresse-vide']);
+            array_push($this->liste_message_erreur_active, self::$LISTE_MESSAGE_ERREUR['courriel-vide']);
         }
     }
-    public function isCodePostalValide($codePostal)
+    private function isAdresseValide()
     {
-        if($codePostal == "")
+        if($this->adresse_postal == "")
         {
-            array_push($liste_message_erreur_active, $LISTE_MESSAGE_ERREUR['code-postal-vide']);
+            array_push($this->liste_message_erreur_active, self::$LISTE_MESSAGE_ERREUR['adresse-vide']);
         }
     }
-    public function isVilleValide($ville)
+    public function isCodePostalValide()
     {
-        if($ville == "")
+        if($this->code_postal == "")
         {
-            array_push($liste_message_erreur_active, $LISTE_MESSAGE_ERREUR['ville-vide']);
+            array_push($this->liste_message_erreur_active, self::$LISTE_MESSAGE_ERREUR['code-postal-vide']);
+        }
+    }
+    public function isVilleValide()
+    {
+        if($this->ville == "")
+        {
+            array_push($this->liste_message_erreur_active, self::$LISTE_MESSAGE_ERREUR['ville-vide']);
         }
     }
 
     public function getListeErreurActive()
     {
-        return $liste_message_erreur_active;
+        return $this->liste_message_erreur_active;
     }
 }
