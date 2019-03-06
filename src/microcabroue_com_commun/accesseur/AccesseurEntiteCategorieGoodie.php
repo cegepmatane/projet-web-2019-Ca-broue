@@ -13,11 +13,11 @@ class AccesseurEntiteCategorieGoodie
     const SQL_MODIFIER = "UPDATE ". CategorieGoodie::TABLE . " SET ".CategorieGoodie::LIBELLE_FR."=:".CategorieGoodie::LIBELLE_FR.", ".CategorieGoodie::LIBELLE_EN."=:".CategorieGoodie::LIBELLE_EN." WHERE ".CategorieGoodie::ID . "=:".CategorieGoodie::ID."; ";
     const SQL_SUPPRIMER = "DELETE FROM ".CategorieGoodie::TABLE." WHERE ".CategorieGoodie::ID."=:".CategorieGoodie::ID.";";
 
-    const SQL_RECUPERER_UNE = "SELECT * from ".CategorieGoodie::TABLE." WHERE ".CategorieGoodie::ID."=:".CategorieGoodie::ID.";";
+    const SQL_RECUPERER_UNE = "SELECT ".CategorieGoodie::ID. ", " .CategorieGoodie::LIBELLE_FR. ", " .CategorieGoodie::LIBELLE_EN. " from ".CategorieGoodie::TABLE." WHERE ".CategorieGoodie::ID."=:".CategorieGoodie::ID.";";
 
     private static $connexion = null;
 
-    const SELECT_TOUTES_LES_CATEGORIES = "select * from ". CategorieGoodie::TABLE;
+    const SELECT_TOUTES_LES_CATEGORIES = "select ".CategorieGoodie::ID. ", " .CategorieGoodie::LIBELLE_FR. ", " .CategorieGoodie::LIBELLE_EN. " from ". CategorieGoodie::TABLE;
 
     function __construct(){
 
