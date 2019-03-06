@@ -250,34 +250,68 @@ class Utilisateur
     }
     public function isNomValide($nom)
     {
-
+        if($nom == "")
+        {
+            array_push($liste_message_erreur_active, $LISTE_MESSAGE_ERREUR['nom-vide']);
+            
+        }
     }
     public function isPrenomValide($prenom)
     {
-
+        if($prenom == "")
+        {
+            array_push($liste_message_erreur_active, $LISTE_MESSAGE_ERREUR['prenom-vide']);
+        }
     }
     public function isPseudoValide($pseudo)
-    {
-
+    { 
+        if($pseudo == "")
+        {
+            array_push($liste_message_erreur_active, $LISTE_MESSAGE_ERREUR['pseudo-vide']);
+        }
     }
-    public function isMotDePasseValide($motPasse)
-    {
-
+    public function isMotDePasseValide($motPasse, $confirmationMotPasse)
+    { 
+        if($motPasse == "")
+        {
+            array_push($liste_message_erreur_active, $LISTE_MESSAGE_ERREUR['mot-passe-vide']);
+        }
+        if($motPasse != $confirmationMotPasse)
+        {
+            array_push($liste_message_erreur_active, $LISTE_MESSAGE_ERREUR['mot-passe-errone']);
+        }
     }
     public function isCourrielValide($courriel)
     {
-
+        if($courriel == "")
+        {
+            array_push($liste_message_erreur_active, $LISTE_MESSAGE_ERREUR['courriel-vide']);
+        }
     }
     public function isAdresseValide($adresse)
     {
-
+        if($adresse == "")
+        {
+            array_push($liste_message_erreur_active, $LISTE_MESSAGE_ERREUR['adresse-vide']);
+        }
     }
     public function isCodePostalValide($codePostal)
     {
-
+        if($codePostal == "")
+        {
+            array_push($liste_message_erreur_active, $LISTE_MESSAGE_ERREUR['code-postal-vide']);
+        }
     }
     public function isVilleValide($ville)
     {
+        if($ville == "")
+        {
+            array_push($liste_message_erreur_active, $LISTE_MESSAGE_ERREUR['ville-vide']);
+        }
+    }
 
+    public function getListeErreurActive()
+    {
+        return $liste_message_erreur_active;
     }
 }
