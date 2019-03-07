@@ -7,6 +7,7 @@ function ajouterUtilisateur($utilisateur)
     $accesseur = new AccesseurUtilisateur();
     $utilisateur->setMot_passe(password_hash($utilisateur->getMot_passe(), PASSWORD_DEFAULT));
     $accesseur->ajouterUtilisateur($utilisateur);
+    header('Location: accueil');
     
 }
 
