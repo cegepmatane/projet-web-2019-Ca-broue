@@ -23,10 +23,9 @@ if($_GET["navigation-retour-url"] ?? false &&
 
 }
 
-$_GET["id"] = "1";
 
 if(isset( $_GET["id"])){
-   
+    
     $page->goodie = $accesseurEntiteGoodie->recupererGoodie($_GET["id"]);
 }
 /*
