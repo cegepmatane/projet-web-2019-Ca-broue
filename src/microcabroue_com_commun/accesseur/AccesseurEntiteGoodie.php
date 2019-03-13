@@ -16,7 +16,6 @@ class AccesseurEntiteGoodie
     const SQL_SUPPRIMER = "DELETE FROM ".Goodie::TABLE." WHERE ".Goodie::ID."=:".Goodie::ID.";";
     const SQL_SELECT_UN_GOODIE = "SELECT ".Goodie::ID. ", " .Goodie::NOM_FR. ", " .Goodie::NOM_EN. ", " .Goodie::PRIX. ", ".Goodie::DESCRIPTION_FR. ", " .Goodie::DESCRIPTION_EN. ", " .Goodie::DESCRIPTION_LONGUE_EN. ", " .Goodie::DESCRIPTION_LONGUE_FR. ", " .Goodie::ID_CATEGORIE. " FROM " .Goodie::TABLE ." WHERE " .Goodie::ID."=:".Goodie::ID. ";";
     const SQL_SELECT_GOODIES = "SELECT ".Goodie::ID. ", " .Goodie::NOM_FR. ", " .Goodie::NOM_EN. ", " .Goodie::PRIX. ", ".Goodie::DESCRIPTION_FR. ", " .Goodie::DESCRIPTION_EN. ", " .Goodie::DESCRIPTION_LONGUE_EN. ", " .Goodie::DESCRIPTION_LONGUE_FR. ", " .Goodie::ID_CATEGORIE. " FROM " .Goodie::TABLE .";";
-
     private static $connexion = null;
 
     function __construct(){

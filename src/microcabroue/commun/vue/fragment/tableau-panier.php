@@ -1,7 +1,7 @@
 <?php
 
 
-function afficherTableauPanier(){
+function afficherTableauPanier($page = null){
     ?>
     <div id ='table-panier'>
     <table class='table'>
@@ -15,20 +15,21 @@ function afficherTableauPanier(){
       </tr>
     </thead>
     <tbody>
-      <tr>
-        <th scope='row'>1</th>
-        <td>Tshirt ça broue brun large</td>
-        <td>1</td>
-        <td>En stock</td>
-        <td>28.80$</td>
-      </tr>
-      <tr>
-        <th scope='row'>2</th>
-        <td>Choppe ca broue</td>
-        <td>2</td>
-        <td>En stock</td>
-        <td>12.50$</td>
-      </tr>
+
+    <?php
+        /** @var Goodie $goodie */
+        foreach($page->listeGoodies as $goodie){
+                      echo" <tr>
+                              <th scope='row'>1</th>
+                              <td>".$goodie->getNomFr()."</td>
+                              <td>1</td>
+                              <td>En stock</td>
+                              <td>28.80$</td>
+                            </tr>";
+        }
+
+?>
+    
     </tbody>
   </table>
   </div>

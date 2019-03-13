@@ -31,8 +31,11 @@ function afficherBoutton(){
 
 afficherEntete($page);
 echo "<div class='conteneur'> <h2>Votre Panier</h2>";
+afficherTableauPanier($page);
 
-afficherTableauPanier();
 afficherBoutton();
 echo "</div>";
+
+require_once(CHEMIN_CODE."microcabroue_publique/action/action-panier.php");
+
 //afficherElementsCommande();
