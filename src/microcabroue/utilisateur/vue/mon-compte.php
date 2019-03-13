@@ -5,7 +5,7 @@ require_once(CHEMIN_SRC_DEV . "microcabroue/commun/vue/fragment/pied-de-page-fra
 
 $page = (Object)
 [
-   // "style" => "utilisateur/decoration/mon-compte.css",
+    "style" => "../microcabroue/utilisateur/decoration/mon-compte.css",
     "titre" => "Mon compte"
 ];
 
@@ -16,26 +16,36 @@ function afficherPage($page = null, $utilisateur = null)
     
    
     ?>
-        <div class='container'>
-            <h2>Bonjour <?=$utilisateur->getPrenom()?></h2> 
-            <div class='container' id="information-compte">
+    <h2 class="titre">Bonjour <?=$utilisateur->getPrenom()?></h2> 
+        
+            <div class='conteneur' id="information-compte">
                 <h4>Informations sur le compte</h4>
                 <p>Nom d'utilisateur: <?=$utilisateur->getPseudo()?>
-                <p>Mot de Passe: <?=$utilisateur->getPseudo()?>
-                <p>Adresse email: <?=$utilisateur->getMail()?>
-                <a class='button'>Modifier</a>
+                <p>Mot de Passe: *********
+                <p>Adresse email: <?=$utilisateur->getMail()?></p>
+                <form method="post">
+                <input type="hidden" name="id" value="<?= $utilisateur->getId()?>">
+                <input type="hidden" name="type-modification" value="info-compte">
+                <button type="submit" name="modifier" class="bouton bouton-bleu" value="modifier-compte">Modifier</button>
+                </form>
+                
             </div>
-            <div class="container" id="information-personnelle">
+
+            <div class="conteneur" id="information-personnelle">
                 <h4>Informations personnelles</h4>
                 <p>Nom: <?=$utilisateur->getNom()?></p>
                 <p>Prenom: <?=$utilisateur->getPrenom()?></p>
                 <p>Adresse: <?=$utilisateur->getAdresse_postal()?></p>
                 <p>Code postal: <?=$utilisateur->getCode_postal()?></p>
-                <p>Ville: <?=$utilisateur->getVille()?></p> 
-                <a class='button'>Modifier</a>
+                <p>Ville: <?=$utilisateur->getVille()?></p>  
+                <form method="post">
+                <input type="hidden" name="id" value="<?= $utilisateur->getId()?>">
+                <input type="hidden" name="type-modification" value="info-personnelle">
+                <button type="submit" name="modifier" class="bouton bouton-bleu" value="modifier-info">Modifier</button>
+                </form>
             </div>    
 
-        </div>
+        
     <?php
     afficherPiedDePage($page);
 
