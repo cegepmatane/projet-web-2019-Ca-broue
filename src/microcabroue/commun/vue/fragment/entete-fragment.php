@@ -78,7 +78,7 @@ function afficherEntete($page = null){
                     ["titre"=>"Accueil", "lien"=>"accueil"],
                     ["titre"=>"Bière", "lien"=>"biere"],
                     ["titre"=>"Boutique", "lien"=>"boutique"],
-                    ["titre"=>"Mon Compte", "lien"=>"moncompte"],
+                    ["titre"=>"Mon Compte", "lien"=>"mon-compte"],
                 ];
                 $liste="";
                 foreach ($objetsNav as $objet) {
