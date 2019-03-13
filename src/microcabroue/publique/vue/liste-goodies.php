@@ -66,10 +66,6 @@ afficherEntete($page);
                     <a href=\"boutique/ajouter-panier/".$goodie->getId()."\" class=\"bouton-validation\">Ajouter au panier</a>
                 </div>
             </div>";
-
-
-
-
         }
         ?>
 
