@@ -20,7 +20,6 @@ if($_GET["navigation-retour-url"] ?? false &&
 
     $page->navigationRetourURL = $_POST["navigation-retour-url"];
     $page->navigationRetourTitre = $_POST["navigation-retour-titre"];
-
 }
 
 

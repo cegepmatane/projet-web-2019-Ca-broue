@@ -5,6 +5,8 @@
  * Date: 31/01/19
  * Time: 2:03 PM
  */
+session_start();
+
 require_once ($_SERVER['CONFIGURATION_COMMUN']);
 
 require_once (CHEMIN_SRC_DEV."microcabroue_com_commun/action/action-deconnexion.php");
@@ -72,7 +74,6 @@ function afficherEntete($page = null){
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav mr-auto">
                 <?php
-                session_start();
 
                 $objetsNav = [
                     ["titre"=>"Accueil", "lien"=>"accueil"],
