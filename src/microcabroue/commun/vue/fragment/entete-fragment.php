@@ -9,8 +9,6 @@ require_once ($_SERVER['CONFIGURATION_COMMUN']);
 
 require_once (CHEMIN_SRC_DEV."microcabroue_com_commun/action/action-deconnexion.php");
 
-require_once (CHEMIN_SRC_DEV."microcabroue/commun/traduction/traduction-entete.php");
-
 function afficherEntete($page = null){
 
     // En cas d'erreur avec le paramètre $page, un objet $page vide est créé.
@@ -80,7 +78,6 @@ function afficherEntete($page = null){
                     ["titre"=>"Accueil", "lien"=>"accueil"],
                     ["titre"=>"Bière", "lien"=>"biere"],
                     ["titre"=>"Boutique", "lien"=>"boutique"],
-                    ["titre"=>"Evenement", "lien"=>"evenement"],
                     ["titre"=>"Mon Compte", "lien"=>"moncompte"],
                 ];
                 $liste="";

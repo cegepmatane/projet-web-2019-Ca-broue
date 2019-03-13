@@ -14,7 +14,8 @@ class AccesseurEntiteGoodie
     const SQL_AJOUTER = "INSERT INTO ".Goodie::TABLE."(".Goodie::ID_CATEGORIE.", ".Goodie::NOM_FR.", ".Goodie::NOM_EN.", ".Goodie::PRIX.", ".Goodie::DESCRIPTION_FR.", ".Goodie::DESCRIPTION_EN.", ".Goodie::DESCRIPTION_LONGUE_EN.", ".Goodie::DESCRIPTION_LONGUE_FR.") VALUES(:".Goodie::ID_CATEGORIE.", :".Goodie::NOM_FR.", :".Goodie::NOM_EN.", :".Goodie::PRIX.", :".Goodie::DESCRIPTION_FR.", :".Goodie::DESCRIPTION_EN.", :".Goodie::DESCRIPTION_LONGUE_EN.", :".Goodie::DESCRIPTION_LONGUE_FR.");";
     const SQL_MODIFIER = "UPDATE ".Goodie::TABLE." SET ".Goodie::ID_CATEGORIE."=:".Goodie::ID_CATEGORIE.", ".Goodie::NOM_FR."=:".Goodie::NOM_FR.", ".Goodie::NOM_EN."=:".Goodie::NOM_EN.", ".Goodie::PRIX."=:".Goodie::PRIX.", ".Goodie::DESCRIPTION_FR."=:".Goodie::DESCRIPTION_FR.", ".Goodie::DESCRIPTION_EN."=:".Goodie::DESCRIPTION_EN.", ".Goodie::DESCRIPTION_LONGUE_EN."=:".Goodie::DESCRIPTION_LONGUE_EN.", ".Goodie::DESCRIPTION_LONGUE_FR."=:".Goodie::DESCRIPTION_LONGUE_FR." WHERE ".Goodie::ID."=:".Goodie::ID.";";
     const SQL_SUPPRIMER = "DELETE FROM ".Goodie::TABLE." WHERE ".Goodie::ID."=:".Goodie::ID.";";
-    const SQL_GOODIES = "SELECT ".Goodie::ID. ", " .Goodie::NOM_FR. ", " .Goodie::NOM_EN. ", " .Goodie::PRIX. ", ".Goodie::DESCRIPTION_FR. ", " .Goodie::DESCRIPTION_EN. ", " .Goodie::DESCRIPTION_LONGUE_EN. ", " .Goodie::DESCRIPTION_LONGUE_FR. ", " .Goodie::ID_CATEGORIE. " FROM " .Goodie::TABLE ." WHERE " .Goodie::ID."=:".Goodie::ID. ";";
+    const SQL_SELECT_UN_GOODIE = "SELECT ".Goodie::ID. ", " .Goodie::NOM_FR. ", " .Goodie::NOM_EN. ", " .Goodie::PRIX. ", ".Goodie::DESCRIPTION_FR. ", " .Goodie::DESCRIPTION_EN. ", " .Goodie::DESCRIPTION_LONGUE_EN. ", " .Goodie::DESCRIPTION_LONGUE_FR. ", " .Goodie::ID_CATEGORIE. " FROM " .Goodie::TABLE ." WHERE " .Goodie::ID."=:".Goodie::ID. ";";
+    const SQL_SELECT_GOODIES = "SELECT ".Goodie::ID. ", " .Goodie::NOM_FR. ", " .Goodie::NOM_EN. ", " .Goodie::PRIX. ", ".Goodie::DESCRIPTION_FR. ", " .Goodie::DESCRIPTION_EN. ", " .Goodie::DESCRIPTION_LONGUE_EN. ", " .Goodie::DESCRIPTION_LONGUE_FR. ", " .Goodie::ID_CATEGORIE. " FROM " .Goodie::TABLE .";";
 
     private static $connexion = null;
 
@@ -28,7 +29,7 @@ class AccesseurEntiteGoodie
      * @return mixed
      */
     public function recupererListeEntiteGoodie(){
-        $requete = self::$connexion->prepare(self::SQL_GOODIES);
+        $requete = self::$connexion->prepare(self::SQL_SELECT_GOODIES);
 
         $listeGoodie=[];
         $requete->execute();
@@ -62,6 +63,7 @@ class AccesseurEntiteGoodie
         $requete = self::$connexion->prepare(self::SELECT_GOODIES_PAR_CATEGORIE);
 
         $listeGoodie=[];
+
         $requete->bindParam(":id_categorie",$id_categorie);
         $requete->execute();
         $donnees = $requete->fetchAll(PDO::FETCH_ASSOC);
@@ -86,7 +88,7 @@ class AccesseurEntiteGoodie
 
     public function recupererGoodie(int $idGoodie)
     {
-        $requete =  self::$connexion->prepare(self::SQL_GOODIES);
+        $requete =  self::$connexion->prepare(self::SQL_SELECT_UN_GOODIE);
         $id= $idGoodie;
         $requete->bindParam(":".Goodie::ID,$id);
         $requete->execute();
