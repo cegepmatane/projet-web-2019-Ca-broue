@@ -13,7 +13,7 @@ $page = (object)
 
     afficherEntete($page);
 ?>
-
+ 
 <?php
 
 function afficherPartieConnexion(){

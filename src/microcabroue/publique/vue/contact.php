@@ -14,7 +14,7 @@
 
         afficherEntete($page);
 
-        ?>
+        ?> 
 
         <form action="" method="post">
             <div>

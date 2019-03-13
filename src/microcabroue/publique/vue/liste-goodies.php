@@ -26,7 +26,7 @@ function afficherPage($page = null){
 if(!is_object($page)) $page = (object)[];
 
 afficherEntete($page);
-?>
+?> 
     <div class="conteneur-boutique">
         <div class="col-3">
             <div class="conteneur-categories-liste-goodies ">

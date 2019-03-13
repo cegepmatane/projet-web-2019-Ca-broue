@@ -25,7 +25,7 @@ function afficherBoutton(){
         <a class='bouton-validation' href='connexion'>Commander</a>
   </div>
        
-  
+   
   <?php
 }
 

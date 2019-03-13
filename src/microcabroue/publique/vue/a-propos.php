@@ -30,6 +30,6 @@
 
         afficherPiedDePage($page);
     }
-
+ 
     afficherPage($page);
 ?>

@@ -15,7 +15,7 @@ $page = (object)
 ];
 
 function afficherPremiereEtape($utilisateur, $page = null)
-{
+{ 
     ?>
     <div class="conteneur-inscription">
         <form method="post">

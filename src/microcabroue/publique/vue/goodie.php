@@ -22,7 +22,7 @@ function afficherPage($page = null){
     afficherEntete($page);
 
 
-?>
+?> 
 
 
 <div class="row">
