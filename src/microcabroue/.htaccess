@@ -10,6 +10,7 @@ RewriteRule ^connexion commun/vue/connexion.php
 RewriteRule ^contact publique/vue/contact.php
 RewriteRule ^a-propos publique/vue/a-propos.php
 RewriteRule ^mon-compte utilisateur/vue/mon-compte.php
+RewriteRule ^modifier-compte utilisateur/vue/modifier-info.php
 RewriteRule ^goodie-image/goodie_(\d+).jpeg publique/illustration/goodie-image/goodie_$1.jpeg
 
 RewriteRule ^utilisateur/paiement utilisateur/vue/paiement.php

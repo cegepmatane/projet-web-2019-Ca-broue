@@ -9,7 +9,7 @@ $page = (Object)
     "titre" => "Mon compte"
 ];
 
-afficherEntete($page);
+
 function afficherPage($page = null, $utilisateur = null)
 {
     if (!is_object($page)) $page = (object)[];
@@ -21,7 +21,7 @@ function afficherPage($page = null, $utilisateur = null)
             <div class='conteneur' id="information-compte">
                 <h4>Informations sur le compte</h4>
                 <p>Nom d'utilisateur: <?=$utilisateur->getPseudo()?>
-                <p>Mot de Passe: *********
+                <p>Mot de passe: *********
                 <p>Adresse email: <?=$utilisateur->getMail()?></p>
                 <form method="post">
                 <input type="hidden" name="id" value="<?= $utilisateur->getId()?>">
