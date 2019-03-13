@@ -1,18 +1,18 @@
 RewriteEngine on
 RewriteRule ^$ publique/vue/index.php
 RewriteRule ^accueil publique/vue/index.php
-RewriteRule ^boutique/goodie/(\d+) publique/vue/vue-goodie.php?id=$1
-RewriteRule ^boutique publique/vue/vue-liste-goodies.php
-RewriteRule ^biere publique/vue/vue-biere.php
-RewriteRule ^inscription publique/vue/vue-inscription.php
-RewriteRule ^panier publique/vue/vue-panier.php
-RewriteRule ^connexion commun/vue/vue-connexion.php
-RewriteRule ^contact publique/vue/vue-contact.php
-RewriteRule ^a-propos publique/vue/vue-a-propos.php
+RewriteRule ^boutique/goodie/(\d+) publique/vue/goodie.php?id=$1
+RewriteRule ^boutique publique/vue/liste-goodies.php
+RewriteRule ^biere publique/vue/biere.php
+RewriteRule ^inscription publique/vue/inscription.php
+RewriteRule ^panier publique/vue/panier.php
+RewriteRule ^connexion commun/vue/connexion.php
+RewriteRule ^contact publique/vue/contact.php
+RewriteRule ^a-propos publique/vue/a-propos.php
 RewriteRule ^mon-compte utilisateur/vue/mon-compte.php
 RewriteRule ^goodie-image/goodie_(\d+).jpeg publique/illustration/goodie-image/goodie_$1.jpeg
 
-RewriteRule ^utilisateur/paiement utilisateur/vue/vue-paiement.php
+RewriteRule ^utilisateur/paiement utilisateur/vue/paiement.php
 
 
 
