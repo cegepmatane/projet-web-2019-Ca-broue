@@ -83,7 +83,7 @@ function afficherEntete($page = null){
                 $liste="";
                 foreach ($objetsNav as $objet) {
 
-                    if($objet['lien'] == 'moncompte' && !isset($_SESSION['id'])){
+                    if($objet['lien'] == 'mon-compte' && !isset($_SESSION['id'])){
                         break;
                     }
 
