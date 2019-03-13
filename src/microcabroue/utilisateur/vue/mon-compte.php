@@ -9,19 +9,20 @@ $page = (Object)
     "titre" => "Mon compte"
 ];
 
-
+afficherEntete($page);
 function afficherPage($page = null, $utilisateur = null)
 {
     if (!is_object($page)) $page = (object)[];
-    afficherEntete($page);
+    
+   
     ?>
         <div class='container'>
-            <h2>Bonjour <?=$utilisateur->getPrenom()?></h2>
+            <h2>Bonjour <?=$utilisateur->getPrenom()?></h2> 
             <div class='container' id="information-compte">
                 <h4>Informations sur le compte</h4>
                 <p>Nom d'utilisateur: <?=$utilisateur->getPseudo()?>
                 <p>Mot de Passe: <?=$utilisateur->getPseudo()?>
-                <p>Adresse email: <?$utilisateur->getMail()?>
+                <p>Adresse email: <?=$utilisateur->getMail()?>
                 <a class='button'>Modifier</a>
             </div>
             <div class="container" id="information-personnelle">
@@ -40,7 +41,7 @@ function afficherPage($page = null, $utilisateur = null)
 
 }
 
-afficherPage($page);
 
+Require_once(CHEMIN_SRC_DEV . "microcabroue_com_utilisateur/action/mon-compte.php");
 
 ?>

@@ -49,5 +49,17 @@ class AccesseurUtilisateur
         $requete->execute();
     }
 
+    public function recevoirUtilisateur($id)
+    {
+        $idNetoyer = filter_var($id, FILTER_SANITIZE_NUMBER_INT);
+        $SQL_RECEVOIR = "SELECT nom, prenom, adresse_postal, code_postal, ville, mail, pseudo, mot_passe FROM utilisateur WHERE id = :id";
+        
+        $requete = self::$connexion->prepare($SQL_RECEVOIR);
+        $requete->bindValue(':id', $idNetoyer, PDO::PARAM_INT);
+        $requete->execute();
+        $donnees = (object) $requete->fetch(PDO::FETCH_OBJ);
+        $utilisateur = new Utilisateur($donnees);
+        return $utilisateur;
+    }
   
 }
