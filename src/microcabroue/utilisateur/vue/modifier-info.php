@@ -16,7 +16,12 @@ function afficherPageCompte($page = null, $utilisateur = null)
     ?>
     <div class="conteneur-inscription">
         <form method="post">
-            <!-- nom utilisateur -->
+        <input type="hidden" class="controle-formulaire" id="nom" name="nom" value=<?= $utilisateur->getNom(); ?>>
+        <input type="hidden" class="controle-formulaire" id="prenom" name="prenom" value=<?= $utilisateur->getPrenom(); ?>>
+        <input type="hidden" class="controle-formulaire" id="adresse" name="adresse_postal" value=<?= $utilisateur->getAdresse_postal(); ?>>   
+        <input type="hidden" class="controle-formulaire" id="code-postal" name="code_postal" value=<?= $utilisateur->getCode_postal(); ?>>
+        <input type="hidden" class="controle-formulaire" id="ville" name="ville" value=<?= $utilisateur->getVille(); ?>>
+        <!-- nom utilisateur -->
             <div class="groupe-formulaire">
                 <label for="nom-utilisateur">Nom d'utilisateur</label>
                 <input class="controle-formulaire" id="pseudo" name="pseudo" value=<?= $utilisateur->getPseudo(); ?>>
@@ -37,7 +42,7 @@ function afficherPageCompte($page = null, $utilisateur = null)
                 <label for="confirmation-mot-de-passe">Confirmer le mot de passe</label>
                 <input type="password" class="controle-formulaire" id="confirmation-mot-de-passe" name="confirmation-mot-de-passe">
             </div>
-            <button type="submit" class="bouton bouton-primaire" name="action-inscrire" value="inscrire">S'inscrire
+            <button type="submit" class="bouton bouton-primaire" name="enregistrer" value="true">Enregistrer
             </button>
 </form>
     
@@ -53,7 +58,10 @@ function afficherPageInfo($page = null, $utilisateur = null)
     ?>
     <div class="conteneur-inscription">
         <form method="post">
-             <!-- nom-->
+        <input class="controle-formulaire"  type="hidden" id="pseudo" name="pseudo" value=<?= $utilisateur->getPseudo(); ?>>
+        <input type="hidden" class="controle-formulaire" id="email" name="mail"
+                       value=<?= $utilisateur->getMail(); ?>>     
+        <!-- nom-->
              <div class="groupe-formulaire">
                 <label for="nom">Nom</label>
                 <input type="nom" class="controle-formulaire" id="nom" name="nom" value=<?= $utilisateur->getNom(); ?>>
@@ -81,7 +89,7 @@ function afficherPageInfo($page = null, $utilisateur = null)
                 <input type="ville" class="controle-formulaire" id="ville" name="ville"
                        value=<?= $utilisateur->getVille(); ?>>
             </div>
-            <button type="submit" class="bouton bouton-primaire" name="action-inscrire" value="inscrire">S'inscrire
+            <button type="submit" class="bouton bouton-primaire" name="enregistrer" value="true">Enregistrer
             </button>
         </form>
     <?php
