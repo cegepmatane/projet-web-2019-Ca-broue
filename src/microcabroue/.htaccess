@@ -17,5 +17,12 @@ RewriteRule ^goodie-image/goodie_(\d+).jpeg publique/illustration/goodie-image/g
 
 RewriteRule ^utilisateur/paiement utilisateur/vue/paiement.php
 
+RewriteRule ^admin$ administration/vue/index.php
+RewriteRule ^admin/$ administration/vue/index.php
+RewriteRule ^admin/accueil$ administration/vue/index.php
+RewriteRule ^admin/goodies$ administration/vue/vue-liste-goodies.php
+RewriteRule ^admin/categories$ administration/vue/vue-liste-categories.php
+RewriteRule ^admin/utilisateurs$ administration/vue/vue-liste-utilisateurs.php
+RewriteRule ^admin/bieres$ administration/vue/vue-liste-bieres.php
 
 

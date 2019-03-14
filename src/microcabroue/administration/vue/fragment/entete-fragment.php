@@ -1,4 +1,6 @@
 <?php
+    require_once($_SERVER["CONFIGURATION_COMMUN"]);
+
     function afficherEntete($page = null){
         if(!is_object($page)) 
             return;
@@ -10,7 +12,7 @@
         <head>
             <meta charset="UTF-8">
             <meta name="viewport" content="width=device-width, initial-scale=1.0">
-            <link href="../decoration/style-commun-admin.css" rel="stylesheet" type="text/css"/>
+            <link href="<?=LIEN_DOMAINE?>administration/decoration/style-commun-admin.css" rel="stylesheet" type="text/css"/>
             
             <title><?= $page->titre ?? ""; ?></title>
 
@@ -26,23 +28,23 @@
         </head>
         <body>
             <header>
-                <img src="../decoration/image/logo.png"  class="d-inline-block align-top" alt=""> 
+                <img src="<?=LIEN_DOMAINE?>administration/decoration/image/logo.png"  class="d-inline-block align-top" alt=""> 
                 <div class="boutons-entete">
                     <ul class="liste-horizontale">
                         <li class="element-liste-horizontale">
-                            <a href="./index.php" class="bouton bouton-jaune">Accueil</a>
+                            <a href="<?=LIEN_DOMAINE?>admin/accueil" class="bouton bouton-jaune">Accueil</a>
                         </li>
                         <li class="element-liste-horizontale">
-                            <a href="./vue-liste-bieres.php" class="bouton bouton-jaune">Bieres</a>
+                            <a href="<?=LIEN_DOMAINE?>admin/bieres" class="bouton bouton-jaune">Bieres</a>
                         </li>
                         <li class="element-liste-horizontale">
-                            <a href="./vue-liste-goodies.php" class="bouton bouton-jaune">Goodies</a>
+                            <a href="<?=LIEN_DOMAINE?>admin/goodies" class="bouton bouton-jaune">Goodies</a>
                         </li>
                         <li class="element-liste-horizontale">
-                            <a href="./vue-liste-categories.php" class="bouton bouton-jaune">Categories</a>
+                            <a href="<?=LIEN_DOMAINE?>admin/categories" class="bouton bouton-jaune">Categories</a>
                         </li>
                         <li class="element-liste-horizontale">
-                            <a href="./vue-liste-utilisateurs.php"class="bouton bouton-jaune">Utilisateurs</a>
+                            <a href="<?=LIEN_DOMAINE?>admin/utilisateurs"class="bouton bouton-jaune">Utilisateurs</a>
                         </li>
                     </ul>
                 </div>
