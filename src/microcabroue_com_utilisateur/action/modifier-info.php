@@ -32,5 +32,4 @@ if (isset($_SESSION['page-modifier']) && $_SESSION['page-modifier'] == "modifier
     afficherPageInfo($page, $utilisateur);
 }
 
-
 ?>

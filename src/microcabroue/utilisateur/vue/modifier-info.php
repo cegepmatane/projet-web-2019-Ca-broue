@@ -5,7 +5,7 @@ require_once(CHEMIN_SRC_DEV . "microcabroue/commun/vue/fragment/pied-de-page-fra
 
 $page = (Object)
 [
-    "style" => "../microcabroue/utilisateur/decoration/mon-compte.css",
+    "style" => "../microcabroue/utilisateur/decoration/modifier-info.css",
     "titre" => ""
 ]; 
 
@@ -14,7 +14,7 @@ function afficherPageCompte($page = null, $utilisateur = null)
     if (!is_object($page)) $page = (object)[];
     if (!is_object($utilisateur)) $utilisateur = (object)[];
     ?>
-    <div class="conteneur-inscription">
+    <div class="conteneur-modification">
         <form method="post">
         <input type="hidden" class="controle-formulaire" id="nom" name="nom" value=<?= $utilisateur->getNom(); ?>>
         <input type="hidden" class="controle-formulaire" id="prenom" name="prenom" value=<?= $utilisateur->getPrenom(); ?>>
@@ -56,7 +56,7 @@ function afficherPageInfo($page = null, $utilisateur = null)
     if (!is_object($page)) $page = (object)[];
     if (!is_object($utilisateur)) $utilisateur = (object)[];
     ?>
-    <div class="conteneur-inscription">
+    <div class="conteneur-modification">
         <form method="post">
         <input class="controle-formulaire"  type="hidden" id="pseudo" name="pseudo" value=<?= $utilisateur->getPseudo(); ?>>
         <input type="hidden" class="controle-formulaire" id="email" name="mail"

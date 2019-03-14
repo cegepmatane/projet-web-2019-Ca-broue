@@ -1,0 +1,25 @@
+@import "../commun/bootstrap-4.0.0/scss/bootstrap.scss";
+
+.groupe-formulaire
+{
+    @extend .form-group;
+}
+.controle-formulaire
+{
+    @extend .form-control;
+}
+.bouton
+{
+    @extend .btn;
+}
+.bouton-primaire
+{
+    @extend .btn-primary;
+}
+.conteneur-modification
+{
+    @extend .container;
+    width: 30%;
+    margin-left: 9%;
+    
+}

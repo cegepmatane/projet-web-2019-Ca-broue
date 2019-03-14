@@ -51,9 +51,9 @@ class AccesseurUtilisateur
     public function modifierUtilisateur($utilisateur, $id)
     {
         $idNetoyer = filter_var($id, FILTER_SANITIZE_NUMBER_INT);
-        $SQL_MODIFIER = "UPDATE utilisateur SET nom = :nom, prenom = :prenom, adresse_postal = :adresse, code_postal = :code_postal, ville = :ville, mail = :mail, pseudo = :pseudo, mot_passe = :mot_passe WHERE id = :id";
+        $SQL_MODIFIER = "UPDATE utilisateur SET nom = :nom, prenom = :prenom, adrsse_postal = :adresse, code_postal = :code_postal, ville = :ville, mail = :mail, pseudo = :pseudo, mot_passe = :mot_passe WHERE id = :id";
         $requete = self::$connexion->prepare($SQL_MODIFIER);
-        $requete->debugDumpParams();
+        
 
         $nom = filter_var($utilisateur->getNom(), FILTER_SANITIZE_STRING);
         $prenom = filter_var($utilisateur->getPrenom(), FILTER_SANITIZE_STRING);
@@ -64,7 +64,7 @@ class AccesseurUtilisateur
         $pseudo = filter_var($utilisateur->getPseudo(), FILTER_SANITIZE_STRING);
         $mot_passe = filter_var($utilisateur->getMot_passe(), FILTER_SANITIZE_STRING);
         
-        $requete->debugDumpParams();
+    
 
         $requete->bindValue(':id', $idNetoyer, PDO::PARAM_INT);
         $requete->bindValue(':nom', $nom, PDO::PARAM_STR);
@@ -76,7 +76,7 @@ class AccesseurUtilisateur
         $requete->bindValue(':pseudo', $pseudo, PDO::PARAM_STR);
         $requete->bindValue(':mot_passe', $mot_passe, PDO::PARAM_STR);
 
-        $requete->debugDumpParams();
+      
         $requete->execute();
     }
 
