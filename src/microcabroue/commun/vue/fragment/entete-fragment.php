@@ -5,8 +5,6 @@
  * Date: 31/01/19
  * Time: 2:03 PM
  */
-session_start();
-
 require_once ($_SERVER['CONFIGURATION_COMMUN']);
 
 require_once (CHEMIN_SRC_DEV."microcabroue_com_commun/action/action-deconnexion.php");
@@ -28,11 +26,7 @@ function afficherEntete($page = null){
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
-        <link href="commun/decoration/style-commun.css" rel="stylesheet" type="text/css"/>
-        <link href="../commun/decoration/style-commun.css" rel="stylesheet" type="text/css"/>
-        <link href="../../commun/decoration/style-commun.css" rel="stylesheet" type="text/css"/>
-
-        <!-- TODO a fix avec un tableau de style -->
+        <link href="<?= LIEN_DOMAINE ; ?>commun/decoration/style-commun.css" rel="stylesheet" type="text/css"/>
 
         <?php
         if(isset($page->style)){
@@ -52,19 +46,10 @@ function afficherEntete($page = null){
     </h1>-->
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
         <a class="navbar-brand" href="#">
-            <?php
-            if(isset($page->dossier)){
-            ?>
-            <img src="../commun/decoration/image/logo.png"  class="d-inline-block align-top" alt="">
-            <?php
-            }else{
-                ?>
-                <img src="commun/decoration/image/logo.png"  class="d-inline-block align-top" alt="">
-                <img src="../../commun/decoration/image/logo.png"  class="d-inline-block align-top" alt="">
 
-                <?php
-            }
-            ?>
+        <img src="<?= LIEN_DOMAINE ; ?>commun/decoration/image/logo.png"  class="d-inline-block align-top" alt="">
+
+
             
         </a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -74,24 +59,24 @@ function afficherEntete($page = null){
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav mr-auto">
                 <?php
+                session_start();
 
                 $objetsNav = [
-                    ["titre"=>"Accueil", "lien"=>"accueil"],
-                    ["titre"=>"Bière", "lien"=>"biere"],
-                    ["titre"=>"Boutique", "lien"=>"boutique"],
-                    ["titre"=>"Mon panier", "lien"=>"panier "],
-                    ["titre"=>"Mon Compte", "lien"=>"mon-compte"],
+                    ["titre"=>"Accueil", "id"=>"accueil", "lien"=> LIEN_DOMAINE."accueil"],
+                    ["titre"=>"Bière", "id"=>"biere", "lien"=>LIEN_DOMAINE."biere"],
+                    ["titre"=>"Boutique", "id"=>"boutique", "lien"=>LIEN_DOMAINE."boutique"],
+                    ["titre"=>"Mon Compte", "id"=>"mon-compte", "lien"=>LIEN_DOMAINE."mon-compte"],
                 ];
                 $liste="";
                 foreach ($objetsNav as $objet) {
 
-                    if($objet['lien'] == 'mon-compte' && !isset($_SESSION['id'])){
+                    if($objet['id'] == 'mon-compte' && !isset($_SESSION['id'])){
                         break;
                     }
 
                     $liste.="<li class='nav-objet";
 
-                    if(isset($page->itemMenuActif) && $page->itemMenuActif == $objet['lien']){
+                    if(isset($page->itemMenuActif) && $page->itemMenuActif == $objet['id']){
                         $liste.=" active";
                     }
                     $liste.="'>";
