@@ -5,7 +5,7 @@
 
         if($page->type != "utilisateur"){ ?>
         <div class="contenu bouton-ajouter">
-                <a href="./vue-ajouter-<?= $page->type; ?>.php" class="bouton bouton-vert">Ajouter</a>
+                <a href="<?=LIEN_DOMAINE?>admin/<?= $page->type; ?>/ajouter" class="bouton bouton-vert">Ajouter</a>
                 </div>
         <?php }
 
