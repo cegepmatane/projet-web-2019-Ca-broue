@@ -9,6 +9,7 @@ require_once ($_SERVER['CONFIGURATION_COMMUN']);
 
 require_once (CHEMIN_SRC_DEV."microcabroue_com_commun/action/action-deconnexion.php");
 
+session_start();
 function afficherEntete($page = null){
 
     // En cas d'erreur avec le paramètre $page, un objet $page vide est créé.
