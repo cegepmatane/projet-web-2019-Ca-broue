@@ -79,7 +79,7 @@ function afficherEntete($page = null){
                     ["titre"=>"Accueil", "lien"=>"accueil"],
                     ["titre"=>"Bière", "lien"=>"biere"],
                     ["titre"=>"Boutique", "lien"=>"boutique"],
-                    ["titre"=>"Mon panier", "lien"=>"panier"],
+                    ["titre"=>"Mon panier", "lien"=>"panier "],
                     ["titre"=>"Mon Compte", "lien"=>"mon-compte"],
                 ];
                 $liste="";
