@@ -24,18 +24,14 @@ function afficherBoutton(){
         <a class='bouton-secondaire' href='boutique'>Revenir à la boutique</a>
         <a class='bouton-validation' href='connexion'>Commander</a>
   </div>
-       
-   
+
   <?php
 }
 
-afficherEntete($page);
-echo "<div class='conteneur'> <h2>Votre Panier</h2>";
-afficherTableauPanier($page);
 
-afficherBoutton();
-echo "</div>";
+afficherEntete($page);
 
 require_once(CHEMIN_CODE."microcabroue_publique/action/action-panier.php");
+
 
 //afficherElementsCommande();

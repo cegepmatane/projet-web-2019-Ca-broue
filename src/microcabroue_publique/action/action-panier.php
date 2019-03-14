@@ -22,13 +22,18 @@ if($_GET["navigation-retour-url"] ?? false &&
 
 
 if(isset($_SESSION['liste-panier'])){
-    $page->listeGoodies = array();
+    $page->listePanier = array();
     foreach($_SESSION['liste-panier'] as $idGoodie){
-
-        $goodie = $accesseurEntiteGoodie->recupererGoodie($idGoodie);
-        $page->listeGoodies = $goodie;
-
+        if(isset($_GET['id']) &&  $_GET['id'] == $idGoodie){
+            $_SESSION['liste-panier'] = array_diff($_SESSION['liste-panier'], array($_GET["id"]));
+        }
+        else{
+            $goodie = $accesseurEntiteGoodie->recupererGoodie($idGoodie);
+            array_push($page->listePanier ,$goodie);
+        }
     }
-
 }
 
+
+afficherTableauPanier($page);
+afficherBoutton();

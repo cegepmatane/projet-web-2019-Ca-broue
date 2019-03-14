@@ -26,14 +26,12 @@ if($_GET["navigation-retour-url"] ?? false &&
 
 if(isset( $_GET["id"])){
     $page->goodie = $accesseurEntiteGoodie->recupererGoodie($_GET["id"]);
-    print_r($_SESSION['liste-panier']);
 
     if(!isset($_SESSION['liste-panier'])){
         $_SESSION['liste-panier'] = array($_GET["id"]);
     }
     else{
         array_push($_SESSION['liste-panier'], $_GET["id"]);
-        //$_SESSION['liste-panier'] = array_diff($_SESSION['liste-panier'], array($_GET["id"]));
     }
 }
 /*
