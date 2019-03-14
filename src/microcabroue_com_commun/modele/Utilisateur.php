@@ -255,6 +255,18 @@ class Utilisateur
         $this->isCodePostalValide();
         $this->isVilleValide();
     }
+
+    public function ValiderUtilisateurModification()
+    {
+        $this->liste_message_erreur_active = [];
+        $this->isNomValide();
+        $this->isPrenomValide();
+        $this->isAdresseValide();
+        $this->isCodePostalValide();
+        $this->isVilleValide();
+        $this->isPseudoValide();
+        $this->isCourrielValide();
+    }
     private function isNomValide()
     {
         if($this->nom == "")

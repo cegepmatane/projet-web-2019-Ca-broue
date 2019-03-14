@@ -6,9 +6,19 @@ require_once(CHEMIN_SRC_DEV . "microcabroue/commun/vue/fragment/pied-de-page-fra
 $page = (Object)
 [
     "style" => "../microcabroue/utilisateur/decoration/modifier-info.css",
-    "titre" => ""
+    "titre" => "",
+    "isEnErreur" => false,
+    "ErreurActive" => ""
 ]; 
 
+function afficherErreur($page)
+{
+    ?>
+    <div id="message-erreur">
+        <strong>Attention!</strong> <?= $page->ErreurActive ?>
+    </div>
+    <?php
+}
 function afficherPageCompte($page = null, $utilisateur = null)
 {
     if (!is_object($page)) $page = (object)[];
