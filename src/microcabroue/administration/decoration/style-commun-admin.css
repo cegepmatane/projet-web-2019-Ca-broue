@@ -8291,6 +8291,10 @@ h3 {
     border: 1px solid #ddd !important;
   }
 }
+.element-liste-horizontale {
+  margin-top: 1.5%;
+}
+
 .controle-formulaire {
   width: 100%;
 }
@@ -8318,13 +8322,12 @@ header {
   margin-bottom: 1%;
 }
 
-.boutons-entete {
-  margin-left: 7%;
-  margin-top: -5%;
-}
-
 .texte-index {
   margin-left: 7%;
+}
+
+.logo {
+  float: left;
 }
 
 /*# sourceMappingURL=style-commun-admin.css.map */

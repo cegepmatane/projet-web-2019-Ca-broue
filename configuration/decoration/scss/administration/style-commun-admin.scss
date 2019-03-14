@@ -27,7 +27,8 @@ $margeContenu: 7%;
 }
 .element-liste-horizontale
 {
-    @extend .list-inline-item; 
+    @extend .list-inline-item;
+    margin-top: 1.5%;  
 } 
 .groupe-formulaire
 {
@@ -75,8 +76,8 @@ header
 }
 .boutons-entete
 {
-    margin-left: $margeContenu;
-    margin-top: -5%
+  // margin-left: $margeContenu;
+   //margin-top: 0%;
 }
 .texte-rouge
 {
@@ -86,4 +87,8 @@ header
 .texte-index
 {
     margin-left: $margeContenu;
+}
+.logo
+{
+    float: left;
 }

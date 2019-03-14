@@ -28,8 +28,9 @@
         </head>
         <body>
             <header>
-                <img src="<?=LIEN_DOMAINE?>administration/decoration/image/logo.png"  class="d-inline-block align-top" alt=""> 
+                
                 <div class="boutons-entete">
+                <img src="<?=LIEN_DOMAINE?>administration/decoration/image/logo.png"  class="logo" alt=""> 
                     <ul class="liste-horizontale">
                         <li class="element-liste-horizontale">
                             <a href="<?=LIEN_DOMAINE?>admin/accueil" class="bouton bouton-jaune">Accueil</a>
