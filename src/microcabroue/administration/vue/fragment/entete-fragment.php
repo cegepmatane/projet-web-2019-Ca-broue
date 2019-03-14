@@ -35,9 +35,9 @@
                         <li class="element-liste-horizontale">
                             <a href="<?=LIEN_DOMAINE?>admin/accueil" class="bouton bouton-jaune">Accueil</a>
                         </li>
-                        <li class="element-liste-horizontale">
+                        <!-- <li class="element-liste-horizontale">
                             <a href="<?=LIEN_DOMAINE?>admin/bieres" class="bouton bouton-jaune">Bieres</a>
-                        </li>
+                        </li> -->
                         <li class="element-liste-horizontale">
                             <a href="<?=LIEN_DOMAINE?>admin/goodies" class="bouton bouton-jaune">Goodies</a>
                         </li>
