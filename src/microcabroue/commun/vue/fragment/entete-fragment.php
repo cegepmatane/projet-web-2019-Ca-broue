@@ -60,7 +60,6 @@ function afficherEntete($page = null){
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav mr-auto">
                 <?php
-                session_start();
 
                 $objetsNav = [
                     ["titre"=>"Accueil", "id"=>"accueil", "lien"=> LIEN_DOMAINE."accueil"],
