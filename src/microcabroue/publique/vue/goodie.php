@@ -36,7 +36,10 @@ function afficherPage($page = null){
         <h5 class="carte-goodie-titre"><?= $page->goodie->getNomFr()?></h5>
         <h5 class="carte-goodie-texte"><?= $page->goodie->getPrix()?> $</h5>
         <h5 class="carte-goodie-texte"><?= $page->goodie->getId()?></h5>
+        <a href="boutique/ajouter-panier/<?= $page->goodie->getId()?>" class="bouton-validation">Ajouter au panier</a>
+
     </div>
+    
 </div>
 
 
@@ -46,4 +49,6 @@ function afficherPage($page = null){
 
 }
 require_once("../../../microcabroue_publique/action/action-goodie.php");
+require_once("../../../microcabroue_publique/action/action-ajouter-panier.php");
+
 ?>
