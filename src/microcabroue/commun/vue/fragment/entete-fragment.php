@@ -66,6 +66,7 @@ function afficherEntete($page = null){
                     ["titre"=>"Accueil", "id"=>"accueil", "lien"=> LIEN_DOMAINE."accueil"],
                     ["titre"=>"Bière", "id"=>"biere", "lien"=>LIEN_DOMAINE."biere"],
                     ["titre"=>"Boutique", "id"=>"boutique", "lien"=>LIEN_DOMAINE."boutique"],
+                    ["titre"=>"Mon panier", "id"=>"panier", "lien"=>LIEN_DOMAINE."panier"],
                     ["titre"=>"Mon Compte", "id"=>"mon-compte", "lien"=>LIEN_DOMAINE."mon-compte"],
                 ];
                 $liste="";
