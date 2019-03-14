@@ -51,7 +51,7 @@ class AccesseurUtilisateur
     public function modifierUtilisateur($utilisateur, $id)
     {
         $idNetoyer = filter_var($id, FILTER_SANITIZE_NUMBER_INT);
-        $SQL_MODIFIER = "UPDATE utilisateur SET nom = :nom, prenom = :prenom, adrsse_postal = :adresse, code_postal = :code_postal, ville = :ville, mail = :mail, pseudo = :pseudo, mot_passe = :mot_passe WHERE id = :id";
+        $SQL_MODIFIER = "UPDATE utilisateur SET nom = :nom, prenom = :prenom, adresse_postal = :adresse, code_postal = :code_postal, ville = :ville, mail = :mail, pseudo = :pseudo, mot_passe = :mot_passe WHERE id = :id";
         $requete = self::$connexion->prepare($SQL_MODIFIER);
         
 
