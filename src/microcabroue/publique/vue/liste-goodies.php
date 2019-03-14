@@ -35,7 +35,7 @@ afficherEntete($page);
                 <?php
                 /** @var CategorieGoodie $categorie */
                 foreach($page->listeCategorieGoodies as $categorie){
-                    echo"<a href=\"boutique?categorie=".$categorie->getId()."  \" class=\"lien-liste-categorie-goodies ";
+                    echo"<a href=\"".LIEN_DOMAINE."boutique?categorie=".$categorie->getId()."  \" class=\"lien-liste-categorie-goodies ";
                     if(isset($page->categorieSelectionnee)&& $categorie->getId() == $page->categorieSelectionnee){
                         echo "active";
                     }
@@ -56,7 +56,7 @@ afficherEntete($page);
         foreach($page->listeGoodies as $goodie){
 
             echo" <div class=\"carte-goodie col-3\">
-                    <a href=\"boutique/goodie/". $goodie->getId()."\" >
+                    <a href=\"".LIEN_DOMAINE."boutique/goodie/". $goodie->getId()."\" >
                         <img class=\"carte-image-goodie\" src=\"goodie-image/goodie_". $goodie->getId() .".jpeg/\" alt=\"Image du goodie\">
                     </a>
                 <div class=\"carte-goodie-corp\">
