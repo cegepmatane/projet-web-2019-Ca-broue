@@ -11,14 +11,7 @@ $page = (Object)
     "ErreurActive" => ""
 ]; 
 
-function afficherErreur($page)
-{
-    ?>
-    <div id="message-erreur">
-        <strong>Attention!</strong> <?= $page->ErreurActive ?>
-    </div>
-    <?php
-}
+
 function afficherPageCompte($page = null, $utilisateur = null)
 {
     if (!is_object($page)) $page = (object)[];
@@ -102,6 +95,14 @@ function afficherPageInfo($page = null, $utilisateur = null)
             <button type="submit" class="bouton bouton-primaire" name="enregistrer" value="true">Enregistrer
             </button>
         </form>
+    <?php
+}
+function afficherErreur($page)
+{
+    ?>
+    <div id="message-erreur">
+        <strong>Attention!</strong> <?= $page->ErreurActive ?>
+    </div>
     <?php
 }
 
