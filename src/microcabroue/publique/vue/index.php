@@ -25,9 +25,22 @@ function afficherPage($page = null){
             <h1>Ça Broue</h1>
             <hr class="separateur-accueil">
             <p>Notre mission est d’offrir des bières uniques brassées avec passion et par la suite, donner une occasion de la déguster avec une vaste sélection d'événements.</p>
+            <a class='bouton-validation' id="biere-bouton" type='submit' href='<?=LIEN_DOMAINE?>biere'>Biere</a>
         </article>
         <div >
-            <img class= "image-accueil" src= "publique/illustration/accueil-image/accueil.jpg" width= "100%">
+            <img class= "image-accueil" src= "publique/illustration/accueil-image/accueil.jpg" width= "100%" style="transform: translateY(0px)">
+        </div>
+    </section>
+    <section class="boutique">
+        <article class="article-boutique">
+            <h1>Vente de Goodies</h1>
+            <hr class="separateur-boutique">
+            <a class='bouton-validation' id="boutique-bouton" type='submit' href='<?=LIEN_DOMAINE?>boutique'>Boutique</a>
+            <p>Poster, Vêtement, Buck & Plus</p>
+
+        </article>
+        <div >
+            <img class= "image-boutique" src= "publique/illustration/accueil-image/boutique.jpeg" width= "100%" style="transform: translateY(0px)">
         </div>
     </section>
     <?php

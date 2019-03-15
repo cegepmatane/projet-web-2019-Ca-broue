@@ -4,20 +4,6 @@ section #accueil .large{
     min-height: 580px;
 }
 
-.article-image h1{
-
-    font-size: 3em;
-    font-family: 'Knockout 47 A','Knockout 47 B';
-    font-weight: 400;
-    text-transform: uppercase;
-    letter-spacing: .13em;
-    position: absolute;
-    top: 45%;
-    left: 43%;
-    z-index:10;
-    background:transparent;
-    color: white;
-}
 .image-accueil{
     position:relative;
     z-index:0;
@@ -25,24 +11,132 @@ section #accueil .large{
     min-width: 100%;
     min-height: 100%;
 }
+
+.article-image h1{
+    text-shadow: 3px 3px #000000;
+    font-size: 3em;
+    font-family: 'Knockout 47 A','Knockout 47 B';
+    font-weight: 400;
+    text-transform: uppercase;
+    letter-spacing: .13em;
+    position: absolute;
+    padding-top: 17%; 
+    padding-left: 41%;
+    margin-right: auto;
+    margin-bottom: auto;
+    z-index:10;
+    background:transparent;
+    color: white;
+}
+
 .article-image hr{
     height: 0.2em;
     width: 18em;
     background: white;
     position: absolute;
-    top: 52%;
-    left: 43%;
+    margin-top: 23%;
+    margin-left: 41.2%;
+    margin-right: auto;
+    margin-bottom: auto;
     z-index:9;   
 }
 
 .article-image p{
     font-size: 1.5em;
     position: absolute;
-    top: 60%;
-    left: 0%;
+    margin-top: 28%;
     z-index:9; 
     color: white;
     font-family: 'Knockout 47 A','Knockout 47 B';
     margin-right: 25%;
-    margin-left: 35%;
+    margin-left: 30%;
+    text-shadow: 3px 3px #000000;
+}
+
+.article-image #biere-bouton{
+    position: absolute;
+    width: 10em;
+    margin-top: 38%;
+    margin-left: 45%; 
+    z-index:9; 
+    background: #ae8648;
+    font-family: 'Knockout 47 A','Knockout 47 B';
+    text-transform: uppercase;
+    letter-spacing: .1em;
+    text-shadow: 2px 1px #000000;
+
+}
+
+#biere-bouton:hover{
+    background: #5d431b;
+    text-shadow: 3px 2px #000000;
+}
+
+
+.image-boutique{
+    position:relative;
+    z-index:0;
+    text-align: center;
+    min-width: 100%;
+    min-height: 100%;
+}
+
+.article-boutique h1{
+    text-shadow: 1px 3px #000000;
+    font-size: 3em;
+    font-family: sans-serif;
+    font-weight: 400;
+    text-transform: uppercase;
+    letter-spacing: .13em;
+    position: absolute;
+    padding-top: 20%; 
+    padding-left: 31%;
+    margin-right: auto;
+    margin-bottom: auto;
+    z-index:10;
+    background:transparent;
+    color: #fffffff0;
+}
+
+.article-boutique hr{
+    height: 0.2em;
+    width: 35.5em;
+    background: #ffffffcf;
+    position: absolute;
+    margin-top: 26%;
+    margin-left: 31%;
+    margin-right: auto;
+    margin-bottom: auto;
+    z-index:9;   
+}
+
+.article-boutique p{
+    font-size: 1.5em;
+    position: absolute;
+    margin-top: 28%;
+    z-index:9; 
+    color: white;
+    font-family: 'Knockout 47 A','Knockout 47 B';
+    margin-right: 25%;
+    margin-left: 40%;
+    text-shadow: 3px 3px #000000;
+}
+
+.article-boutique #boutique-bouton{
+    position: absolute;
+    width: 10em;
+    margin-top: 35%;
+    margin-left: 45%; 
+    z-index:9; 
+    background: #ae8648;
+    font-family: 'Knockout 47 A','Knockout 47 B';
+    text-transform: uppercase;
+    letter-spacing: .1em;
+    text-shadow: 2px 1px #000000;
+    
+}
+
+#boutique-bouton:hover{
+    background: #5d431b;
+    text-shadow: 3px 2px #000000;
 }
