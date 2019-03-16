@@ -24,13 +24,14 @@ function afficherPage($page = null){
 
 ?> 
 
+<div class="col-md-12">
 
 <div class="row">
     <div class="col-md-5">
         <img class="carte-image-goodie" src="<?= LIEN_DOMAINE?>publique/illustration/goodie-image/goodie_<?= $page->goodie->getId()?>.jpeg">
     </div>
     
-    <div class="conteneur col-md-7">
+    <div class="col-md-7">
 
         <h6 class="carte-goodie-texte"><?= $page->goodie->getDescriptionFr()?></h6> 
         <h5 class="carte-goodie-titre"><?= $page->goodie->getNomFr()?></h5>
@@ -39,9 +40,9 @@ function afficherPage($page = null){
         <a href="boutique/ajouter-panier/<?= $page->goodie->getId()?>" class="bouton-validation">Ajouter au panier</a>
 
     </div>
-    
+   
 </div>
-
+</div>
 
 
 <?php
@@ -51,4 +52,4 @@ function afficherPage($page = null){
 require_once("../../../microcabroue_publique/action/action-goodie.php");
 require_once("../../../microcabroue_publique/action/action-ajouter-panier.php");
 
-?>
+
