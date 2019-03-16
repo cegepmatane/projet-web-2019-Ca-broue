@@ -23,11 +23,13 @@ DROP TABLE IF EXISTS `achat`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `achat` (
+  'id' int(11) NOT NULL AUTO_INCREMENT,
   `id_goodie` int(11) NOT NULL,
   `id_utilisateur` int(11) NOT NULL,
   `prix_achat` double NOT NULL,
   `date_achat` datetime NOT NULL,
-  PRIMARY KEY (`id_goodie`,`id_utilisateur`,`date_achat`)
+  'numero_transaction' int(11) NOT NULL,
+  PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
