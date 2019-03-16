@@ -5,6 +5,7 @@ include_once("../../commun/vue/fragment/tableau-panier.php");
 
 $page = (object)
     [
+    "style" => LIEN_DOMAINE."publique/decoration/panier.css",
     "titre" => "panier",
     "titrePrincipal" => "Le titre principal H1",
     "itemMenuActif" => "panier"
