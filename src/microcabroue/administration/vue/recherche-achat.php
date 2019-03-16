@@ -63,6 +63,6 @@ require_once "fragment/pied-de-page-fragment.php";
     <?php
     afficherPiedDePage($page);
  }
- afficherPage($page)
+ require_once (CHEMIN_CODE."microcabroue_com_administration/action/action-recherche-achat.php");
 
 ?>

@@ -1,0 +1,6 @@
+<?php
+afficherPage($page);
+
+
+
+?>
