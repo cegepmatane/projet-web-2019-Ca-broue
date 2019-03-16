@@ -300,6 +300,13 @@ class Utilisateur
             array_push($this->liste_message_erreur_active, self::$LISTE_MESSAGE_ERREUR['mot-passe-errone']);
         }
     }
+    public function isMotDePasseValideModification($confirmationMotPasse)
+    { 
+        if($this->mot_passe != $confirmationMotPasse)
+        {
+            array_push($this->liste_message_erreur_active, self::$LISTE_MESSAGE_ERREUR['mot-passe-errone']);
+        }
+    }
     private function isCourrielValide()
     {
         if($this->mail == "")

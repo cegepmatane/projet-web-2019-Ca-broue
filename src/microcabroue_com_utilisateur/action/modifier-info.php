@@ -15,12 +15,15 @@ if(isset($_POST['enregistrer']) && $_POST['enregistrer'] == "true")
     $utilisateur->setVille($_POST['ville']);
     $utilisateur->setMail($_POST['mail']);
     $utilisateur->setPseudo($_POST['pseudo']);
-    //$utilisateur->setMot_passe($_POST['mot']);
+    $utilisateur->setMot_passe($_POST['mot_passe']);
     $utilisateur->ValiderUtilisateurModification();
+    $utilisateur->isMotDePasseValideModification($_POST['confirmation-mot-de-passe']);
+
     $listeErreurActive = $utilisateur->getListeErreurActive();
 
     if(count($listeErreurActive) == 0)
     {
+        $utilisateur->setMot_passe(password_hash($utilisateur->getMot_passe(), PASSWORD_DEFAULT));
         $accesseur->modifierUtilisateur($utilisateur, $id);
         header("location: mon-compte");
     }
