@@ -26,7 +26,7 @@ require_once "fragment/pied-de-page-fragment.php";
     <option value="utilisateur">Client</option>
     </select>
     <input type="text">
-    <button type="submit" class="bouton bouton-vert">Rechercher</button>
+    <button type="submit" class="bouton bouton-vert" value="rechercher" name="bouton-rechercher">Rechercher</button>
     </form>
     </div>
     <h4>Résultats de recherche</h4>

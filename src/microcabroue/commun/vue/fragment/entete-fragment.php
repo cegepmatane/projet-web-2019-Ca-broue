@@ -28,8 +28,9 @@ function afficherEntete($page = null){
         <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
         <link href="<?= LIEN_DOMAINE ; ?>commun/decoration/style-commun.css" rel="stylesheet" type="text/css"/>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
 
-        <?php
+<?php
         if(isset($page->style)){
             ?>
 
@@ -47,7 +48,6 @@ function afficherEntete($page = null){
     </h1>-->
     <nav class="navbar navbar-expand-lg navbar-light bg-light" id="navbar">
         <a class="navbar-brand" href="#">
-
         <img src="<?= LIEN_DOMAINE ; ?>commun/decoration/image/logo.png"  class="d-inline-block align-top" alt="">
 
 
@@ -65,7 +65,6 @@ function afficherEntete($page = null){
                     ["titre"=>"Accueil", "id"=>"accueil", "lien"=> LIEN_DOMAINE."accueil"],
                     ["titre"=>"Bière", "id"=>"biere", "lien"=>LIEN_DOMAINE."biere"],
                     ["titre"=>"Boutique", "id"=>"boutique", "lien"=>LIEN_DOMAINE."boutique"],
-                    ["titre"=>"Mon panier", "id"=>"panier", "lien"=>LIEN_DOMAINE."panier"],
                     ["titre"=>"Mon Compte", "id"=>"mon-compte", "lien"=>LIEN_DOMAINE."mon-compte"],
                 ];
                 $liste="";
@@ -86,12 +85,17 @@ function afficherEntete($page = null){
                 }
                 echo $liste;
                 ?>
+                
 
             </ul>
        
 
             <div class="form-inline my-2 my-lg-0">
-            
+                <a href="<?= LIEN_DOMAINE?>panier">
+                    <i class="material-icons cart">
+                        shopping_cart
+                    </i>
+                </a>   
             <?php 
 
                 if (isset($_SESSION['id']) AND isset($_SESSION['pseudo']))
@@ -110,6 +114,7 @@ function afficherEntete($page = null){
                 ?>
             </div>
         </div>
+        
     </nav>
 
 </header>

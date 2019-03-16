@@ -6,6 +6,7 @@ include_once("../../commun/vue/fragment/pied-de-page-fragment.php");
 
 $page = (object)
     [
+    "style" => LIEN_DOMAINE."commun/decoration/connexion.css",
     "titre" => "panier",
     "titrePrincipal" => "Le titre principal H1",
     "itemMenuActif" => "accueil"
