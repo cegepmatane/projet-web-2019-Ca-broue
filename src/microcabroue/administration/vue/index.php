@@ -5,7 +5,6 @@ include_once "fragment/pied-de-page-fragment.php";
 $page = (object)
 [
     "titre" => "Statistique des ventes",
-    "itemMenuActif" => "",
 ];
 
 function afficherPage($page = null){
@@ -131,6 +130,6 @@ function afficherPage($page = null){
     afficherPiedDePage($page);
 }
 
-afficherPage($page);
+require_once (CHEMIN_CODE."microcabroue_com_administration/action/action-index.php");
 
 ?>

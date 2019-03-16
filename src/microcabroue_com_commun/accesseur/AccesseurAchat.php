@@ -6,9 +6,11 @@
  * Time: 4:49 PM
  */
 
+require_once("BaseDeDonnee.php");
+
 class AccesseurAchat
 {
-    public const SQL_STATISTIQUE_PAR_GOODIE = "select ".Achat::PRIX.", ". Achat::QUANTITE. ", ".Achat::DATE . ", ".Achat::ID_GOODIE." from ". Achat::TABLE . " group by ".Achat::ID_GOODIE;
+    public const SQL_STATISTIQUE_PAR_GOODIE = "select ".Achat::PRIX.", ". Achat::QUANTITE. ", ".Achat::DATE . ", ".Achat::ID_GOODIE." from ". Achat::TABLE ;
     private static $connexion = null;
 
     function __construct(){
