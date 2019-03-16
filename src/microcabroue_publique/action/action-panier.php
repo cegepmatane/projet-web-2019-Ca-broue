@@ -26,9 +26,7 @@ if(isset($_SESSION['liste-panier'])){
         if(isset($_GET['id']) &&  $_GET['id'] == $goodie->id){
             $_SESSION['liste-panier'] = json_encode(array_diff($page->listePanier, $goodie));
         }
-        else{
-            //array_push($page->listePanier ,$goodie);
-        }
+     
     }
     afficherTableauPanier($page);
 }

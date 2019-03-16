@@ -39,11 +39,15 @@ if(isset( $_GET["id"])){
 
     }
     else{
-        $listePanier = json_decode($_SESSION['liste-panier']);
+        $listePanier = json_decode($_SESSION['liste-panier'], true);
         $doublon = false;
+        var_dump( $listePanier);
+
         foreach($listePanier as $unGoodie){
-            print_r($unGoodie);
-            if($panier->getId() == $unGoodie->id){
+            echo ("<br>");
+
+            var_dump($unGoodie);
+            if($panier->getId() == $unGoodie->getId()){
                 $unGoodie->quantitee++; 
                 $doublon = true;
             }
