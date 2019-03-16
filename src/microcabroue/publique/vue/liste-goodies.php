@@ -71,18 +71,10 @@ function afficherPage($page = null){
 
                 <script type="text/javascript" src="publique/lib/Ajax.js"></script>
                 <script type="text/javascript">
-                    function demanderAChargerGoodies(id_categorie) {
-                        parametre = "categorie=" + id_categorie;
-                        ajax = new Ajax();
-                        url = <?php echo "'".LIEN_DOMAINE."' +"; ?> 'publique/vue/fragment/fragment-charger-goodie.php';
-                        ajax.executer("GET", url, parametre, recevoirGoodies);
-                    }
-                    function recevoirGoodies(ajax) {
-                        reponse = ajax.responseText;
-                        document.getElementById('conteneur-goodie').innerHTML = reponse;
-
-                    }
+                    url=<?php echo "'".LIEN_DOMAINE."' +"; ?> 'publique/vue/fragment/fragment-charger-goodie.php';
                 </script>
+                <script type="text/javascript" src="publique/js/liste-goodies.js"></script>
+
 
             </div>
         </div>
