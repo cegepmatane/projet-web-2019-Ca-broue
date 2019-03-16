@@ -35,7 +35,7 @@ function afficherPage($page = null){
                     <?php
                     /** @var CategorieGoodie $categorie */
                     foreach($page->listeCategorieGoodies as $categorie){
-                        echo"<a id='".'goodie_'.$categorie->getId()."' onclick=\"demanderAChargerGoodies(id_categorie=".$categorie->getId().")\" class=\"lien-liste-categorie-goodies ";
+                        echo"<a id='".'categorie_'.$categorie->getId()."' onclick=\"demanderAChargerGoodies(id_categorie=".$categorie->getId().")\" class=\"lien-liste-categorie-goodies ";
                         if(isset($page->categorieSelectionnee)&& $categorie->getId() == $page->categorieSelectionnee){
                             echo "active";
                         }
