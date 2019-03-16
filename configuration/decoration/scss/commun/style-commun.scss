@@ -20,6 +20,10 @@ body {
   font-size:25px;
 }
 
+.nav-lien:hover {
+  
+}
+
 .ligne{
   @extend .row;
 }
@@ -63,4 +67,13 @@ body {
   @extend .btn;
   @extend .btn-secondary;
 
+}
+
+#navbar{
+  background-color: #14141400 !important;
+  width: 100%;
+  overflow: hidden;
+  position: fixed;
+  top: 0;
+  z-index: 20;
 }

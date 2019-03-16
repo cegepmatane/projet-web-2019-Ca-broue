@@ -49,5 +49,4 @@ if(!$page->isNavigationRetour){
     }
 }
 
-afficherPage($page)
 ?>

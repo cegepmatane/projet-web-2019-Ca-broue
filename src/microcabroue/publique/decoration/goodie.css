@@ -8234,11 +8234,19 @@ h3 {
     border: 1px solid #ddd !important;
   }
 }
-.col-md-5 .carte-image-goodie {
-  margin-left: 30%;
-  margin-right: auto;
-  padding-top: 10%;
-  width: 50%;
+/* .col-md-5{
+
+    .carte-image-goodie
+    {
+        margin-left: 30%;
+        margin-right: auto;
+        padding-top: 10%;
+        width: 50%;
+    }
+} */
+#navbar {
+  background-color: white !important;
+  position: relative !important;
 }
 
 /*# sourceMappingURL=goodie.css.map */

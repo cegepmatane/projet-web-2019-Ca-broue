@@ -8306,14 +8306,15 @@ section #accueil .large {
 }
 
 .image-boutique {
-  position: relative;
   z-index: 0;
-  text-align: center;
   min-width: 100%;
   min-height: 100%;
+  display: block;
 }
 
 .article-boutique h1 {
+  margin-left: auto;
+  margin-right: auto;
   text-shadow: 1px 3px #000000;
   font-size: 3em;
   font-family: sans-serif;
@@ -8322,12 +8323,12 @@ section #accueil .large {
   letter-spacing: 0.13em;
   position: absolute;
   padding-top: 20%;
-  padding-left: 31%;
-  margin-right: auto;
+  padding-left: 35%;
   margin-bottom: auto;
   z-index: 10;
   background: transparent;
   color: #fffffff0;
+  text-align: center;
 }
 
 .article-boutique hr {
@@ -8336,7 +8337,7 @@ section #accueil .large {
   background: #ffffffcf;
   position: absolute;
   margin-top: 26%;
-  margin-left: 31%;
+  margin-left: 35.5%;
   margin-right: auto;
   margin-bottom: auto;
   z-index: 9;

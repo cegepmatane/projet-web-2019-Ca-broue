@@ -76,3 +76,8 @@ $taille-police: 2em;
 .lien-pagination{
   @extend .page-link;
 }
+
+#navbar{
+  background-color: white !important;
+  position: relative !important;
+}

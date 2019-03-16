@@ -1,6 +1,6 @@
 @import "../commun/bootstrap-4.0.0/scss/bootstrap.scss";
 
-.col-md-5{
+/* .col-md-5{
   
     .carte-image-goodie
     {
@@ -9,4 +9,9 @@
         padding-top: 10%;
         width: 50%;
     }
-}
+} */
+
+#navbar{
+    background-color: white !important;
+    position: relative !important; 
+  }

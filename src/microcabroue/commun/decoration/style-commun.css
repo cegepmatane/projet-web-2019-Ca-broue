@@ -8387,4 +8387,13 @@ body {
   margin: 2%;
 }
 
+#navbar {
+  background-color: #14141400 !important;
+  width: 100%;
+  overflow: hidden;
+  position: fixed;
+  top: 0;
+  z-index: 20;
+}
+
 /*# sourceMappingURL=style-commun.css.map */

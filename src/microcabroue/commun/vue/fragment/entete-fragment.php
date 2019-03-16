@@ -45,7 +45,7 @@ function afficherEntete($page = null){
    <!-- <h1>
         <?/*= $page->titrePrincipal ?? ""; */?>
     </h1>-->
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light" id="navbar">
         <a class="navbar-brand" href="#">
 
         <img src="<?= LIEN_DOMAINE ; ?>commun/decoration/image/logo.png"  class="d-inline-block align-top" alt="">
