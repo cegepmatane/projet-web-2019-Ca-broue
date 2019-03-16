@@ -7,7 +7,7 @@ $page = (object)
     [
     "titre" => "panier",
     "titrePrincipal" => "Le titre principal H1",
-    "itemMenuActif" => "accueil"
+    "itemMenuActif" => "panier"
     ];
 ?>
 

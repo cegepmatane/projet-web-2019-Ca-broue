@@ -6,7 +6,8 @@ require_once(CHEMIN_SRC_DEV . "microcabroue/commun/vue/fragment/pied-de-page-fra
 $page = (Object)
 [
     "style" => "../microcabroue/utilisateur/decoration/mon-compte.css",
-    "titre" => "Mon compte"
+    "titre" => "Mon compte",
+    "itemMenuActif" => "mon-compte"
 ];
 
 
