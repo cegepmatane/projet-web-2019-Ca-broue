@@ -21,12 +21,29 @@ if($_GET["navigation-retour-url"] ?? false &&
 }
 
 if(isset($_SESSION['liste-panier'])){
-    $page->listePanier = json_decode($_SESSION['liste-panier']);
-    foreach($page->listePanier as $goodie){
-        if(isset($_GET['id']) &&  $_GET['id'] == $goodie->id){
-            $_SESSION['liste-panier'] = json_encode(array_diff($page->listePanier, $goodie));
+
+    //session_destroy();
+    $page->listePanier = (array) json_decode($_SESSION['liste-panier']);
+    $doublon = false;
+
+    foreach($page->listePanier as &$panier){
+
+        if(isset($_GET['id']) && $_GET['id'] == $panier->id){
+            if($panier->quantitee > 1){
+                $panier->quantitee--;
+                $doublon = true;
+            }
+            else{
+                $panier = null;
+            }
         }
-     
+    }
+    if(isset($_GET['id'])){
+        if(!$doublon){
+            $tableauApresSuppresion = array_filter($page->listePanier);
+            $page->listePanier = (array) $tableauApresSuppresion;
+        }
+        $_SESSION['liste-panier'] = json_encode($page->listePanier);
     }
     afficherTableauPanier($page);
 }

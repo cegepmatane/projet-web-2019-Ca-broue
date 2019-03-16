@@ -46,14 +46,15 @@ function afficherTableauPanierModifiable($page = null){
     
       <?php
           /** @var Goodie $goodie */
-          for($i=0;$i<sizeof($page->listePanier);$i++){
-            
+          //for($i=0;$i<sizeof($page->listePanier);$i++){
+          foreach($page->listePanier as $panier)
+          {
             echo" <tr>
-            <th scope='row'>$i</th>
-            <td>".$page->listePanier[$i]->nom_fr."</td>
-            <td>".$page->listePanier[$i]->quantitee."</td>
-            <td>".$page->listePanier[$i]->prix." $ </td>
-            <td><a href='?id=".$page->listePanier[$i]->id."' class='btn btn-danger my-2 my-sm-0' '>Supprimer</a></td>
+            <th scope='row'></th>
+            <td>".$panier->nom_fr."</td>
+            <td>".$panier->quantitee."</td>
+            <td>".$panier->prix." $ </td>
+            <td><a href='?id=".$panier->id."' class='btn btn-danger my-2 my-sm-0' '>Supprimer</a></td>
             </tr>";
 
           }

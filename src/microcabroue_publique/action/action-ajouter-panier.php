@@ -35,19 +35,13 @@ if(isset( $_GET["id"])){
     if(!isset($_SESSION['liste-panier'])){
         $panierListe = array($panier);
         $_SESSION['liste-panier'] = json_encode($panierListe);
-        print_r($_SESSION['liste-panier']);
 
     }
     else{
-        $listePanier = json_decode($_SESSION['liste-panier'], true);
+        $listePanier = json_decode($_SESSION['liste-panier']);
         $doublon = false;
-        var_dump( $listePanier);
-
         foreach($listePanier as $unGoodie){
-            echo ("<br>");
-
-            var_dump($unGoodie);
-            if($panier->getId() == $unGoodie->getId()){
+            if($panier->getId() == $unGoodie->id){
                 $unGoodie->quantitee++; 
                 $doublon = true;
             }
@@ -56,7 +50,6 @@ if(isset( $_GET["id"])){
             array_push($listePanier,$panier );
         }
         $_SESSION['liste-panier'] = json_encode($listePanier);
-        print_r($_SESSION['liste-panier']);
 
 
     }
