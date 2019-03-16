@@ -7,18 +7,20 @@
  */
 
 require_once("BaseDeDonnee.php");
-
 require_once("AccesseurUtilisateur.php");
+
 class AccesseurAchat
 {
-    public const SQL_STATISTIQUE_PAR_GOODIE = "select ".Achat::PRIX.", ". Achat::QUANTITE. ", ".Achat::DATE . ", ".Achat::ID_GOODIE." from ". Achat::TABLE ;
     public const SQL_RECHERCHE_PAR_UTILISATEUR = "select".Achat::PRIX.", ". Achat::QUANTITE. ", ".Achat::DATE . ", ".Achat::ID_GOODIE." from ". Achat::TABLE . "where ".Achat::ID_UTILISATEUR. " = :id";
+    public const SQL_STATISTIQUE_PAR_GOODIE = "select SUM(".Achat::PRIX.") as sum_prix, SUM(". Achat::QUANTITE. ") as sum_quantite, ".Achat::ID_GOODIE." from ". Achat::TABLE . " group by ".Achat::ID_GOODIE;
+
     private static $connexion = null;
-    
+    private $accesseurUtilisateur = null;
     
 
     function __construct(){
         if(!self::$connexion) self::$connexion =  BaseDeDonnee::getConnexion();
+
         $accesseurUtilisateur = new AccesseurUtilisateur();
     }
 
@@ -30,9 +32,8 @@ class AccesseurAchat
         $curseur = $requete->fetchAll(PDO::FETCH_ASSOC);
         if (count($curseur) > 0) {
             foreach ($curseur as $maLigne) {
-                $achat = new Achat(null, new Goodie((object)[Goodie::ID => $maLigne[Achat::ID_GOODIE]]), $maLigne[Achat::PRIX], $maLigne[Achat::QUANTITE], $maLigne[Achat::DATE], "");
 
-                $listeAchats[] = $achat;
+                $listeAchats[] = $maLigne;
             }
         }
         return $listeAchats;
