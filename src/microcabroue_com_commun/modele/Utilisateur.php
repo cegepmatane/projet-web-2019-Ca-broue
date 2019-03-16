@@ -13,6 +13,7 @@ class Utilisateur
     private $mail;
     private $pseudo;
     private $mot_passe;
+    private $isAdmin;
 
     private $liste_message_erreur_active = [];
     private static $LISTE_MESSAGE_ERREUR =
@@ -59,6 +60,7 @@ class Utilisateur
         $this->setMail($attribut->mail ?? "");
         $this->setPseudo($attribut->pseudo ?? "");
         $this->setMot_passe($attribut->mot_passe ?? "");
+        $this->setIsAdmin($attribut->isAdmin ?? false);
     }
 
     /**
@@ -240,6 +242,21 @@ class Utilisateur
 
         return $this;
     }
+
+    public function getIsAdmin()
+    {
+        return $this->isAdmin;
+    }
+
+    
+    public function setIsAdmin($isAdmin)
+    {
+        $this->isAdmin = $isAdmin;
+
+        return $this;
+    }
+
+
     public function ValiderUtilisateurPremiereEtape()
     {
         $this->liste_message_erreur_active = [];
