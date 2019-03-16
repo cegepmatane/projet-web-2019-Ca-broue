@@ -8,13 +8,18 @@
 
 require_once("BaseDeDonnee.php");
 
+require_once("AccesseurUtilisateur.php");
 class AccesseurAchat
 {
     public const SQL_STATISTIQUE_PAR_GOODIE = "select ".Achat::PRIX.", ". Achat::QUANTITE. ", ".Achat::DATE . ", ".Achat::ID_GOODIE." from ". Achat::TABLE ;
+    public const SQL_RECHERCHE_PAR_UTILISATEUR = "select".Achat::PRIX.", ". Achat::QUANTITE. ", ".Achat::DATE . ", ".Achat::ID_GOODIE." from ". Achat::TABLE . "where ".Achat::ID_UTILISATEUR. " = :id";
     private static $connexion = null;
+    
+    
 
     function __construct(){
         if(!self::$connexion) self::$connexion =  BaseDeDonnee::getConnexion();
+        $accesseurUtilisateur = new AccesseurUtilisateur();
     }
 
     public function recupererStatistiqueParGoodie(){
@@ -31,5 +36,17 @@ class AccesseurAchat
             }
         }
         return $listeAchats;
+    }
+
+    public function rechercherParUtilisateur($nom, $prenom)
+    {
+        $requete = self::$connexion->prepare(self::SQL_RECHERCHE_PAR_UTILISATEUR);
+        $listeResultat=[];
+        $utilisateur = $accesseurUtilisateur->recevoirUtilisateurParNom($nom, $prenom);
+        $requete->bindValue(':id', $utilisateur->getId(), PDO::PARAM_INT);
+        $requete->execute();
+        $listeResultat = $requete->fetchAll(PDO::FETCH_OBJ);
+
+        return $listeResultat;
     }
 }
