@@ -17,14 +17,16 @@ function afficherTableauPanierModifiable($page = null){
 
   <?php
       /** @var Goodie $goodie */
-      for($i=0;$i<sizeof($page->listePanier);$i++){
-        echo" <tr>
-        <th scope='row'>$i</th>
-        <td>".$page->listePanier[$i]->getNomFr()."</td>
-        <td>1</td>
-        <td>".$page->listePanier[$i]->getPrix()." $ </td>
-      </tr>";
-      }
+      foreach($page->listePanier as $panier)
+          {
+            echo" <tr>
+            <th scope='row'></th>
+            <td>".$panier->nom_fr."</td>
+            <td>".$panier->quantitee."</td>
+            <td>".$panier->prix." $ </td>
+            </tr>";
+
+          }
 
     }
 

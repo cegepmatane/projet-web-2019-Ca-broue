@@ -22,7 +22,6 @@ if($_GET["navigation-retour-url"] ?? false &&
 
 if(isset($_SESSION['liste-panier'])){
 
-    //session_destroy();
     $page->listePanier = (array) json_decode($_SESSION['liste-panier']);
     $doublon = false;
 
@@ -39,11 +38,14 @@ if(isset($_SESSION['liste-panier'])){
         }
     }
     if(isset($_GET['id'])){
+
         if(!$doublon){
             $tableauApresSuppresion = array_filter($page->listePanier);
             $page->listePanier = (array) $tableauApresSuppresion;
         }
         $_SESSION['liste-panier'] = json_encode($page->listePanier);
+        header('Location:'.LIEN_DOMAINE.'panier');
+
     }
     afficherTableauPanier($page);
 }
