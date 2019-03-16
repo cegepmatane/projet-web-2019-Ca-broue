@@ -42,6 +42,7 @@ function afficherPage($page = null){
     afficherPiedDePage($page);
 
 }
+
 require_once("../../../microcabroue_publique/action/action-ajouter-panier.php");
 
 ?> 

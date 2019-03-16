@@ -1,5 +1,6 @@
 <?php
 require_once ($_SERVER['CONFIGURATION_COMMUN']);
+require_once(CHEMIN_SRC_DEV . "microcabroue_com_commun/modele/Panier.php");
 
 require_once(CHEMIN_SRC_DEV."microcabroue_com_commun/modele/Goodie.php");
 //require_once(CHEMIN_SRC_DEV."microcabroue_publique/modele/CategorieGoodie.php");
@@ -26,13 +27,36 @@ if($_GET["navigation-retour-url"] ?? false &&
 
 if(isset( $_GET["id"])){
     $page->goodie = $accesseurEntiteGoodie->recupererGoodie($_GET["id"]);
+    $panier = new Panier();
+    $panier->setId($page->goodie->getId());
+    $panier->setNomFr($page->goodie->getNomFr());
+    $panier->setPrix($page->goodie->getPrix());
 
     if(!isset($_SESSION['liste-panier'])){
-        $_SESSION['liste-panier'] = array($_GET["id"]);
+        $panierListe = array($panier);
+        $_SESSION['liste-panier'] = json_encode($panierListe);
+        print_r($_SESSION['liste-panier']);
+
     }
     else{
-        array_push($_SESSION['liste-panier'], $_GET["id"]);
+        $listePanier = json_decode($_SESSION['liste-panier']);
+        $doublon = false;
+        foreach($listePanier as $unGoodie){
+            print_r($unGoodie);
+            if($panier->getId() == $unGoodie->id){
+                $unGoodie->quantitee++; 
+                $doublon = true;
+            }
+        }
+        if(!$doublon){
+            array_push($listePanier,$panier );
+        }
+        $_SESSION['liste-panier'] = json_encode($listePanier);
+        print_r($_SESSION['liste-panier']);
+
+
     }
+    header('Location:'.LIEN_DOMAINE.'panier');
 }
 /*
 $page->messageNavigationRetour = "Goodie non trouvée".

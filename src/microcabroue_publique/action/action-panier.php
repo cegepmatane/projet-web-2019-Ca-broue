@@ -20,20 +20,18 @@ if($_GET["navigation-retour-url"] ?? false &&
     $page->navigationRetourTitre = $_POST["navigation-retour-titre"];
 }
 
-
 if(isset($_SESSION['liste-panier'])){
-    $page->listePanier = array();
-    foreach($_SESSION['liste-panier'] as $idGoodie){
-        if(isset($_GET['id']) &&  $_GET['id'] == $idGoodie){
-            $_SESSION['liste-panier'] = array_diff($_SESSION['liste-panier'], array($_GET["id"]));
+    $page->listePanier = json_decode($_SESSION['liste-panier']);
+    foreach($page->listePanier as $goodie){
+        if(isset($_GET['id']) &&  $_GET['id'] == $goodie->id){
+            $_SESSION['liste-panier'] = json_encode(array_diff($page->listePanier, $goodie));
         }
         else{
-            $goodie = $accesseurEntiteGoodie->recupererGoodie($idGoodie);
-            array_push($page->listePanier ,$goodie);
+            //array_push($page->listePanier ,$goodie);
         }
     }
+    afficherTableauPanier($page);
 }
 
 
-afficherTableauPanier($page);
 afficherBoutton();

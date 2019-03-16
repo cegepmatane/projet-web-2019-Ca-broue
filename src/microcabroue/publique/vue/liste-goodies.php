@@ -63,7 +63,7 @@ function afficherPage($page = null){
                     <h5 class=\"carte-goodie-titre\">". $goodie->getNomFr() ."</h5>
                     <p class=\"carte-goodie-texte\">". $goodie->getPrix() ." $</p>
                     <p class=\"carte-goodie-texte\">". $goodie->getDescriptionFr() ."</p>
-                    <a href=\"boutique/ajouter-panier/".$goodie->getId()."\" class=\"bouton-validation\">Ajouter au panier</a>
+                    <a href=\"".LIEN_DOMAINE."boutique/ajouter-panier/".$goodie->getId()."\" class=\"bouton-validation\">Ajouter au panier</a>
                 </div>
             </div>";
                 }
