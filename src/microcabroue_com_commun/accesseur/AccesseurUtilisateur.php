@@ -92,5 +92,19 @@ class AccesseurUtilisateur
         $utilisateur = new Utilisateur($donnees);
         return $utilisateur;
     }
+    public function recevoirUtilisateurParNom($nom, $prenom)
+    {
+        $nomNetoyer = filter_var($nom, FILTER_SANITIZE_STRING);
+        $prenomNetoyer = filter_var($prenom, FILTER_SANITIZE_STRING);
+        $SQL_RECEVOIR = "SELECT nom, prenom, adresse_postal, code_postal, ville, mail, pseudo, mot_passe FROM utilisateur WHERE nom = :nom AND prenom = :prenom";
+        
+        $requete = self::$connexion->prepare($SQL_RECEVOIR);
+        $requete->bindValue(':nom', $nomNetoyer, PDO::PARAM_STR);
+        $requete->bindValue(':prenom', $prenomNetoyer, PDO::PARAM_STR);
+        $requete->execute();
+        $donnees = (object) $requete->fetch(PDO::FETCH_OBJ);
+        $utilisateur = new Utilisateur($donnees);
+        return $utilisateur;
+    }
   
 }
