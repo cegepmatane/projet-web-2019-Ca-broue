@@ -23,7 +23,7 @@ function afficherBoutton(){
   
   <div id='continuer-bouttons'>
         <a class='bouton-secondaire' href='boutique'>Revenir à la boutique</a>
-        <a class='bouton-validation' href='connexion'>Commander</a>
+        <a class='bouton-validation' href='utilisateur/paiement'>Commander</a>
   </div>
 
   <?php

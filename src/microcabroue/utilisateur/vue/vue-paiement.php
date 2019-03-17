@@ -7,7 +7,7 @@ require_once("../../commun/vue/fragment/tableau-panier.php");
 $page = (object)
 [
     "style" => "decoration/style-paiement.css",
-    "titre" => "inscription",
+    "titre" => "paiement",
     "isPremiereEtape" => true,
     "isSecondeEtape" => false,
     "dossier" => true,
@@ -29,14 +29,14 @@ function afficherPremiereEtapeLivraison($page = null)
 ?>
         <h1>Mode de livraison</h1>
 
-    <form >
+    <form method="post">
         <div class='form-group ligne'>
             <label><input type='radio' name='optradio' checked>Poste Canada</label>
             <label><input type='radio' name='optradio' checked>Fedex</label>
             <label><input type='radio' name='optradio' checked>PuroPost</label>
         </div>
         <!-- Prochaine etape -->
-        <button type="submit" class="btn btn-primary">Poursuivre</button>
+        <button type="submit" class="btn btn-primary" name="action-aller-seconde-etape" value="naviguer">Poursuivre</button>
     </form>
 <?php
 }
@@ -53,7 +53,10 @@ function afficherDeuxiemeEtapePaiement($page = null)
             </form>
         </div>
         <!-- Prochaine etape -->
-        <button type="submit" class="btn btn-primary">Paiement</button>
+        <button type="submit" class="bouton bouton-primaire" name="action-aller-premiere-etape" value="naviguer">
+                Revenir
+            </button>
+        <button type="submit" class="btn btn-primary" name="action-payer" value="payer">Paiement</button>
     </form> 
 <?php
 }
@@ -81,6 +84,6 @@ function afficherPage($page = null)
     afficherPiedDePage($page);
 }
 
+require_once("../../../microcabroue_com_utilisateur/action/action-paiement.php");
 
-afficherPage($page);
 
