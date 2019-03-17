@@ -30,7 +30,7 @@
             <header>
                 
                 <div class="boutons-entete">
-                <img src="<?=LIEN_DOMAINE?>administration/decoration/image/logo.png"  class="logo" alt=""> 
+                <a href="<?=LIEN_DOMAINE?>"><img src="<?=LIEN_DOMAINE?>administration/decoration/image/logo.png"  class="logo" alt=""></a> 
                     <ul class="liste-horizontale">
                         <li class="element-liste-horizontale">
                             <a href="<?=LIEN_DOMAINE?>admin/accueil" class="bouton bouton-jaune">Accueil</a>
