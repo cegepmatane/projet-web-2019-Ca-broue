@@ -17,13 +17,13 @@ require_once "fragment/pied-de-page-fragment.php";
     ?>
     <h4>Résultats de recherche</h4>
     <div class="tableau-resultat">
-    <table>
+    <table class="table">
     <tr>
-    <th>Numero d'achat</th>
-    <th>Date</th>
-    <th>Produit</th>
-    <th>Quantité</th>
-    <th>Client</th>
+    <th scope="col">Numero d'achat</th>
+    <th scope="col">Date</th>
+    <th scope="col">Produit</th>
+    <th scope="col">Quantité</th>
+    <th scope="col">Client</th>
     </tr>
     <?php 
     if(count($page->resultatRecherche) > 0)
@@ -32,11 +32,11 @@ require_once "fragment/pied-de-page-fragment.php";
         {
             ?>
             <tr>
-                <th><?=$resultat->numero_achat?></th>
-                <th><?=$resultat->date?></th>
-                <th><?=$resultat->produit?></th>
-                <th><?=$resultat->quantite?></th>
-                <th><?=$resultat->utilisateur?></th>
+                <th scope="row"><?=$resultat->numero_achat?></th>
+                <td><?=$resultat->date?></td>
+                <td><?=$resultat->produit?></td>
+                <td><?=$resultat->quantite?></td>
+                <td><?=$resultat->utilisateur?></td>
             </tr>
             <?php
         }      
@@ -55,7 +55,7 @@ require_once "fragment/pied-de-page-fragment.php";
         ?>
         <div class="conteneur">
     <form method="post">
-    <select name="choix-recherche">
+    <select class="form-control" name="choix-recherche">
     <option value="numero-achat">Numéro d'achat</option>
     <option value="date">Date</option>
     <option value="produit">Produit</option>
@@ -101,7 +101,7 @@ require_once "fragment/pied-de-page-fragment.php";
         <form method="post">
         <input type="hidden" name="choix-recherche" value="<?=$_POST['choix-recherche']?>">
         <label for="numero-achat">Numéro de d'achat</label>
-        <input type="text" name="numero-achat" value="000000">
+        <input class="form-control" type="text" name="numero-achat" value="000000">
         <button type="submit" class="bouton bouton-vert" name="bouton-recherche" value="rechercher"> Rechercher</button>
         </form>
         </div>
