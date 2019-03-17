@@ -17,5 +17,4 @@ $listeStatsParGoodie = $accesseurAchat->recupererStatistiqueParGoodie();
 
 $page->listeStatsParGoodie = $listeStatsParGoodie;
 
-var_dump($listeStatsParGoodie);
 afficherPage($page);

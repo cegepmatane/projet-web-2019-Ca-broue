@@ -13,6 +13,10 @@ function afficherPage($page = null){
 
     afficherEntete($page);
 
+    if (!isset($page->listeStatsParGoodie)){
+        echo"<p>Erreur dans le chargement des statistiques</p>";
+        return;
+    }
     ?>
     <hr>
     <br>
@@ -30,37 +34,24 @@ function afficherPage($page = null){
                 <thead>
                 <tr>
                     <th scope="col">Goodies</th>
-                    <th scope="col">Ventes total </th>
                     <th scope="col">CA total </th>
-                    <th scope="col">Vente ce mois</th>
-                    <th scope="col">CA ce mois</th>
+                    <th scope="col">Ventes total </th>
                 </tr>
                 </thead>
                 <tbody>
-                <tr>
-                    <th scope="row">Goodie 1</th>
-                    <td><?= rand() ?></php></td>
-                    <td><?= rand() ?></php> €</td>
-                    <td><?= rand() ?></php></td>
-                    <td><?= rand() ?></php> €</td>
+                <?php
+                    foreach ($page->listeStatsParGoodie as $stats) {
 
-                </tr>
-                <tr>
-                    <th scope="row">Goodie 2</th>
-                    <td><?= rand() ?></php></td>
-                    <td><?= rand() ?></php> €</td>
-                    <td><?= rand() ?></php></td>
-                    <td><?= rand() ?></php> €</td>
+                        ?>
+                        <tr>
+                            <th scope="row"><?= $stats['id_goodie'] ?> (TODO mettre le nom )</th>
+                            <td><?= $stats['sum_prix'] ?> €</td>
+                            <td><?= $stats['sum_quantite'] ?></td>
+                        </tr>
 
-                </tr>
-                <tr>
-                    <th scope="row">Goodie 3</th>
-                    <td><?= rand() ?></php></td>
-                    <td><?= rand() ?></php> €</td>
-                    <td><?= rand() ?></php></td>
-                    <td><?= rand() ?></php> €</td>
-
-                </tr>
+                        <?php
+                    }
+                        ?>
                 </tbody>
             </table>
         </div>
