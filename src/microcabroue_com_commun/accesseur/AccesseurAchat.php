@@ -53,7 +53,7 @@ class AccesseurAchat
         $curseur = $requete->fetchAll(PDO::FETCH_ASSOC);
         if (count($curseur) > 0) {
             foreach ($curseur as $maLigne) {
-                //$maLigne['goodie'] = $accesseurGoodie->recupererGoodie($maLigne[Achat::ID_GOODIE]);
+                $maLigne['categorie'] = $accesseurCategorie->recupererCategorie($maLigne[Goodie::ID_CATEGORIE]);
                 $listeAchats[] = $maLigne;
             }
         }
