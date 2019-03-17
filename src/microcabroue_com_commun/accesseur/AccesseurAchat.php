@@ -9,6 +9,7 @@ require_once(CHEMIN_SRC_DEV . "microcabroue_com_commun/modele/Utilisateur.php");
 require_once(CHEMIN_SRC_DEV . "microcabroue_com_commun/modele/Achat.php");
 require_once("BaseDeDonnee.php");
 require_once("AccesseurUtilisateur.php");
+require_once("AccesseurEntiteGoodie.php");
 
 class AccesseurAchat
 {
@@ -19,15 +20,14 @@ class AccesseurAchat
 
     private static $connexion = null;
     private $accesseurUtilisateur = null;
-    
 
     function __construct(){
         if(!self::$connexion) self::$connexion =  BaseDeDonnee::getConnexion();
-
         $accesseurUtilisateur = new AccesseurUtilisateur();
     }
 
     public function recupererStatistiqueParGoodie(){
+        $accesseurGoodie = new AccesseurEntiteGoodie();
         $requete = self::$connexion->prepare(self::SQL_STATISTIQUE_PAR_GOODIE);
 
         $listeAchats=[];
@@ -35,7 +35,7 @@ class AccesseurAchat
         $curseur = $requete->fetchAll(PDO::FETCH_ASSOC);
         if (count($curseur) > 0) {
             foreach ($curseur as $maLigne) {
-
+                $maLigne['goodie'] = $accesseurGoodie->recupererGoodie($maLigne[Achat::ID_GOODIE]);
                 $listeAchats[] = $maLigne;
             }
         }
