@@ -12,7 +12,7 @@ require_once("AccesseurUtilisateur.php");
 
 class AccesseurAchat
 {
-    public const SQL_RECHERCHE_PAR_UTILISATEUR = "select".Achat::PRIX.", ". Achat::QUANTITE. ", ".Achat::DATE . ", ".Achat::ID_GOODIE." from ". Achat::TABLE . "where ".Achat::ID_UTILISATEUR. " = :id";
+    public const SQL_RECHERCHE_PAR_UTILISATEUR = "select ".Achat::PRIX.", ". Achat::QUANTITE. ", ". Achat::NUMERO_TRANSACTION.", ".Achat::DATE . ", ".Achat::ID_GOODIE." from ". Achat::TABLE . " where ".Achat::ID_UTILISATEUR. " = ?";
     public const SQL_STATISTIQUE_PAR_GOODIE = "select SUM(".Achat::PRIX.") as sum_prix, SUM(". Achat::QUANTITE. ") as sum_quantite, ".Achat::ID_GOODIE." from ". Achat::TABLE . " group by ".Achat::ID_GOODIE;
     public const SQL_RECHERCHE_PAR_NUMERO = "select ".Achat::ID_UTILISATEUR.", ".Achat::DATE. ", ".Achat::ID_GOODIE.", ".Achat::QUANTITE." from ".Achat::TABLE." where ". Achat::NUMERO_TRANSACTION. " = :numero";
     public const SQL_RECHERCHE_PAR_DATE = "select ".Achat::ID_UTILISATEUR.", ".Achat::DATE. ", ".Achat::ID_GOODIE.", ".Achat::NUMERO_TRANSACTION.", ".Achat::QUANTITE." from ".Achat::TABLE." where ".Achat::DATE." LIKE ?";  
@@ -42,15 +42,17 @@ class AccesseurAchat
         return $listeAchats;
     }
 
-    public function rechercherParUtilisateur($nom, $prenom)
+    public function rechercherParUtilisateur($id_utilisateur)
     {
+        $idNetoyer = filter_var($id_utilisateur, FILTER_SANITIZE_NUMBER_INT);
         $requete = self::$connexion->prepare(self::SQL_RECHERCHE_PAR_UTILISATEUR);
         $listeResultat=[];
-        $utilisateur = $accesseurUtilisateur->recevoirUtilisateurParNom($nom, $prenom);
-        $requete->bindValue(':id', $utilisateur->getId(), PDO::PARAM_INT);
+        $requete->bindValue(1, $idNetoyer, PDO::PARAM_INT);
         $requete->execute();
+        
         $listeResultat = $requete->fetchAll(PDO::FETCH_OBJ);
-
+        //var_dump($listeResultat);
+        //$requete->debugDumpParams();
         return $listeResultat;
     }
     public function rechercherParNumero($numero)
@@ -71,4 +73,5 @@ class AccesseurAchat
         //var_dump($requete);
         return $listeAchat;
     }
+    
 }

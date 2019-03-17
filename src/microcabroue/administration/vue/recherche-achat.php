@@ -67,12 +67,32 @@ require_once "fragment/pied-de-page-fragment.php";
         <?php
     }
 
-    function afficherParNom($page)
+    function afficherParNom($page, $listeUtilisateur)
     {
         if(!is_object($page))
             $page = (object)[];
-        ?>
 
+            
+        ?>
+        <div class="conteneur">
+        <form method="post">
+        <input type="hidden" name="choix-recherche" value="<?=$_POST['choix-recherche']?>">
+        <label for="date-achat">Date de l'achat</label>
+        <select class="form-control"  name="utilisateur-achat">
+        <?php
+        foreach($listeUtilisateur as $utilisateur)
+        {
+            
+            ?>
+            <option value="<?=$utilisateur->getId()?>"><?=$utilisateur->getPrenom()." " . $utilisateur->getNom()?></option>
+            <?php
+            
+        }
+        ?>
+        </select>
+        <button type="submit" class="bouton bouton-vert" name="bouton-recherche" value="rechercher"> Rechercher</button>
+        </form>
+        </div>
         <?php
     }
 

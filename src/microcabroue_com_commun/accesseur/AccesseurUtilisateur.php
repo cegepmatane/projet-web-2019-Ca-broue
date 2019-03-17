@@ -92,19 +92,21 @@ class AccesseurUtilisateur
         $utilisateur = new Utilisateur($donnees);
         return $utilisateur;
     }
-    public function recevoirUtilisateurParNom($nom, $prenom)
+    public function recupererUtilisateurs()
     {
-        $nomNetoyer = filter_var($nom, FILTER_SANITIZE_STRING);
-        $prenomNetoyer = filter_var($prenom, FILTER_SANITIZE_STRING);
-        $SQL_RECEVOIR = "SELECT nom, prenom, adresse_postal, code_postal, ville, mail, pseudo, mot_passe FROM utilisateur WHERE nom = :nom AND prenom = :prenom";
+        $listeUtilisateur = [];
+        $SQL_RECEVOIR = "SELECT id, nom, prenom, adresse_postal, code_postal, ville, mail, pseudo, mot_passe FROM utilisateur";
         
         $requete = self::$connexion->prepare($SQL_RECEVOIR);
-        $requete->bindValue(':nom', $nomNetoyer, PDO::PARAM_STR);
-        $requete->bindValue(':prenom', $prenomNetoyer, PDO::PARAM_STR);
         $requete->execute();
-        $donnees = (object) $requete->fetch(PDO::FETCH_OBJ);
-        $utilisateur = new Utilisateur($donnees);
-        return $utilisateur;
+        $donnees = $requete->fetchAll(PDO::FETCH_OBJ);
+        foreach($donnees as $donnee)
+       {
+        $utilisateur = new Utilisateur($donnee);
+        $listeUtilisateur[] = $utilisateur;
+       }
+        
+        return $listeUtilisateur;
     }
   
 }

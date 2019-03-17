@@ -22,6 +22,8 @@ if(isset($_POST['bouton-choix']) && $_POST['bouton-choix'] == "selectionner")
         case "produit":
             break;    
         case "utilisateur":
+            $listeUtilisateur = $accesseurUtilisateur->recupererUtilisateurs();
+            afficherParNom($page, $listeUtilisateur);
             break;
     }
 }
@@ -54,7 +56,6 @@ if(isset($_POST['bouton-recherche']) && $_POST['bouton-recherche'] == "recherche
             break;
         case "date":
             $listeAchat = $accesseurAchat->rechercherParDate($_POST['date-achat']);
-           
             
             if(isset($listeAchat[0]->id_goodie) && is_int($listeAchat[0]->id_goodie))
             {
@@ -78,6 +79,26 @@ if(isset($_POST['bouton-recherche']) && $_POST['bouton-recherche'] == "recherche
         case "produit":
             break;    
         case "utilisateur":
+            $listeAchat = $accesseurAchat->rechercherParUtilisateur($_POST['utilisateur-achat']);
+            if(isset($listeAchat[0]->id_goodie) && is_int($listeAchat[0]->id_goodie))
+            {
+                $utilisateur = $accesseurUtilisateur->recevoirUtilisateur($_POST['utilisateur-achat']);
+                foreach($listeAchat as $achat)
+               {
+                    $goodie = $accesseurGoodie->recupererGoodie($achat->id_goodie);
+                    
+                    $achatAffichable = (object)
+                    [
+                        "numero_achat" => $achat->numero_transaction,
+                        "date" => $achat->date_achat,
+                        "produit" => $goodie->getNomFr(),
+                        "utilisateur" => $utilisateur->getPrenom()." ". $utilisateur->getNom(),
+                        "quantite" => $achat->quantite_produit 
+                    ];
+                    $page->resultatRecherche[] = $achatAffichable;
+               }
+
+            }
             break;
     }
 }
