@@ -47,6 +47,9 @@
                         <li class="element-liste-horizontale">
                             <a href="<?=LIEN_DOMAINE?>admin/utilisateurs"class="bouton bouton-jaune">Utilisateurs</a>
                         </li>
+                        <li class="element-liste-horizontale">
+                            <a href="<?=LIEN_DOMAINE?>admin/recherche-achat"class="bouton bouton-jaune">Recherche d'achat</a>
+                        </li>
                     </ul>
                 </div>
             </header>
