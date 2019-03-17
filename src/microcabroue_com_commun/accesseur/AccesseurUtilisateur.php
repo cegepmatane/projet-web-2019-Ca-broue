@@ -12,7 +12,7 @@ class AccesseurUtilisateur
 
     public function verifierUtilisateur($pseudo){
 
-        $SQL_VERIFIER = "SELECT pseudo, mot_passe, id FROM utilisateur WHERE pseudo = :pseudo";
+        $SQL_VERIFIER = "SELECT pseudo, mot_passe, id, isAdmin FROM utilisateur WHERE pseudo = :pseudo";
 
         $requete = self::$connexion->prepare($SQL_VERIFIER);
         $requete->bindParam(':pseudo', $pseudo, PDO::PARAM_STR);

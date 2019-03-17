@@ -66,11 +66,16 @@ function afficherEntete($page = null){
                     ["titre"=>"Bière", "id"=>"biere", "lien"=>LIEN_DOMAINE."biere"],
                     ["titre"=>"Boutique", "id"=>"boutique", "lien"=>LIEN_DOMAINE."boutique"],
                     ["titre"=>"Mon Compte", "id"=>"mon-compte", "lien"=>LIEN_DOMAINE."mon-compte"],
+                    ["titre"=>"Paneau d'administration", "id"=>"admin", "lien"=>LIEN_DOMAINE."admin"],
                 ];
                 $liste="";
                 foreach ($objetsNav as $objet) {
 
                     if($objet['id'] == 'mon-compte' && !isset($_SESSION['id'])){
+                        break;
+                    }
+
+                    if($objet['id'] == 'admin' && (!isset($_SESSION['isAdmin']) || $_SESSION['isAdmin'] == false)){
                         break;
                     }
 

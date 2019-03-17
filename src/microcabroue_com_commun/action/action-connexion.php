@@ -20,6 +20,7 @@ if(isset($_POST["action-connexion"]) && $_POST["action-connexion"] == "connexion
         if(password_verify($_POST['mot_passe'], $utilisateur->mot_passe)){
             $_SESSION['pseudo'] = $utilisateur->pseudo;
             $_SESSION['id'] = $utilisateur->id;
+            $_SESSION['isAdmin'] = $utilisateur->isAdmin;
             header('Location: accueil');         
         }
         else{
