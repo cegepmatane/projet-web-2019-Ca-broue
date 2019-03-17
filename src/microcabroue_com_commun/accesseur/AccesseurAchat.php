@@ -14,7 +14,8 @@ class AccesseurAchat
 {
     public const SQL_RECHERCHE_PAR_UTILISATEUR = "select".Achat::PRIX.", ". Achat::QUANTITE. ", ".Achat::DATE . ", ".Achat::ID_GOODIE." from ". Achat::TABLE . "where ".Achat::ID_UTILISATEUR. " = :id";
     public const SQL_STATISTIQUE_PAR_GOODIE = "select SUM(".Achat::PRIX.") as sum_prix, SUM(". Achat::QUANTITE. ") as sum_quantite, ".Achat::ID_GOODIE." from ". Achat::TABLE . " group by ".Achat::ID_GOODIE;
-    public const SQL_RECHERCHE_PAR_NUMERO = "select ".Achat::ID_UTILISATEUR.", ".Achat::DATE. ", ".Achat::ID_GOODIE.", ".Achat::QUANTITE." from ".Achat::TABLE." where ". Achat::NUMERO_TRANSACTION. " = :numero";  
+    public const SQL_RECHERCHE_PAR_NUMERO = "select ".Achat::ID_UTILISATEUR.", ".Achat::DATE. ", ".Achat::ID_GOODIE.", ".Achat::QUANTITE." from ".Achat::TABLE." where ". Achat::NUMERO_TRANSACTION. " = :numero";
+    public const SQL_RECHERCHE_PAR_DATE = "select ".Achat::ID_UTILISATEUR.", ".Achat::DATE. ", ".Achat::ID_GOODIE.", ".Achat::NUMERO_TRANSACTION.", ".Achat::QUANTITE." from ".Achat::TABLE." where ".Achat::DATE." LIKE ?";  
 
     private static $connexion = null;
     private $accesseurUtilisateur = null;
@@ -59,5 +60,15 @@ class AccesseurAchat
         $requete->execute();
         $achat = $requete->fetch(PDO::FETCH_OBJ);
         return $achat;
+    }
+    public function rechercherParDate($date)
+    {
+        $listeAchat = [];
+        $requete = self::$connexion->prepare(self::SQL_RECHERCHE_PAR_DATE);
+        $requete->bindValue(1, $date."%", PDO::PARAM_STR);
+        $requete->execute();
+        $listeAchat = $requete->fetchAll(PDO::FETCH_OBJ);
+        //var_dump($requete);
+        return $listeAchat;
     }
 }

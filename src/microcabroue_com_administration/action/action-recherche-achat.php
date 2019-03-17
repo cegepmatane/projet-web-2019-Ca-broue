@@ -17,6 +17,7 @@ if(isset($_POST['bouton-choix']) && $_POST['bouton-choix'] == "selectionner")
             afficherParNumero($page);
             break;
         case "date":
+            afficherParDate($page);
             break;
         case "produit":
             break;    
@@ -52,6 +53,27 @@ if(isset($_POST['bouton-recherche']) && $_POST['bouton-recherche'] == "recherche
             }
             break;
         case "date":
+            $listeAchat = $accesseurAchat->rechercherParDate($_POST['date-achat']);
+           
+            
+            if(isset($listeAchat[0]->id_goodie) && is_int($listeAchat[0]->id_goodie))
+            {
+               foreach($listeAchat as $achat)
+               {
+                    $goodie = $accesseurGoodie->recupererGoodie($achat->id_goodie);
+                    $utilisateur = $accesseurUtilisateur->recevoirUtilisateur($achat->id_utilisateur);
+                    $achatAffichable = (object)
+                    [
+                        "numero_achat" => $achat->numero_transaction,
+                        "date" => $achat->date_achat,
+                        "produit" => $goodie->getNomFr(),
+                        "utilisateur" => $utilisateur->getPrenom()." ". $utilisateur->getNom(),
+                        "quantite" => $achat->quantite_produit 
+                    ];
+                    $page->resultatRecherche[] = $achatAffichable;
+               }
+                
+            }
             break;
         case "produit":
             break;    
