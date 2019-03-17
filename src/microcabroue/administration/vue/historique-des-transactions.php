@@ -30,20 +30,21 @@ function afficherPage($page = null){
     <div class="row">
         <hr>
 
-        <div class="col-2 ">
+        <div class="col-1 ">
             <br/>
-            <h4 class="d-flex justify-content-center">Statistiques par goodies</h4>
 
         </div>
-        <div class="col-6">
+        <div class="col-10">
 
             <table class="table table-striped">
                 <thead>
                 <tr>
-                    <th scope="col">Goodies</th>
-                    <th scope="col">CA total </th>
-                    <th scope="col">Ventes totales </th>
-                    <th scope="col">Nombre de commande </th>
+                    <th scope="col">Date</th>
+                    <th scope="col">Numéro de transaction </th>
+                    <th scope="col">Prix de vente </th>
+                    <th scope="col">Quantité </th>
+                    <th scope="col">Nom du goodie </th>
+                    <th scope="col">Client </th>
 
                 </tr>
                 </thead>
@@ -53,10 +54,12 @@ function afficherPage($page = null){
 
                     ?>
                     <tr>
-                      <!--  <th scope="row"><?/*= $stats['goodie']->getNomFr()*/?> </th>
-                        <td><?/*= $stats['sum_prix'] */?> $</td>
-                        <td><?/*= $stats['sum_quantite'] */?></td>
-                        <td><?/*= $stats['nb_vente'] */?></td>-->
+                        <th scope="row"><?= $transaction[Achat::DATE]?> </th>
+                        <td><?= $transaction[Achat::NUMERO_TRANSACTION] ?></td>
+                        <td><?= $transaction[Achat::PRIX] ?> $</td>
+                        <td><?= $transaction[Achat::QUANTITE] ?></td>
+                        <td><?= $transaction['goodie']->getNomFr() ?></td>
+                        <td><?= $transaction['utilisateur']->getPrenom(). " ". $transaction['utilisateur']->getNom() ?></td>
                     </tr>
 
                     <?php
@@ -65,7 +68,7 @@ function afficherPage($page = null){
                 </tbody>
             </table>
         </div>
-        <div class="col-4"> </div>
+        <div class="col-1"> </div>
 
     </div>
 
