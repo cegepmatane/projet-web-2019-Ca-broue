@@ -39,6 +39,9 @@
                             <a href="<?=LIEN_DOMAINE?>admin/bieres" class="bouton bouton-jaune">Bieres</a>
                         </li> -->
                         <li class="element-liste-horizontale">
+                            <a href="<?=LIEN_DOMAINE?>admin/historique" class="bouton bouton-jaune">Historique des transactions</a>
+                        </li>
+                        <li class="element-liste-horizontale">
                             <a href="<?=LIEN_DOMAINE?>admin/goodies" class="bouton bouton-jaune">Goodies</a>
                         </li>
                         <li class="element-liste-horizontale">

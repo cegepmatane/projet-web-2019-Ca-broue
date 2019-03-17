@@ -31,5 +31,6 @@ RewriteRule ^admin/bieres$ administration/vue/vue-liste-bieres.php
 RewriteRule ^admin/biere/ajouter$ administration/vue/vue-ajouter-biere.php
 RewriteRule ^admin/biere/modifier/(\d+)$ administration/vue/vue-modifier-biere.php?id=$1
 RewriteRule ^admin/recherche-achat$ administration/vue/recherche-achat.php
+RewriteRule ^admin/historique$ administration/vue/historique-des-transactions.php
 
 
