@@ -36,6 +36,8 @@ function afficherPage($page = null){
                     <th scope="col">Goodies</th>
                     <th scope="col">CA total </th>
                     <th scope="col">Ventes totales </th>
+                    <th scope="col">Nombre de commande </th>
+
                 </tr>
                 </thead>
                 <tbody>
@@ -47,6 +49,7 @@ function afficherPage($page = null){
                             <th scope="row"><?= $stats['goodie']->getNomFr()?> </th>
                             <td><?= $stats['sum_prix'] ?> $</td>
                             <td><?= $stats['sum_quantite'] ?></td>
+                            <td><?= $stats['nb_vente'] ?></td>
                         </tr>
 
                         <?php
