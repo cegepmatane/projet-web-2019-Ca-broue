@@ -16,7 +16,7 @@ $accesseurAchat = new AccesseurAchat();
 $listeStatsParGoodie = $accesseurAchat->recupererStatistiqueParGoodie();
 $listeStatsParCategorie = $accesseurAchat->recupererStatistiqueParCategorie();
 $page->listeStatsParGoodie = $listeStatsParGoodie;
+$page->listeStatsParCategorie = $listeStatsParCategorie;
 
 
-var_dump($listeStatsParCategorie);
 afficherPage($page);

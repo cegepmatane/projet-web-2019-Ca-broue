@@ -14,7 +14,7 @@ function afficherPage($page = null){
     afficherEntete($page);
 
     if (!isset($page->listeStatsParGoodie)){
-        echo"<p>Erreur dans le chargement des statistiques</p>";
+        echo"<p>Erreur dans le chargement des statistiques par goodies</p>";
         return;
     }
     ?>
@@ -25,7 +25,7 @@ function afficherPage($page = null){
 
         <div class="col-2 ">
             <br/>
-            <h4 class="d-flex justify-content-center">Statistique par goodies</h4>
+            <h4 class="d-flex justify-content-center">Statistiques par goodies</h4>
 
         </div>
         <div class="col-6">
@@ -45,7 +45,7 @@ function afficherPage($page = null){
                         ?>
                         <tr>
                             <th scope="row"><?= $stats['goodie']->getNomFr()?> </th>
-                            <td><?= $stats['sum_prix'] ?> €</td>
+                            <td><?= $stats['sum_prix'] ?> $</td>
                             <td><?= $stats['sum_quantite'] ?></td>
                         </tr>
 
@@ -58,13 +58,20 @@ function afficherPage($page = null){
         <div class="col-4"> </div>
 
     </div>
+    <?php
+        if (!isset($page->listeStatsParCategorie)){
+        echo"<p>Erreur dans le chargement des statistiques par catégorie</p>";
+        return;
+    }
+    ?>
     <hr>
     <br>
+
     <div class="row">
 
         <div class="col-2 ">
             <br/>
-            <h4 class="d-flex justify-content-center">Statistique par catégories</h4>
+            <h4 class="d-flex justify-content-center">Statistiques par catégories</h4>
 
         </div>
         <div class="col-6">
@@ -73,37 +80,26 @@ function afficherPage($page = null){
                 <thead>
                 <tr>
                     <th scope="col">Categorie</th>
-                    <th scope="col">Ventes total </th>
                     <th scope="col">CA total </th>
-                    <th scope="col">Vente ce mois</th>
-                    <th scope="col">CA ce mois</th>
+                    <th scope="col">Quantité vendu</th>
+                    <th scope="col">Nombre de commande </th>
                 </tr>
                 </thead>
                 <tbody>
-                <tr>
-                    <th scope="row">Categorie 1</th>
-                    <td><?= rand() ?></php></td>
-                    <td><?= rand() ?></php> €</td>
-                    <td><?= rand() ?></php></td>
-                    <td><?= rand() ?></php> €</td>
+                <?php
+                foreach ($page->listeStatsParCategorie as $stats) {
 
-                </tr>
-                <tr>
-                    <th scope="row">Categorie 2</th>
-                    <td><?= rand() ?></php></td>
-                    <td><?= rand() ?></php> €</td>
-                    <td><?= rand() ?></php></td>
-                    <td><?= rand() ?></php> €</td>
+                    ?>
+                    <tr>
+                        <th scope="row"><?= $stats['categorie']->getLibelleFr()?> </th>
+                        <td><?= $stats['sum_prix'] ?> $</td>
+                        <td><?= $stats['sum_quantite'] ?></td>
+                        <td><?= $stats['nb_vente'] ?></td>
+                    </tr>
 
-                </tr>
-                <tr>
-                    <th scope="row">Categorie 3</th>
-                    <td><?= rand() ?></php></td>
-                    <td><?= rand() ?></php> €</td>
-                    <td><?= rand() ?></php></td>
-                    <td><?= rand() ?></php> €</td>
-
-                </tr>
+                    <?php
+                }
+                ?>
                 </tbody>
             </table>
         </div>
