@@ -14,6 +14,7 @@ require_once("AccesseurEntiteCategorieGoodie.php");
 
 class AccesseurAchat
 {
+    public const SQL_RECHERCHE_PAR_GOODIE = "select ".Achat::PRIX.", ". Achat::QUANTITE. ", ". Achat::NUMERO_TRANSACTION.", ".Achat::DATE . ", ".Achat::ID_UTILISATEUR." from ". Achat::TABLE . " where ".Achat::ID_GOODIE." = ?";
     public const SQL_RECHERCHE_PAR_UTILISATEUR = "select ".Achat::PRIX.", ". Achat::QUANTITE. ", ". Achat::NUMERO_TRANSACTION.", ".Achat::DATE . ", ".Achat::ID_GOODIE." from ". Achat::TABLE . " where ".Achat::ID_UTILISATEUR. " = ?";
     public const SQL_RECHERCHE_PAR_NUMERO = "select ".Achat::ID_UTILISATEUR.", ".Achat::DATE. ", ".Achat::ID_GOODIE.", ".Achat::QUANTITE." from ".Achat::TABLE." where ". Achat::NUMERO_TRANSACTION. " = :numero";
     public const SQL_RECHERCHE_PAR_DATE = "select ".Achat::ID_UTILISATEUR.", ".Achat::DATE. ", ".Achat::ID_GOODIE.", ".Achat::NUMERO_TRANSACTION.", ".Achat::QUANTITE." from ".Achat::TABLE." where ".Achat::DATE." LIKE ?";
@@ -109,6 +110,20 @@ class AccesseurAchat
         $listeAchat = $requete->fetchAll(PDO::FETCH_OBJ);
         //var_dump($requete);
         return $listeAchat;
+    }
+
+    public function rechercherParGoodie($id_goodie)
+    {
+        $idNetoyer = filter_var($id_goodie, FILTER_SANITIZE_NUMBER_INT);
+        $requete = self::$connexion->prepare(self::SQL_RECHERCHE_PAR_GOODIE);
+        $listeResultat=[];
+        $requete->bindValue(1, $idNetoyer, PDO::PARAM_INT);
+        $requete->execute();
+        
+        $listeResultat = $requete->fetchAll(PDO::FETCH_OBJ);
+        //var_dump($listeResultat);
+        //$requete->debugDumpParams();
+        return $listeResultat;
     }
     
 }

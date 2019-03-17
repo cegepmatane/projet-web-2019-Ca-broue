@@ -77,7 +77,7 @@ require_once "fragment/pied-de-page-fragment.php";
         <div class="conteneur">
         <form method="post">
         <input type="hidden" name="choix-recherche" value="<?=$_POST['choix-recherche']?>">
-        <label for="date-achat">Date de l'achat</label>
+        <label for="utilisateur-achat">Client</label>
         <select class="form-control"  name="utilisateur-achat">
         <?php
         foreach($listeUtilisateur as $utilisateur)
@@ -96,12 +96,30 @@ require_once "fragment/pied-de-page-fragment.php";
         <?php
     }
 
-    function afficherParProduit($page)
+    function afficherParProduit($page, $listeProduit)
     {
         if(!is_object($page))
             $page = (object)[];
         ?>
-        
+        <div class="conteneur">
+        <form method="post">
+        <input type="hidden" name="choix-recherche" value="<?=$_POST['choix-recherche']?>">
+        <label for="produit-achat">Produit</label>
+        <select class="form-control"  name="produit-achat">
+        <?php
+        foreach($listeProduit as $produit)
+        {
+            
+            ?>
+            <option value="<?=$produit->getId()?>"><?=$produit->getNomFr()?></option>
+            <?php
+            
+        }
+        ?>
+        </select>
+        <button type="submit" class="bouton bouton-vert" name="bouton-recherche" value="rechercher"> Rechercher</button>
+        </form>
+        </div>
         <?php
     }
     function afficherParDate($page)
