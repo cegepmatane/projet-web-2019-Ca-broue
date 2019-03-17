@@ -19,7 +19,7 @@ class AccesseurAchat
     public const SQL_RECHERCHE_PAR_DATE = "select ".Achat::ID_UTILISATEUR.", ".Achat::DATE. ", ".Achat::ID_GOODIE.", ".Achat::NUMERO_TRANSACTION.", ".Achat::QUANTITE." from ".Achat::TABLE." where ".Achat::DATE." LIKE ?";
     public const SQL_STATISTIQUE_PAR_GOODIE = "select SUM(".Achat::PRIX.") as sum_prix, SUM(". Achat::QUANTITE. ") as sum_quantite, COUNT(".Achat::DATE .") as nb_vente, ".Achat::ID_GOODIE." from ". Achat::TABLE . " group by ".Achat::ID_GOODIE;
     public const SQL_STATISTIQUE_PAR_CATEGORIE = "select SUM(".Achat::PRIX.") as sum_prix, SUM(". Achat::QUANTITE. ") as sum_quantite, COUNT(".Achat::DATE .") as nb_vente, ".Goodie::ID_CATEGORIE." from ". Achat::TABLE . ", ". Goodie::TABLE ." where goodie.id=achat.id_goodie group by ".Goodie::ID_CATEGORIE;
-
+    public const SQL_LISTER_TRANSACTION = " select ".Achat::ID_UTILISATEUR . ", ".Achat::ID_GOODIE . ", ".Achat::DATE . ", ".Achat::QUANTITE . ", ".Achat::PRIX . ", ". Achat::NUMERO_TRANSACTION . " from ".Achat::TABLE. " order by ". Achat::DATE." DESC;";
     private static $connexion = null;
     private $accesseurUtilisateur = null;
 
@@ -58,6 +58,25 @@ class AccesseurAchat
             }
         }
         return $listeAchats;
+    }
+
+    public function listerLesTransactions(){
+        $accesseurGoodie = new AccesseurEntiteGoodie();
+        $accesseurUtilisateur = new AccesseurUtilisateur();
+
+        $requete = self::$connexion->prepare(self::SQL_LISTER_TRANSACTION);
+
+        $listeTransactions=[];
+        $requete->execute();
+        $curseur = $requete->fetchAll(PDO::FETCH_ASSOC);
+        if (count($curseur) > 0) {
+            foreach ($curseur as $maLigne) {
+                $maLigne['goodie'] = $accesseurGoodie->recupererGoodie($maLigne[Achat::ID_GOODIE]);
+                $maLigne['utilisateur'] = $accesseurUtilisateur->recevoirUtilisateur($maLigne[Goodie::ID_UTILISATEUR]);
+                $listeTransactions[] = $maLigne;
+            }
+        }
+        return $listeTransactions;
     }
 
     public function rechercherParUtilisateur($id_utilisateur)
