@@ -14,7 +14,9 @@ require_once (CHEMIN_SRC_DEV."microcabroue_com_commun/accesseur/AccesseurAchat.p
 $accesseurAchat = new AccesseurAchat();
 
 $listeStatsParGoodie = $accesseurAchat->recupererStatistiqueParGoodie();
-
+$listeStatsParCategorie = $accesseurAchat->recupererStatistiqueParCategorie();
 $page->listeStatsParGoodie = $listeStatsParGoodie;
 
+
+var_dump($listeStatsParCategorie);
 afficherPage($page);
