@@ -30,7 +30,7 @@ function afficherPage($page = null){
                 <option <?php if($_GET['periode-stats'] == 'semaine') echo"selected"; ?> value="semaine">Semaine actuelle</option>
             </select>
             <div class="col-sm-1"></div>
-            <button type="submit" class="form-control col-sm-1" class="btn btn-primary mb-2">Valider</button>
+            <button type="submit" class="form-control col-sm-1" class="btn btn-primary mb-2">Actualiser</button>
         </div>
     </form>
     <hr>
@@ -57,8 +57,13 @@ function afficherPage($page = null){
                 </thead>
                 <tbody>
                 <?php
+                $totalPrix=0;
+                $totalQuantite=0;
+                $totalVente=0;
                     foreach ($page->listeStatsParGoodie as $stats) {
-
+                        $totalPrix+=$stats['sum_prix'];
+                        $totalVente+=$stats['nb_vente'];
+                        $totalQuantite+=$stats['sum_quantite'];
                         ?>
                         <tr>
                             <th scope="row"><?= $stats['goodie']->getNomFr()?> </th>
@@ -70,6 +75,10 @@ function afficherPage($page = null){
                         <?php
                     }
                         ?>
+                <th scope="row">Total </th>
+                <th><?= $totalPrix?> $</th>
+                <th><?= $totalQuantite?> </th>
+                <th><?= $totalVente?> </th>
                 </tbody>
             </table>
         </div>
@@ -105,8 +114,13 @@ function afficherPage($page = null){
                 </thead>
                 <tbody>
                 <?php
+                $totalPrix=0;
+                $totalQuantite=0;
+                $totalVente=0;
                 foreach ($page->listeStatsParCategorie as $stats) {
-
+                    $totalPrix+=$stats['sum_prix'];
+                    $totalVente+=$stats['nb_vente'];
+                    $totalQuantite+=$stats['sum_quantite'];
                     ?>
                     <tr>
                         <th scope="row"><?= $stats['categorie']->getLibelleFr()?> </th>
@@ -118,6 +132,10 @@ function afficherPage($page = null){
                     <?php
                 }
                 ?>
+                <th scope="row">Total </th>
+                <th><?= $totalPrix?> $</th>
+                <th><?= $totalQuantite?> </th>
+                <th><?= $totalVente?> </th>
                 </tbody>
             </table>
         </div>
