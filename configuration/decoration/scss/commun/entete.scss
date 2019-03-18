@@ -1,0 +1,17 @@
+@import "../commun/bootstrap-4.0.0/scss/bootstrap.scss";
+
+@font-face {
+    font-family: Test;
+    src: url("../../fonts/Callygraphy.ttf") format("truetype");
+   }
+
+.nav-lien{
+    color: #ae8648 !important;
+    font-family: Test;
+ 
+}
+
+.nav-lien:hover{
+    color: #74521e !important;
+    background-color: #201c1b79  !important;
+}

@@ -1,4 +1,4 @@
-# Plan Fonctionnel
+# Plan Test
 
 ---
  **A**|   **B**

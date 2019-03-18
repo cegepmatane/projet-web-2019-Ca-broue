@@ -28,6 +28,7 @@ function afficherEntete($page = null){
         <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
         <link href="<?= LIEN_DOMAINE ; ?>commun/decoration/style-commun.css" rel="stylesheet" type="text/css"/>
+        <link href="<?= LIEN_DOMAINE ; ?>commun/decoration/entete.css" rel="stylesheet" type="text/css"/>
         <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
 
 <?php

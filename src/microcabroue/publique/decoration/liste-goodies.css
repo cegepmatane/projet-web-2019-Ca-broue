@@ -8281,4 +8281,9 @@ h3 {
   position: relative !important;
 }
 
+img {
+  max-width: 200px !important;
+  max-height: 200px !important;
+}
+
 /*# sourceMappingURL=liste-goodies.css.map */

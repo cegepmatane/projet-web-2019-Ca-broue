@@ -8234,20 +8234,18 @@ h3 {
     border: 1px solid #ddd !important;
   }
 }
-.col-md-5 .carte-image-goodie {
-  margin-left: 20%;
-  margin-right: auto;
-  padding-top: 10%;
-  width: 50%;
+@font-face {
+  font-family: Test;
+  src: url("../../fonts/Callygraphy.ttf") format("truetype");
+}
+.nav-lien {
+  color: #ae8648 !important;
+  font-family: Test;
 }
 
-#navbar {
-  background-color: white !important;
-  position: relative !important;
+.nav-lien:hover {
+  color: #74521e !important;
+  background-color: #201c1b79 !important;
 }
 
-img {
-  width: 70% !important;
-}
-
-/*# sourceMappingURL=goodie.css.map */
+/*# sourceMappingURL=entete.css.map */
