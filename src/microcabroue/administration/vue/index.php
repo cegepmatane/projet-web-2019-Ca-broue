@@ -18,6 +18,21 @@ function afficherPage($page = null){
         return;
     }
     ?>
+    <form action="<?= LIEN_DOMAINE ?>admin" method="get" id="tri-stats">
+        <div class="form-group row text-center">
+            <label for="tri-select" class="col-sm-2 col-form-label">
+                Tri sur la période :
+            </label>
+            <select id="tri-select" name="periode-stats" form="tri-stats" class="form-control col-sm-3">
+                <option value="tout">Depuis le début</option>
+                <option value="annee">Année actuelle</option>
+                <option value="mois">Mois actuel</option>
+                <option value="semaine">Semaine actuelle</option>
+            </select>
+            <div class="col-sm-1"></div>
+            <button type="submit" class="form-control col-sm-1" class="btn btn-primary mb-2">Valider</button>
+        </div>
+    </form>
     <hr>
     <br>
     <div class="row">
