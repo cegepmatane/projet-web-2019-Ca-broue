@@ -143,6 +143,63 @@ function afficherPage($page = null){
 
     </div>
 
+    <?php
+    if (!isset($page->listeStatsUtilisateur)){
+        echo"<p>Erreur dans le chargement des statistiques par client</p>";
+        return;
+    }
+    ?>
+    <hr>
+    <br>
+
+    <div class="row">
+
+        <div class="col-2 ">
+            <br/>
+            <h4 class="d-flex justify-content-center">Statistiques par clients</h4>
+
+        </div>
+        <div class="col-6">
+
+            <table class="table table-striped">
+                <thead>
+                <tr>
+                    <th scope="col">Client</th>
+                    <th scope="col">CA total </th>
+                    <th scope="col">Quantité vendu</th>
+                    <th scope="col">Nombre de commande </th>
+                </tr>
+                </thead>
+                <tbody>
+                <?php
+                $totalPrix=0;
+                $totalQuantite=0;
+                $totalVente=0;
+                foreach ($page->listeStatsParCategorie as $stats) {
+                    $totalPrix+=$stats['sum_prix'];
+                    $totalVente+=$stats['nb_vente'];
+                    $totalQuantite+=$stats['sum_quantite'];
+                    ?>
+                    <tr>
+                        <th scope="row"><?= $stats['client']->getPrenom()?> <?= $stats['client']->getNom()?></th>
+                        <td><?= $stats['sum_prix'] ?> $</td>
+                        <td><?= $stats['sum_quantite'] ?></td>
+                        <td><?= $stats['nb_vente'] ?></td>
+                    </tr>
+
+                    <?php
+                }
+                ?>
+                <th scope="row">Total </th>
+                <th><?= $totalPrix?> $</th>
+                <th><?= $totalQuantite?> </th>
+                <th><?= $totalVente?> </th>
+                </tbody>
+            </table>
+        </div>
+        <div class="col-4"> </div>
+
+    </div>
 
   <!--  <div class="texte-rouge texte-index">
         Si vous ne possèdez pas les droits vous ne devriez pas être ici.
