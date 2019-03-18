@@ -1,6 +1,10 @@
 <?php
     require_once($_SERVER["CONFIGURATION_COMMUN"]);
-
+    session_start();
+    if(!$_SESSION['isAdmin'])
+    {
+        header('location: connexion');
+    }
     function afficherEntete($page = null){
         if(!is_object($page)) 
             return;

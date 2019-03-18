@@ -8330,4 +8330,9 @@ header {
   float: left;
 }
 
+.selecteur-recherche {
+  margin-left: 13%;
+  margin-right: 71%;
+}
+
 /*# sourceMappingURL=style-commun-admin.css.map */

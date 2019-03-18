@@ -53,7 +53,7 @@ require_once "fragment/pied-de-page-fragment.php";
         if(!is_object($page))
             $page = (object)[];
         ?>
-        <div class="conteneur">
+    <div class="selecteur-recherche">
     <form method="post">
     <select class="form-control" name="choix-recherche">
     <option value="numero-achat">Numéro d'achat</option>
@@ -74,7 +74,7 @@ require_once "fragment/pied-de-page-fragment.php";
 
             
         ?>
-        <div class="conteneur">
+        <div class="selecteur-recherche">
         <form method="post">
         <input type="hidden" name="choix-recherche" value="<?=$_POST['choix-recherche']?>">
         <label for="utilisateur-achat">Client</label>
@@ -101,7 +101,7 @@ require_once "fragment/pied-de-page-fragment.php";
         if(!is_object($page))
             $page = (object)[];
         ?>
-        <div class="conteneur">
+        <div class="selecteur-recherche">
         <form method="post">
         <input type="hidden" name="choix-recherche" value="<?=$_POST['choix-recherche']?>">
         <label for="produit-achat">Produit</label>
