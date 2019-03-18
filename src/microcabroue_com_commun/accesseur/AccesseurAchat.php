@@ -19,8 +19,10 @@ class AccesseurAchat
     public const SQL_RECHERCHE_PAR_NUMERO = "select ".Achat::ID_UTILISATEUR.", ".Achat::DATE. ", ".Achat::ID_GOODIE.", ".Achat::QUANTITE." from ".Achat::TABLE." where ". Achat::NUMERO_TRANSACTION. " = :numero";
     public const SQL_RECHERCHE_PAR_DATE = "select ".Achat::ID_UTILISATEUR.", ".Achat::DATE. ", ".Achat::ID_GOODIE.", ".Achat::NUMERO_TRANSACTION.", ".Achat::QUANTITE." from ".Achat::TABLE." where ".Achat::DATE." LIKE ?";
     public const SQL_STATISTIQUE_PAR_GOODIE = "select SUM(".Achat::PRIX.") as sum_prix, SUM(". Achat::QUANTITE. ") as sum_quantite, COUNT(".Achat::DATE .") as nb_vente, ".Achat::ID_GOODIE." from ". Achat::TABLE . " group by ".Achat::ID_GOODIE;
+    public const SQL_STATISTIQUE_PAR_GOODIE_PAR_PERIODE = "select SUM(".Achat::PRIX.") as sum_prix, SUM(". Achat::QUANTITE. ") as sum_quantite, COUNT(".Achat::DATE .") as nb_vente, ".Achat::ID_GOODIE." from ". Achat::TABLE;
     public const SQL_STATISTIQUE_PAR_CATEGORIE = "select SUM(".Achat::PRIX.") as sum_prix, SUM(". Achat::QUANTITE. ") as sum_quantite, COUNT(".Achat::DATE .") as nb_vente, ".Goodie::ID_CATEGORIE." from ". Achat::TABLE . ", ". Goodie::TABLE ." where goodie.id=achat.id_goodie group by ".Goodie::ID_CATEGORIE;
     public const SQL_LISTER_TRANSACTION = " select ".Achat::ID_UTILISATEUR . ", ".Achat::ID_GOODIE . ", ".Achat::DATE . ", ".Achat::QUANTITE . ", ".Achat::PRIX . ", ". Achat::NUMERO_TRANSACTION . " from ".Achat::TABLE. " order by ". Achat::DATE." DESC;";
+
     private static $connexion = null;
     private $accesseurUtilisateur = null;
 
@@ -29,9 +31,27 @@ class AccesseurAchat
         $accesseurUtilisateur = new AccesseurUtilisateur();
     }
 
-    public function recupererStatistiqueParGoodie(){
+    public function recupererStatistiqueParGoodie($triPeriode = null){
         $accesseurGoodie = new AccesseurEntiteGoodie();
-        $requete = self::$connexion->prepare(self::SQL_STATISTIQUE_PAR_GOODIE);
+        switch ($triPeriode) {
+            case 'annee':
+                $sql = self::SQL_STATISTIQUE_PAR_GOODIE_PAR_PERIODE;
+                $sql.= " where YEAR(".Achat::DATE.") = YEAR(NOW()) group by ".Achat::ID_GOODIE;
+                $requete = self::$connexion->prepare($sql);
+                break;
+            case 'mois':
+                $sql = self::SQL_STATISTIQUE_PAR_GOODIE_PAR_PERIODE;
+                $sql.= " where MONTH(".Achat::DATE.") = MONTH(NOW()) group by ".Achat::ID_GOODIE;
+                $requete = self::$connexion->prepare($sql);
+                break;
+            case 'semaine':
+                $sql = self::SQL_STATISTIQUE_PAR_GOODIE_PAR_PERIODE;
+                $sql.= " where WEEK(".Achat::DATE.") = WEEK(NOW()) group by ".Achat::ID_GOODIE;
+                $requete = self::$connexion->prepare($sql);
+                break;
+            default:
+                $requete = self::$connexion->prepare(self::SQL_STATISTIQUE_PAR_GOODIE);
+        }
 
         $listeAchats=[];
         $requete->execute();
@@ -87,7 +107,7 @@ class AccesseurAchat
         $listeResultat=[];
         $requete->bindValue(1, $idNetoyer, PDO::PARAM_INT);
         $requete->execute();
-        
+
         $listeResultat = $requete->fetchAll(PDO::FETCH_OBJ);
         //var_dump($listeResultat);
         //$requete->debugDumpParams();
@@ -119,11 +139,11 @@ class AccesseurAchat
         $listeResultat=[];
         $requete->bindValue(1, $idNetoyer, PDO::PARAM_INT);
         $requete->execute();
-        
+
         $listeResultat = $requete->fetchAll(PDO::FETCH_OBJ);
         //var_dump($listeResultat);
         //$requete->debugDumpParams();
         return $listeResultat;
     }
-    
+
 }

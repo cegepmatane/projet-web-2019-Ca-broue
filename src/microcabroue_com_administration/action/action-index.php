@@ -12,8 +12,11 @@ require_once (CHEMIN_SRC_DEV."microcabroue_com_commun/modele/Goodie.php");
 require_once (CHEMIN_SRC_DEV."microcabroue_com_commun/accesseur/AccesseurAchat.php");
 
 $accesseurAchat = new AccesseurAchat();
-
-$listeStatsParGoodie = $accesseurAchat->recupererStatistiqueParGoodie();
+$periode=null;
+if(isset($_GET['periode-stats'])){
+    $periode=$_GET['periode-stats'];
+}
+$listeStatsParGoodie = $accesseurAchat->recupererStatistiqueParGoodie($periode);
 $listeStatsParCategorie = $accesseurAchat->recupererStatistiqueParCategorie();
 $page->listeStatsParGoodie = $listeStatsParGoodie;
 $page->listeStatsParCategorie = $listeStatsParCategorie;
