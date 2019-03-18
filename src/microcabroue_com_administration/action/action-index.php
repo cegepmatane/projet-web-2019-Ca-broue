@@ -17,7 +17,7 @@ if(isset($_GET['periode-stats'])){
     $periode=$_GET['periode-stats'];
 }
 $listeStatsParGoodie = $accesseurAchat->recupererStatistiqueParGoodie($periode);
-$listeStatsParCategorie = $accesseurAchat->recupererStatistiqueParCategorie();
+$listeStatsParCategorie = $accesseurAchat->recupererStatistiqueParCategorie($periode);
 $page->listeStatsParGoodie = $listeStatsParGoodie;
 $page->listeStatsParCategorie = $listeStatsParCategorie;
 
