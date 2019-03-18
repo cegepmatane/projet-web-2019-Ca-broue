@@ -83,7 +83,7 @@ class AccesseurUtilisateur
     public function recevoirUtilisateur($id)
     {
         $idNetoyer = filter_var($id, FILTER_SANITIZE_NUMBER_INT);
-        $SQL_RECEVOIR = "SELECT nom, prenom, adresse_postal, code_postal, ville, mail, pseudo, mot_passe FROM utilisateur WHERE id = :id";
+        $SQL_RECEVOIR = "SELECT nom, prenom, adresse_postal, code_postal, ville, mail, pseudo, mot_passe, isAdmin FROM utilisateur WHERE id = :id";
         
         $requete = self::$connexion->prepare($SQL_RECEVOIR);
         $requete->bindValue(':id', $idNetoyer, PDO::PARAM_INT);
@@ -95,7 +95,7 @@ class AccesseurUtilisateur
     public function recupererUtilisateurs()
     {
         $listeUtilisateur = [];
-        $SQL_RECEVOIR = "SELECT id, nom, prenom, adresse_postal, code_postal, ville, mail, pseudo, mot_passe FROM utilisateur";
+        $SQL_RECEVOIR = "SELECT id, nom, prenom, adresse_postal, code_postal, ville, mail, pseudo, mot_passe, isAdmin FROM utilisateur";
         
         $requete = self::$connexion->prepare($SQL_RECEVOIR);
         $requete->execute();
