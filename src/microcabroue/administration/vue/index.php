@@ -175,13 +175,13 @@ function afficherPage($page = null){
                 $totalPrix=0;
                 $totalQuantite=0;
                 $totalVente=0;
-                foreach ($page->listeStatsParCategorie as $stats) {
+                foreach ($page->listeStatsUtilisateur as $stats) {
                     $totalPrix+=$stats['sum_prix'];
                     $totalVente+=$stats['nb_vente'];
                     $totalQuantite+=$stats['sum_quantite'];
                     ?>
                     <tr>
-                        <th scope="row"><?= $stats['client']->getPrenom()?> <?= $stats['client']->getNom()?></th>
+                        <th scope="row"><?= $stats['utilisateur']->getPrenom()?> <?= $stats['utilisateur']->getNom()?></th>
                         <td><?= $stats['sum_prix'] ?> $</td>
                         <td><?= $stats['sum_quantite'] ?></td>
                         <td><?= $stats['nb_vente'] ?></td>
