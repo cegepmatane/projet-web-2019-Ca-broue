@@ -91,7 +91,7 @@ function afficherDeuxiemeEtape($utilisateur, $page = null)
             <div class="groupe-formulaire bouton-cocher">
                 <label class="etiquette-bouton-cocher">
                     <input class="saisie-bouton-cocher" type="checkbox" name="accepter-condition" value="coche">
-                    J'accepte les <a href="#">conditions d'utilisations</a>
+                    J'accepte les <a target="_blank" href="./conditions">conditions de confidentialité</a>
             </div>
             <!-- finaliser ou revenir-->
             <button type="submit" class="bouton bouton-primaire" name="action-aller-premiere-etape" value="naviguer">
