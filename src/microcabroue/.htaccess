@@ -13,6 +13,7 @@ RewriteRule ^a-propos publique/vue/a-propos.php
 RewriteRule ^mon-compte utilisateur/vue/mon-compte.php
 RewriteRule ^modifier-compte utilisateur/vue/modifier-info.php
 RewriteRule ^goodie-image/goodie_(\d+).jpeg publique/illustration/goodie-image/goodie_$1.jpeg
+RewriteRule ^conditions publique/vue/condition-confidentialite.php
 
 
 RewriteRule ^utilisateur/paiement utilisateur/vue/vue-paiement.php
