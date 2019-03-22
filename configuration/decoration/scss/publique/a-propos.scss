@@ -1,0 +1,129 @@
+@import "../commun/bootstrap-4.0.0/scss/bootstrap.scss";
+
+
+#navbar{
+    background-color: white !important;
+    position: relative !important; 
+  } 
+
+.florian
+{
+    text-align: center;
+    font-family: 'Knockout 47 A','Knockout 47 B';
+
+
+    position: relative !important;
+    //padding-left: 200px !important;
+    .image-membre
+    {
+        width: 40%;
+    }
+}
+
+.alec
+{
+    text-align: center;
+    font-family: 'Knockout 47 A','Knockout 47 B';
+
+
+    position: relative !important;
+    .image-membre
+    {
+        width: 55%;
+    }
+}
+
+.sedrick
+{
+    text-align: center;
+    font-family: 'Knockout 47 A','Knockout 47 B';
+
+
+    .image-membre
+    {
+        width: 55%;
+    }
+}
+
+
+.michael
+{
+    text-align: center;
+    font-family: 'Knockout 47 A','Knockout 47 B';
+
+    .image-membre
+    {
+        width: 40%;
+    }
+}
+
+
+.alexandre
+{
+    text-align: center;
+    font-family: 'Knockout 47 A','Knockout 47 B';
+
+
+    .image-membre
+    {
+    width: 40%;
+    }
+}
+
+.ajustement
+{
+    margin-left: 20em !important;
+   
+}
+
+div hr, .separation {
+    height: 0.2em !important;
+    width: 35.5em !important;
+    background: #000000cf !important;
+    position: relative !important;
+    text-align: center !important;
+    margin-right: auto !important;
+    margin-bottom: auto !important;
+    
+}
+
+.notre-mission-text
+{
+    text-align: center;
+    margin-left: 20%;
+    margin-right: 20%;
+    margin-top: 3%;
+    margin-bottom: 0% !important;
+}
+.notre-mission-text2
+{
+    text-align: center;
+    margin-left: 20%;
+    margin-right: 20%;
+    margin-top: 1%;
+    padding-bottom: 5%;
+}
+
+.notre-mission
+{
+    font-family: 'Knockout 47 A','Knockout 47 B';
+    text-transform: uppercase;
+    letter-spacing: .1em;
+    text-shadow: 2px 1px #000000;
+    text-align: center;
+    padding-top: 5% 
+}
+
+.notre-equipe
+{
+    font-family: 'Knockout 47 A','Knockout 47 B';
+    text-transform: uppercase;
+    letter-spacing: .1em;
+    text-shadow: 2px 1px #000000;
+    text-align: center;
+}
+
+.col-md-12
+{
+    padding-top: 5% !important;
+}
