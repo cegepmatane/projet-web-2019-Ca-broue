@@ -16,21 +16,21 @@ RewriteRule ^goodie-image/goodie_(\d+).jpeg publique/illustration/goodie-image/g
 RewriteRule ^conditions publique/vue/condition-confidentialite.php
 
 
-RewriteRule ^utilisateur/paiement utilisateur/vue/vue-paiement.php
+RewriteRule ^utilisateur/paiement utilisateur/vue/paiement.php
 
 RewriteRule ^admin$ administration/vue/index.php
 RewriteRule ^admin/$ administration/vue/index.php
 RewriteRule ^admin/accueil$ administration/vue/index.php
-RewriteRule ^admin/goodies$ administration/vue/vue-liste-goodies.php
-RewriteRule ^admin/goodie/ajouter$ administration/vue/vue-ajouter-goodie.php
-RewriteRule ^admin/goodie/modifier/(\d+)$ administration/vue/vue-modifier-goodie.php?id=$1
-RewriteRule ^admin/categories$ administration/vue/vue-liste-categories.php
-RewriteRule ^admin/categorie/ajouter$ administration/vue/vue-ajouter-categorie.php
-RewriteRule ^admin/categorie/modifier/(\d+)$ administration/vue/vue-modifier-categorie.php?id=$1
-RewriteRule ^admin/utilisateurs$ administration/vue/vue-liste-utilisateurs.php
-RewriteRule ^admin/bieres$ administration/vue/vue-liste-bieres.php
-RewriteRule ^admin/biere/ajouter$ administration/vue/vue-ajouter-biere.php
-RewriteRule ^admin/biere/modifier/(\d+)$ administration/vue/vue-modifier-biere.php?id=$1
+RewriteRule ^admin/goodies$ administration/vue/liste-goodies.php
+RewriteRule ^admin/goodie/ajouter$ administration/vue/ajouter-goodie.php
+RewriteRule ^admin/goodie/modifier/(\d+)$ administration/vue/modifier-goodie.php?id=$1
+RewriteRule ^admin/categories$ administration/vue/liste-categories.php
+RewriteRule ^admin/categorie/ajouter$ administration/vue/ajouter-categorie.php
+RewriteRule ^admin/categorie/modifier/(\d+)$ administration/vue/modifier-categorie.php?id=$1
+RewriteRule ^admin/utilisateurs$ administration/vue/liste-utilisateurs.php
+RewriteRule ^admin/bieres$ administration/vue/liste-bieres.php
+RewriteRule ^admin/biere/ajouter$ administration/vue/ajouter-biere.php
+RewriteRule ^admin/biere/modifier/(\d+)$ administration/vue/modifier-biere.php?id=$1
 RewriteRule ^admin/recherche-achat$ administration/vue/recherche-achat.php
 RewriteRule ^admin/historique$ administration/vue/historique-des-transactions.php
 
