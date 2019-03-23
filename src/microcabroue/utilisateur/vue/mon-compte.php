@@ -7,10 +7,45 @@ $page = (Object)
 [
     "style" => "../microcabroue/utilisateur/decoration/mon-compte.css",
     "titre" => "Mon compte",
-    "itemMenuActif" => "mon-compte"
+    "itemMenuActif" => "mon-compte",
+    "achats" => []
+
 ];
 
+function afficherAchats($page = null)
+{
+    ?>
+    <div class="conteneur" id="achats">
+                <h4>Achats</h4>
+                    <table class="table">
+                <tr>
+                    <th scope="col">Numero d'achat</th>
+                    <th scope="col">Date</th>
+                    <th scope="col">Produit</th>
+                    <th scope="col">Quantité</th>
+                </tr>
+                <?php 
+            if(count($page->achats) > 0)
+            {
+                foreach($page->achats as $achat)
+                {
+                 ?>
+                    <tr>
+                        <th scope="row"><?=$achat->numero_achat?></th>
+                        <td><?=$achat->date?></td>
+                        <td><?=$achat->produit?></td>
+                        <td><?=$achat->quantite?></td>
+                    </tr>
+                <?php
+                }      
+            }
+                ?>
+                </table>
+            </div>    
+                 
 
+            <?php 
+}
 function afficherPage($page = null, $utilisateur = null)
 {
     if (!is_object($page)) $page = (object)[];
@@ -44,11 +79,10 @@ function afficherPage($page = null, $utilisateur = null)
                 <input type="hidden" name="type-modification" value="info-personnelle">
                 <button type="submit" name="modifier" class="bouton bouton-bleu" value="modifier-info">Modifier</button>
                 </form>
-            </div>    
+            </div>
 
-        
     <?php
-    afficherPiedDePage($page);
+    
 
 }
 
