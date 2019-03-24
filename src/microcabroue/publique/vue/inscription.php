@@ -132,5 +132,5 @@ function afficherPage($utilisateur, $page = null)
     afficherPiedDePage($page);
 }
 
-require_once("../../../microcabroue_publique/action/action-inscription.php");
+require_once("../../../microcabroue_com_publique/action/action-inscription.php");
 ?>

@@ -32,7 +32,7 @@ function afficherBoutton(){
 
 afficherEntete($page);
 
-require_once(CHEMIN_CODE."microcabroue_publique/action/action-panier.php");
+require_once(CHEMIN_CODE . "microcabroue_com_publique/action/action-panier.php");
 
 
 //afficherElementsCommande();

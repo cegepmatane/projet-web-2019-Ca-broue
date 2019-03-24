@@ -2,8 +2,8 @@
 require_once ($_SERVER['CONFIGURATION_COMMUN']);
 
 require_once(CHEMIN_SRC_DEV."microcabroue_com_commun/modele/Goodie.php");
-//require_once(CHEMIN_SRC_DEV."microcabroue_publique/modele/CategorieGoodie.php");
-//require_once(CHEMIN_SRC_DEV."microcabroue_publique/accesseur/AccesseurEntiteCategorieGoodie.php");
+//require_once(CHEMIN_SRC_DEV."microcabroue_com_publique/modele/CategorieGoodie.php");
+//require_once(CHEMIN_SRC_DEV."microcabroue_com_publique/accesseur/AccesseurEntiteCategorieGoodie.php");
 require_once(CHEMIN_SRC_DEV."microcabroue_com_commun/accesseur/AccesseurEntiteGoodie.php");
 
 //$accesseurEntiteCategorieGoodie = new AccesseurEntiteCategorieGoodie();

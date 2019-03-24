@@ -43,6 +43,6 @@ function afficherPage($page = null){
 
 }
 
-require_once("../../../microcabroue_publique/action/action-ajouter-panier.php");
+require_once("../../../microcabroue_com_publique/action/action-ajouter-panier.php");
 
 ?> 

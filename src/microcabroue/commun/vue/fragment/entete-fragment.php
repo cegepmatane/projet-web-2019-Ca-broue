@@ -7,7 +7,7 @@
  */
 require_once ($_SERVER['CONFIGURATION_COMMUN']);
 
-require_once (CHEMIN_SRC_DEV."microcabroue_com_commun/action/action-deconnexion.php");
+require_once (CHEMIN_CODE."microcabroue_com_commun/action/action-deconnexion.php");
 
 session_start();
 function afficherEntete($page = null){
