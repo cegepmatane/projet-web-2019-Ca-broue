@@ -20,6 +20,8 @@ function afficherPage($page = null)
         $page = (object)[];
 
     afficherEntete($page);
+
+    echo $page->calendrier->show();
     ?>
 
     <?php
