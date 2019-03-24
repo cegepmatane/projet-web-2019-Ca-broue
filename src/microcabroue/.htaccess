@@ -32,6 +32,7 @@ RewriteRule ^admin/bieres$ administration/vue/liste-bieres.php
 RewriteRule ^admin/biere/ajouter$ administration/vue/ajouter-biere.php
 RewriteRule ^admin/biere/modifier/(\d+)$ administration/vue/modifier-biere.php?id=$1
 RewriteRule ^admin/recherche-achat$ administration/vue/recherche-achat.php
+RewriteRule ^admin/historique/datetransaction/(([12]\d{3}-(0[1-9]|1[0-2])-(0[1-9]|[12]\d|3[01]))) administration/vue/historique-des-transactions.php?datetransaction=$1
 RewriteRule ^admin/historique$ administration/vue/historique-des-transactions.php
 RewriteRule ^admin/calendrier$ administration/vue/calendrier.php
 

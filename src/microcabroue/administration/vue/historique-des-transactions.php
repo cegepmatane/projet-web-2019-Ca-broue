@@ -21,7 +21,7 @@ function afficherPage($page = null){
     afficherEntete($page);
 
     if (!isset($page->listeTransactions)){
-        echo"<p>Erreur dans le chargement des statistiques par goodies</p>";
+        echo"<p>Erreur dans le chargement des transactions</p>";
         return;
     }
     ?>
@@ -30,8 +30,15 @@ function afficherPage($page = null){
     <div class="row">
         <hr>
 
-        <div class="col-1 ">
+        <div class="col-2 ">
             <br/>
+            <h4 class="d-flex justify-content-center">
+                <?php
+                    if(isset( $page->datetransaction)){
+                        echo"Transactions du : ". $page->datetransaction;
+                    }
+                ?>
+            </h4>
 
         </div>
         <div class="col-10">
