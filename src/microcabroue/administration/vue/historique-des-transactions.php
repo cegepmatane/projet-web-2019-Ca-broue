@@ -27,18 +27,18 @@ function afficherPage($page = null){
     ?>
     <hr>
     <br>
+    <?php
+
+    if(isset( $page->datetransaction)){
+        echo"<h4 >Transactions du : ". $page->datetransaction ."</h4>";
+    }
+    ?>
     <div class="row">
         <hr>
 
-        <div class="col-2 ">
+        <div class="col-1">
             <br/>
-            <h4 class="d-flex justify-content-center">
-                <?php
-                    if(isset( $page->datetransaction)){
-                        echo"Transactions du : ". $page->datetransaction;
-                    }
-                ?>
-            </h4>
+
 
         </div>
         <div class="col-10">
