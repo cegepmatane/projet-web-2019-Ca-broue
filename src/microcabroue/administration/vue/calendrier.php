@@ -12,6 +12,7 @@ include_once "fragment/pied-de-page-fragment.php";
 $page = (object)
 [
     "titre" => "Calendrier",
+    "style" => LIEN_DOMAINE."administration/decoration/calendrier.css"
 ];
 
 function afficherPage($page = null)
