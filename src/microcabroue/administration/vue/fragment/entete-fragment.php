@@ -46,6 +46,9 @@
                             <a href="<?=LIEN_DOMAINE?>admin/historique" class="bouton bouton-jaune">Historique des transactions</a>
                         </li>
                         <li class="element-liste-horizontale">
+                            <a href="<?=LIEN_DOMAINE?>admin/calendrier" class="bouton bouton-jaune">Calendrier des transactions</a>
+                        </li>
+                        <li class="element-liste-horizontale">
                             <a href="<?=LIEN_DOMAINE?>admin/goodies" class="bouton bouton-jaune">Goodies</a>
                         </li>
                         <li class="element-liste-horizontale">
