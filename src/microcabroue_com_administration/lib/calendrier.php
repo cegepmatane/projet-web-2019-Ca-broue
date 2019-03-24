@@ -125,8 +125,13 @@ class Calendar {
         }
 
 
-        return '<li id="li-'.$this->currentDate.'" class="'.($cellNumber%7==1?' start ':($cellNumber%7==0?' end ':' ')).
-            ($cellContent==null?'mask':'').'">'.$cellContent.'</li>';
+        $resultat ='<li id="li-'.$this->currentDate.'" class="'.($cellNumber%7==1?' start ':($cellNumber%7==0?' end ':' ')). ($cellContent==null?'mask':'').'">';
+        $resultat.='<a href="'.LIEN_DOMAINE. $this->currentDate.'" >';
+        $resultat.=$cellContent;
+        $resultat.='</a>';
+        $resultat.='</li>';
+
+        return $resultat;
     }
 
     /**
