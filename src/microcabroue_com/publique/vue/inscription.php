@@ -1,8 +1,8 @@
 <?php
 require_once ($_SERVER['CONFIGURATION_COMMUN']);
-require_once(CHEMIN_SRC_DEV . "microcabroue/commun/vue/fragment/entete-fragment.php");
-require_once(CHEMIN_SRC_DEV . "microcabroue/commun/vue/fragment/pied-de-page-fragment.php");
-require_once(CHEMIN_SRC_DEV . "microcabroue_com_commun/modele/Utilisateur.php");
+require_once(CHEMIN_SRC_DEV . "microcabroue_com/commun/vue/fragment/entete-fragment.php");
+require_once(CHEMIN_SRC_DEV . "microcabroue_com/commun/vue/fragment/pied-de-page-fragment.php");
+require_once(CHEMIN_CODE . "microcabroue_com_commun/modele/Utilisateur.php");
 
 $page = (object)
 [
@@ -132,5 +132,5 @@ function afficherPage($utilisateur, $page = null)
     afficherPiedDePage($page);
 }
 
-require_once("../../../microcabroue_publique/action/action-inscription.php");
+require_once(CHEMIN_CODE."microcabroue_com_publique/action/action-inscription.php");
 ?>

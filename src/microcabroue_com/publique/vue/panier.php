@@ -1,7 +1,8 @@
 <?php
-include_once("../../commun/vue/fragment/entete-fragment.php");
-include_once("../../commun/vue/fragment/pied-de-page-fragment.php");
-include_once("../../commun/vue/fragment/tableau-panier.php");
+require_once ($_SERVER['CONFIGURATION_COMMUN']);
+include_once(CHEMIN_SRC_DEV."microcabroue_com/commun/vue/fragment/entete-fragment.php");
+include_once(CHEMIN_SRC_DEV."microcabroue_com/commun/vue/fragment/pied-de-page-fragment.php");
+include_once(CHEMIN_SRC_DEV."microcabroue_com/commun/vue/fragment/tableau-panier.php");
 
 $page = (object)
     [
@@ -32,7 +33,7 @@ function afficherBoutton(){
 
 afficherEntete($page);
 
-require_once(CHEMIN_CODE."microcabroue_publique/action/action-panier.php");
+require_once(CHEMIN_CODE."microcabroue_com_publique/action/action-panier.php");
 
 
 //afficherElementsCommande();

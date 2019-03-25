@@ -85,5 +85,5 @@ function afficherPage($page = null){
     afficherPiedDePage($page);
 
 }
-require_once(CHEMIN_CODE."microcabroue_publique/action/action-liste-goodies.php");
+require_once(CHEMIN_CODE."microcabroue_com_publique/action/action-liste-goodies.php");
 

@@ -8,6 +8,6 @@
 
 require_once ($_SERVER['CONFIGURATION_COMMUN']);
 
-require_once(CHEMIN_SRC_DEV."microcabroue_publique/action/action-fragment-charger-goodie.php");
+require_once(CHEMIN_CODE."microcabroue_com_publique/action/action-fragment-charger-goodie.php");
 
 

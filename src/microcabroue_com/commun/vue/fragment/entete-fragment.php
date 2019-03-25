@@ -7,7 +7,7 @@
  */
 require_once ($_SERVER['CONFIGURATION_COMMUN']);
 
-require_once (CHEMIN_SRC_DEV."microcabroue_com_commun/action/action-deconnexion.php");
+require_once (CHEMIN_CODE."microcabroue_com_commun/action/action-deconnexion.php");
 
 session_start();
 function afficherEntete($page = null){
@@ -48,7 +48,7 @@ function afficherEntete($page = null){
         <?/*= $page->titrePrincipal ?? ""; */?>
     </h1>-->
     <nav class="navbar navbar-expand-lg navbar-light bg-light" id="navbar">
-        <a class="navbar-brand" href="#">
+        <a class="navbar-brand" href=<?= LIEN_DOMAINE."accueil"; ?>>
         <img src="<?= LIEN_DOMAINE ; ?>commun/decoration/image/logo.png"  class="d-inline-block align-top" alt="">
 
 

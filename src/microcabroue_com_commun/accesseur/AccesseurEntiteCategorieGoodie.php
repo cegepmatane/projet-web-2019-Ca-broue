@@ -6,7 +6,7 @@
  * Time: 12:45 PM
  */
 require_once("BaseDeDonnee.php");
-require_once(CHEMIN_SRC_DEV . "microcabroue_com_commun/modele/CategorieGoodie.php");
+require_once(CHEMIN_CODE . "microcabroue_com_commun/modele/CategorieGoodie.php");
 class AccesseurEntiteCategorieGoodie
 {
     const SQL_AJOUTER = "INSERT INTO ".CategorieGoodie::TABLE."(".CategorieGoodie::LIBELLE_FR.", ".CategorieGoodie::LIBELLE_EN.") VALUES(:" .CategorieGoodie::LIBELLE_FR. ", :" .CategorieGoodie::LIBELLE_EN . ")";

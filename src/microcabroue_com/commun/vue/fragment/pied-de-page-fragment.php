@@ -17,13 +17,13 @@ function afficherPiedDePage($page = null){
 
                 <ul class="list-unstyled">
                     <li>
-                        <a href="https://cabroue.home.blog/">Forum</a>
+                        <a href=<?= LIEN_DOMAINE."wordpress" ?>>Forum</a>
                     </li>
                     <li>
-                        <a href="./a-propos">À propos de nous</a>
+                        <a href=<?= LIEN_DOMAINE."a-propos" ?>>À propos de nous</a>
                     </li>
                     <li>
-                        <a href="./contact">Nous contactez</a>
+                        <a href=<?= LIEN_DOMAINE."contact" ?>>Nous contactez</a>
                     </li>
                 </ul>
 
@@ -53,7 +53,7 @@ function afficherPiedDePage($page = null){
             </li>
             <li class="list-inline-item">
                 <a class="btn-floating btn-git mx-1"
-                href="https://github.com/">
+                href="https://github.com/cegepmatane/projet-web-2019-Ca-broue">
                 <i class="fab fa-github"> </i>
                 </a>
             </li>
