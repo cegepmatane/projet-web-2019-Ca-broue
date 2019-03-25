@@ -12,7 +12,15 @@ require_once (CHEMIN_SRC_DEV."microcabroue_com_commun/accesseur/AccesseurAchat.p
 
 $accesseurAchat = new AccesseurAchat();
 
-$listeTransactions = $accesseurAchat->listerLesTransactions();
+
+if (isset($_GET["datetransaction"])){
+    $listeTransactions = $accesseurAchat->listerLesTransactionsDunJour($_GET["datetransaction"]);
+    $page->datetransaction = $_GET["datetransaction"];
+
+}else{
+    $listeTransactions = $accesseurAchat->listerLesTransactions();
+}
+
 $page->listeTransactions = $listeTransactions;
 
 afficherPage($page);

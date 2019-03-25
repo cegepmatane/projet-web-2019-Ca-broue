@@ -25,6 +25,7 @@ class AccesseurAchat
     public const SQL_STATISTIQUE_PAR_UTILISATEUR = "select SUM(".Achat::PRIX.") as sum_prix, SUM(". Achat::QUANTITE. ") as sum_quantite, COUNT(".Achat::DATE .") as nb_vente, ".Achat::ID_UTILISATEUR." from ". Achat::TABLE . " group by ".Achat::ID_UTILISATEUR;
     public const SQL_STATISTIQUE_PAR_UTILISATEUR_PAR_PERIODE = "select SUM(".Achat::PRIX.") as sum_prix, SUM(". Achat::QUANTITE. ") as sum_quantite, COUNT(".Achat::DATE .") as nb_vente, ".Achat::ID_UTILISATEUR." from ". Achat::TABLE;
     public const SQL_LISTER_TRANSACTION = " select ".Achat::ID_UTILISATEUR . ", ".Achat::ID_GOODIE . ", ".Achat::DATE . ", ".Achat::QUANTITE . ", ".Achat::PRIX . ", ". Achat::NUMERO_TRANSACTION . " from ".Achat::TABLE. " order by ". Achat::DATE." DESC;";
+    public const SQL_LISTER_TRANSACTION_DUN_JOUR = " select ".Achat::ID_UTILISATEUR . ", ".Achat::ID_GOODIE . ", ".Achat::DATE . ", ".Achat::QUANTITE . ", ".Achat::PRIX . ", ". Achat::NUMERO_TRANSACTION . " from ".Achat::TABLE. " where  :datetransaction=DATE(".Achat::DATE.") order by ". Achat::DATE." DESC;";
 
     private static $connexion = null;
     private $accesseurUtilisateur = null;
@@ -144,6 +145,26 @@ class AccesseurAchat
         $accesseurUtilisateur = new AccesseurUtilisateur();
 
         $requete = self::$connexion->prepare(self::SQL_LISTER_TRANSACTION);
+
+        $listeTransactions=[];
+        $requete->execute();
+        $curseur = $requete->fetchAll(PDO::FETCH_ASSOC);
+        if (count($curseur) > 0) {
+            foreach ($curseur as $maLigne) {
+                $maLigne['goodie'] = $accesseurGoodie->recupererGoodie($maLigne[Achat::ID_GOODIE]);
+                $maLigne['utilisateur'] = $accesseurUtilisateur->recevoirUtilisateur($maLigne[Goodie::ID_UTILISATEUR]);
+                $listeTransactions[] = $maLigne;
+            }
+        }
+        return $listeTransactions;
+    }
+
+    public function listerLesTransactionsDunJour($datetransaction){
+        $accesseurGoodie = new AccesseurEntiteGoodie();
+        $accesseurUtilisateur = new AccesseurUtilisateur();
+
+        $requete = self::$connexion->prepare(self::SQL_LISTER_TRANSACTION_DUN_JOUR);
+        $requete->bindValue(1, $datetransaction, PDO::PARAM_STR);
 
         $listeTransactions=[];
         $requete->execute();
