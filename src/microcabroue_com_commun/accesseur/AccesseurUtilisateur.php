@@ -11,11 +11,11 @@ class AccesseurUtilisateur
     }
 
     public function verifierUtilisateur($pseudo){
-
+        $pseudoFiltre = filter_var($pseudo, FILTER_SANITIZE_STRING);
         $SQL_VERIFIER = "SELECT pseudo, mot_passe, id, isAdmin FROM utilisateur WHERE pseudo = :pseudo";
 
         $requete = self::$connexion->prepare($SQL_VERIFIER);
-        $requete->bindParam(':pseudo', $pseudo, PDO::PARAM_STR);
+        $requete->bindParam(':pseudo', $pseudoFiltre, PDO::PARAM_STR);
         $requete->execute();
         $donnees = $requete->fetch(PDO::FETCH_OBJ);
         return $donnees;
