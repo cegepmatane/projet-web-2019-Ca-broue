@@ -8301,4 +8301,9 @@ h3 {
   border-radius: 5px;
 }
 
+#navbar {
+  background-color: white !important;
+  position: relative !important;
+}
+
 /*# sourceMappingURL=modifier-info.css.map */
