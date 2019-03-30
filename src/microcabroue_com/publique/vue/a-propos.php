@@ -1,6 +1,7 @@
 <?php
-    include_once("../../commun/vue/fragment/entete-fragment.php");
-    include_once("../../commun/vue/fragment/pied-de-page-fragment.php");
+
+    require("../../commun/vue/fragment/entete-fragment.php");
+    require("../../commun/vue/fragment/pied-de-page-fragment.php");
 
     $page = (object)[
         "style" => "publique/decoration/a-propos.css",
@@ -19,8 +20,8 @@
         <div>
             <h2 class="notre-mission">Notre mission</h2>
             <hr>
-            <p class="notre-mission-text">Le but de notre projet est de créer un site web commercial avec un moyen de payement comme Paypal, le projet était principalement fait en PHP. Nous devions gérer les différentes pages à l'intégration serveur en passant par l'utilisation du "Modèle", "Vue", "Contrôleur" et par le référencement du site sur les moteurs de recherche. </p>
-            <p class="notre-mission-text2">Étant de grands amateurs de bière nous n'avons donc pas hésité sur le choisis. Malheureusement, la vente de bière en ligne est interdite au Canada, on a donc décidé de vendre des goodies liés à notre brasserie. Nous avons quand même une page dédié à nos bières, où les différents visiteurs pourront voir des images et une description complète de nos produits.</p>
+            <p class="notre-mission-text">Notre mission est d’offrir des bières uniques brassées avec passion et par la suite, donner une occasion de la déguster avec une vaste sélection d'événements. </p>
+	    <p></p>
         </div>
 
         <!-- faire une boucle pour tout les membres du projet -->
