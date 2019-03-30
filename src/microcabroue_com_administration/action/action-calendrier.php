@@ -6,7 +6,7 @@
  * Time: 5:29 PM
  */
 
-require_once (CHEMIN_SRC_DEV."microcabroue_com_administration/lib/calendrier.php");
+require_once (CHEMIN_CODE."microcabroue_com_administration/lib/calendrier.php");
 
 $calendrier = new Calendar();
 
