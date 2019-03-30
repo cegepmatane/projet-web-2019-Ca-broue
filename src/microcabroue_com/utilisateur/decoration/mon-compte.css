@@ -8294,4 +8294,9 @@ h3 {
   margin-left: 10%;
 }
 
+#navbar {
+  background-color: white !important;
+  position: relative !important;
+}
+
 /*# sourceMappingURL=mon-compte.css.map */
