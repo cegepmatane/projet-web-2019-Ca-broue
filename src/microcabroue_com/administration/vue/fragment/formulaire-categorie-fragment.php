@@ -11,16 +11,17 @@ function afficherChamps($page = null){
     if(!is_object($page))
         return;
 
-    if(!isset($page->categorie) || $page->categorie == null) {
+    /*if(!isset($page->categorie) || $page->categorie == null) {
         echo "<div class=\"alert alert-danger\" role=\"alert\">
         Erreur sur le chargement de la catégorie
         </div>";
         return;
-    }
+    }*/
 
 
         /** @var CategorieGoodie $categorie */
-        $categorie = $page->categorie;
+        if(isset($page->categorie))
+   	    $categorie = $page->categorie;
     ?>
     <form method="post">
         <input type="hidden" name="id" value=<?= isset($categorie) ? $categorie->getId() : null ?>>

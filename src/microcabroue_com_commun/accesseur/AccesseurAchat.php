@@ -5,8 +5,8 @@
  * Date: 16/03/19
  * Time: 4:49 PM
  */
-require_once(CHEMIN_SRC_DEV . "microcabroue_com_commun/modele/Utilisateur.php");
-require_once(CHEMIN_SRC_DEV . "microcabroue_com_commun/modele/Achat.php");
+require_once(CHEMIN_CODE . "microcabroue_com_commun/modele/Utilisateur.php");
+require_once(CHEMIN_CODE . "microcabroue_com_commun/modele/Achat.php");
 require_once("BaseDeDonnee.php");
 require_once("AccesseurUtilisateur.php");
 require_once("AccesseurEntiteGoodie.php");
