@@ -121,7 +121,7 @@ class AccesseurAchat
             case 'semaine':
                 $sql = self::SQL_STATISTIQUE_PAR_UTILISATEUR_PAR_PERIODE;
                 $sql.= " where WEEK(".Achat::DATE.") = WEEK(NOW()) group by ".Achat::ID_UTILISATEUR;
-                var_dump($sql);
+
                 $requete = self::$connexion->prepare($sql);
                 break;
             default:
