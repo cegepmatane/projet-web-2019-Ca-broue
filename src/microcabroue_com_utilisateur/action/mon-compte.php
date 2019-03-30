@@ -1,9 +1,9 @@
 <?php
 //session_start(); 
-require_once(CHEMIN_SRC_DEV . "microcabroue_com_commun/accesseur/AccesseurUtilisateur.php");
-require_once(CHEMIN_SRC_DEV."microcabroue_com_commun/modele/Goodie.php");
-require_once(CHEMIN_SRC_DEV."microcabroue_com_commun/accesseur/AccesseurAchat.php");
-require_once(CHEMIN_SRC_DEV."microcabroue_com_commun/accesseur/AccesseurEntiteGoodie.php");
+require_once(CHEMIN_CODE . "microcabroue_com_commun/accesseur/AccesseurUtilisateur.php");
+require_once(CHEMIN_CODE."microcabroue_com_commun/modele/Goodie.php");
+require_once(CHEMIN_CODE."microcabroue_com_commun/accesseur/AccesseurAchat.php");
+require_once(CHEMIN_CODE."microcabroue_com_commun/accesseur/AccesseurEntiteGoodie.php");
 
 afficherEntete($page);
 

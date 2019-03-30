@@ -1,11 +1,11 @@
 <?php 
 require_once ($_SERVER['CONFIGURATION_COMMUN']);
-require_once(CHEMIN_SRC_DEV . "microcabroue/commun/vue/fragment/entete-fragment.php");
-require_once(CHEMIN_SRC_DEV . "microcabroue/commun/vue/fragment/pied-de-page-fragment.php");
+require_once(CHEMIN_SRC_DEV . "microcabroue_com/commun/vue/fragment/entete-fragment.php");
+require_once(CHEMIN_SRC_DEV . "microcabroue_com/commun/vue/fragment/pied-de-page-fragment.php");
 
 $page = (Object)
 [
-    "style" => "../microcabroue/utilisateur/decoration/mon-compte.css",
+    "style" => "../../../utilisateur/decoration/mon-compte.css",
     "titre" => "Mon compte",
     "itemMenuActif" => "mon-compte",
     "achats" => []
@@ -87,6 +87,6 @@ function afficherPage($page = null, $utilisateur = null)
 }
 
 
-Require_once(CHEMIN_SRC_DEV . "microcabroue_com_utilisateur/action/mon-compte.php");
+Require_once(CHEMIN_CODE . "microcabroue_com_utilisateur/action/mon-compte.php");
 
 ?>
