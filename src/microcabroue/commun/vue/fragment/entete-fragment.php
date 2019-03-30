@@ -107,7 +107,7 @@ function afficherEntete($page = null){
 
                 if (isset($_SESSION['id']) AND isset($_SESSION['pseudo']))
                 {
-                    echo '<form method="post">';
+                    echo '<form class="nom-utilisateur" method="post">';
                     echo 'Bonjour ' . $_SESSION['pseudo'];
                     echo " <button class='btn btn-danger my-2 my-sm-0' name='action-deconnexion' value='deconnexion' type='submit'>Deconnexion</button>";
                     echo "</form>";
