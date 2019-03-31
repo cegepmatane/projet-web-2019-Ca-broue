@@ -38,6 +38,6 @@
         else if($_POST["action-modifier"] == "suppression")
             $accesseurEntiteGoodie->supprimer($goodie->getId());
 
-        // header('Location: accueil');
+        header('Location: '.LIEN_DOMAINE.'admin/goodies');
     }
 ?>
