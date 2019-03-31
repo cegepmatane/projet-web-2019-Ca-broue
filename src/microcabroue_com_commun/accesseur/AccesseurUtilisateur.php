@@ -80,10 +80,36 @@ class AccesseurUtilisateur
         $requete->execute();
     }
 
+    public function supprimer($id){
+        $idNettoyer = filter_var($id, FILTER_SANITIZE_NUMBER_INT);
+
+        $SQL_SUPPRIMER = "DELETE FROM ".Utilisateur::TABLE." WHERE ".Utilisateur::ID."=:".Utilisateur::ID.";";
+
+        $requete = self::$connexion->prepare($SQL_SUPPRIMER);
+
+        $requete->bindParam(":" . Utilisateur::ID, $idNettoyer, PDO::PARAM_INT);
+
+        return $requete->execute();
+    }
+
+    public function modifierEtatAdmin($id, $isAdmin){
+        $idNettoyer = filter_var($id, FILTER_SANITIZE_NUMBER_INT);
+        $isAdminNettoyer = filter_var($isAdmin, FILTER_SANITIZE_NUMBER_INT);
+
+        $SQL_MODIFIER_ETAT_ADMIN = "UPDATE ".Utilisateur::TABLE." SET ".Utilisateur::IS_ADMIN."=:".Utilisateur::IS_ADMIN." WHERE ".Utilisateur::ID."=:".Utilisateur::ID.";";
+
+        $requete = self::$connexion->prepare($SQL_MODIFIER_ETAT_ADMIN);
+
+        $requete->bindParam(":" . Utilisateur::ID, $idNettoyer, PDO::PARAM_INT);
+        $requete->bindParam(":" . Utilisateur::IS_ADMIN, $isAdminNettoyer, PDO::PARAM_INT);
+
+        return $requete->execute();
+    }
+
     public function recevoirUtilisateur($id)
     {
         $idNetoyer = filter_var($id, FILTER_SANITIZE_NUMBER_INT);
-        $SQL_RECEVOIR = "SELECT nom, prenom, adresse_postal, code_postal, ville, mail, pseudo, mot_passe, isAdmin FROM utilisateur WHERE id = :id";
+        $SQL_RECEVOIR = "SELECT id, nom, prenom, adresse_postal, code_postal, ville, mail, pseudo, mot_passe, isAdmin FROM utilisateur WHERE id = :id";
         
         $requete = self::$connexion->prepare($SQL_RECEVOIR);
         $requete->bindValue(':id', $idNetoyer, PDO::PARAM_INT);

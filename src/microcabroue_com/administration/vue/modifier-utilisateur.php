@@ -5,16 +5,11 @@
 
     $page = (object)
     [
-        // TODO Changer les information pour les information recuillit de la bd avec le id
-        "titre" => "Gestion de Bobby",
+        "titre" => "Gestion de ",
         "titrePrincipal" => "Panneau d'adminstration - Ça Broue !",
         "type" => "utilisateur",
         "action" => "modification",
         "urlRetour" => "./vue-liste-utilisateurs.php",
-        "utilisateur" => (object)[
-            "nomUtilisateur" => "ti-paulSarte33",
-            "isAdmin" => true
-        ]
     ];
     
     function afficherPage($page = null){
@@ -26,5 +21,6 @@
         afficherPiedDePage($page);
     }
 
-    afficherPage($page);
+    // afficherPage($page);
+    require_once (CHEMIN_CODE."microcabroue_com_administration/action/action-afficher-champs-modification-utilisateur.php");
 ?>

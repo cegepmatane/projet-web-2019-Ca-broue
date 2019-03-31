@@ -8,16 +8,6 @@
         "titre" => "Gestion des utilisateurs",
         "titrePrincipal" => "Panneau d'adminstration - Ça Broue !",
         "type" => "utilisateur",
-        "listeUtilisateurs" => [
-            $utilisateur = (object)[
-                "nom" => "Joe Blow",
-                "id" => "0"
-            ],
-            $utilisateur = (object)[
-                "nom" => "Jean-Denis Tremblay",
-                "id" => "1"
-            ]
-        ]
     ];
 
     function afficherPage($page = null){
@@ -29,5 +19,6 @@
         afficherPiedDePage($page);
     }
 
-    afficherPage($page);
+    // afficherPage($page);
+    require_once (CHEMIN_CODE."microcabroue_com_administration/action/action-liste-utilisateurs.php");
 ?>

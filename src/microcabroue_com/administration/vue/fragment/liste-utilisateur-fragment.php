@@ -7,14 +7,20 @@
             foreach($page->listeUtilisateurs as $utilisateur){
                 ?>
                 <div>
-                 <?= $utilisateur->nom; ?>
+                 <?= $utilisateur->getPrenom() . " " . $utilisateur->getNom(); ?>
                 <div class="boutons-liste"> 
-                    <a href="vue-modifier-<?= $page->type; ?>.php?id=<?= $utilisateur->id;?>" class="bouton bouton-bleu">Modifier</a>
-                    <a href="#supprimer?id=<?= $utilisateur->id; ?>" class="bouton bouton-rouge">Supprimer</a>
+                    <form method="post">
+                        <a href="<?= $page->type; ?>/modifier/<?= $utilisateur->getId();?>" class="bouton bouton-bleu">Modifier</a>
+
+                        <input type="hidden" name="id" value="<?= $utilisateur->getId(); ?>">
+                        <button class="bouton bouton-rouge" type="submit" name="action-modifier" value="suppression">Supprimer</button>
+                    </form>
                 </div>
                 </div>
                 <?php
             }
         }
     }
+
+    require_once (CHEMIN_CODE."microcabroue_com_administration/action/action-modifier-utilisateur.php");
 ?>

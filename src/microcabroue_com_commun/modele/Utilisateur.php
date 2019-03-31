@@ -2,7 +2,16 @@
 
 class Utilisateur
 {
-
+    public const ID = "id";
+    public const NOM = "nom";
+    public const PRENOM = "prenom";
+    public const ADRESSE_POSTAL = "adresse_postal";
+    public const VILLE = "ville";
+    public const MAIL = "mail";
+    public const PSEUDO = "pseudo";
+    public const MOT_DE_PASSE = "mot_passe";
+    public const IS_ADMIN = "isAdmin";
+    const TABLE = "utilisateur";
 
     private $id;
     private $nom;
