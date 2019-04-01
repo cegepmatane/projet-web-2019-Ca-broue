@@ -10,7 +10,7 @@
 
 -   [Statistiques Google Analytics](#statistiques-google-analytics)
 
-## Moteur Google
+## Moteur Google (Webmaster)
 
 ![alt text](image/index-google.png 'Capture du moteur google')
 Comme le montre la capture d'écran, le site est bel et bien inscrit au moteur de Google.
@@ -19,6 +19,10 @@ Comme le montre la capture d'écran, le site est bel et bien inscrit au moteur d
 
 ![alt text](image/analytics.png 'Capture des statistique Google Analytics')
 Nous pouvont remarquer qu'il y a des usagés sur ordinateur comme sur mobile. De plus la page la plus visité est l'accueil et tout les usagés viennent du canada.
+
+## Recommendation
+
+Puisque selon les statisques de Google Analytics, la page d'accueil est la plus visité, elle devrait être la plus attrayante du site. Elle devrait aussi inspirer les gens à naviguer sur le site en cliquant sur des boutons, il faut vraiment exploiter l'invite à l'action sur la page principale.
 
 ## Référencement de Michaël
 
